@@ -18,6 +18,7 @@ export async function svgToPng(svg) {
 export default function ShareImage({life,kind='end',badge='',family=null}) {
  const [state,setState]=useState({busy:false,url:'',blob:null,error:''});
  const current=useRef(''),version=useRef(0);
+ const filename=`人生签-${life.id}-${kind==='birth'?'出生':kind==='family'?'家族':'终局'}.png`;
  useEffect(()=>()=>{version.current++;if(current.current)URL.revokeObjectURL(current.current);},[]);
  useEffect(()=>{version.current++;if(current.current)URL.revokeObjectURL(current.current);current.current='';setState({busy:false,url:'',blob:null,error:''});},[life.id,kind,badge,family?.length]);
  async function prepare(){
@@ -30,14 +31,14 @@ export default function ShareImage({life,kind='end',badge='',family=null}) {
   }catch(error){setState(s=>({...s,busy:false,error:error.message}));return null;}
  }
  async function save(){const result=await prepare();if(!result)return;
-  const a=document.createElement('a');a.href=result.url;a.download=`投胎模拟器-${life.id}-${kind==='birth'?'出生':kind==='family'?'家族':'终局'}.png`;document.body.appendChild(a);a.click();a.remove();
+  const a=document.createElement('a');a.href=result.url;a.download=filename;document.body.appendChild(a);a.click();a.remove();
  }
- async function share(){const result=await prepare();if(!result)return;const file=new File([result.blob],`投胎模拟器-${life.id}.png`,{type:'image/png'});
-  if(navigator.canShare?.({files:[file]})&&navigator.share){try{await navigator.share({files:[file],title:'投胎模拟器'});}catch(e){if(e.name!=='AbortError')setState(s=>({...s,error:'请长按下方图片保存，或使用保存图片按钮。'}));}}
+ async function share(){const result=await prepare();if(!result)return;const file=new File([result.blob],filename,{type:'image/png'});
+  if(navigator.canShare?.({files:[file]})&&navigator.share){try{await navigator.share({files:[file],title:'人生签'});}catch(e){if(e.name!=='AbortError')setState(s=>({...s,error:'请长按下方图片保存，或使用保存图片按钮。'}));}}
  }
  return <section className="share-image" aria-label={kind==='birth'?'保存出生卡':kind==='family'?'保存家族卡':'保存终局卡'}>
   <div className="share-actions"><button onClick={save} disabled={state.busy}>{state.busy?'正在生成图片…':'保存图片'}</button><button onClick={share} disabled={state.busy}>分享 / 展开图片</button></div>
   {state.error&&<p role="alert">{state.error}</p>}
-  {state.url&&<div className="share-image-preview"><p>图片已在本机生成。手机可长按下图，选择「存储到照片」。</p><a href={state.url} download={`投胎模拟器-${life.id}.png`}>下载 PNG 原图</a><img src={state.url} width="1080" height="1920" alt={`${life.name}的${kind==='birth'?'出生':kind==='family'?'家族':'终局'}卡，可长按保存`} style={{display:'block',width:'100%',maxWidth:360,height:'auto',margin:'16px auto'}}/></div>}
+  {state.url&&<div className="share-image-preview"><p>图片已在本机生成。手机可长按下图，选择「存储到照片」。</p><a href={state.url} download={filename}>下载 PNG 原图</a><img src={state.url} width="1080" height="1920" alt={`${life.name}的${kind==='birth'?'出生':kind==='family'?'家族':'终局'}卡，可长按保存`} style={{display:'block',width:'100%',maxWidth:360,height:'auto',margin:'16px auto'}}/></div>}
  </section>;
 }

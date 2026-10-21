@@ -1,0 +1,41 @@
+{
+  "results": [
+    {
+      "width": 375,
+      "title": "人生签 · 中国版",
+      "button": "出生",
+      "download": "人生签-粤-2026-694669-出生.png",
+      "share": {
+        "title": "人生签",
+        "filenames": [
+          "人生签-粤-2026-694669-出生.png"
+        ]
+      },
+      "dex": "人生签-人生图鉴.json",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "title": "人生签 · 中国版",
+      "button": "出生",
+      "download": "人生签-粤-2026-694669-出生.png",
+      "share": {
+        "title": "人生签",
+        "filenames": [
+          "人生签-粤-2026-694669-出生.png"
+        ]
+      },
+      "dex": "人生签-人生图鉴.json",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "horizontalOverflow": false
+    }
+  ],
+  "errors": []
+}

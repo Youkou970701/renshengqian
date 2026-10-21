@@ -1,0 +1,188 @@
+{
+  "sampleSize": 100000,
+  "countPairs": [
+    {
+      "id": "rural-degree",
+      "before": 1302,
+      "after": 1302,
+      "identical": true
+    },
+    {
+      "id": "left-985",
+      "before": 74,
+      "after": 74,
+      "identical": true
+    },
+    {
+      "id": "repeat-degree",
+      "before": 50,
+      "after": 50,
+      "identical": true
+    },
+    {
+      "id": "civil-third",
+      "before": 980,
+      "after": 980,
+      "identical": true
+    },
+    {
+      "id": "near-one",
+      "before": 6139,
+      "after": 6139,
+      "identical": true
+    },
+    {
+      "id": "beijing-college",
+      "before": 162,
+      "after": 162,
+      "identical": true
+    },
+    {
+      "id": "century",
+      "before": 3403,
+      "after": 3403,
+      "identical": true
+    },
+    {
+      "id": "hometown",
+      "before": 1034,
+      "after": 1034,
+      "identical": true
+    },
+    {
+      "id": "master",
+      "before": 8287,
+      "after": 8287,
+      "identical": true
+    },
+    {
+      "id": "public",
+      "before": 5713,
+      "after": 5713,
+      "identical": true
+    },
+    {
+      "id": "rural-master",
+      "before": 859,
+      "after": 859,
+      "identical": true
+    },
+    {
+      "id": "left-degree",
+      "before": 4006,
+      "after": 4006,
+      "identical": true
+    },
+    {
+      "id": "teacher",
+      "before": 218,
+      "after": 218,
+      "identical": true
+    },
+    {
+      "id": "medical",
+      "before": 215,
+      "after": 215,
+      "identical": true
+    },
+    {
+      "id": "technician",
+      "before": 4908,
+      "after": 4908,
+      "identical": true
+    },
+    {
+      "id": "business",
+      "before": 1603,
+      "after": 1603,
+      "identical": true
+    },
+    {
+      "id": "company",
+      "before": 224,
+      "after": 224,
+      "identical": true
+    },
+    {
+      "id": "house",
+      "before": 72,
+      "after": 72,
+      "identical": true
+    },
+    {
+      "id": "parent",
+      "before": 72927,
+      "after": 72927,
+      "identical": true
+    },
+    {
+      "id": "together",
+      "before": 76937,
+      "after": 76937,
+      "identical": true
+    },
+    {
+      "id": "city",
+      "before": 3739,
+      "after": 3739,
+      "identical": true
+    },
+    {
+      "id": "million",
+      "before": 1541,
+      "after": 1541,
+      "identical": true
+    },
+    {
+      "id": "long-life",
+      "before": 55555,
+      "after": 55555,
+      "identical": true
+    },
+    {
+      "id": "college",
+      "before": 5005,
+      "after": 5005,
+      "identical": true
+    },
+    {
+      "id": "upgrade",
+      "before": 410,
+      "after": 410,
+      "identical": true
+    },
+    {
+      "id": "first-master",
+      "before": 4923,
+      "after": 4923,
+      "identical": true
+    },
+    {
+      "id": "civil-first",
+      "before": 2009,
+      "after": 2009,
+      "identical": true
+    },
+    {
+      "id": "general",
+      "before": 7971,
+      "after": 7971,
+      "identical": true
+    },
+    {
+      "id": "high-complete",
+      "before": 74399,
+      "after": 74399,
+      "identical": true
+    },
+    {
+      "id": "degree",
+      "before": 37277,
+      "after": 37277,
+      "identical": true
+    }
+  ],
+  "allIdentical": true,
+  "beforeHash": "c8b37c06e75b3ab50161cf366852adb3ec9b9592bc25d434916250d36baec293",
+  "afterHash": "4b4224b5c9fcf3f0c07e4ccb13a49b3764989aaa8157c45022a6bd66d7bd9239"
+}

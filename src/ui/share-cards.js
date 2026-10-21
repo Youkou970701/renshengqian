@@ -9,7 +9,7 @@ const text=(s,x,y,size=30,extra='')=>`<text x="${x}" y="${y}" font-size="${size}
 const lines=(s,x,y,{size=32,max=25,gap=51,...rest}={})=>{const a=Array.from(String(s??''));return Array.from({length:Math.ceil(a.length/max)},(_,i)=>text(a.slice(i*max,(i+1)*max).join(''),x,y+i*gap,size,rest.bold?'font-weight="700"':'')).join('');};
 const shell=(body,bg,ink)=>`<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="${bg}"/><g fill="${ink}" font-family="PingFang SC,Microsoft YaHei,Heiti SC,sans-serif">${body}</g></svg>`;
 const family=['','每笔开销都要细算','大笔支出需要攒钱','日常有着落，花费需计划','有积蓄支持你的求学','求学和起步都有人托底'];
-const footer=(life,ink='#192e28')=>`<path d="M60 1800H1020" stroke="${ink}" stroke-width="2"/>${text(life.id,60,1850,27,'font-family="Menlo,Courier New,monospace"')}${text('投胎模拟器',1020,1850,28,'text-anchor="end" font-weight="700"')}${text('基于公开统计的模拟，不代表任何个人命运',60,1894,21)}`;
+const footer=(life,ink='#192e28')=>`<path d="M60 1800H1020" stroke="${ink}" stroke-width="2"/>${text(life.id,60,1850,27,'font-family="Menlo,Courier New,monospace"')}${text('人生签',1020,1850,28,'text-anchor="end" font-weight="700"')}${text('基于公开统计的模拟，不代表任何个人命运',60,1894,21)}`;
 const badge=(s)=>s?`<rect x="60" y="159" width="960" height="65" fill="#ed563c"/>${text(s,85,203,31,'fill="#fff" font-weight="700"')}`:'';
 
 /** All card input is already-computed life state; rendering consumes no randomness. */
@@ -25,7 +25,7 @@ export function endCard(life,opts={}) {
  const me=educated?Math.max(0,n-1):99;
  const grid=Array.from({length:100},(_,i)=>{const x=60+(i%10)*96,y=735+Math.floor(i/10)*96;return `<rect x="${x}" y="${y}" width="82" height="82" fill="${i===me?'#ed563c':i<n?'#285e49':'#dfe5dc'}"/>${i===me?`<path d="M${x+15} ${y+41}h52m-26-26v52" stroke="#fff" stroke-width="7"/>`:''}`;}).join('');
  const edu=s.education==='普通本科'?'本科':s.education;
- return shell(`<rect x="60" y="60" width="960" height="18"/>${text('投胎模拟器 / 中国版',60,128,27,'font-weight="700"')}${text('一生的数据',1020,128,24,'text-anchor="end"')}${badge(opts.badge)}${text(`${life.province} · ${life.place??''}`,60,272,30)}${text(n,52,541,302,'font-family="Arial,sans-serif" font-weight="700" letter-spacing="-15"')}${text('/ 100 人',470,541,65)}${text('同省同年出生的人里，',60,622,43,'font-weight="600"')}${text(`约 ${n} 人读了本科。`,60,684,43,'font-weight="600"')}${text(`模型出生队列参照 · 本省 ${s.referenceSample??0} 局`,60,718,20)}${grid}${text(`你读到${edu}，走过 ${life.age} 年。`,60,1730,50,'font-weight="800"')}${text(`${life.name} · ${life.lastJob??life.job} · 橙色方格是你`,60,1775,27)}${footer(life)}`,'#fafbf7','#192e28');
+ return shell(`<rect x="60" y="60" width="960" height="18"/>${text('人生签 / 中国版',60,128,27,'font-weight="700"')}${text('一生的数据',1020,128,24,'text-anchor="end"')}${badge(opts.badge)}${text(`${life.province} · ${life.place??''}`,60,272,30)}${text(n,52,541,302,'font-family="Arial,sans-serif" font-weight="700" letter-spacing="-15"')}${text('/ 100 人',470,541,65)}${text('同省同年出生的人里，',60,622,43,'font-weight="600"')}${text(`约 ${n} 人读了本科。`,60,684,43,'font-weight="600"')}${text(`模型出生队列参照 · 本省 ${s.referenceSample??0} 局`,60,718,20)}${grid}${text(`你读到${edu}，走过 ${life.age} 年。`,60,1730,50,'font-weight="800"')}${text(`${life.name} · ${life.lastJob??life.job} · 橙色方格是你`,60,1775,27)}${footer(life)}`,'#fafbf7','#192e28');
 }
 
 /** Player-visible strings only, used by editorial tests (SVG attributes are not copy). */
@@ -41,5 +41,5 @@ export function familyCard(life,opts={}){
   const education=summary(s).education,settled=settlement(s).label;
   return `${i?text(delta>0?'↑ 起点更宽裕':delta<0?'↓ 起点更紧张':'→ 相近的起点',75,y-43,27,'fill="#ed563c"'):''}<path d="M60 ${y}H1020" stroke="#203b30" stroke-width="2"/>${text(`第 ${i+1} 代`,65,y+55,28)}${text(s.name,65,y+136,69,'font-weight="700"')}${text(`${s.age} 岁`,1005,y+136,69,'text-anchor="end" font-weight="700"')}${text(`出生 · ${s.province}${s.place} · ${s.hukou==='rural'?'乡村':'城市'}`,65,y+200,31)}${text(`学历 · ${education}`,65,y+255,31)}${text(`定居 · ${settled}`,65,y+310,31)}`;
  }).join('');
- return shell(`<rect x="60" y="60" width="960" height="18"/>${text('投胎模拟器 / 家族接力',60,137,30,'font-weight="700"')}${text(`${rows.length} 代`,1015,137,30,'text-anchor="end"')}${lines(headline,60,265,{size:55,max:17,gap:75,bold:true})}${body}${footer(life)}`,'#fafbf7','#192e28');
+ return shell(`<rect x="60" y="60" width="960" height="18"/>${text('人生签 / 家族接力',60,137,30,'font-weight="700"')}${text(`${rows.length} 代`,1015,137,30,'text-anchor="end"')}${lines(headline,60,265,{size:55,max:17,gap:75,bold:true})}${body}${footer(life)}`,'#fafbf7','#192e28');
 }

@@ -1,0 +1,13 @@
+{
+  "protectedUnchangedExceptAuthorizedDerivedFiles": true,
+  "changedProtectedFiles": [
+    "src/content/achievements-rarity.json",
+    "src/content/engine-version.js"
+  ],
+  "localStorageKeysUnchanged": true,
+  "localStorageKeys": {
+    "src/ui/daily.js:DAILY_KEY": "toutai-sim:daily:v1",
+    "src/ui/App.jsx:SAVE_KEY": "toutai-sim:v2",
+    "src/ui/collection.js:COLLECTION_KEY": "toutai-sim:collection:v1"
+  }
+}

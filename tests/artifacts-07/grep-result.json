@@ -1,0 +1,5 @@
+{
+  "command": "grep -rn \u6295\u80ce src index.html tests public",
+  "exitCode": 1,
+  "stdout": ""
+}
