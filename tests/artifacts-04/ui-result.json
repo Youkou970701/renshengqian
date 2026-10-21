@@ -1,0 +1,113 @@
+{
+  "results": [
+    {
+      "name": "home",
+      "width": 375,
+      "overflow": false,
+      "dialog": 0
+    },
+    {
+      "name": "birth",
+      "width": 375,
+      "overflow": false,
+      "dialog": 0
+    },
+    {
+      "name": "school",
+      "width": 375,
+      "overflow": false,
+      "dialog": 1
+    },
+    {
+      "name": "near",
+      "width": 375,
+      "overflow": false,
+      "dialog": 1
+    },
+    {
+      "name": "end",
+      "width": 375,
+      "overflow": false,
+      "dialog": 0
+    },
+    {
+      "name": "home",
+      "width": 1280,
+      "overflow": false,
+      "dialog": 0
+    },
+    {
+      "name": "birth",
+      "width": 1280,
+      "overflow": false,
+      "dialog": 0
+    },
+    {
+      "name": "school",
+      "width": 1280,
+      "overflow": false,
+      "dialog": 1
+    },
+    {
+      "name": "near",
+      "width": 1280,
+      "overflow": false,
+      "dialog": 1
+    },
+    {
+      "name": "end",
+      "width": 1280,
+      "overflow": false,
+      "dialog": 0
+    }
+  ],
+  "errors": [],
+  "near": {
+    "id": "鄂-2026-002735",
+    "age": 18,
+    "dice": {
+      "id": "exam-bachelor",
+      "label": "本科录取概率",
+      "p": 0.24636249186245418,
+      "u": 0.2600039257667959,
+      "pass": false,
+      "contributions": {
+        "base": -0.4492592930968442,
+        "tier": -0.4103287559314074,
+        "wealth": -3.637978807091713e-12,
+        "hukou": -0.2601819877305388,
+        "grade": 0.14596510462850346,
+        "effort": -0.14430256634654143
+      },
+      "factors": [
+        {
+          "key": "tier",
+          "label": "省份",
+          "logit": -0.4103287559314074,
+          "delta": -0.08372735067156517,
+          "pp": -8.372735067156517
+        },
+        {
+          "key": "hukou",
+          "label": "求学条件",
+          "logit": -0.2601819877305388,
+          "delta": -0.05141045618878537,
+          "pp": -5.141045618878537
+        },
+        {
+          "key": "effort",
+          "label": "备考投入",
+          "logit": -0.14430256634654143,
+          "delta": -0.027760256643350134,
+          "pp": -2.7760256643350134
+        }
+      ],
+      "positive": true,
+      "successLabel": "本科录取",
+      "failureLabel": "未录取本科",
+      "nearMiss": true,
+      "closePass": false,
+      "gap": 0.013641433904341693
+    }
+  }
+}

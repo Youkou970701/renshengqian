@@ -1,0 +1,26 @@
+import { templates, rural, poor, rich, secondarySchool } from './helpers.js';
+
+export const highEvents = templates('high', [
+  ['choices', '志愿表铺在餐桌上，家里人对着招生简章讨论到很晚。', null, { knowledge: 1 }, secondarySchool],
+  ['poster', '走廊的招生海报换了新的，你停下来看了看本科和专科的区别。', null, { knowledge: 1 }, secondarySchool],
+  ['county-hs', '县中门口的早餐摊已经开火，你背着书包从蒸汽里走过去。', null, { grind: 1 }, (s) => secondarySchool(s) && rural(s)],
+  ['fee-talk', '家人说起学费和路费，话说到一半又让你先安心读书。', null, { happy: -1 }, (s) => secondarySchool(s) && rural(s) && poor(s)],
+  ['application', '老师讲填报技巧，你在本子上记下“先看招生计划”。', null, { knowledge: 1 }, secondarySchool],
+  ['elite', '班里有人提起985，你翻开错题本，看着仍没弄懂的那一页。', null, { grind: 1 }, secondarySchool],
+  ['campus-map', '招生简章里有校园地图，你把图书馆的位置圈了出来。', null, { happy: 1 }, secondarySchool],
+  ['workshop', '实训课上，你跟着老师把工具逐件归位。', null, { knowledge: 1 }, (s) => secondarySchool(s) && s.edu !== 'high'],
+  ['grant', '助学申请表需要家里签字，你把纸张夹进塑料文件袋。', null, { happy: 1 }, (s) => secondarySchool(s) && poor(s)],
+  ['route', '升学说明会上，你发现实训和继续读书也能放进同一份计划。', null, { knowledge: 1 }, secondarySchool],
+  ['lights', '晚自习结束，宿舍里有人拿手电照着最后一道题。', null, { knowledge: 1, health: -1 }, secondarySchool],
+  ['uniform', '校服袖口沾了粉笔灰，你用湿纸巾擦了很久。', null, { happy: -1 }, secondarySchool],
+  ['bus', '周末回家的班车很挤，你站着也睡着了一小会儿。', null, { health: -1 }, rural],
+  ['comfort', '考砸后家人没追问分数，只给你留了一碗热汤。', null, { happy: 2 }, secondarySchool],
+  ['coach', '家人帮你找了志愿咨询资料，你仍然想自己把专业介绍读一遍。', null, { knowledge: 1 }, (s) => secondarySchool(s) && rich(s)],
+  ['part-time', '假期你帮亲戚看店，第一次体会到整天站着是什么感觉。', null, { social: 1, health: -1 }, (s) => secondarySchool(s) && poor(s)],
+  ['last-sports', '操场上同学喊你去跑步，你合上习题册，决定透口气。', null, { health: 1, happy: 1 }, secondarySchool],
+  ['friend-note', '好友把鼓励的话写在便签背面，贴在你的水杯上。', null, { social: 1, happy: 1 }],
+  ['repair', '旧台灯闪了几次，家人换好灯泡，说这盏还能用。', null, { happy: 1 }, poor],
+  ['future', '填意向专业时，你第一次发现自己想去的地方那么远。', null, { knowledge: 1 }, secondarySchool],
+  ['application-data','老师打开历年全国高考报名资料，让你们看完历史人数，再仔细看志愿表。','education.gaokao_applicants',{knowledge:1},secondarySchool],
+  ['elite-data','你在升学资料里读到985招生占比，把想报的学校另抄在一张纸上。','education.elite_985_rate',{grind:1},secondarySchool],
+]);

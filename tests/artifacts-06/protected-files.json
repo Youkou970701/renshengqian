@@ -1,0 +1,67 @@
+[
+  {
+    "path": "data/cn-stats.json",
+    "unchanged": true
+  },
+  {
+    "path": "docs/codex-handoff-01-engine.md",
+    "unchanged": true
+  },
+  {
+    "path": "docs/codex-handoff-01-results.md",
+    "unchanged": true
+  },
+  {
+    "path": "docs/codex-handoff-02-engine-content-fixes.md",
+    "unchanged": true
+  },
+  {
+    "path": "docs/codex-handoff-02-results.md",
+    "unchanged": true
+  },
+  {
+    "path": "docs/codex-handoff-03-design-lab.md",
+    "unchanged": true
+  },
+  {
+    "path": "docs/codex-handoff-03-results.md",
+    "unchanged": true
+  },
+  {
+    "path": "docs/codex-handoff-04-results.md",
+    "unchanged": true
+  },
+  {
+    "path": "docs/codex-handoff-04-ui-dice-speed.md",
+    "unchanged": true
+  },
+  {
+    "path": "docs/codex-handoff-05-family-daily-dex.md",
+    "unchanged": true
+  },
+  {
+    "path": "docs/codex-handoff-05-results.md",
+    "unchanged": true
+  },
+  {
+    "path": "docs/codex-handoff-06-family-dex-polish.md",
+    "unchanged": true
+  },
+  {
+    "path": "docs/requirements.md",
+    "unchanged": true
+  },
+  {
+    "path": "src/engine/decisions.js",
+    "authorizedChange": "仅引入P并把自动生育阈值.55改成P.family.autoChildProbability=.95",
+    "otherwiseIdentical": true
+  },
+  {
+    "path": "src/engine/birth.js",
+    "unchanged": true
+  },
+  {
+    "path": "src/engine/rng.js",
+    "unchanged": true
+  }
+]

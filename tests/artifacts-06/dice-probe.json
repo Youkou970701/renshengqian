@@ -1,0 +1,33 @@
+{
+  "sampleSize": 3000,
+  "seedRange": [
+    0,
+    2999
+  ],
+  "strategy": "auto",
+  "diceCount": 18784,
+  "labels": {
+    "家境": 7693,
+    "城乡": 7391,
+    "省份": 11929,
+    "成绩": 10290,
+    "努力": 1594,
+    "学历": 469,
+    "行业": 2038
+  },
+  "kinds": {
+    "school-general": 2640,
+    "midcareer": 2806,
+    "exam-bachelor": 2280,
+    "exam-211": 2280,
+    "exam-985": 2280,
+    "school-stage": 211,
+    "civil": 5364,
+    "master": 923
+  },
+  "nearMissCount": 909,
+  "closePassCount": 566,
+  "internalCaps": 0,
+  "maxProbabilityError": 2.7755575615628914e-17,
+  "assertions": "PASS"
+}

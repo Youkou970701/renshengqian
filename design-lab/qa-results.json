@@ -1,0 +1,1191 @@
+{
+  "results": [
+    {
+      "folder": "A-dossier",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 693.09375,
+        "bottom": 735.09375,
+        "width": 313,
+        "height": 42
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/A-dossier-rural-birth-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "A-dossier",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 480.84375,
+        "bottom": 774,
+        "width": 319,
+        "height": 293.15625
+      },
+      "peers": {
+        "top": 207,
+        "bottom": 788,
+        "width": 104,
+        "height": 581
+      },
+      "screen": "mid",
+      "path": "screenshots/A-dossier-rural-mid-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "A-dossier",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 61,
+        "bottom": 677.875,
+        "width": 347,
+        "height": 616.875
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/A-dossier-rural-end-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "A-dossier",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 928.734375,
+        "bottom": 982.734375,
+        "width": 798,
+        "height": 54
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/A-dossier-rural-birth-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "A-dossier",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 513.03125,
+        "bottom": 792,
+        "width": 949,
+        "height": 278.96875
+      },
+      "peers": {
+        "top": 109,
+        "bottom": 817,
+        "width": 230,
+        "height": 708
+      },
+      "screen": "mid",
+      "path": "screenshots/A-dossier-rural-mid-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "A-dossier",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 147.890625,
+        "bottom": 770.109375,
+        "width": 350,
+        "height": 622.21875
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/A-dossier-rural-end-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "A-dossier",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 674.953125,
+        "bottom": 716.953125,
+        "width": 313,
+        "height": 42
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/A-dossier-urban-birth-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "A-dossier",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 480.84375,
+        "bottom": 774,
+        "width": 319,
+        "height": 293.15625
+      },
+      "peers": {
+        "top": 207,
+        "bottom": 788,
+        "width": 104,
+        "height": 581
+      },
+      "screen": "mid",
+      "path": "screenshots/A-dossier-urban-mid-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "A-dossier",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 61,
+        "bottom": 677.875,
+        "width": 347,
+        "height": 616.875
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/A-dossier-urban-end-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "A-dossier",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 897.546875,
+        "bottom": 951.546875,
+        "width": 798,
+        "height": 54
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/A-dossier-urban-birth-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "A-dossier",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 513.03125,
+        "bottom": 792,
+        "width": 949,
+        "height": 278.96875
+      },
+      "peers": {
+        "top": 109,
+        "bottom": 817,
+        "width": 230,
+        "height": 708
+      },
+      "screen": "mid",
+      "path": "screenshots/A-dossier-urban-mid-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "A-dossier",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 147.890625,
+        "bottom": 770.109375,
+        "width": 350,
+        "height": 622.21875
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/A-dossier-urban-end-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "B-ticket",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 719.890625,
+        "bottom": 761.890625,
+        "width": 309,
+        "height": 42
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/B-ticket-rural-birth-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "B-ticket",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 453.4375,
+        "bottom": 757,
+        "width": 347,
+        "height": 303.5625
+      },
+      "peers": {
+        "top": 228,
+        "bottom": 771,
+        "width": 103,
+        "height": 543
+      },
+      "screen": "mid",
+      "path": "screenshots/B-ticket-rural-mid-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "B-ticket",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 61,
+        "bottom": 677.875,
+        "width": 347,
+        "height": 616.875
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/B-ticket-rural-end-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "B-ticket",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 941.734375,
+        "bottom": 993.734375,
+        "width": 850,
+        "height": 52
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/B-ticket-rural-birth-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "B-ticket",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 456.84375,
+        "bottom": 795,
+        "width": 965,
+        "height": 338.15625
+      },
+      "peers": {
+        "top": 105,
+        "bottom": 820,
+        "width": 220,
+        "height": 715
+      },
+      "screen": "mid",
+      "path": "screenshots/B-ticket-rural-mid-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "B-ticket",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 145.890625,
+        "bottom": 768.109375,
+        "width": 350,
+        "height": 622.21875
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/B-ticket-rural-end-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "B-ticket",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 701.75,
+        "bottom": 743.75,
+        "width": 309,
+        "height": 42
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/B-ticket-urban-birth-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "B-ticket",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 453.4375,
+        "bottom": 757,
+        "width": 347,
+        "height": 303.5625
+      },
+      "peers": {
+        "top": 228,
+        "bottom": 771,
+        "width": 103,
+        "height": 543
+      },
+      "screen": "mid",
+      "path": "screenshots/B-ticket-urban-mid-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "B-ticket",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 61,
+        "bottom": 677.875,
+        "width": 347,
+        "height": 616.875
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/B-ticket-urban-end-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "B-ticket",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 941.734375,
+        "bottom": 993.734375,
+        "width": 850,
+        "height": 52
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/B-ticket-urban-birth-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "B-ticket",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 456.84375,
+        "bottom": 795,
+        "width": 965,
+        "height": 338.15625
+      },
+      "peers": {
+        "top": 105,
+        "bottom": 820,
+        "width": 220,
+        "height": 715
+      },
+      "screen": "mid",
+      "path": "screenshots/B-ticket-urban-mid-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "B-ticket",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 145.890625,
+        "bottom": 768.109375,
+        "width": 350,
+        "height": 622.21875
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/B-ticket-urban-end-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "C-lottery",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 666.015625,
+        "bottom": 706.015625,
+        "width": 305,
+        "height": 40
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/C-lottery-rural-birth-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "C-lottery",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 456.3125,
+        "bottom": 678.828125,
+        "width": 343,
+        "height": 222.515625
+      },
+      "peers": {
+        "top": 688.828125,
+        "bottom": 798,
+        "width": 375,
+        "height": 109.171875
+      },
+      "screen": "mid",
+      "path": "screenshots/C-lottery-rural-mid-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "C-lottery",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 48,
+        "bottom": 714.65625,
+        "width": 375,
+        "height": 666.65625
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/C-lottery-rural-end-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "C-lottery",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 834.15625,
+        "bottom": 884.15625,
+        "width": 490.28125,
+        "height": 50
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/C-lottery-rural-birth-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "C-lottery",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 608,
+        "bottom": 874.765625,
+        "width": 744,
+        "height": 266.765625
+      },
+      "peers": {
+        "top": 58,
+        "bottom": 608,
+        "width": 240,
+        "height": 550
+      },
+      "screen": "mid",
+      "path": "screenshots/C-lottery-rural-mid-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "C-lottery",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 88,
+        "bottom": 941.328125,
+        "width": 480,
+        "height": 853.328125
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/C-lottery-rural-end-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "C-lottery",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 666.015625,
+        "bottom": 706.015625,
+        "width": 305,
+        "height": 40
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/C-lottery-urban-birth-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "C-lottery",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 456.3125,
+        "bottom": 678.828125,
+        "width": 343,
+        "height": 222.515625
+      },
+      "peers": {
+        "top": 688.828125,
+        "bottom": 798,
+        "width": 375,
+        "height": 109.171875
+      },
+      "screen": "mid",
+      "path": "screenshots/C-lottery-urban-mid-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "C-lottery",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 48,
+        "bottom": 714.65625,
+        "width": 375,
+        "height": 666.65625
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/C-lottery-urban-end-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "C-lottery",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 834.15625,
+        "bottom": 884.15625,
+        "width": 490.28125,
+        "height": 50
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/C-lottery-urban-birth-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "C-lottery",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 608,
+        "bottom": 874.765625,
+        "width": 744,
+        "height": 266.765625
+      },
+      "peers": {
+        "top": 58,
+        "bottom": 608,
+        "width": 240,
+        "height": 550
+      },
+      "screen": "mid",
+      "path": "screenshots/C-lottery-urban-mid-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "C-lottery",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 88,
+        "bottom": 941.328125,
+        "width": 480,
+        "height": 853.328125
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/C-lottery-urban-end-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "D-datajournal",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 763.625,
+        "bottom": 810.625,
+        "width": 331,
+        "height": 47
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/D-datajournal-rural-birth-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "D-datajournal",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 434,
+        "bottom": 732.359375,
+        "width": 335,
+        "height": 298.359375
+      },
+      "peers": {
+        "top": 224,
+        "bottom": 280,
+        "width": 335,
+        "height": 56
+      },
+      "screen": "mid",
+      "path": "screenshots/D-datajournal-rural-mid-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "D-datajournal",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 65,
+        "bottom": 728.109375,
+        "width": 373,
+        "height": 663.109375
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/D-datajournal-rural-end-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "D-datajournal",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 786.65625,
+        "bottom": 833.65625,
+        "width": 360,
+        "height": 47
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/D-datajournal-rural-birth-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "D-datajournal",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 120,
+        "bottom": 681.78125,
+        "width": 390,
+        "height": 561.78125
+      },
+      "peers": {
+        "top": 476.78125,
+        "bottom": 681.78125,
+        "width": 240,
+        "height": 205
+      },
+      "screen": "mid",
+      "path": "screenshots/D-datajournal-rural-mid-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "D-datajournal",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 127.671875,
+        "bottom": 778.328125,
+        "width": 366,
+        "height": 650.65625
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/D-datajournal-rural-end-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "D-datajournal",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 741.4375,
+        "bottom": 788.4375,
+        "width": 331,
+        "height": 47
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/D-datajournal-urban-birth-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "D-datajournal",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 434,
+        "bottom": 732.359375,
+        "width": 335,
+        "height": 298.359375
+      },
+      "peers": {
+        "top": 224,
+        "bottom": 280,
+        "width": 335,
+        "height": 56
+      },
+      "screen": "mid",
+      "path": "screenshots/D-datajournal-urban-mid-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "D-datajournal",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 65,
+        "bottom": 728.109375,
+        "width": 373,
+        "height": 663.109375
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/D-datajournal-urban-end-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "D-datajournal",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 786.65625,
+        "bottom": 833.65625,
+        "width": 360,
+        "height": 47
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/D-datajournal-urban-birth-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "D-datajournal",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 120,
+        "bottom": 681.78125,
+        "width": 390,
+        "height": 561.78125
+      },
+      "peers": {
+        "top": 476.78125,
+        "bottom": 681.78125,
+        "width": 240,
+        "height": 205
+      },
+      "screen": "mid",
+      "path": "screenshots/D-datajournal-urban-mid-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "D-datajournal",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 127.671875,
+        "bottom": 778.328125,
+        "width": 366,
+        "height": 650.65625
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/D-datajournal-urban-end-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "E-scroll",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 730.46875,
+        "bottom": 773.46875,
+        "width": 180,
+        "height": 43
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/E-scroll-rural-birth-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "E-scroll",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 441.125,
+        "bottom": 698.75,
+        "width": 339,
+        "height": 257.625
+      },
+      "peers": {
+        "top": 713.75,
+        "bottom": 798,
+        "width": 375,
+        "height": 84.25
+      },
+      "screen": "mid",
+      "path": "screenshots/E-scroll-rural-mid-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "E-scroll",
+      "person": "rural",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 48,
+        "bottom": 714.65625,
+        "width": 375,
+        "height": 666.65625
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/E-scroll-rural-end-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "E-scroll",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 949.296875,
+        "bottom": 999.296875,
+        "width": 180,
+        "height": 50
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/E-scroll-rural-birth-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "E-scroll",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 648,
+        "bottom": 940.984375,
+        "width": 625,
+        "height": 292.984375
+      },
+      "peers": {
+        "top": 78,
+        "bottom": 638,
+        "width": 235,
+        "height": 560
+      },
+      "screen": "mid",
+      "path": "screenshots/E-scroll-rural-mid-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "E-scroll",
+      "person": "rural",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "粤-2026-694669",
+      "target": {
+        "top": 88,
+        "bottom": 941.328125,
+        "width": 480,
+        "height": 853.328125
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/E-scroll-rural-end-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "E-scroll",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 730.46875,
+        "bottom": 773.46875,
+        "width": 180,
+        "height": 43
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/E-scroll-urban-birth-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "E-scroll",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 441.125,
+        "bottom": 698.75,
+        "width": 339,
+        "height": 257.625
+      },
+      "peers": {
+        "top": 713.75,
+        "bottom": 798,
+        "width": 375,
+        "height": 84.25
+      },
+      "screen": "mid",
+      "path": "screenshots/E-scroll-urban-mid-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "E-scroll",
+      "person": "urban",
+      "width": "mobile",
+      "scrollWidth": 375,
+      "viewport": 375,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 48,
+        "bottom": 714.65625,
+        "width": 375,
+        "height": 666.65625
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/E-scroll-urban-end-mobile.png",
+      "pass": true
+    },
+    {
+      "folder": "E-scroll",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 949.296875,
+        "bottom": 999.296875,
+        "width": 180,
+        "height": 50
+      },
+      "peers": null,
+      "screen": "birth",
+      "path": "screenshots/E-scroll-urban-birth-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "E-scroll",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 648,
+        "bottom": 940.984375,
+        "width": 625,
+        "height": 292.984375
+      },
+      "peers": {
+        "top": 78,
+        "bottom": 638,
+        "width": 235,
+        "height": 560
+      },
+      "screen": "mid",
+      "path": "screenshots/E-scroll-urban-mid-desktop.png",
+      "pass": true
+    },
+    {
+      "folder": "E-scroll",
+      "person": "urban",
+      "width": "desktop",
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "id": "京-2026-066321",
+      "target": {
+        "top": 88,
+        "bottom": 941.328125,
+        "width": 480,
+        "height": 853.328125
+      },
+      "peers": null,
+      "screen": "end",
+      "path": "screenshots/E-scroll-urban-end-desktop.png",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "external": [],
+  "interact": {
+    "id": "京-2026-066321",
+    "heading": "下一站，普通高中。",
+    "view": "mobile"
+  }
+}

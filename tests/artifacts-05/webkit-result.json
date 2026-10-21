@@ -1,0 +1,18 @@
+[
+  {
+    "kind": "family",
+    "width": 1080,
+    "height": 1920,
+    "download": true,
+    "localImage": true,
+    "browser": "Playwright WebKit iPhone 13仿真，非iOS真机或Apple Simulator"
+  },
+  {
+    "kind": "daily",
+    "width": 1080,
+    "height": 1920,
+    "download": true,
+    "localImage": true,
+    "browser": "Playwright WebKit iPhone 13仿真，非iOS真机或Apple Simulator"
+  }
+]

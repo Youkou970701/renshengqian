@@ -1,0 +1,69 @@
+{
+  "evidence": [
+    {
+      "screen": "home",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "screen": "dex",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "screen": "daily",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "daily": [
+        "鲁-2026-966202",
+        1,
+        2
+      ]
+    },
+    {
+      "relay": "粤-2026-410636·二代",
+      "resume": true,
+      "width": 375
+    },
+    {
+      "childless": true,
+      "relayButton": false,
+      "width": 375
+    },
+    {
+      "screen": "home",
+      "width": 1280,
+      "overflow": false
+    },
+    {
+      "screen": "dex",
+      "width": 1280,
+      "overflow": false
+    },
+    {
+      "screen": "daily",
+      "width": 1280,
+      "overflow": false
+    },
+    {
+      "daily": [
+        "鲁-2026-966202",
+        1,
+        2
+      ]
+    },
+    {
+      "relay": "粤-2026-410636·二代",
+      "resume": true,
+      "width": 1280
+    },
+    {
+      "childless": true,
+      "relayButton": false,
+      "width": 1280
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "birth",
+    "browser": "Playwright WebKit 26.5, iPhone 13 emulation (not iOS hardware or Apple Simulator)",
+    "pngDimensions": [
+      1080,
+      1920
+    ],
+    "downloadEvent": true,
+    "fallbackImage": true,
+    "longPressInstruction": true,
+    "externalRequests": 0
+  },
+  {
+    "kind": "end",
+    "browser": "Playwright WebKit 26.5, iPhone 13 emulation (not iOS hardware or Apple Simulator)",
+    "pngDimensions": [
+      1080,
+      1920
+    ],
+    "downloadEvent": true,
+    "fallbackImage": true,
+    "longPressInstruction": true,
+    "externalRequests": 0
+  }
+]

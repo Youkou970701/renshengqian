@@ -1,0 +1,26 @@
+import { templates, poor, rich, secondarySchool, higherSchool, bachelorEligible, working } from './helpers.js';
+
+export const collegeEvents = templates('college', [
+  ['fair', '招聘会入口排着队，你把简历压平，又检查了一遍联系方式。', null, { social: 1 }],
+  ['exam-book', '书店的考研资料堆得很高，你翻看目录，算了算准备的时间。', null, { knowledge: 1 }, bachelorEligible],
+  ['exam-register', '考研报名页面开了，你和同学讨论要不要再读几年。', null, { grind: 1 }, (s) => higherSchool(s) && bachelorEligible(s)],
+  ['civil-exam', '朋友发来考公岗位表，你把专业要求那一栏放大来看。', null, { knowledge: 1 }, (s) => ['college', 'associate', 'bachelor', '985', '211', 'master'].includes(s.edu)],
+  ['campus', '你从招生宣传栏前走过，想起当年翻得起毛的志愿表。', null, { happy: 1 }, higherSchool],
+  ['dorm-chat', '宿舍聊天时，有人说起家乡，有人说以后不想再搬这么远。', null, { social: 1 }, (s) => higherSchool(s) && s.edu === '985'],
+  ['internship', '实习面试结束，你在地铁里重新回想刚才没答好的问题。', null, { social: 1 }, higherSchool],
+  ['promotion', '继续升学的通知贴出来，你拍了照片，准备回去细看报名条件。', null, { knowledge: 1 }, higherSchool],
+  ['offer', '班群里陆续有人报喜，你关掉消息，继续修改自己的简历。', null, { grind: 1 }, higherSchool],
+  ['exam-seat', '自习室里座位难找，你抱着书在走廊边等了一会儿。', null, { knowledge: 1 }, (s) => higherSchool(s) && bachelorEligible(s)],
+  ['factory', '实习车间的交接班铃响了，你学着在记录本上写清每一道工序。', null, { knowledge: 1 }, (s) => (secondarySchool(s) || higherSchool(s)) && ['vocational', 'secondary_vocational', 'zhongzhi', 'college', 'associate'].includes(s.edu)],
+  ['takeaway', '送餐前你把手机充满电，雨衣叠好放在车座下面。', null, { health: -1 }, (s) => ['delivery', '外卖骑手', '送餐员'].includes(s.job)],
+  ['scholarship', '你把奖学金申请材料理好，最后一页还缺老师签字。', null, { grind: 1 }, higherSchool],
+  ['call-home', '给家里打电话，你说一切都好，挂掉后才想起没吃晚饭。', null, { happy: -1 }, poor],
+  ['roommates', '室友带回家乡特产，桌上摆满了不同口味的小袋零食。', null, { social: 1, happy: 1 }, higherSchool],
+  ['computer', '电脑终于换新，你把旧电脑里攒下的文件认真拷了出来。', null, { knowledge: 1 }, rich],
+  ['certificate', '技能证书领到手，你先拍照发进家里的群。', null, { happy: 1 }],
+  ['cheap-ticket', '为买到便宜车票，你提前把回家的日期写在日历上。', null, { happy: 1 }, poor],
+  ['presentation', '汇报时你没再一直盯着稿纸，同伴在台下悄悄点头。', null, { social: 1 }, (s) => higherSchool(s) || working(s)],
+  ['laundry', '晾衣绳上空出一个位置，你突然觉得自己已经习惯独自生活。', null, { happy: 1 }],
+  ['master-data','考研讲座展示了报名人数和录取人数，你在笔记里写下备考需要付出的时间。','education.kaoyan_admit_ratio',{knowledge:1},bachelorEligible],
+  ['civil-data','你读到国考报考人数与岗位数，把自己的专业和能报的职位一项项对照。','career.guokao_ratio',{knowledge:1},bachelorEligible],
+]);

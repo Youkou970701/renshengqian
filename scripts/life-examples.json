@@ -1,0 +1,3080 @@
+[
+  {
+    "id": "京-2026-066321",
+    "seed": 62827066321,
+    "year": 2026,
+    "rngState": 3195379426,
+    "age": 95,
+    "alive": false,
+    "sex": "female",
+    "province": "北京",
+    "tier": "S",
+    "hukou": "urban",
+    "wealthQ": 5,
+    "parents": {
+      "mother": {
+        "age": 24,
+        "education": "大专及以上",
+        "job": "白领"
+      },
+      "father": {
+        "age": 33,
+        "education": "大专及以上",
+        "job": "个体经营者"
+      }
+    },
+    "leftBehind": false,
+    "siblings": 0,
+    "attrs": {
+      "health": 98.97999999999968,
+      "happy": 100,
+      "knowledge": 97.19999999999989,
+      "social": 97.89999999999978,
+      "grind": 100
+    },
+    "gradePct": 67.6809037647209,
+    "edu": "bachelor",
+    "job": "退休",
+    "income": 36000,
+    "assets": 409833,
+    "city": "省会",
+    "married": true,
+    "kids": [
+      {
+        "bornAt": 33,
+        "hukou": "urban",
+        "wealthQ": 4
+      }
+    ],
+    "log": [
+      {
+        "age": 0,
+        "text": "你出生在北京，城市户口，家境 Q5。",
+        "stat": "births.by_province_2024.北京"
+      },
+      {
+        "age": 1,
+        "text": "兴趣教室里有一架小钢琴，你更喜欢敲旁边的三角铁。",
+        "stat": null
+      },
+      {
+        "age": 2,
+        "text": "厨房里飘来面汤的味道，你搬着小板凳等晚饭。",
+        "stat": null
+      },
+      {
+        "age": 2,
+        "text": "家人把出生手环收进抽屉，你的名字写在一张新户口页上。",
+        "stat": "births.national_2024"
+      },
+      {
+        "age": 2,
+        "text": "兴趣教室里有一架小钢琴，你更喜欢敲旁边的三角铁。",
+        "stat": null
+      },
+      {
+        "age": 3,
+        "text": "接种本夹在户口本里，家人怕忘记，提前把它放进布袋。",
+        "stat": "health.infant_mortality"
+      },
+      {
+        "age": 4,
+        "text": "电梯门上映出你的影子，你伸手想摸另一个自己。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 5,
+        "text": "雨水从屋檐落下来，你蹲在门口看蚂蚁搬走饼干屑。",
+        "stat": null
+      },
+      {
+        "age": 6,
+        "text": "运动会上你没拿名次，跑完后同学还是把水递了过来。",
+        "stat": null
+      },
+      {
+        "age": 7,
+        "text": "运动会上你没拿名次，跑完后同学还是把水递了过来。",
+        "stat": null
+      },
+      {
+        "age": 8,
+        "text": "周末的补课班换了教室，你在楼道里匆匆吃完一个面包。",
+        "stat": null
+      },
+      {
+        "age": 8,
+        "text": "学校发了借书卡，你把它夹进最舍不得折的课本。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 8,
+        "text": "老师在讲台边放了一个旧书箱，你借走的书有很多折角。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 9,
+        "text": "运动会上你没拿名次，跑完后同学还是把水递了过来。",
+        "stat": null
+      },
+      {
+        "age": 10,
+        "text": "新书包背上肩，家人在课本扉页认真写下你的名字。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 10,
+        "text": "老师在讲台边放了一个旧书箱，你借走的书有很多折角。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 11,
+        "text": "新书包背上肩，家人在课本扉页认真写下你的名字。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 11,
+        "text": "暑假的风扇吱呀作响，你在练习册边上画了一整页小人。",
+        "stat": null
+      },
+      {
+        "age": 12,
+        "text": "这次成绩退了几名，你把试卷重新叠好，没有急着扔进书包。",
+        "stat": null
+      },
+      {
+        "age": 13,
+        "text": "食堂阿姨认出你没带饭卡，先把饭盘递给了你。",
+        "stat": null
+      },
+      {
+        "age": 14,
+        "text": "班会讲到了普高和中职，老师让大家把招生简章带回家。",
+        "stat": "education.hs_stage_gross_enroll"
+      },
+      {
+        "age": 14,
+        "text": "你和好友约好周末一起骑车，计划写在便签纸角落。",
+        "stat": null
+      },
+      {
+        "age": 14,
+        "text": "这次成绩退了几名，你把试卷重新叠好，没有急着扔进书包。",
+        "stat": null
+      },
+      {
+        "age": 15,
+        "text": "你完成了初中学业，来到中考的路口。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 15,
+        "text": "招生老师带来实训课的照片，你第一次仔细看另一条升学路线。",
+        "stat": "education.hs_stage_gross_enroll"
+      },
+      {
+        "age": 15,
+        "text": "家人预约了补课老师，你得把原本的球赛改到下个周末。",
+        "stat": null
+      },
+      {
+        "age": 15,
+        "text": "老师让写给未来的自己，你想了很久才落笔。",
+        "stat": null
+      },
+      {
+        "age": 15,
+        "text": "你选择了「争取普通高中」。",
+        "stat": null
+      },
+      {
+        "age": 15,
+        "text": "你拿到了普通高中的录取通知。",
+        "stat": "education.general_hs_rate"
+      },
+      {
+        "age": 16,
+        "text": "晚自习结束，宿舍里有人拿手电照着最后一道题。",
+        "stat": null
+      },
+      {
+        "age": 16,
+        "text": "操场上同学喊你去跑步，你合上习题册，决定透口气。",
+        "stat": null
+      },
+      {
+        "age": 16,
+        "text": "班里有人提起985，你翻开错题本，看着仍没弄懂的那一页。",
+        "stat": "education.elite_985_rate"
+      },
+      {
+        "age": 17,
+        "text": "操场上同学喊你去跑步，你合上习题册，决定透口气。",
+        "stat": null
+      },
+      {
+        "age": 17,
+        "text": "志愿表铺在餐桌上，家里人对着招生简章讨论到很晚。",
+        "stat": "education.general_hs_rate"
+      },
+      {
+        "age": 17,
+        "text": "填意向专业时，你第一次发现自己想去的地方那么远。",
+        "stat": null
+      },
+      {
+        "age": 18,
+        "text": "你完成了高中阶段的学业。",
+        "stat": "education.hs_stage_gross_enroll"
+      },
+      {
+        "age": 18,
+        "text": "考砸后家人没追问分数，只给你留了一碗热汤。",
+        "stat": null
+      },
+      {
+        "age": 18,
+        "text": "志愿表铺在餐桌上，家里人对着招生简章讨论到很晚。",
+        "stat": "education.general_hs_rate"
+      },
+      {
+        "age": 18,
+        "text": "校服袖口沾了粉笔灰，你用湿纸巾擦了很久。",
+        "stat": null
+      },
+      {
+        "age": 18,
+        "text": "你选择了「参加高考 / 职教升学考试」。",
+        "stat": null
+      },
+      {
+        "age": 18,
+        "text": "你没有收到本科录取通知。成绩、家庭负担和名额共同影响了这次结果。",
+        "stat": "province_tier.S"
+      },
+      {
+        "age": 19,
+        "text": "电脑终于换新，你把旧电脑里攒下的文件认真拷了出来。",
+        "stat": null
+      },
+      {
+        "age": 19,
+        "text": "实习车间的交接班铃响了，你学着在记录本上写清每一道工序。",
+        "stat": null
+      },
+      {
+        "age": 19,
+        "text": "你选择了「接受专科或工作」。",
+        "stat": null
+      },
+      {
+        "age": 19,
+        "text": "你选择了专科或就业，开始准备下一段生活。",
+        "stat": "education.higher_ed_gross_enroll"
+      },
+      {
+        "age": 20,
+        "text": "你把奖学金申请材料理好，最后一页还缺老师签字。",
+        "stat": null
+      },
+      {
+        "age": 21,
+        "text": "招聘会入口排着队，你把简历压平，又检查了一遍联系方式。",
+        "stat": "career.youth_unemployment"
+      },
+      {
+        "age": 21,
+        "text": "继续升学的通知贴出来，你拍了照片，准备回去细看报名条件。",
+        "stat": "education.higher_ed_gross_enroll"
+      },
+      {
+        "age": 21,
+        "text": "你选择了「准备专升本 / 继续升学」。",
+        "stat": null
+      },
+      {
+        "age": 21,
+        "text": "继续升学的录取通知到了，你沿着另一条路走进了本科课堂。该路线概率为待核机制估计。",
+        "stat": "education.higher_ed_gross_enroll"
+      },
+      {
+        "age": 22,
+        "text": "电脑终于换新，你把旧电脑里攒下的文件认真拷了出来。",
+        "stat": null
+      },
+      {
+        "age": 22,
+        "text": "招聘会入口排着队，你把简历压平，又检查了一遍联系方式。",
+        "stat": "career.youth_unemployment"
+      },
+      {
+        "age": 22,
+        "text": "你选择了「找工作」。",
+        "stat": null
+      },
+      {
+        "age": 22,
+        "text": "这一年的去向是：企业职员。",
+        "stat": "career.youth_unemployment"
+      },
+      {
+        "age": 23,
+        "text": "两家人坐下来商量婚事，你希望把彩礼和婚礼支出说得更明白。",
+        "stat": null
+      },
+      {
+        "age": 24,
+        "text": "两家人坐下来商量婚事，你希望把彩礼和婚礼支出说得更明白。",
+        "stat": null
+      },
+      {
+        "age": 24,
+        "text": "休息日你把工作群设成免打扰，去河边慢慢走了一段。",
+        "stat": null
+      },
+      {
+        "age": 25,
+        "text": "看房回来的路上，你们打开计算器，反复调整首付和月供。",
+        "stat": null
+      },
+      {
+        "age": 25,
+        "text": "你选择了「省会」。",
+        "stat": null
+      },
+      {
+        "age": 25,
+        "text": "你把生活搬到了省会。",
+        "stat": null
+      },
+      {
+        "age": 26,
+        "text": "同事在午饭时聊起是否要孩子，大家的顾虑并不一样。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 27,
+        "text": "相亲时，你们先聊通勤，再聊以后想住在哪里。",
+        "stat": "family.first_marriage_age"
+      },
+      {
+        "age": 28,
+        "text": "同事在午饭时聊起是否要孩子，大家的顾虑并不一样。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 28,
+        "text": "看房回来的路上，你们打开计算器，反复调整首付和月供。",
+        "stat": null
+      },
+      {
+        "age": 29,
+        "text": "房东问要不要续租，你把通勤路线和搬家费用列在便签上。",
+        "stat": null
+      },
+      {
+        "age": 29,
+        "text": "休息日你把工作群设成免打扰，去河边慢慢走了一段。",
+        "stat": null
+      },
+      {
+        "age": 29,
+        "text": "两家人坐下来商量婚事，你希望把彩礼和婚礼支出说得更明白。",
+        "stat": null
+      },
+      {
+        "age": 29,
+        "text": "你选择了「尝试相亲与结婚」。",
+        "stat": null
+      },
+      {
+        "age": 29,
+        "text": "你们一起添置锅碗，开始商量两个人的日子。",
+        "stat": "family.first_marriage_age"
+      },
+      {
+        "age": 30,
+        "text": "超市的婴儿用品架前，你们算了算接下来的生活开销。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 30,
+        "text": "朋友的婚礼请柬发来，群里开始讨论谁坐哪班车回去。",
+        "stat": "family.marriage_registrations"
+      },
+      {
+        "age": 31,
+        "text": "朋友的婚礼请柬发来，群里开始讨论谁坐哪班车回去。",
+        "stat": "family.marriage_registrations"
+      },
+      {
+        "age": 31,
+        "text": "你选择了「继续租住」。",
+        "stat": null
+      },
+      {
+        "age": 31,
+        "text": "你续签了租房合同。",
+        "stat": null
+      },
+      {
+        "age": 32,
+        "text": "加班结束的电梯里很安静，你终于回复了家人的消息。",
+        "stat": null
+      },
+      {
+        "age": 32,
+        "text": "超市的婴儿用品架前，你们算了算接下来的生活开销。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 33,
+        "text": "同事在午饭时聊起是否要孩子，大家的顾虑并不一样。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 33,
+        "text": "体检后你把报告收好，和家人商量下次休假一起出去走走。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 33,
+        "text": "翻到婚礼时留下的清单，你们聊起当初一起置办生活用品的日子。",
+        "stat": "family.first_marriage_age"
+      },
+      {
+        "age": 33,
+        "text": "你选择了「迎接孩子」。",
+        "stat": null
+      },
+      {
+        "age": 33,
+        "text": "孩子出生了。下一代的起点是城市、家境 Q4。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 34,
+        "text": "考公公告更新了，你把专业要求和备考安排看了一遍，才关掉浏览器。",
+        "stat": "career.guokao_ratio"
+      },
+      {
+        "age": 34,
+        "text": "朋友的婚礼请柬发来，群里开始讨论谁坐哪班车回去。",
+        "stat": "family.marriage_registrations"
+      },
+      {
+        "age": 35,
+        "text": "翻到婚礼时留下的清单，你们聊起当初一起置办生活用品的日子。",
+        "stat": "family.first_marriage_age"
+      },
+      {
+        "age": 35,
+        "text": "休息日你把工作群设成免打扰，去河边慢慢走了一段。",
+        "stat": null
+      },
+      {
+        "age": 35,
+        "text": "加班结束的电梯里很安静，你终于回复了家人的消息。",
+        "stat": null
+      },
+      {
+        "age": 35,
+        "text": "你选择了「继续现在的工作」。",
+        "stat": null
+      },
+      {
+        "age": 35,
+        "text": "你继续在熟悉的岗位上工作。",
+        "stat": null
+      },
+      {
+        "age": 36,
+        "text": "部门调整的消息传来，你开始整理这些年的项目和联系方式。",
+        "stat": null
+      },
+      {
+        "age": 36,
+        "text": "社区更新健康档案，你找出上次体检忘了看的那张报告。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 36,
+        "text": "年轻亲戚请你帮忙看看简历，你把联系方式一栏单独圈出来。",
+        "stat": "career.youth_unemployment"
+      },
+      {
+        "age": 37,
+        "text": "部门调整的消息传来，你开始整理这些年的项目和联系方式。",
+        "stat": null
+      },
+      {
+        "age": 37,
+        "text": "饭后你和家人讨论退休以后想怎样生活，把想去的地方记下来。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 38,
+        "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+        "stat": null
+      },
+      {
+        "age": 38,
+        "text": "你教长辈用手机挂号，对方又问了一遍，你把步骤写在纸上。",
+        "stat": null
+      },
+      {
+        "age": 39,
+        "text": "社区更新健康档案，你找出上次体检忘了看的那张报告。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 39,
+        "text": "体检提醒你多活动，你把久没穿的运动鞋重新擦干净。",
+        "stat": null
+      },
+      {
+        "age": 39,
+        "text": "家里讨论孩子上学和住处，你把地图放大，比较了几条通勤路线。",
+        "stat": null
+      },
+      {
+        "age": 40,
+        "text": "饭后你和家人讨论退休以后想怎样生活，把想去的地方记下来。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 41,
+        "text": "家里的水龙头又滴水，你照着教程换了密封圈。",
+        "stat": null
+      },
+      {
+        "age": 41,
+        "text": "陪家人去复查，你把药盒照片和医嘱存在手机同一个文件夹。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 42,
+        "text": "部门调整的消息传来，你开始整理这些年的项目和联系方式。",
+        "stat": null
+      },
+      {
+        "age": 42,
+        "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+        "stat": null
+      },
+      {
+        "age": 42,
+        "text": "陪家人去复查，你把药盒照片和医嘱存在手机同一个文件夹。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 43,
+        "text": "转岗培训需要重新做笔记，你把听不懂的地方用笔标出来。",
+        "stat": null
+      },
+      {
+        "age": 43,
+        "text": "家里讨论孩子上学和住处，你把地图放大，比较了几条通勤路线。",
+        "stat": null
+      },
+      {
+        "age": 43,
+        "text": "社区更新健康档案，你找出上次体检忘了看的那张报告。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 44,
+        "text": "社区更新健康档案，你找出上次体检忘了看的那张报告。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 45,
+        "text": "家长会上，老师讲了普高和中职，你把重点记在手机里。",
+        "stat": "education.hs_stage_gross_enroll"
+      },
+      {
+        "age": 45,
+        "text": "同事准备继续读书，你也找来专业课教材，试着翻了开头。",
+        "stat": "education.kaoyan_admit_ratio"
+      },
+      {
+        "age": 46,
+        "text": "年轻亲戚请你帮忙看看简历，你把联系方式一栏单独圈出来。",
+        "stat": "career.youth_unemployment"
+      },
+      {
+        "age": 46,
+        "text": "陪家人去复查，你把药盒照片和医嘱存在手机同一个文件夹。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 47,
+        "text": "孩子说起升学压力，你没有立刻讲道理，先陪着散了会儿步。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 48,
+        "text": "孩子也到了中考的年纪。这个家的起点是家境 Q4。",
+        "stat": "education.general_hs_rate"
+      },
+      {
+        "age": 48,
+        "text": "家长会上，老师讲了普高和中职，你把重点记在手机里。",
+        "stat": "education.hs_stage_gross_enroll"
+      },
+      {
+        "age": 48,
+        "text": "孩子说想试试更远的学校，你先问了住宿和路费。",
+        "stat": "education.bachelor_admitted"
+      },
+      {
+        "age": 49,
+        "text": "陪家人去复查，你把药盒照片和医嘱存在手机同一个文件夹。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 49,
+        "text": "孩子说起升学压力，你没有立刻讲道理，先陪着散了会儿步。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 49,
+        "text": "年轻亲戚请你帮忙看看简历，你把联系方式一栏单独圈出来。",
+        "stat": "career.youth_unemployment"
+      },
+      {
+        "age": 50,
+        "text": "家里讨论孩子上学和住处，你把地图放大，比较了几条通勤路线。",
+        "stat": null
+      },
+      {
+        "age": 51,
+        "text": "孩子说想试试更远的学校，你先问了住宿和路费。",
+        "stat": "education.bachelor_admitted"
+      },
+      {
+        "age": 51,
+        "text": "转岗培训需要重新做笔记，你把听不懂的地方用笔标出来。",
+        "stat": null
+      },
+      {
+        "age": 52,
+        "text": "年轻亲戚请你帮忙看看简历，你把联系方式一栏单独圈出来。",
+        "stat": "career.youth_unemployment"
+      },
+      {
+        "age": 52,
+        "text": "孩子说想试试更远的学校，你先问了住宿和路费。",
+        "stat": "education.bachelor_admitted"
+      },
+      {
+        "age": 52,
+        "text": "体检提醒你多活动，你把久没穿的运动鞋重新擦干净。",
+        "stat": null
+      },
+      {
+        "age": 53,
+        "text": "你教长辈用手机挂号，对方又问了一遍，你把步骤写在纸上。",
+        "stat": null
+      },
+      {
+        "age": 53,
+        "text": "旧相识来到附近，你们吃了顿便饭，话题从近况慢慢聊到家人。",
+        "stat": null
+      },
+      {
+        "age": 53,
+        "text": "社区更新健康档案，你找出上次体检忘了看的那张报告。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 54,
+        "text": "部门调整的消息传来，你开始整理这些年的项目和联系方式。",
+        "stat": null
+      },
+      {
+        "age": 54,
+        "text": "体检提醒你多活动，你把久没穿的运动鞋重新擦干净。",
+        "stat": null
+      },
+      {
+        "age": 55,
+        "text": "陪家人去复查，你把药盒照片和医嘱存在手机同一个文件夹。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 55,
+        "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+        "stat": null
+      },
+      {
+        "age": 55,
+        "text": "体检提醒你多活动，你把久没穿的运动鞋重新擦干净。",
+        "stat": null
+      },
+      {
+        "age": 56,
+        "text": "饭后你和家人讨论退休以后想怎样生活，把想去的地方记下来。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 56,
+        "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+        "stat": null
+      },
+      {
+        "age": 56,
+        "text": "旧相识来到附近，你们吃了顿便饭，话题从近况慢慢聊到家人。",
+        "stat": null
+      },
+      {
+        "age": 57,
+        "text": "陪家人去复查，你把药盒照片和医嘱存在手机同一个文件夹。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 58,
+        "text": "家里的水龙头又滴水，你照着教程换了密封圈。",
+        "stat": null
+      },
+      {
+        "age": 58,
+        "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+        "stat": null
+      },
+      {
+        "age": 59,
+        "text": "旧相识来到附近，你们吃了顿便饭，话题从近况慢慢聊到家人。",
+        "stat": null
+      },
+      {
+        "age": 60,
+        "text": "你开始按新的节奏安排生活，药盒和家人的电话变得常见。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 60,
+        "text": "窗边的花又开了，你挪了挪花盆，让它多晒一会儿太阳。",
+        "stat": null
+      },
+      {
+        "age": 60,
+        "text": "孩子打来视频，你先问吃饭没有，对方也问了同一句。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 60,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 61,
+        "text": "上楼时你歇了一会儿，决定下次少提一点东西。",
+        "stat": null
+      },
+      {
+        "age": 61,
+        "text": "邻居约你去公园，你把常用药和水杯放进随身小包。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 61,
+        "text": "老朋友来串门，茶续了又续，你们又聊起年轻时的工作。",
+        "stat": null
+      },
+      {
+        "age": 62,
+        "text": "体检报告装进旧文件袋，你按医嘱在药盒上贴了标签。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 63,
+        "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 63,
+        "text": "晚辈想学你做的菜，你边演示边说调味不用太着急。",
+        "stat": null
+      },
+      {
+        "age": 63,
+        "text": "旧照片褪了色，你在背面补写还能记得的时间和地点。",
+        "stat": null
+      },
+      {
+        "age": 64,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 64,
+        "text": "晴天你把被子拿出去晒，傍晚收回来时带着暖暖的味道。",
+        "stat": null
+      },
+      {
+        "age": 64,
+        "text": "老朋友来串门，茶续了又续，你们又聊起年轻时的工作。",
+        "stat": null
+      },
+      {
+        "age": 65,
+        "text": "晚辈回来看你，饭桌坐满后，你又从柜里找出一双碗筷。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 65,
+        "text": "整理旧物时翻出毕业证，你把压弯的封皮轻轻抚平。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 65,
+        "text": "孩子打来视频，你先问吃饭没有，对方也问了同一句。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 66,
+        "text": "孩子打来视频，你先问吃饭没有，对方也问了同一句。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 66,
+        "text": "晚辈回来看你，饭桌坐满后，你又从柜里找出一双碗筷。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 67,
+        "text": "社区活动室开门，你把上次没下完的棋重新摆好。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 67,
+        "text": "晚辈回来看你，饭桌坐满后，你又从柜里找出一双碗筷。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 67,
+        "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 68,
+        "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 68,
+        "text": "体检报告装进旧文件袋，你按医嘱在药盒上贴了标签。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 68,
+        "text": "老朋友来串门，茶续了又续，你们又聊起年轻时的工作。",
+        "stat": null
+      },
+      {
+        "age": 69,
+        "text": "老朋友来串门，茶续了又续，你们又聊起年轻时的工作。",
+        "stat": null
+      },
+      {
+        "age": 69,
+        "text": "上楼时你歇了一会儿，决定下次少提一点东西。",
+        "stat": null
+      },
+      {
+        "age": 69,
+        "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 70,
+        "text": "晨练的路走得慢了些，你在树荫下停下，和熟人打招呼。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 70,
+        "text": "社区活动室开门，你把上次没下完的棋重新摆好。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 70,
+        "text": "老朋友来串门，茶续了又续，你们又聊起年轻时的工作。",
+        "stat": null
+      },
+      {
+        "age": 71,
+        "text": "广场的音乐响起，你没有急着加入，先在旁边跟着打拍子。",
+        "stat": null
+      },
+      {
+        "age": 71,
+        "text": "上楼时你歇了一会儿，决定下次少提一点东西。",
+        "stat": null
+      },
+      {
+        "age": 72,
+        "text": "上楼时你歇了一会儿，决定下次少提一点东西。",
+        "stat": null
+      },
+      {
+        "age": 73,
+        "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 74,
+        "text": "上楼时你歇了一会儿，决定下次少提一点东西。",
+        "stat": null
+      },
+      {
+        "age": 75,
+        "text": "上楼时你歇了一会儿，决定下次少提一点东西。",
+        "stat": null
+      },
+      {
+        "age": 76,
+        "text": "整理旧物时翻出毕业证，你把压弯的封皮轻轻抚平。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 77,
+        "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 77,
+        "text": "上楼时你歇了一会儿，决定下次少提一点东西。",
+        "stat": null
+      },
+      {
+        "age": 78,
+        "text": "晨练的路走得慢了些，你在树荫下停下，和熟人打招呼。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 78,
+        "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 79,
+        "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+        "stat": null
+      },
+      {
+        "age": 79,
+        "text": "晚辈回来看你，饭桌坐满后，你又从柜里找出一双碗筷。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 80,
+        "text": "体检报告装进旧文件袋，你按医嘱在药盒上贴了标签。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 81,
+        "text": "体检报告装进旧文件袋，你按医嘱在药盒上贴了标签。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 81,
+        "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+        "stat": null
+      },
+      {
+        "age": 81,
+        "text": "孩子打来视频，你先问吃饭没有，对方也问了同一句。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 82,
+        "text": "社区活动室开门，你把上次没下完的棋重新摆好。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 82,
+        "text": "旧照片褪了色，你在背面补写还能记得的时间和地点。",
+        "stat": null
+      },
+      {
+        "age": 83,
+        "text": "社区活动室开门，你把上次没下完的棋重新摆好。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 84,
+        "text": "晴天你把被子拿出去晒，傍晚收回来时带着暖暖的味道。",
+        "stat": null
+      },
+      {
+        "age": 85,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 86,
+        "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 87,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 87,
+        "text": "孩子打来视频，你先问吃饭没有，对方也问了同一句。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 87,
+        "text": "广场的音乐响起，你没有急着加入，先在旁边跟着打拍子。",
+        "stat": null
+      },
+      {
+        "age": 88,
+        "text": "晴天你把被子拿出去晒，傍晚收回来时带着暖暖的味道。",
+        "stat": null
+      },
+      {
+        "age": 88,
+        "text": "晨练的路走得慢了些，你在树荫下停下，和熟人打招呼。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 89,
+        "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+        "stat": null
+      },
+      {
+        "age": 90,
+        "text": "晴天你把被子拿出去晒，傍晚收回来时带着暖暖的味道。",
+        "stat": null
+      },
+      {
+        "age": 90,
+        "text": "社区活动室开门，你把上次没下完的棋重新摆好。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 91,
+        "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 91,
+        "text": "老朋友来串门，茶续了又续，你们又聊起年轻时的工作。",
+        "stat": null
+      },
+      {
+        "age": 91,
+        "text": "整理旧物时翻出毕业证，你把压弯的封皮轻轻抚平。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 92,
+        "text": "广场的音乐响起，你没有急着加入，先在旁边跟着打拍子。",
+        "stat": null
+      },
+      {
+        "age": 92,
+        "text": "晚辈回来看你，饭桌坐满后，你又从柜里找出一双碗筷。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 93,
+        "text": "上楼时你歇了一会儿，决定下次少提一点东西。",
+        "stat": null
+      },
+      {
+        "age": 93,
+        "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 93,
+        "text": "社区活动室开门，你把上次没下完的棋重新摆好。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 94,
+        "text": "旧照片褪了色，你在背面补写还能记得的时间和地点。",
+        "stat": null
+      },
+      {
+        "age": 94,
+        "text": "晚辈回来看你，饭桌坐满后，你又从柜里找出一双碗筷。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 95,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 95,
+        "text": "晚辈回来看你，饭桌坐满后，你又从柜里找出一双碗筷。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 95,
+        "text": "你在 95 岁离开了。终局类别：意外（意外）。",
+        "stat": "health.life_expectancy"
+      }
+    ],
+    "history": [
+      {
+        "age": 0,
+        "happy": 65
+      },
+      {
+        "age": 1,
+        "happy": 65
+      },
+      {
+        "age": 2,
+        "happy": 67
+      },
+      {
+        "age": 3,
+        "happy": 67
+      },
+      {
+        "age": 4,
+        "happy": 68
+      },
+      {
+        "age": 5,
+        "happy": 69
+      },
+      {
+        "age": 6,
+        "happy": 70
+      },
+      {
+        "age": 7,
+        "happy": 71
+      },
+      {
+        "age": 8,
+        "happy": 70
+      },
+      {
+        "age": 9,
+        "happy": 71
+      },
+      {
+        "age": 10,
+        "happy": 71
+      },
+      {
+        "age": 11,
+        "happy": 72
+      },
+      {
+        "age": 12,
+        "happy": 71
+      },
+      {
+        "age": 13,
+        "happy": 72.8
+      },
+      {
+        "age": 14,
+        "happy": 71.8
+      },
+      {
+        "age": 15,
+        "happy": 72.6
+      },
+      {
+        "age": 16,
+        "happy": 74.39999999999999
+      },
+      {
+        "age": 17,
+        "happy": 75.1
+      },
+      {
+        "age": 18,
+        "happy": 76.1
+      },
+      {
+        "age": 19,
+        "happy": 75.8
+      },
+      {
+        "age": 20,
+        "happy": 75.8
+      },
+      {
+        "age": 21,
+        "happy": 75.8
+      },
+      {
+        "age": 22,
+        "happy": 76.6
+      },
+      {
+        "age": 23,
+        "happy": 76.6
+      },
+      {
+        "age": 24,
+        "happy": 77.6
+      },
+      {
+        "age": 25,
+        "happy": 77.39999999999999
+      },
+      {
+        "age": 26,
+        "happy": 77.39999999999999
+      },
+      {
+        "age": 27,
+        "happy": 78.19999999999999
+      },
+      {
+        "age": 28,
+        "happy": 77.19999999999999
+      },
+      {
+        "age": 29,
+        "happy": 76.89999999999999
+      },
+      {
+        "age": 30,
+        "happy": 75.6
+      },
+      {
+        "age": 31,
+        "happy": 75.6
+      },
+      {
+        "age": 32,
+        "happy": 74.3
+      },
+      {
+        "age": 33,
+        "happy": 75.3
+      },
+      {
+        "age": 34,
+        "happy": 74.3
+      },
+      {
+        "age": 35,
+        "happy": 76
+      },
+      {
+        "age": 36,
+        "happy": 75.8
+      },
+      {
+        "age": 37,
+        "happy": 75.8
+      },
+      {
+        "age": 38,
+        "happy": 77.8
+      },
+      {
+        "age": 39,
+        "happy": 76.8
+      },
+      {
+        "age": 40,
+        "happy": 77.5
+      },
+      {
+        "age": 41,
+        "happy": 77.5
+      },
+      {
+        "age": 42,
+        "happy": 78.2
+      },
+      {
+        "age": 43,
+        "happy": 77.2
+      },
+      {
+        "age": 44,
+        "happy": 78
+      },
+      {
+        "age": 45,
+        "happy": 78.8
+      },
+      {
+        "age": 46,
+        "happy": 78.5
+      },
+      {
+        "age": 47,
+        "happy": 78.2
+      },
+      {
+        "age": 48,
+        "happy": 78.2
+      },
+      {
+        "age": 49,
+        "happy": 79
+      },
+      {
+        "age": 50,
+        "happy": 77.7
+      },
+      {
+        "age": 51,
+        "happy": 77.7
+      },
+      {
+        "age": 52,
+        "happy": 77.7
+      },
+      {
+        "age": 53,
+        "happy": 78.4
+      },
+      {
+        "age": 54,
+        "happy": 77.10000000000001
+      },
+      {
+        "age": 55,
+        "happy": 78.80000000000001
+      },
+      {
+        "age": 56,
+        "happy": 83.60000000000001
+      },
+      {
+        "age": 57,
+        "happy": 83.30000000000001
+      },
+      {
+        "age": 58,
+        "happy": 85.00000000000001
+      },
+      {
+        "age": 59,
+        "happy": 86.00000000000001
+      },
+      {
+        "age": 60,
+        "happy": 88.00000000000001
+      },
+      {
+        "age": 61,
+        "happy": 88.70000000000002
+      },
+      {
+        "age": 62,
+        "happy": 88.70000000000002
+      },
+      {
+        "age": 63,
+        "happy": 90.70000000000002
+      },
+      {
+        "age": 64,
+        "happy": 92.70000000000002
+      },
+      {
+        "age": 65,
+        "happy": 97.50000000000001
+      },
+      {
+        "age": 66,
+        "happy": 100
+      },
+      {
+        "age": 67,
+        "happy": 100
+      },
+      {
+        "age": 68,
+        "happy": 100
+      },
+      {
+        "age": 69,
+        "happy": 100
+      },
+      {
+        "age": 70,
+        "happy": 100
+      },
+      {
+        "age": 71,
+        "happy": 100
+      },
+      {
+        "age": 72,
+        "happy": 100
+      },
+      {
+        "age": 73,
+        "happy": 100
+      },
+      {
+        "age": 74,
+        "happy": 99.7
+      },
+      {
+        "age": 75,
+        "happy": 99.4
+      },
+      {
+        "age": 76,
+        "happy": 100
+      },
+      {
+        "age": 77,
+        "happy": 100
+      },
+      {
+        "age": 78,
+        "happy": 100
+      },
+      {
+        "age": 79,
+        "happy": 100
+      },
+      {
+        "age": 80,
+        "happy": 100
+      },
+      {
+        "age": 81,
+        "happy": 100
+      },
+      {
+        "age": 82,
+        "happy": 100
+      },
+      {
+        "age": 83,
+        "happy": 100
+      },
+      {
+        "age": 84,
+        "happy": 100
+      },
+      {
+        "age": 85,
+        "happy": 100
+      },
+      {
+        "age": 86,
+        "happy": 100
+      },
+      {
+        "age": 87,
+        "happy": 100
+      },
+      {
+        "age": 88,
+        "happy": 100
+      },
+      {
+        "age": 89,
+        "happy": 100
+      },
+      {
+        "age": 90,
+        "happy": 100
+      },
+      {
+        "age": 91,
+        "happy": 100
+      },
+      {
+        "age": 92,
+        "happy": 100
+      },
+      {
+        "age": 93,
+        "happy": 100
+      },
+      {
+        "age": 94,
+        "happy": 100
+      },
+      {
+        "age": 95,
+        "happy": 100
+      }
+    ],
+    "pending": null,
+    "choices": [
+      {
+        "age": 15,
+        "decision": "school",
+        "choice": "general"
+      },
+      {
+        "age": 18,
+        "decision": "exam",
+        "choice": "exam"
+      },
+      {
+        "age": 19,
+        "decision": "repeat",
+        "choice": "college"
+      },
+      {
+        "age": 21,
+        "decision": "upgrade",
+        "choice": "upgrade"
+      },
+      {
+        "age": 22,
+        "decision": "career",
+        "choice": "work"
+      },
+      {
+        "age": 25,
+        "decision": "city",
+        "choice": "省会"
+      },
+      {
+        "age": 29,
+        "decision": "marry",
+        "choice": "marry"
+      },
+      {
+        "age": 31,
+        "decision": "house",
+        "choice": "rent"
+      },
+      {
+        "age": 33,
+        "decision": "child",
+        "choice": "child"
+      },
+      {
+        "age": 35,
+        "decision": "midcareer",
+        "choice": "stay"
+      }
+    ],
+    "record": {
+      "junior": true,
+      "stage": true,
+      "general": true,
+      "completed": true,
+      "gaokao": true,
+      "admitted": false,
+      "elite": false,
+      "age22": "企业职员"
+    },
+    "repeatUsed": true,
+    "capture": true,
+    "mortgage": 0,
+    "peakIncome": 97763,
+    "retired": true,
+    "death": {
+      "category": "意外",
+      "detail": "意外"
+    }
+  },
+  {
+    "id": "渝-2026-289306",
+    "seed": 62824289306,
+    "year": 2026,
+    "rngState": 3520451887,
+    "age": 92,
+    "alive": false,
+    "sex": "female",
+    "province": "重庆",
+    "tier": "B",
+    "hukou": "rural",
+    "wealthQ": 1,
+    "parents": {
+      "mother": {
+        "age": 25,
+        "education": "初中及以下",
+        "job": "个体经营者"
+      },
+      "father": {
+        "age": 29,
+        "education": "初中及以下",
+        "job": "个体经营者"
+      }
+    },
+    "leftBehind": false,
+    "siblings": 0,
+    "attrs": {
+      "health": 99.75999999999999,
+      "happy": 100,
+      "knowledge": 81.0999999999999,
+      "social": 100,
+      "grind": 94
+    },
+    "gradePct": 81.07856676522599,
+    "edu": "junior",
+    "job": "居民养老 / 零工",
+    "income": 6000,
+    "assets": 254274,
+    "city": "县城",
+    "married": true,
+    "kids": [],
+    "log": [
+      {
+        "age": 0,
+        "text": "你出生在重庆，农村户口，家境 Q1。",
+        "stat": "births.by_province_2024.重庆"
+      },
+      {
+        "age": 1,
+        "text": "午后的院门开着，邻居端来一碗刚蒸好的鸡蛋羹。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 1,
+        "text": "雨水从屋檐落下来，你蹲在门口看蚂蚁搬走饼干屑。",
+        "stat": null
+      },
+      {
+        "age": 1,
+        "text": "赶集时你坐在车后座，手里攥着刚买的小风车。",
+        "stat": null
+      },
+      {
+        "age": 2,
+        "text": "午后的院门开着，邻居端来一碗刚蒸好的鸡蛋羹。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 3,
+        "text": "你把积木搭成歪歪扭扭的房子，家人没有急着替你扶正。",
+        "stat": null
+      },
+      {
+        "age": 4,
+        "text": "家人把院里的水桶倒扣起来，又叮嘱你别独自跑到水边。",
+        "stat": "health.under5_mortality"
+      },
+      {
+        "age": 5,
+        "text": "接种本夹在户口本里，家人怕忘记，提前把它放进布袋。",
+        "stat": "health.infant_mortality"
+      },
+      {
+        "age": 5,
+        "text": "赶集时你坐在车后座，手里攥着刚买的小风车。",
+        "stat": null
+      },
+      {
+        "age": 6,
+        "text": "放学后你先帮家里理货，晚饭后才打开作业本。",
+        "stat": "education.poor_rural_hs_completion"
+      },
+      {
+        "age": 6,
+        "text": "学校让做手工灯笼，你和家人把旧挂历裁成细细的纸条。",
+        "stat": null
+      },
+      {
+        "age": 6,
+        "text": "暑假的风扇吱呀作响，你在练习册边上画了一整页小人。",
+        "stat": null
+      },
+      {
+        "age": 7,
+        "text": "同桌把橡皮掰了一半给你，你们在课间又和好了。",
+        "stat": null
+      },
+      {
+        "age": 7,
+        "text": "学校发了借书卡，你把它夹进最舍不得折的课本。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 8,
+        "text": "新书包背上肩，家人在课本扉页认真写下你的名字。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 8,
+        "text": "班里排节目，你站在队伍边上，终于记住了最后一个动作。",
+        "stat": null
+      },
+      {
+        "age": 9,
+        "text": "老师在讲台边放了一个旧书箱，你借走的书有很多折角。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 9,
+        "text": "暑假的风扇吱呀作响，你在练习册边上画了一整页小人。",
+        "stat": null
+      },
+      {
+        "age": 9,
+        "text": "自然课上种的豆子终于发芽，你把尺子贴在杯子旁边。",
+        "stat": null
+      },
+      {
+        "age": 10,
+        "text": "新书包背上肩，家人在课本扉页认真写下你的名字。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 11,
+        "text": "班里排节目，你站在队伍边上，终于记住了最后一个动作。",
+        "stat": null
+      },
+      {
+        "age": 11,
+        "text": "学校发了借书卡，你把它夹进最舍不得折的课本。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 12,
+        "text": "老师让写给未来的自己，你想了很久才落笔。",
+        "stat": null
+      },
+      {
+        "age": 13,
+        "text": "自行车掉了链子，同学蹲下来帮忙，手上沾满黑油。",
+        "stat": null
+      },
+      {
+        "age": 14,
+        "text": "你和好友约好周末一起骑车，计划写在便签纸角落。",
+        "stat": null
+      },
+      {
+        "age": 14,
+        "text": "老师让写给未来的自己，你想了很久才落笔。",
+        "stat": null
+      },
+      {
+        "age": 14,
+        "text": "这次成绩退了几名，你把试卷重新叠好，没有急着扔进书包。",
+        "stat": null
+      },
+      {
+        "age": 15,
+        "text": "你完成了初中学业，来到中考的路口。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 15,
+        "text": "晚自习的铃响过，你和同桌在走廊上再对了一遍答案。",
+        "stat": null
+      },
+      {
+        "age": 15,
+        "text": "你选择了「争取普通高中」。",
+        "stat": null
+      },
+      {
+        "age": 15,
+        "text": "普通高中的路没有走通，你提着行李去中职报到。",
+        "stat": "education.general_hs_rate"
+      },
+      {
+        "age": 16,
+        "text": "实训课上，你跟着老师把工具逐件归位。",
+        "stat": "education.hs_stage_gross_enroll"
+      },
+      {
+        "age": 17,
+        "text": "招生简章里有校园地图，你把图书馆的位置圈了出来。",
+        "stat": "education.elite_211_rate"
+      },
+      {
+        "age": 17,
+        "text": "考砸后家人没追问分数，只给你留了一碗热汤。",
+        "stat": null
+      },
+      {
+        "age": 17,
+        "text": "假期你帮亲戚看店，第一次体会到整天站着是什么感觉。",
+        "stat": null
+      },
+      {
+        "age": 18,
+        "text": "高中阶段的学业没有读完，你先离开校园补贴家里。",
+        "stat": "education.poor_rural_hs_completion"
+      },
+      {
+        "age": 18,
+        "text": "好友把鼓励的话写在便签背面，贴在你的水杯上。",
+        "stat": null
+      },
+      {
+        "age": 18,
+        "text": "旧台灯闪了几次，家人换好灯泡，说这盏还能用。",
+        "stat": null
+      },
+      {
+        "age": 19,
+        "text": "招聘会入口排着队，你把简历压平，又检查了一遍联系方式。",
+        "stat": "career.youth_unemployment"
+      },
+      {
+        "age": 20,
+        "text": "为买到便宜车票，你提前把回家的日期写在日历上。",
+        "stat": null
+      },
+      {
+        "age": 20,
+        "text": "招聘会入口排着队，你把简历压平，又检查了一遍联系方式。",
+        "stat": "career.youth_unemployment"
+      },
+      {
+        "age": 21,
+        "text": "技能证书领到手，你先拍照发进家里的群。",
+        "stat": null
+      },
+      {
+        "age": 21,
+        "text": "为买到便宜车票，你提前把回家的日期写在日历上。",
+        "stat": null
+      },
+      {
+        "age": 21,
+        "text": "晾衣绳上空出一个位置，你突然觉得自己已经习惯独自生活。",
+        "stat": null
+      },
+      {
+        "age": 22,
+        "text": "晾衣绳上空出一个位置，你突然觉得自己已经习惯独自生活。",
+        "stat": null
+      },
+      {
+        "age": 22,
+        "text": "你选择了「找工作」。",
+        "stat": null
+      },
+      {
+        "age": 22,
+        "text": "这一年的去向是：工厂工人。",
+        "stat": "career.youth_unemployment"
+      },
+      {
+        "age": 23,
+        "text": "朋友的婚礼请柬发来，群里开始讨论谁坐哪班车回去。",
+        "stat": "family.marriage_registrations"
+      },
+      {
+        "age": 24,
+        "text": "朋友的婚礼请柬发来，群里开始讨论谁坐哪班车回去。",
+        "stat": "family.marriage_registrations"
+      },
+      {
+        "age": 24,
+        "text": "工资到账，你先把房租和给家里的钱分开，才看剩余金额。",
+        "stat": null
+      },
+      {
+        "age": 24,
+        "text": "雨天收工后，你把湿透的手套摊在窗边晾着。",
+        "stat": null
+      },
+      {
+        "age": 25,
+        "text": "同事在午饭时聊起是否要孩子，大家的顾虑并不一样。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 25,
+        "text": "搬家箱子上写着厨房和卧室，你先拆开了装电饭煲的那箱。",
+        "stat": null
+      },
+      {
+        "age": 25,
+        "text": "体检后你把报告收好，和家人商量下次休假一起出去走走。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 25,
+        "text": "你选择了「县城」。",
+        "stat": null
+      },
+      {
+        "age": 25,
+        "text": "你把生活搬到了县城。",
+        "stat": null
+      },
+      {
+        "age": 26,
+        "text": "同事在午饭时聊起是否要孩子，大家的顾虑并不一样。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 26,
+        "text": "朋友的婚礼请柬发来，群里开始讨论谁坐哪班车回去。",
+        "stat": "family.marriage_registrations"
+      },
+      {
+        "age": 26,
+        "text": "搬家箱子上写着厨房和卧室，你先拆开了装电饭煲的那箱。",
+        "stat": null
+      },
+      {
+        "age": 27,
+        "text": "朋友的婚礼请柬发来，群里开始讨论谁坐哪班车回去。",
+        "stat": "family.marriage_registrations"
+      },
+      {
+        "age": 27,
+        "text": "工资到账，你先把房租和给家里的钱分开，才看剩余金额。",
+        "stat": null
+      },
+      {
+        "age": 27,
+        "text": "老家的饭桌给你留了位置，家人问这次能待到什么时候。",
+        "stat": null
+      },
+      {
+        "age": 28,
+        "text": "休息日你把工作群设成免打扰，去河边慢慢走了一段。",
+        "stat": null
+      },
+      {
+        "age": 29,
+        "text": "下班后你打开考编题库，做完一页才想起汤还没热。",
+        "stat": "career.guokao_ratio"
+      },
+      {
+        "age": 29,
+        "text": "你选择了「尝试相亲与结婚」。",
+        "stat": null
+      },
+      {
+        "age": 29,
+        "text": "你们一起添置锅碗，开始商量两个人的日子。",
+        "stat": "family.first_marriage_age"
+      },
+      {
+        "age": 30,
+        "text": "超市的婴儿用品架前，你们算了算接下来的生活开销。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 31,
+        "text": "搬家箱子上写着厨房和卧室，你先拆开了装电饭煲的那箱。",
+        "stat": null
+      },
+      {
+        "age": 31,
+        "text": "工资到账，你先把房租和给家里的钱分开，才看剩余金额。",
+        "stat": null
+      },
+      {
+        "age": 31,
+        "text": "体检后你把报告收好，和家人商量下次休假一起出去走走。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 31,
+        "text": "你选择了「继续租住」。",
+        "stat": null
+      },
+      {
+        "age": 31,
+        "text": "你续签了租房合同。",
+        "stat": null
+      },
+      {
+        "age": 32,
+        "text": "下班后你打开考编题库，做完一页才想起汤还没热。",
+        "stat": "career.guokao_ratio"
+      },
+      {
+        "age": 32,
+        "text": "翻到婚礼时留下的清单，你们聊起当初一起置办生活用品的日子。",
+        "stat": "family.first_marriage_age"
+      },
+      {
+        "age": 32,
+        "text": "朋友的婚礼请柬发来，群里开始讨论谁坐哪班车回去。",
+        "stat": "family.marriage_registrations"
+      },
+      {
+        "age": 33,
+        "text": "翻到婚礼时留下的清单，你们聊起当初一起置办生活用品的日子。",
+        "stat": "family.first_marriage_age"
+      },
+      {
+        "age": 33,
+        "text": "工资到账，你先把房租和给家里的钱分开，才看剩余金额。",
+        "stat": null
+      },
+      {
+        "age": 33,
+        "text": "休息日你把工作群设成免打扰，去河边慢慢走了一段。",
+        "stat": null
+      },
+      {
+        "age": 33,
+        "text": "你选择了「暂时不生育」。",
+        "stat": null
+      },
+      {
+        "age": 34,
+        "text": "同事在午饭时聊起是否要孩子，大家的顾虑并不一样。",
+        "stat": "family.tfr"
+      },
+      {
+        "age": 34,
+        "text": "工资到账，你先把房租和给家里的钱分开，才看剩余金额。",
+        "stat": null
+      },
+      {
+        "age": 35,
+        "text": "看房回来的路上，你们打开计算器，反复调整首付和月供。",
+        "stat": null
+      },
+      {
+        "age": 35,
+        "text": "你选择了「继续现在的工作」。",
+        "stat": null
+      },
+      {
+        "age": 35,
+        "text": "工作发生变化，你开始做外卖骑手。（35岁风险为机制估计，无对应统计）",
+        "stat": null
+      },
+      {
+        "age": 36,
+        "text": "你把存款和日常支出重新算了一遍，决定先修好家里的旧冰箱。",
+        "stat": null
+      },
+      {
+        "age": 36,
+        "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+        "stat": null
+      },
+      {
+        "age": 36,
+        "text": "体检提醒你多活动，你把久没穿的运动鞋重新擦干净。",
+        "stat": null
+      },
+      {
+        "age": 37,
+        "text": "年轻亲戚请你帮忙看看简历，你把联系方式一栏单独圈出来。",
+        "stat": "career.youth_unemployment"
+      },
+      {
+        "age": 37,
+        "text": "你教长辈用手机挂号，对方又问了一遍，你把步骤写在纸上。",
+        "stat": null
+      },
+      {
+        "age": 37,
+        "text": "饭后你和家人讨论退休以后想怎样生活，把想去的地方记下来。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 38,
+        "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+        "stat": null
+      },
+      {
+        "age": 38,
+        "text": "旧相识来到附近，你们吃了顿便饭，话题从近况慢慢聊到家人。",
+        "stat": null
+      },
+      {
+        "age": 39,
+        "text": "你把存款和日常支出重新算了一遍，决定先修好家里的旧冰箱。",
+        "stat": null
+      },
+      {
+        "age": 39,
+        "text": "社区更新健康档案，你找出上次体检忘了看的那张报告。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 40,
+        "text": "你帮熟人研究送餐路线，才发现每个路口的等待都要算时间。",
+        "stat": null
+      },
+      {
+        "age": 41,
+        "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+        "stat": null
+      },
+      {
+        "age": 41,
+        "text": "旧相识来到附近，你们吃了顿便饭，话题从近况慢慢聊到家人。",
+        "stat": null
+      },
+      {
+        "age": 42,
+        "text": "转岗培训需要重新做笔记，你把听不懂的地方用笔标出来。",
+        "stat": null
+      },
+      {
+        "age": 43,
+        "text": "你帮熟人研究送餐路线，才发现每个路口的等待都要算时间。",
+        "stat": null
+      },
+      {
+        "age": 43,
+        "text": "老家的亲戚打来电话，你开始协调轮流照看长辈的时间。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 43,
+        "text": "你把存款和日常支出重新算了一遍，决定先修好家里的旧冰箱。",
+        "stat": null
+      },
+      {
+        "age": 44,
+        "text": "你把存款和日常支出重新算了一遍，决定先修好家里的旧冰箱。",
+        "stat": null
+      },
+      {
+        "age": 44,
+        "text": "你帮熟人研究送餐路线，才发现每个路口的等待都要算时间。",
+        "stat": null
+      },
+      {
+        "age": 45,
+        "text": "家里的水龙头又滴水，你照着教程换了密封圈。",
+        "stat": null
+      },
+      {
+        "age": 46,
+        "text": "社区更新健康档案，你找出上次体检忘了看的那张报告。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 46,
+        "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+        "stat": null
+      },
+      {
+        "age": 46,
+        "text": "老家的亲戚打来电话，你开始协调轮流照看长辈的时间。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 47,
+        "text": "转岗培训需要重新做笔记，你把听不懂的地方用笔标出来。",
+        "stat": null
+      },
+      {
+        "age": 47,
+        "text": "体检提醒你多活动，你把久没穿的运动鞋重新擦干净。",
+        "stat": null
+      },
+      {
+        "age": 48,
+        "text": "老家的亲戚打来电话，你开始协调轮流照看长辈的时间。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 48,
+        "text": "社区更新健康档案，你找出上次体检忘了看的那张报告。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 48,
+        "text": "体检提醒你多活动，你把久没穿的运动鞋重新擦干净。",
+        "stat": null
+      },
+      {
+        "age": 49,
+        "text": "你把存款和日常支出重新算了一遍，决定先修好家里的旧冰箱。",
+        "stat": null
+      },
+      {
+        "age": 50,
+        "text": "你教长辈用手机挂号，对方又问了一遍，你把步骤写在纸上。",
+        "stat": null
+      },
+      {
+        "age": 50,
+        "text": "你帮熟人研究送餐路线，才发现每个路口的等待都要算时间。",
+        "stat": null
+      },
+      {
+        "age": 50,
+        "text": "旧相识来到附近，你们吃了顿便饭，话题从近况慢慢聊到家人。",
+        "stat": null
+      },
+      {
+        "age": 51,
+        "text": "体检提醒你多活动，你把久没穿的运动鞋重新擦干净。",
+        "stat": null
+      },
+      {
+        "age": 51,
+        "text": "年轻亲戚请你帮忙看看简历，你把联系方式一栏单独圈出来。",
+        "stat": "career.youth_unemployment"
+      },
+      {
+        "age": 51,
+        "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+        "stat": null
+      },
+      {
+        "age": 52,
+        "text": "体检提醒你多活动，你把久没穿的运动鞋重新擦干净。",
+        "stat": null
+      },
+      {
+        "age": 53,
+        "text": "陪家人去复查，你把药盒照片和医嘱存在手机同一个文件夹。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 54,
+        "text": "老家的亲戚打来电话，你开始协调轮流照看长辈的时间。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 55,
+        "text": "老家的亲戚打来电话，你开始协调轮流照看长辈的时间。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 55,
+        "text": "你帮熟人研究送餐路线，才发现每个路口的等待都要算时间。",
+        "stat": null
+      },
+      {
+        "age": 56,
+        "text": "饭后你和家人讨论退休以后想怎样生活，把想去的地方记下来。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 56,
+        "text": "旧相识来到附近，你们吃了顿便饭，话题从近况慢慢聊到家人。",
+        "stat": null
+      },
+      {
+        "age": 57,
+        "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+        "stat": null
+      },
+      {
+        "age": 57,
+        "text": "饭后你和家人讨论退休以后想怎样生活，把想去的地方记下来。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 57,
+        "text": "转岗培训需要重新做笔记，你把听不懂的地方用笔标出来。",
+        "stat": null
+      },
+      {
+        "age": 58,
+        "text": "转岗培训需要重新做笔记，你把听不懂的地方用笔标出来。",
+        "stat": null
+      },
+      {
+        "age": 58,
+        "text": "老家的亲戚打来电话，你开始协调轮流照看长辈的时间。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 59,
+        "text": "陪家人去复查，你把药盒照片和医嘱存在手机同一个文件夹。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 59,
+        "text": "旧相识来到附近，你们吃了顿便饭，话题从近况慢慢聊到家人。",
+        "stat": null
+      },
+      {
+        "age": 59,
+        "text": "社区更新健康档案，你找出上次体检忘了看的那张报告。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 60,
+        "text": "你开始按新的节奏安排生活，药盒和家人的电话变得常见。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 60,
+        "text": "老屋的门槛还在，你搬把椅子坐着，听院外熟悉的脚步声。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 60,
+        "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+        "stat": null
+      },
+      {
+        "age": 61,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 62,
+        "text": "旧照片褪了色，你在背面补写还能记得的时间和地点。",
+        "stat": null
+      },
+      {
+        "age": 63,
+        "text": "复诊时你拿出记好的问题，医生逐条告诉你该留意什么。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 63,
+        "text": "体检报告装进旧文件袋，你按医嘱在药盒上贴了标签。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 64,
+        "text": "旧照片褪了色，你在背面补写还能记得的时间和地点。",
+        "stat": null
+      },
+      {
+        "age": 64,
+        "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 64,
+        "text": "整理旧物时翻出毕业证，你把压弯的封皮轻轻抚平。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 65,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 65,
+        "text": "旧照片褪了色，你在背面补写还能记得的时间和地点。",
+        "stat": null
+      },
+      {
+        "age": 65,
+        "text": "老屋的门槛还在，你搬把椅子坐着，听院外熟悉的脚步声。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 66,
+        "text": "晴天你把被子拿出去晒，傍晚收回来时带着暖暖的味道。",
+        "stat": null
+      },
+      {
+        "age": 66,
+        "text": "邻居约你去公园，你把常用药和水杯放进随身小包。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 67,
+        "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+        "stat": null
+      },
+      {
+        "age": 67,
+        "text": "老屋的门槛还在，你搬把椅子坐着，听院外熟悉的脚步声。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 68,
+        "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+        "stat": null
+      },
+      {
+        "age": 68,
+        "text": "复诊时你拿出记好的问题，医生逐条告诉你该留意什么。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 68,
+        "text": "窗边的花又开了，你挪了挪花盆，让它多晒一会儿太阳。",
+        "stat": null
+      },
+      {
+        "age": 69,
+        "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+        "stat": null
+      },
+      {
+        "age": 69,
+        "text": "广场的音乐响起，你没有急着加入，先在旁边跟着打拍子。",
+        "stat": null
+      },
+      {
+        "age": 69,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 70,
+        "text": "复诊时你拿出记好的问题，医生逐条告诉你该留意什么。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 70,
+        "text": "老屋的门槛还在，你搬把椅子坐着，听院外熟悉的脚步声。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 71,
+        "text": "晴天你把被子拿出去晒，傍晚收回来时带着暖暖的味道。",
+        "stat": null
+      },
+      {
+        "age": 72,
+        "text": "菜地里新苗冒出来，你扶着锄头看了好一会儿。",
+        "stat": null
+      },
+      {
+        "age": 73,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 73,
+        "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+        "stat": null
+      },
+      {
+        "age": 73,
+        "text": "老朋友来串门，茶续了又续，你们又聊起年轻时的工作。",
+        "stat": null
+      },
+      {
+        "age": 74,
+        "text": "老屋的门槛还在，你搬把椅子坐着，听院外熟悉的脚步声。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 74,
+        "text": "体检报告装进旧文件袋，你按医嘱在药盒上贴了标签。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 74,
+        "text": "复诊时你拿出记好的问题，医生逐条告诉你该留意什么。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 75,
+        "text": "复诊时你拿出记好的问题，医生逐条告诉你该留意什么。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 75,
+        "text": "晴天你把被子拿出去晒，傍晚收回来时带着暖暖的味道。",
+        "stat": null
+      },
+      {
+        "age": 76,
+        "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 77,
+        "text": "晴天你把被子拿出去晒，傍晚收回来时带着暖暖的味道。",
+        "stat": null
+      },
+      {
+        "age": 77,
+        "text": "邻居约你去公园，你把常用药和水杯放进随身小包。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 77,
+        "text": "菜地里新苗冒出来，你扶着锄头看了好一会儿。",
+        "stat": null
+      },
+      {
+        "age": 78,
+        "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 78,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 79,
+        "text": "晨练的路走得慢了些，你在树荫下停下，和熟人打招呼。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 79,
+        "text": "上楼时你歇了一会儿，决定下次少提一点东西。",
+        "stat": null
+      },
+      {
+        "age": 79,
+        "text": "邻居约你去公园，你把常用药和水杯放进随身小包。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 80,
+        "text": "整理旧物时翻出毕业证，你把压弯的封皮轻轻抚平。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 81,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 82,
+        "text": "整理旧物时翻出毕业证，你把压弯的封皮轻轻抚平。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 83,
+        "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+        "stat": null
+      },
+      {
+        "age": 84,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 84,
+        "text": "旧照片褪了色，你在背面补写还能记得的时间和地点。",
+        "stat": null
+      },
+      {
+        "age": 85,
+        "text": "广场的音乐响起，你没有急着加入，先在旁边跟着打拍子。",
+        "stat": null
+      },
+      {
+        "age": 85,
+        "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+        "stat": null
+      },
+      {
+        "age": 86,
+        "text": "整理旧物时翻出毕业证，你把压弯的封皮轻轻抚平。",
+        "stat": "education.compulsory_retention"
+      },
+      {
+        "age": 86,
+        "text": "邻居约你去公园，你把常用药和水杯放进随身小包。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 86,
+        "text": "旧照片褪了色，你在背面补写还能记得的时间和地点。",
+        "stat": null
+      },
+      {
+        "age": 87,
+        "text": "老朋友来串门，茶续了又续，你们又聊起年轻时的工作。",
+        "stat": null
+      },
+      {
+        "age": 87,
+        "text": "晨练的路走得慢了些，你在树荫下停下，和熟人打招呼。",
+        "stat": "health.life_expectancy_by_sex"
+      },
+      {
+        "age": 88,
+        "text": "老朋友来串门，茶续了又续，你们又聊起年轻时的工作。",
+        "stat": null
+      },
+      {
+        "age": 88,
+        "text": "旧照片褪了色，你在背面补写还能记得的时间和地点。",
+        "stat": null
+      },
+      {
+        "age": 88,
+        "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+        "stat": null
+      },
+      {
+        "age": 89,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 90,
+        "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+        "stat": "health.life_expectancy"
+      },
+      {
+        "age": 90,
+        "text": "晴天你把被子拿出去晒，傍晚收回来时带着暖暖的味道。",
+        "stat": null
+      },
+      {
+        "age": 90,
+        "text": "老屋的门槛还在，你搬把椅子坐着，听院外熟悉的脚步声。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 91,
+        "text": "老朋友来串门，茶续了又续，你们又聊起年轻时的工作。",
+        "stat": null
+      },
+      {
+        "age": 91,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 91,
+        "text": "晴天你把被子拿出去晒，傍晚收回来时带着暖暖的味道。",
+        "stat": null
+      },
+      {
+        "age": 92,
+        "text": "老屋的门槛还在，你搬把椅子坐着，听院外熟悉的脚步声。",
+        "stat": "births.rural_share_of_births"
+      },
+      {
+        "age": 92,
+        "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+        "stat": null
+      },
+      {
+        "age": 92,
+        "text": "你在 92 岁离开了。终局类别：意外（意外）。",
+        "stat": "health.life_expectancy"
+      }
+    ],
+    "history": [
+      {
+        "age": 0,
+        "happy": 65
+      },
+      {
+        "age": 1,
+        "happy": 67
+      },
+      {
+        "age": 2,
+        "happy": 68
+      },
+      {
+        "age": 3,
+        "happy": 68
+      },
+      {
+        "age": 4,
+        "happy": 68
+      },
+      {
+        "age": 5,
+        "happy": 68
+      },
+      {
+        "age": 6,
+        "happy": 68.7
+      },
+      {
+        "age": 7,
+        "happy": 68.4
+      },
+      {
+        "age": 8,
+        "happy": 68.10000000000001
+      },
+      {
+        "age": 9,
+        "happy": 69.9
+      },
+      {
+        "age": 10,
+        "happy": 69.9
+      },
+      {
+        "age": 11,
+        "happy": 69.9
+      },
+      {
+        "age": 12,
+        "happy": 70.60000000000001
+      },
+      {
+        "age": 13,
+        "happy": 70.60000000000001
+      },
+      {
+        "age": 14,
+        "happy": 70.60000000000001
+      },
+      {
+        "age": 15,
+        "happy": 70.60000000000001
+      },
+      {
+        "age": 16,
+        "happy": 70.60000000000001
+      },
+      {
+        "age": 17,
+        "happy": 73.30000000000001
+      },
+      {
+        "age": 18,
+        "happy": 75.30000000000001
+      },
+      {
+        "age": 19,
+        "happy": 76.10000000000001
+      },
+      {
+        "age": 20,
+        "happy": 77.9
+      },
+      {
+        "age": 21,
+        "happy": 80.9
+      },
+      {
+        "age": 22,
+        "happy": 82.7
+      },
+      {
+        "age": 23,
+        "happy": 82.7
+      },
+      {
+        "age": 24,
+        "happy": 81.7
+      },
+      {
+        "age": 25,
+        "happy": 82.7
+      },
+      {
+        "age": 26,
+        "happy": 83.7
+      },
+      {
+        "age": 27,
+        "happy": 84.7
+      },
+      {
+        "age": 28,
+        "happy": 86.5
+      },
+      {
+        "age": 29,
+        "happy": 86.2
+      },
+      {
+        "age": 30,
+        "happy": 85.2
+      },
+      {
+        "age": 31,
+        "happy": 86
+      },
+      {
+        "age": 32,
+        "happy": 87
+      },
+      {
+        "age": 33,
+        "happy": 87.7
+      },
+      {
+        "age": 34,
+        "happy": 86.7
+      },
+      {
+        "age": 35,
+        "happy": 85.7
+      },
+      {
+        "age": 36,
+        "happy": 86.4
+      },
+      {
+        "age": 37,
+        "happy": 87.4
+      },
+      {
+        "age": 38,
+        "happy": 90.4
+      },
+      {
+        "age": 39,
+        "happy": 89.4
+      },
+      {
+        "age": 40,
+        "happy": 89.4
+      },
+      {
+        "age": 41,
+        "happy": 92.10000000000001
+      },
+      {
+        "age": 42,
+        "happy": 91.80000000000001
+      },
+      {
+        "age": 43,
+        "happy": 90.80000000000001
+      },
+      {
+        "age": 44,
+        "happy": 89.80000000000001
+      },
+      {
+        "age": 45,
+        "happy": 90.60000000000001
+      },
+      {
+        "age": 46,
+        "happy": 93.4
+      },
+      {
+        "age": 47,
+        "happy": 93.10000000000001
+      },
+      {
+        "age": 48,
+        "happy": 93.10000000000001
+      },
+      {
+        "age": 49,
+        "happy": 92.10000000000001
+      },
+      {
+        "age": 50,
+        "happy": 93.10000000000001
+      },
+      {
+        "age": 51,
+        "happy": 95.10000000000001
+      },
+      {
+        "age": 52,
+        "happy": 95.10000000000001
+      },
+      {
+        "age": 53,
+        "happy": 95.10000000000001
+      },
+      {
+        "age": 54,
+        "happy": 95.10000000000001
+      },
+      {
+        "age": 55,
+        "happy": 95.9
+      },
+      {
+        "age": 56,
+        "happy": 98.7
+      },
+      {
+        "age": 57,
+        "happy": 100
+      },
+      {
+        "age": 58,
+        "happy": 100
+      },
+      {
+        "age": 59,
+        "happy": 100
+      },
+      {
+        "age": 60,
+        "happy": 100
+      },
+      {
+        "age": 61,
+        "happy": 99.7
+      },
+      {
+        "age": 62,
+        "happy": 100
+      },
+      {
+        "age": 63,
+        "happy": 100
+      },
+      {
+        "age": 64,
+        "happy": 100
+      },
+      {
+        "age": 65,
+        "happy": 100
+      },
+      {
+        "age": 66,
+        "happy": 100
+      },
+      {
+        "age": 67,
+        "happy": 100
+      },
+      {
+        "age": 68,
+        "happy": 100
+      },
+      {
+        "age": 69,
+        "happy": 100
+      },
+      {
+        "age": 70,
+        "happy": 100
+      },
+      {
+        "age": 71,
+        "happy": 100
+      },
+      {
+        "age": 72,
+        "happy": 100
+      },
+      {
+        "age": 73,
+        "happy": 100
+      },
+      {
+        "age": 74,
+        "happy": 100
+      },
+      {
+        "age": 75,
+        "happy": 100
+      },
+      {
+        "age": 76,
+        "happy": 100
+      },
+      {
+        "age": 77,
+        "happy": 100
+      },
+      {
+        "age": 78,
+        "happy": 100
+      },
+      {
+        "age": 79,
+        "happy": 100
+      },
+      {
+        "age": 80,
+        "happy": 100
+      },
+      {
+        "age": 81,
+        "happy": 99.7
+      },
+      {
+        "age": 82,
+        "happy": 100
+      },
+      {
+        "age": 83,
+        "happy": 100
+      },
+      {
+        "age": 84,
+        "happy": 100
+      },
+      {
+        "age": 85,
+        "happy": 100
+      },
+      {
+        "age": 86,
+        "happy": 100
+      },
+      {
+        "age": 87,
+        "happy": 100
+      },
+      {
+        "age": 88,
+        "happy": 100
+      },
+      {
+        "age": 89,
+        "happy": 100
+      },
+      {
+        "age": 90,
+        "happy": 100
+      },
+      {
+        "age": 91,
+        "happy": 100
+      },
+      {
+        "age": 92,
+        "happy": 100
+      }
+    ],
+    "pending": null,
+    "choices": [
+      {
+        "age": 15,
+        "decision": "school",
+        "choice": "general"
+      },
+      {
+        "age": 22,
+        "decision": "career",
+        "choice": "work"
+      },
+      {
+        "age": 25,
+        "decision": "city",
+        "choice": "县城"
+      },
+      {
+        "age": 29,
+        "decision": "marry",
+        "choice": "marry"
+      },
+      {
+        "age": 31,
+        "decision": "house",
+        "choice": "rent"
+      },
+      {
+        "age": 33,
+        "decision": "child",
+        "choice": "no"
+      },
+      {
+        "age": 35,
+        "decision": "midcareer",
+        "choice": "stay"
+      }
+    ],
+    "record": {
+      "junior": true,
+      "stage": true,
+      "general": false,
+      "completed": false,
+      "gaokao": false,
+      "admitted": false,
+      "elite": false,
+      "age22": "工厂工人"
+    },
+    "repeatUsed": false,
+    "capture": true,
+    "mortgage": 0,
+    "peakIncome": 30635,
+    "retired": true,
+    "death": {
+      "category": "意外",
+      "detail": "意外"
+    }
+  }
+]

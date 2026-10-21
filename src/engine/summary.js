@@ -1,0 +1,3 @@
+import reference from './reference.json' with {type:'json'};
+const education={none:'初中未完成',junior:'初中',high:'普通高中',vocational:'中职',college:'专科',bachelor:'普通本科','211':'211本科','985':'985本科',master:'硕士'};
+export function summary(s){const peak=s.peakIncome??s.income;const incomes=reference.provinces[s.province]?.income??reference.income;return {education:education[s.edu]??s.edu,incomePercentile:incomes.length?Math.round(incomes.filter(x=>x<=peak).length/incomes.length*100):0,bachelorPer100:reference.provinces[s.province]?.bachelorPer100,referenceSample:reference.provinces[s.province]?.n,lifespan:s.age,death:s.death,peakIncome:peak};}

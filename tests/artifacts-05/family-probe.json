@@ -1,0 +1,7486 @@
+{
+  "n": 5000,
+  "groups": {
+    "highCity": {
+      "n": 717,
+      "q4plus": 395,
+      "q3lower": 322,
+      "q3higher": 596
+    },
+    "juniorFarm": {
+      "n": 50,
+      "q4plus": 6,
+      "q3lower": 44,
+      "q3higher": 9
+    },
+    "q5": {
+      "n": 401,
+      "q4plus": 177,
+      "q3lower": 224,
+      "q3higher": 276
+    },
+    "q1": {
+      "n": 415,
+      "q4plus": 71,
+      "q3lower": 344,
+      "q3higher": 119
+    }
+  },
+  "generations": {
+    "2": {
+      "n": 2085,
+      "provinces": {
+        "江西": 59,
+        "广东": 252,
+        "福建": 68,
+        "云南": 105,
+        "湖南": 91,
+        "贵州": 82,
+        "河北": 92,
+        "山东": 159,
+        "重庆": 43,
+        "新疆": 45,
+        "广西": 92,
+        "安徽": 75,
+        "山西": 47,
+        "江苏": 89,
+        "四川": 109,
+        "辽宁": 49,
+        "河南": 179,
+        "甘肃": 44,
+        "浙江": 107,
+        "湖北": 74,
+        "内蒙古": 25,
+        "上海": 26,
+        "青海": 10,
+        "海南": 15,
+        "吉林": 14,
+        "天津": 13,
+        "北京": 31,
+        "黑龙江": 17,
+        "宁夏": 19,
+        "陕西": 45,
+        "西藏": 9
+      },
+      "hukou": {
+        "urban": 2085
+      },
+      "wealth": {
+        "1": 564,
+        "2": 506,
+        "3": 441,
+        "4": 370,
+        "5": 204
+      }
+    },
+    "3": {
+      "n": 882,
+      "provinces": {
+        "广东": 108,
+        "云南": 50,
+        "山东": 61,
+        "河北": 39,
+        "广西": 44,
+        "安徽": 37,
+        "山西": 21,
+        "四川": 42,
+        "江西": 23,
+        "辽宁": 20,
+        "河南": 70,
+        "福建": 31,
+        "湖北": 33,
+        "甘肃": 17,
+        "内蒙古": 11,
+        "贵州": 28,
+        "浙江": 47,
+        "湖南": 36,
+        "重庆": 27,
+        "新疆": 16,
+        "江苏": 31,
+        "吉林": 7,
+        "天津": 6,
+        "青海": 5,
+        "宁夏": 6,
+        "北京": 15,
+        "黑龙江": 12,
+        "上海": 9,
+        "陕西": 24,
+        "海南": 4,
+        "西藏": 2
+      },
+      "hukou": {
+        "urban": 882
+      },
+      "wealth": {
+        "1": 210,
+        "2": 202,
+        "3": 214,
+        "4": 168,
+        "5": 88
+      }
+    }
+  },
+  "sample": [
+    {
+      "name": "孙可欣",
+      "place": "饶平县",
+      "month": 11,
+      "templateUsage": {
+        "baby": {
+          "baby-rain": {
+            "count": 1,
+            "lastAge": 1
+          },
+          "baby-kindergarten": {
+            "count": 1,
+            "lastAge": 1
+          },
+          "baby-market": {
+            "count": 1,
+            "lastAge": 2
+          },
+          "baby-used-clothes": {
+            "count": 1,
+            "lastAge": 2
+          },
+          "baby-left-train": {
+            "count": 1,
+            "lastAge": 2
+          },
+          "baby-noodles": {
+            "count": 1,
+            "lastAge": 3
+          },
+          "baby-left-newyear": {
+            "count": 1,
+            "lastAge": 3
+          },
+          "baby-reunion": {
+            "count": 1,
+            "lastAge": 4
+          },
+          "baby-vaccine": {
+            "count": 1,
+            "lastAge": 5
+          },
+          "baby-voice": {
+            "count": 1,
+            "lastAge": 5
+          },
+          "baby-birth-book": {
+            "count": 1,
+            "lastAge": 5
+          }
+        },
+        "child": {
+          "child-homework-light": {
+            "count": 1,
+            "lastAge": 6
+          },
+          "child-lantern": {
+            "count": 1,
+            "lastAge": 6
+          },
+          "child-left-class": {
+            "count": 1,
+            "lastAge": 7
+          },
+          "child-enroll": {
+            "count": 1,
+            "lastAge": 7
+          },
+          "child-reading": {
+            "count": 1,
+            "lastAge": 7
+          },
+          "child-left-festival": {
+            "count": 1,
+            "lastAge": 8
+          },
+          "child-park": {
+            "count": 1,
+            "lastAge": 9
+          },
+          "child-science": {
+            "count": 1,
+            "lastAge": 10
+          },
+          "child-phone-homework": {
+            "count": 1,
+            "lastAge": 11
+          },
+          "child-team": {
+            "count": 1,
+            "lastAge": 11
+          },
+          "child-online-call": {
+            "count": 1,
+            "lastAge": 11
+          }
+        },
+        "junior": {
+          "junior-letter": {
+            "count": 1,
+            "lastAge": 12
+          },
+          "junior-left-meeting": {
+            "count": 1,
+            "lastAge": 12
+          },
+          "junior-left-call": {
+            "count": 1,
+            "lastAge": 12
+          },
+          "junior-options": {
+            "count": 1,
+            "lastAge": 13
+          },
+          "junior-reunion": {
+            "count": 1,
+            "lastAge": 13
+          },
+          "junior-canteen": {
+            "count": 1,
+            "lastAge": 13
+          },
+          "junior-parent-workaway": {
+            "count": 1,
+            "lastAge": 14
+          },
+          "junior-split": {
+            "count": 1,
+            "lastAge": 14
+          },
+          "junior-county-bus": {
+            "count": 1,
+            "lastAge": 15
+          },
+          "junior-complete": {
+            "count": 1,
+            "lastAge": 15
+          },
+          "junior-basketball": {
+            "count": 1,
+            "lastAge": 15
+          }
+        },
+        "high": {
+          "high-bus": {
+            "count": 1,
+            "lastAge": 16
+          },
+          "high-friend-note": {
+            "count": 1,
+            "lastAge": 16
+          },
+          "high-repair": {
+            "count": 1,
+            "lastAge": 17
+          }
+        },
+        "college": {
+          "college-call-home": {
+            "count": 1,
+            "lastAge": 19
+          },
+          "college-cheap-ticket": {
+            "count": 1,
+            "lastAge": 19
+          },
+          "college-laundry": {
+            "count": 1,
+            "lastAge": 20
+          },
+          "college-fair": {
+            "count": 1,
+            "lastAge": 20
+          },
+          "college-certificate": {
+            "count": 1,
+            "lastAge": 20
+          }
+        },
+        "adult": {
+          "adult-trade-1": {
+            "count": 1,
+            "lastAge": 23
+          },
+          "adult-marriage-data": {
+            "count": 2,
+            "lastAge": 31
+          },
+          "adult-long-plan": {
+            "count": 1,
+            "lastAge": 24
+          },
+          "adult-mother-3": {
+            "count": 1,
+            "lastAge": 25
+          },
+          "adult-trade-3": {
+            "count": 1,
+            "lastAge": 25
+          },
+          "adult-move": {
+            "count": 2,
+            "lastAge": 32
+          },
+          "adult-mother-4": {
+            "count": 2,
+            "lastAge": 34
+          },
+          "adult-room-1": {
+            "count": 1,
+            "lastAge": 27
+          },
+          "adult-room-4": {
+            "count": 1,
+            "lastAge": 27
+          },
+          "adult-day-off": {
+            "count": 1,
+            "lastAge": 27
+          },
+          "adult-mother-0": {
+            "count": 1,
+            "lastAge": 28
+          },
+          "adult-room-3": {
+            "count": 1,
+            "lastAge": 28
+          },
+          "adult-rent": {
+            "count": 1,
+            "lastAge": 28
+          },
+          "adult-pay": {
+            "count": 1,
+            "lastAge": 29
+          },
+          "adult-civil": {
+            "count": 1,
+            "lastAge": 29
+          },
+          "adult-room-10": {
+            "count": 2,
+            "lastAge": 34
+          },
+          "adult-room-7": {
+            "count": 1,
+            "lastAge": 30
+          },
+          "adult-trade-0": {
+            "count": 1,
+            "lastAge": 30
+          },
+          "adult-mother-1": {
+            "count": 1,
+            "lastAge": 30
+          },
+          "adult-trade-4": {
+            "count": 1,
+            "lastAge": 31
+          },
+          "adult-mortgage": {
+            "count": 1,
+            "lastAge": 31
+          },
+          "adult-wedding-plan": {
+            "count": 1,
+            "lastAge": 33
+          },
+          "adult-trade-2": {
+            "count": 1,
+            "lastAge": 33
+          },
+          "adult-room-0": {
+            "count": 1,
+            "lastAge": 33
+          },
+          "adult-marriage": {
+            "count": 1,
+            "lastAge": 34
+          },
+          "adult-hometown": {
+            "count": 1,
+            "lastAge": 35
+          },
+          "adult-room-8": {
+            "count": 1,
+            "lastAge": 35
+          }
+        },
+        "middle": {
+          "middle-health-file": {
+            "count": 1,
+            "lastAge": 36
+          },
+          "middle-ordinary-8": {
+            "count": 1,
+            "lastAge": 36
+          },
+          "middle-separate-4": {
+            "count": 2,
+            "lastAge": 55
+          },
+          "middle-ordinary-0": {
+            "count": 2,
+            "lastAge": 56
+          },
+          "middle-ordinary-14": {
+            "count": 2,
+            "lastAge": 48
+          },
+          "middle-ordinary-1": {
+            "count": 2,
+            "lastAge": 46
+          },
+          "middle-young-job": {
+            "count": 2,
+            "lastAge": 51
+          },
+          "middle-mother-2": {
+            "count": 1,
+            "lastAge": 38
+          },
+          "middle-separate-5": {
+            "count": 1,
+            "lastAge": 38
+          },
+          "middle-school-house": {
+            "count": 2,
+            "lastAge": 44
+          },
+          "middle-child-3": {
+            "count": 1,
+            "lastAge": 40
+          },
+          "middle-ordinary-7": {
+            "count": 1,
+            "lastAge": 41
+          },
+          "middle-ordinary-3": {
+            "count": 2,
+            "lastAge": 57
+          },
+          "middle-mother-4": {
+            "count": 2,
+            "lastAge": 46
+          },
+          "middle-parent-phone": {
+            "count": 2,
+            "lastAge": 52
+          },
+          "middle-future-plan": {
+            "count": 1,
+            "lastAge": 42
+          },
+          "middle-child-4": {
+            "count": 1,
+            "lastAge": 43
+          },
+          "middle-ordinary-6": {
+            "count": 1,
+            "lastAge": 43
+          },
+          "middle-work-0": {
+            "count": 1,
+            "lastAge": 44
+          },
+          "middle-mother-6": {
+            "count": 1,
+            "lastAge": 45
+          },
+          "middle-child-split-data": {
+            "count": 1,
+            "lastAge": 46
+          },
+          "middle-child-5": {
+            "count": 1,
+            "lastAge": 47
+          },
+          "middle-child-road": {
+            "count": 1,
+            "lastAge": 47
+          },
+          "middle-child-school": {
+            "count": 1,
+            "lastAge": 48
+          },
+          "middle-child-8": {
+            "count": 2,
+            "lastAge": 55
+          },
+          "middle-work-3": {
+            "count": 1,
+            "lastAge": 49
+          },
+          "middle-mother-3": {
+            "count": 1,
+            "lastAge": 50
+          },
+          "middle-savings": {
+            "count": 1,
+            "lastAge": 51
+          },
+          "middle-separate-3": {
+            "count": 1,
+            "lastAge": 52
+          },
+          "middle-child-7": {
+            "count": 1,
+            "lastAge": 52
+          },
+          "middle-work-5": {
+            "count": 1,
+            "lastAge": 53
+          },
+          "middle-child-9": {
+            "count": 1,
+            "lastAge": 53
+          },
+          "middle-work-6": {
+            "count": 2,
+            "lastAge": 59
+          },
+          "middle-separate-2": {
+            "count": 1,
+            "lastAge": 54
+          },
+          "middle-child-2": {
+            "count": 1,
+            "lastAge": 55
+          },
+          "middle-new-skills": {
+            "count": 1,
+            "lastAge": 56
+          },
+          "middle-work-4": {
+            "count": 1,
+            "lastAge": 57
+          },
+          "middle-hometown-care": {
+            "count": 1,
+            "lastAge": 58
+          }
+        },
+        "senior": {
+          "senior-day-15": {
+            "count": 2,
+            "lastAge": 75
+          },
+          "senior-day-0": {
+            "count": 1,
+            "lastAge": 61
+          },
+          "senior-recipes": {
+            "count": 1,
+            "lastAge": 62
+          },
+          "senior-window": {
+            "count": 2,
+            "lastAge": 69
+          },
+          "senior-checkup": {
+            "count": 2,
+            "lastAge": 70
+          },
+          "senior-day-8": {
+            "count": 2,
+            "lastAge": 74
+          },
+          "senior-day-29": {
+            "count": 2,
+            "lastAge": 77
+          },
+          "senior-day-3": {
+            "count": 1,
+            "lastAge": 64
+          },
+          "senior-day-10": {
+            "count": 2,
+            "lastAge": 84
+          },
+          "senior-day-22": {
+            "count": 1,
+            "lastAge": 65
+          },
+          "senior-day-26": {
+            "count": 1,
+            "lastAge": 66
+          },
+          "senior-children-6": {
+            "count": 2,
+            "lastAge": 82
+          },
+          "senior-calendar": {
+            "count": 1,
+            "lastAge": 67
+          },
+          "senior-children-5": {
+            "count": 2,
+            "lastAge": 80
+          },
+          "senior-children-0": {
+            "count": 1,
+            "lastAge": 67
+          },
+          "senior-walk": {
+            "count": 1,
+            "lastAge": 68
+          },
+          "senior-children-3": {
+            "count": 2,
+            "lastAge": 76
+          },
+          "senior-phone": {
+            "count": 2,
+            "lastAge": 76
+          },
+          "senior-dance": {
+            "count": 2,
+            "lastAge": 83
+          },
+          "senior-day-6": {
+            "count": 1,
+            "lastAge": 71
+          },
+          "senior-life-data": {
+            "count": 1,
+            "lastAge": 72
+          },
+          "senior-day-24": {
+            "count": 2,
+            "lastAge": 88
+          },
+          "senior-day-12": {
+            "count": 1,
+            "lastAge": 73
+          },
+          "senior-day-5": {
+            "count": 1,
+            "lastAge": 73
+          },
+          "senior-old-friend": {
+            "count": 1,
+            "lastAge": 74
+          },
+          "senior-day-13": {
+            "count": 2,
+            "lastAge": 91
+          },
+          "senior-day-2": {
+            "count": 2,
+            "lastAge": 87
+          },
+          "senior-day-23": {
+            "count": 1,
+            "lastAge": 75
+          },
+          "senior-photo": {
+            "count": 2,
+            "lastAge": 89
+          },
+          "senior-day-16": {
+            "count": 2,
+            "lastAge": 83
+          },
+          "senior-day-17": {
+            "count": 2,
+            "lastAge": 90
+          },
+          "senior-day-28": {
+            "count": 2,
+            "lastAge": 86
+          },
+          "senior-day-14": {
+            "count": 2,
+            "lastAge": 89
+          },
+          "senior-children-9": {
+            "count": 1,
+            "lastAge": 81
+          },
+          "senior-day-21": {
+            "count": 1,
+            "lastAge": 84
+          },
+          "senior-day-18": {
+            "count": 1,
+            "lastAge": 85
+          },
+          "senior-stairs": {
+            "count": 1,
+            "lastAge": 87
+          },
+          "senior-family-call": {
+            "count": 1,
+            "lastAge": 87
+          },
+          "senior-children-7": {
+            "count": 1,
+            "lastAge": 90
+          },
+          "senior-pension": {
+            "count": 1,
+            "lastAge": 90
+          }
+        }
+      },
+      "id": "粤-2026-410636",
+      "seed": 62806410636,
+      "year": 2026,
+      "rngState": 2494234152,
+      "age": 91,
+      "alive": false,
+      "sex": "female",
+      "province": "广东",
+      "tier": "C",
+      "hukou": "rural",
+      "wealthQ": 1,
+      "parents": {
+        "mother": {
+          "age": 81,
+          "education": "初中及以下",
+          "job": "外出务工者",
+          "name": "杨丽娟",
+          "birthAge": 24,
+          "alive": false,
+          "health": 0,
+          "away": true,
+          "workplace": "外地工厂",
+          "diedAt": 57
+        },
+        "father": {
+          "age": 57,
+          "education": "初中及以下",
+          "job": "外出务工者",
+          "name": "孙志远",
+          "birthAge": 35,
+          "alive": false,
+          "health": 0,
+          "away": true,
+          "workplace": "外地工地",
+          "diedAt": 22
+        }
+      },
+      "leftBehind": true,
+      "siblings": 2,
+      "attrs": {
+        "health": 93.97999999999968,
+        "happy": 100,
+        "knowledge": 64.6999999999999,
+        "social": 72.84999999999981,
+        "grind": 72
+      },
+      "gradePct": 65.92453227238707,
+      "edu": "junior",
+      "job": "居民养老 / 零工",
+      "income": 6000,
+      "assets": -246741,
+      "city": "县城",
+      "married": true,
+      "kids": [
+        {
+          "bornAt": 33,
+          "hukou": "rural",
+          "wealthQ": 2
+        }
+      ],
+      "log": [
+        {
+          "age": 0,
+          "text": "2026年11月，你出生在广东饶平县的一个村子，名字叫孙可欣。你出生时，爸爸孙志远当时35岁，在外地打工；妈妈杨丽娟当时24岁，在外地打工。那时家里的收入不宽裕，大笔支出都要提前攒钱。父母当时为了工作常年离家，你小时候主要跟着爷爷奶奶生活。",
+          "stat": null,
+          "node": "birth"
+        },
+        {
+          "age": 1,
+          "text": "雨水从屋檐落下来，你蹲在门口看蚂蚁搬走饼干屑。",
+          "stat": null,
+          "templateId": "baby-rain"
+        },
+        {
+          "age": 1,
+          "text": "幼儿园午睡时，你把家里带来的小毛巾压在枕头下面。",
+          "stat": null,
+          "templateId": "baby-kindergarten"
+        },
+        {
+          "age": 2,
+          "text": "赶集时你坐在车后座，手里攥着刚买的小风车。",
+          "stat": null,
+          "templateId": "baby-market"
+        },
+        {
+          "age": 2,
+          "text": "亲戚送来一袋小衣服，袖口折好，穿起来也很暖。",
+          "stat": null,
+          "templateId": "baby-used-clothes"
+        },
+        {
+          "age": 2,
+          "text": "父母的车票已经买好，你还坐在行李箱上，不知道他们明早又要走。",
+          "stat": null,
+          "templateId": "baby-left-train"
+        },
+        {
+          "age": 3,
+          "text": "厨房里飘来面汤的味道，你搬着小板凳等晚饭。",
+          "stat": null,
+          "templateId": "baby-noodles"
+        },
+        {
+          "age": 3,
+          "text": "爸爸妈妈把行李带回来，你先认了很久，才肯让他们抱。",
+          "stat": null,
+          "templateId": "baby-left-newyear"
+        },
+        {
+          "age": 4,
+          "text": "春节的行李箱刚放下，你先躲在门后，又慢慢跑过去抱住父母。",
+          "stat": null,
+          "templateId": "baby-reunion"
+        },
+        {
+          "age": 5,
+          "text": "接种本夹在户口本里，家人怕忘记，提前把它放进布袋。",
+          "stat": null,
+          "templateId": "baby-vaccine"
+        },
+        {
+          "age": 5,
+          "text": "睡前，家人重放手机里那段从外地发来的语音。",
+          "stat": null,
+          "templateId": "baby-voice"
+        },
+        {
+          "age": 5,
+          "text": "家人翻到一份全国出生人口的历史记录，看过那个大数字，又转头看看身边小小的你。",
+          "stat": "births.national_2024",
+          "templateId": "baby-birth-book"
+        },
+        {
+          "age": 6,
+          "text": "放学后你先帮家里理货，晚饭后才打开作业本。",
+          "stat": null,
+          "templateId": "child-homework-light"
+        },
+        {
+          "age": 6,
+          "text": "学校让做手工灯笼，你和家人把旧挂历裁成细细的纸条。",
+          "stat": null,
+          "templateId": "child-lantern"
+        },
+        {
+          "age": 7,
+          "text": "老师问谁的父母在外地工作，你举起手，放学还是由爷爷来接。",
+          "stat": "family.left_behind_share_rural",
+          "templateId": "child-left-class"
+        },
+        {
+          "age": 7,
+          "text": "新书包背上肩，家人在课本扉页认真写下你的名字。",
+          "stat": null,
+          "templateId": "child-enroll"
+        },
+        {
+          "age": 7,
+          "text": "老师在讲台边放了一个旧书箱，你借走的书有很多折角。",
+          "stat": null,
+          "templateId": "child-reading"
+        },
+        {
+          "age": 8,
+          "text": "过年见到父母，你攒了很久的话反而说不出来，只把手伸过去。",
+          "stat": null,
+          "templateId": "child-left-festival"
+        },
+        {
+          "age": 9,
+          "text": "家人带你去公园，你把落叶夹进语文书当书签。",
+          "stat": null,
+          "templateId": "child-park"
+        },
+        {
+          "age": 10,
+          "text": "自然课上种的豆子终于发芽，你把尺子贴在杯子旁边。",
+          "stat": null,
+          "templateId": "child-science"
+        },
+        {
+          "age": 11,
+          "text": "父母隔着手机检查作业，画面卡住时，你等着那句“接着读”。",
+          "stat": null,
+          "templateId": "child-phone-homework"
+        },
+        {
+          "age": 11,
+          "text": "班里排节目，你站在队伍边上，终于记住了最后一个动作。",
+          "stat": null,
+          "templateId": "child-team"
+        },
+        {
+          "age": 11,
+          "text": "视频里的父母问你有没有长高，你把奖状举到镜头前。",
+          "stat": null,
+          "templateId": "child-online-call"
+        },
+        {
+          "age": 12,
+          "text": "老师让写给未来的自己，你想了很久才落笔。",
+          "stat": null,
+          "templateId": "junior-letter"
+        },
+        {
+          "age": 12,
+          "text": "家长会的椅子上坐着爷爷，你看见他一笔一画地抄老师写下的安排。",
+          "stat": null,
+          "templateId": "junior-left-meeting"
+        },
+        {
+          "age": 12,
+          "text": "父母在外地宿舍接起视频，你把这次试卷举高，怕他们看不清。",
+          "stat": null,
+          "templateId": "junior-left-call"
+        },
+        {
+          "age": 13,
+          "text": "招生老师带来实训课的照片，你第一次仔细看另一条升学路线。",
+          "stat": null,
+          "templateId": "junior-options"
+        },
+        {
+          "age": 13,
+          "text": "父母回来开家长会，散会后陪你在操场绕了一圈。",
+          "stat": null,
+          "templateId": "junior-reunion"
+        },
+        {
+          "age": 13,
+          "text": "食堂阿姨认出你没带饭卡，先把饭盘递给了你。",
+          "stat": null,
+          "templateId": "junior-canteen"
+        },
+        {
+          "age": 14,
+          "text": "爸爸说工地暂时走不开，升学说明会只能请你用手机录下来。",
+          "stat": null,
+          "templateId": "junior-parent-workaway"
+        },
+        {
+          "age": 14,
+          "text": "班会讲到了普高和中职，老师让大家把招生简章带回家。",
+          "stat": null,
+          "templateId": "junior-split"
+        },
+        {
+          "age": 15,
+          "text": "你完成初中学业，拿到了毕业证，接下来要面对中考。",
+          "stat": "education.compulsory_retention",
+          "node": "junior"
+        },
+        {
+          "age": 15,
+          "text": "去县城的客车绕过熟悉的路口，你第一次自己保管生活费。",
+          "stat": null,
+          "templateId": "junior-county-bus"
+        },
+        {
+          "age": 15,
+          "text": "学校核对毕业资料，你认真把姓名和证件号码又看了一遍。",
+          "stat": null,
+          "templateId": "junior-complete"
+        },
+        {
+          "age": 15,
+          "text": "傍晚的球场只剩半边有光，你们仍然多打了一会儿。",
+          "stat": null,
+          "templateId": "junior-basketball"
+        },
+        {
+          "age": 15,
+          "text": "你选择了「争取普通高中」。",
+          "stat": null
+        },
+        {
+          "age": 15,
+          "text": "你把能交的材料都交了，把能做的准备都做了。这一回，机会仍然过去了。你的全日制求学在这里停了下来。",
+          "stat": "education.general_hs_rate",
+          "node": "school",
+          "reason": "chance",
+          "outcome": "leave",
+          "dominant": "chance",
+          "contributions": {
+            "base": 2.522076764416852,
+            "wealth": -0.568964182228592,
+            "hukou": -0.052036397547417436
+          },
+          "probability": 0.8700132800149579,
+          "draw": 0.9330813346896321,
+          "templateId": "verdict:school:chance:3",
+          "dice": [
+            {
+              "id": "school-stage",
+              "label": "高中阶段升学概率",
+              "p": 0.8700132800149579,
+              "u": 0.9330813346896321,
+              "pass": false,
+              "contributions": {
+                "base": 2.522076764416852,
+                "wealth": -0.568964182228592,
+                "hukou": -0.052036397547417436
+              },
+              "factors": [
+                {
+                  "key": "wealth",
+                  "label": "家境",
+                  "logit": -0.568964182228592,
+                  "delta": -0.05200138742918081,
+                  "pp": -5.200138742918082
+                },
+                {
+                  "key": "hukou",
+                  "label": "求学条件",
+                  "logit": -0.052036397547417436,
+                  "delta": -0.005772360765752604,
+                  "pp": -0.5772360765752604
+                }
+              ],
+              "positive": true,
+              "successLabel": "继续升学",
+              "failureLabel": "未能继续升学",
+              "nearMiss": false,
+              "closePass": false,
+              "gap": 0.06306805467467413
+            }
+          ]
+        },
+        {
+          "age": 16,
+          "text": "周末回家的班车很挤，你站着也睡着了一小会儿。",
+          "stat": null,
+          "templateId": "high-bus"
+        },
+        {
+          "age": 16,
+          "text": "好友把鼓励的话写在便签背面，贴在你的水杯上。",
+          "stat": null,
+          "templateId": "high-friend-note"
+        },
+        {
+          "age": 17,
+          "text": "旧台灯闪了几次，家人换好灯泡，说这盏还能用。",
+          "stat": null,
+          "templateId": "high-repair"
+        },
+        {
+          "age": 19,
+          "text": "给家里打电话，你说一切都好，挂掉后才想起没吃晚饭。",
+          "stat": null,
+          "templateId": "college-call-home"
+        },
+        {
+          "age": 19,
+          "text": "为买到便宜车票，你提前把回家的日期写在日历上。",
+          "stat": null,
+          "templateId": "college-cheap-ticket"
+        },
+        {
+          "age": 20,
+          "text": "晾衣绳上空出一个位置，你突然觉得自己已经习惯独自生活。",
+          "stat": null,
+          "templateId": "college-laundry"
+        },
+        {
+          "age": 20,
+          "text": "招聘会入口排着队，你把简历压平，又检查了一遍联系方式。",
+          "stat": null,
+          "templateId": "college-fair"
+        },
+        {
+          "age": 20,
+          "text": "技能证书领到手，你先拍照发进家里的群。",
+          "stat": null,
+          "templateId": "college-certificate"
+        },
+        {
+          "age": 22,
+          "text": "爸爸孙志远在57岁离开了。你翻出家里的旧照片，才发现许多话还没有来得及说。",
+          "stat": "health.life_expectancy_by_sex",
+          "node": "parentDeath"
+        },
+        {
+          "age": 22,
+          "text": "你选择了「找一份工作」。",
+          "stat": null
+        },
+        {
+          "age": 22,
+          "text": "第一份稳定下来的工作是个体户。你开始算，到手的钱够不够房租和寄回家的那一笔。",
+          "stat": "career.youth_unemployment",
+          "node": "career",
+          "templateId": "career-22-work-个体户",
+          "reason": "个体户"
+        },
+        {
+          "age": 23,
+          "text": "你把退回来的货重新检查，算了算这单最后还剩多少利润。",
+          "stat": null,
+          "templateId": "adult-trade-1"
+        },
+        {
+          "age": 23,
+          "text": "你看见关于平均初婚年龄的报道，没有立刻转给家人，先想了想自己想过的生活。",
+          "stat": "family.first_marriage_age",
+          "templateId": "adult-marriage-data"
+        },
+        {
+          "age": 24,
+          "text": "体检后你把报告收好，和家人商量下次休假一起出去走走。",
+          "stat": null,
+          "templateId": "adult-long-plan"
+        },
+        {
+          "age": 25,
+          "text": "母亲在电话里说腰有点酸，你把复查的日期存进了日历。",
+          "stat": null,
+          "templateId": "adult-mother-3"
+        },
+        {
+          "age": 25,
+          "text": "临近节日，货比平时卖得快，你关店后又补了一次货。",
+          "stat": null,
+          "templateId": "adult-trade-3"
+        },
+        {
+          "age": 25,
+          "text": "搬家箱子上写着厨房和卧室，你先拆开了装电饭煲的那箱。",
+          "stat": null,
+          "templateId": "adult-move"
+        },
+        {
+          "age": 25,
+          "text": "你选择了「县城」。",
+          "stat": null
+        },
+        {
+          "age": 25,
+          "text": "你把生活搬到了县城。",
+          "stat": null
+        },
+        {
+          "age": 26,
+          "text": "你和母亲因为过年回哪儿拌了几句嘴，第二天还是先给她打了电话。",
+          "stat": null,
+          "templateId": "adult-mother-4"
+        },
+        {
+          "age": 27,
+          "text": "租房合同快到期，你拍下水表和电表，把押金条单独收好。",
+          "stat": null,
+          "templateId": "adult-room-1"
+        },
+        {
+          "age": 27,
+          "text": "搬家时你舍不得扔的东西装满一箱，最后还是留下了那口小电锅。",
+          "stat": null,
+          "templateId": "adult-room-4"
+        },
+        {
+          "age": 27,
+          "text": "休息日你把工作群设成免打扰，去河边慢慢走了一段。",
+          "stat": null,
+          "templateId": "adult-day-off"
+        },
+        {
+          "age": 28,
+          "text": "妈妈杨丽娟把你小时候的奖状找出来，问你要不要一起带走。",
+          "stat": null,
+          "templateId": "adult-mother-0"
+        },
+        {
+          "age": 28,
+          "text": "你算着去公司的最后一班车，没参加同事临时约的那顿饭。",
+          "stat": null,
+          "templateId": "adult-room-3"
+        },
+        {
+          "age": 28,
+          "text": "房东问要不要续租，你把通勤路线和搬家费用列在便签上。",
+          "stat": null,
+          "templateId": "adult-rent"
+        },
+        {
+          "age": 29,
+          "text": "工资到账，你先把房租和给家里的钱分开，才看剩余金额。",
+          "stat": null,
+          "templateId": "adult-pay"
+        },
+        {
+          "age": 29,
+          "text": "下班后你打开考编题库，做完一页才想起汤还没热。",
+          "stat": null,
+          "templateId": "adult-civil"
+        },
+        {
+          "age": 29,
+          "text": "你换了手机号码，挨个通知常联系的人，发现名单比想象的短。",
+          "stat": null,
+          "templateId": "adult-room-10"
+        },
+        {
+          "age": 29,
+          "text": "你选择了「尝试相亲与结婚」。",
+          "stat": null
+        },
+        {
+          "age": 29,
+          "text": "你们一起添置锅碗，开始商量两个人的日子。",
+          "stat": null
+        },
+        {
+          "age": 30,
+          "text": "报销款迟迟没下来，你删掉购物车里的东西，先留够这个月的饭钱。",
+          "stat": null,
+          "templateId": "adult-room-7"
+        },
+        {
+          "age": 30,
+          "text": "进货的钱先付出去了，你坐在店里等今天第一位客人。",
+          "stat": null,
+          "templateId": "adult-trade-0"
+        },
+        {
+          "age": 30,
+          "text": "母亲来你住的地方，最先问厨房在哪里，怕你一直在外面凑合。",
+          "stat": null,
+          "templateId": "adult-mother-1"
+        },
+        {
+          "age": 31,
+          "text": "熟客想赊账，你犹豫了一会儿，还是把账记进了本子。",
+          "stat": null,
+          "templateId": "adult-trade-4"
+        },
+        {
+          "age": 31,
+          "text": "看房回来的路上，你们打开计算器，反复调整首付和月供。",
+          "stat": null,
+          "templateId": "adult-mortgage"
+        },
+        {
+          "age": 31,
+          "text": "你看见关于平均初婚年龄的报道，没有立刻转给家人，先想了想自己想过的生活。",
+          "stat": "family.first_marriage_age",
+          "templateId": "adult-marriage-data"
+        },
+        {
+          "age": 31,
+          "text": "你选择了「继续租住」。",
+          "stat": null
+        },
+        {
+          "age": 31,
+          "text": "你续签了租房合同。",
+          "stat": null
+        },
+        {
+          "age": 32,
+          "text": "搬家箱子上写着厨房和卧室，你先拆开了装电饭煲的那箱。",
+          "stat": null,
+          "templateId": "adult-move"
+        },
+        {
+          "age": 33,
+          "text": "翻到婚礼时留下的清单，你们聊起当初一起置办生活用品的日子。",
+          "stat": null,
+          "templateId": "adult-wedding-plan"
+        },
+        {
+          "age": 33,
+          "text": "店门口修路，客人绕着走；你把营业时间写得更大一些。",
+          "stat": null,
+          "templateId": "adult-trade-2"
+        },
+        {
+          "age": 33,
+          "text": "合租室友搬走了，客厅空出一角；你先问房东接下来的房租怎么算。",
+          "stat": null,
+          "templateId": "adult-room-0"
+        },
+        {
+          "age": 33,
+          "text": "你选择了「迎接孩子」。",
+          "stat": null
+        },
+        {
+          "age": 33,
+          "text": "孩子出生了。你的孩子出生时，家里的条件是：住在乡村，收入紧张，每一笔学费都要提前攒。",
+          "stat": null
+        },
+        {
+          "age": 34,
+          "text": "你和母亲因为过年回哪儿拌了几句嘴，第二天还是先给她打了电话。",
+          "stat": null,
+          "templateId": "adult-mother-4"
+        },
+        {
+          "age": 34,
+          "text": "朋友的婚礼请柬发来，群里开始讨论谁坐哪班车回去。",
+          "stat": null,
+          "templateId": "adult-marriage"
+        },
+        {
+          "age": 34,
+          "text": "你换了手机号码，挨个通知常联系的人，发现名单比想象的短。",
+          "stat": null,
+          "templateId": "adult-room-10"
+        },
+        {
+          "age": 35,
+          "text": "老家的饭桌给你留了位置，家人问这次能待到什么时候。",
+          "stat": null,
+          "templateId": "adult-hometown"
+        },
+        {
+          "age": 35,
+          "text": "一个旧同学来你工作的城市，你们在车站附近吃了碗面。",
+          "stat": null,
+          "templateId": "adult-room-8"
+        },
+        {
+          "age": 35,
+          "text": "你选择了「继续现在的工作」。",
+          "stat": null
+        },
+        {
+          "age": 35,
+          "text": "这一轮调整后，你仍在做个体户。工资没有中断，家里的开支也还要按月安排。",
+          "stat": null,
+          "node": "midcareer",
+          "industry": "business",
+          "probability": 0.16,
+          "contributions": {
+            "industry": 0.16
+          },
+          "footnote": "本次人生计算中，这一行业在35岁节点的岗位中断风险为 16%。来源：本地岗位风险参数；不是行业调查结果。",
+          "draw": 0.32174821267835796,
+          "dice": [
+            {
+              "id": "midcareer",
+              "label": "本次岗位中断概率",
+              "p": 0.16,
+              "u": 0.32174821267835796,
+              "pass": false,
+              "contributions": {
+                "base": -1.9924301646902063,
+                "industry": 0.33420208808667407
+              },
+              "factors": [
+                {
+                  "key": "industry",
+                  "label": "所在行业",
+                  "logit": 0.33420208808667407,
+                  "delta": 0.04000000000000001,
+                  "pp": 4.000000000000001
+                }
+              ],
+              "positive": false,
+              "successLabel": "岗位中断",
+              "failureLabel": "岗位保留",
+              "nearMiss": false,
+              "closePass": false,
+              "gap": 0.16174821267835796
+            }
+          ],
+          "templateId": "midcareer-retained",
+          "reason": "retained_business"
+        },
+        {
+          "age": 36,
+          "text": "社区更新健康档案，你找出上次体检忘了看的那张报告。",
+          "stat": null,
+          "templateId": "middle-health-file"
+        },
+        {
+          "age": 36,
+          "text": "你和家人因为一笔支出争了几句，饭后又坐下来重新算账。",
+          "stat": null,
+          "templateId": "middle-ordinary-8"
+        },
+        {
+          "age": 36,
+          "text": "年夜饭之后你收拾行李，长辈在门口站着，直到车灯拐过路口。",
+          "stat": null,
+          "templateId": "middle-separate-4"
+        },
+        {
+          "age": 37,
+          "text": "屋里的灯坏了，你站在凳子上换灯泡，家人在下面扶着凳脚。",
+          "stat": null,
+          "templateId": "middle-ordinary-0"
+        },
+        {
+          "age": 37,
+          "text": "你把窗帘拆下来洗，阳光照进屋里，灰尘在空中慢慢落下。",
+          "stat": null,
+          "templateId": "middle-ordinary-14"
+        },
+        {
+          "age": 37,
+          "text": "存折上的数字慢慢变长了，你却仍在超市比较两袋米的价钱。",
+          "stat": null,
+          "templateId": "middle-ordinary-1"
+        },
+        {
+          "age": 38,
+          "text": "年轻亲戚请你帮忙看看简历，你把联系方式一栏单独圈出来。",
+          "stat": null,
+          "templateId": "middle-young-job"
+        },
+        {
+          "age": 38,
+          "text": "母亲把你的生日记得很牢，却忘了上次复查是哪一天。",
+          "stat": null,
+          "templateId": "middle-mother-2"
+        },
+        {
+          "age": 38,
+          "text": "你小时候盼父母过年回来，现在轮到老人问你什么时候回去。",
+          "stat": null,
+          "templateId": "middle-separate-5"
+        },
+        {
+          "age": 39,
+          "text": "家里讨论孩子上学和住处，你把地图放大，比较了几条通勤路线。",
+          "stat": null,
+          "templateId": "middle-school-house"
+        },
+        {
+          "age": 40,
+          "text": "你接到班主任的电话，走到楼道里，听完后才回去继续工作。",
+          "stat": null,
+          "templateId": "middle-child-3"
+        },
+        {
+          "age": 41,
+          "text": "你翻出年轻时写的计划，有些已经完成，有些连自己都忘了。",
+          "stat": null,
+          "templateId": "middle-ordinary-7"
+        },
+        {
+          "age": 41,
+          "text": "通勤的路修了新桥，你试走一遍，记住了新的公交站。",
+          "stat": null,
+          "templateId": "middle-ordinary-3"
+        },
+        {
+          "age": 41,
+          "text": "母亲想来你身边住几天，你腾出柜子，提前把床单洗好。",
+          "stat": null,
+          "templateId": "middle-mother-4"
+        },
+        {
+          "age": 42,
+          "text": "你教长辈用手机挂号，对方又问了一遍，你把步骤写在纸上。",
+          "stat": null,
+          "templateId": "middle-parent-phone"
+        },
+        {
+          "age": 42,
+          "text": "饭后你和家人讨论退休以后想怎样生活，把想去的地方记下来。",
+          "stat": null,
+          "templateId": "middle-future-plan"
+        },
+        {
+          "age": 43,
+          "text": "孩子说不想沿着你走过的路，你一时不知道该先劝还是先听。",
+          "stat": null,
+          "templateId": "middle-child-4"
+        },
+        {
+          "age": 43,
+          "text": "家里水管漏了，师傅拆开墙角时，你拿盆接了整整一晚。",
+          "stat": null,
+          "templateId": "middle-ordinary-6"
+        },
+        {
+          "age": 44,
+          "text": "新来的同事向你请教，你讲到一半，发现有些经验已经不适用了。",
+          "stat": null,
+          "templateId": "middle-work-0"
+        },
+        {
+          "age": 44,
+          "text": "家里讨论孩子上学和住处，你把地图放大，比较了几条通勤路线。",
+          "stat": null,
+          "templateId": "middle-school-house"
+        },
+        {
+          "age": 45,
+          "text": "母亲说不想添麻烦，你没有劝太多，只把下次接她的时间定了下来。",
+          "stat": null,
+          "templateId": "middle-mother-6"
+        },
+        {
+          "age": 46,
+          "text": "母亲想来你身边住几天，你腾出柜子，提前把床单洗好。",
+          "stat": null,
+          "templateId": "middle-mother-4"
+        },
+        {
+          "age": 46,
+          "text": "存折上的数字慢慢变长了，你却仍在超市比较两袋米的价钱。",
+          "stat": null,
+          "templateId": "middle-ordinary-1"
+        },
+        {
+          "age": 46,
+          "text": "学校介绍全国普高招生人数，你替孩子把中考后的几条路写在同一张纸上。",
+          "stat": "education.general_hs_rate",
+          "templateId": "middle-child-split-data"
+        },
+        {
+          "age": 47,
+          "text": "陪孩子看学校时，你先找食堂和宿舍；孩子却一直看着操场。",
+          "stat": null,
+          "templateId": "middle-child-5"
+        },
+        {
+          "age": 47,
+          "text": "孩子说起升学压力，你没有立刻讲道理，先陪着散了会儿步。",
+          "stat": null,
+          "templateId": "middle-child-road"
+        },
+        {
+          "age": 48,
+          "text": "孩子也到了中考的年纪。你陪着孩子翻招生简章，想起自己当年的那张志愿表。",
+          "stat": "education.general_hs_rate"
+        },
+        {
+          "age": 48,
+          "text": "孩子把升学资料放在桌上，你想起自己当年攥着志愿表的样子。",
+          "stat": null,
+          "templateId": "middle-child-school"
+        },
+        {
+          "age": 48,
+          "text": "你把窗帘拆下来洗，阳光照进屋里，灰尘在空中慢慢落下。",
+          "stat": null,
+          "templateId": "middle-ordinary-14"
+        },
+        {
+          "age": 49,
+          "text": "孩子问你当年为什么没继续读，你讲到一半，停下想了一会儿。",
+          "stat": null,
+          "templateId": "middle-child-8"
+        },
+        {
+          "age": 49,
+          "text": "工作上的称呼慢慢从名字变成了师傅，你一开始还不太习惯。",
+          "stat": null,
+          "templateId": "middle-work-3"
+        },
+        {
+          "age": 50,
+          "text": "你陪母亲买菜，她还在挑你小时候最爱吃的那一种。",
+          "stat": null,
+          "templateId": "middle-mother-3"
+        },
+        {
+          "age": 51,
+          "text": "你把存款和日常支出重新算了一遍，决定先修好家里的旧冰箱。",
+          "stat": null,
+          "templateId": "middle-savings"
+        },
+        {
+          "age": 51,
+          "text": "年轻亲戚请你帮忙看看简历，你把联系方式一栏单独圈出来。",
+          "stat": null,
+          "templateId": "middle-young-job"
+        },
+        {
+          "age": 52,
+          "text": "你教长辈用手机挂号，对方又问了一遍，你把步骤写在纸上。",
+          "stat": null,
+          "templateId": "middle-parent-phone"
+        },
+        {
+          "age": 52,
+          "text": "你给老家装了扶手，老人先嫌占地方，后来出门总会扶一下。",
+          "stat": null,
+          "templateId": "middle-separate-3"
+        },
+        {
+          "age": 52,
+          "text": "你给住校的孩子整理药和换洗衣物，写了一张很长的清单。",
+          "stat": null,
+          "templateId": "middle-child-7"
+        },
+        {
+          "age": 53,
+          "text": "公司通知换系统，你和同事对着新页面把操作步骤记下来。",
+          "stat": null,
+          "templateId": "middle-work-5"
+        },
+        {
+          "age": 53,
+          "text": "你想替孩子做决定，话到嘴边又改成了：你自己最想选什么？",
+          "stat": null,
+          "templateId": "middle-child-9"
+        },
+        {
+          "age": 54,
+          "text": "你听见有人谈退休，才开始认真查自己缴费的记录。",
+          "stat": null,
+          "templateId": "middle-work-6"
+        },
+        {
+          "age": 54,
+          "text": "回乡的车票买好了，临出发又被工作绊住，你给家里重新说了时间。",
+          "stat": null,
+          "templateId": "middle-separate-2"
+        },
+        {
+          "age": 55,
+          "text": "年夜饭之后你收拾行李，长辈在门口站着，直到车灯拐过路口。",
+          "stat": null,
+          "templateId": "middle-separate-4"
+        },
+        {
+          "age": 55,
+          "text": "孩子想报的兴趣班和补课时间撞了，你们坐下来听他把话说完。",
+          "stat": null,
+          "templateId": "middle-child-2"
+        },
+        {
+          "age": 55,
+          "text": "孩子问你当年为什么没继续读，你讲到一半，停下想了一会儿。",
+          "stat": null,
+          "templateId": "middle-child-8"
+        },
+        {
+          "age": 56,
+          "text": "同事准备继续读书，你也找来专业课教材，试着翻了开头。",
+          "stat": null,
+          "templateId": "middle-new-skills"
+        },
+        {
+          "age": 56,
+          "text": "屋里的灯坏了，你站在凳子上换灯泡，家人在下面扶着凳脚。",
+          "stat": null,
+          "templateId": "middle-ordinary-0"
+        },
+        {
+          "age": 57,
+          "text": "妈妈杨丽娟在81岁离开了。你翻出家里的旧照片，才发现许多话还没有来得及说。",
+          "stat": "health.life_expectancy_by_sex",
+          "node": "parentDeath"
+        },
+        {
+          "age": 57,
+          "text": "通勤的路修了新桥，你试走一遍，记住了新的公交站。",
+          "stat": null,
+          "templateId": "middle-ordinary-3"
+        },
+        {
+          "age": 57,
+          "text": "你准备下班时有人来找，家里的晚饭只好再热一次。",
+          "stat": null,
+          "templateId": "middle-work-4"
+        },
+        {
+          "age": 58,
+          "text": "老家的亲戚打来电话，你开始协调轮流照看长辈的时间。",
+          "stat": null,
+          "templateId": "middle-hometown-care"
+        },
+        {
+          "age": 59,
+          "text": "你听见有人谈退休，才开始认真查自己缴费的记录。",
+          "stat": null,
+          "templateId": "middle-work-6"
+        },
+        {
+          "age": 60,
+          "text": "你收好工作时常用的物件，开始重新安排一天的时间。",
+          "stat": null
+        },
+        {
+          "age": 60,
+          "text": "一次复诊要转几趟车，你提前一天把路线写好。",
+          "stat": null,
+          "templateId": "senior-day-15"
+        },
+        {
+          "age": 61,
+          "text": "早点摊的老板换成了年轻人，仍认得你爱吃哪一种。",
+          "stat": null,
+          "templateId": "senior-day-0"
+        },
+        {
+          "age": 62,
+          "text": "晚辈想学你做的菜，你边演示边说调味不用太着急。",
+          "stat": null,
+          "templateId": "senior-recipes"
+        },
+        {
+          "age": 63,
+          "text": "窗边的花又开了，你挪了挪花盆，让它多晒一会儿太阳。",
+          "stat": null,
+          "templateId": "senior-window"
+        },
+        {
+          "age": 63,
+          "text": "体检报告装进旧文件袋，你按医嘱在药盒上贴了标签。",
+          "stat": null,
+          "templateId": "senior-checkup"
+        },
+        {
+          "age": 64,
+          "text": "你不再赶早高峰出门，公交车空一些，能慢慢找个座位。",
+          "stat": null,
+          "templateId": "senior-day-8"
+        },
+        {
+          "age": 64,
+          "text": "夜里醒来，你没有立刻起身，等眼睛适应了灯光才慢慢坐起。",
+          "stat": null,
+          "templateId": "senior-day-29"
+        },
+        {
+          "age": 64,
+          "text": "你把用旧的衣服改成坐垫，针脚比年轻时慢了一些。",
+          "stat": null,
+          "templateId": "senior-day-3"
+        },
+        {
+          "age": 65,
+          "text": "邻居送来自己腌的菜，你把洗干净的罐子还回去，里面装了几颗水果。",
+          "stat": null,
+          "templateId": "senior-day-10"
+        },
+        {
+          "age": 65,
+          "text": "你把常吃的药列了清单，去不同科室时都随身带着。",
+          "stat": null,
+          "templateId": "senior-day-22"
+        },
+        {
+          "age": 66,
+          "text": "厨房的锅盖柄松了，你找来螺丝刀，修好后敲了敲试试。",
+          "stat": null,
+          "templateId": "senior-day-26"
+        },
+        {
+          "age": 66,
+          "text": "孩子陪你去复诊，坐在旁边把医生的话都记了下来。",
+          "stat": null,
+          "templateId": "senior-children-6"
+        },
+        {
+          "age": 67,
+          "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+          "stat": null,
+          "templateId": "senior-calendar"
+        },
+        {
+          "age": 67,
+          "text": "晚辈问起你的父母，你从柜子里取出那本封皮已经发脆的相册。",
+          "stat": null,
+          "templateId": "senior-children-5"
+        },
+        {
+          "age": 67,
+          "text": "孩子问你要不要搬过去住，你说先看看，晚上开始收拾一只小箱子。",
+          "stat": null,
+          "templateId": "senior-children-0"
+        },
+        {
+          "age": 68,
+          "text": "晨练的路走得慢了些，你在树荫下停下，和熟人打招呼。",
+          "stat": null,
+          "templateId": "senior-walk"
+        },
+        {
+          "age": 68,
+          "text": "视频结束后，你把手机靠在杯子旁，又看了一会儿刚才的截图。",
+          "stat": null,
+          "templateId": "senior-children-3"
+        },
+        {
+          "age": 69,
+          "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+          "stat": null,
+          "templateId": "senior-phone"
+        },
+        {
+          "age": 69,
+          "text": "窗边的花又开了，你挪了挪花盆，让它多晒一会儿太阳。",
+          "stat": null,
+          "templateId": "senior-window"
+        },
+        {
+          "age": 70,
+          "text": "体检报告装进旧文件袋，你按医嘱在药盒上贴了标签。",
+          "stat": null,
+          "templateId": "senior-checkup"
+        },
+        {
+          "age": 71,
+          "text": "广场的音乐响起，你没有急着加入，先在旁边跟着打拍子。",
+          "stat": null,
+          "templateId": "senior-dance"
+        },
+        {
+          "age": 71,
+          "text": "家里的门锁换了，你试开了几次，才把备用钥匙收好。",
+          "stat": null,
+          "templateId": "senior-day-6"
+        },
+        {
+          "age": 72,
+          "text": "健康讲座说起全国人均预期寿命，你听完那个数字，还是按自己的步子走回家。",
+          "stat": "health.life_expectancy",
+          "templateId": "senior-life-data"
+        },
+        {
+          "age": 72,
+          "text": "你整理旧书时读到自己年轻时的批注，认出了熟悉的字迹。",
+          "stat": null,
+          "templateId": "senior-day-24"
+        },
+        {
+          "age": 73,
+          "text": "你给一张模糊的合影写下名字，写到最后发现有两个人想不起来。",
+          "stat": null,
+          "templateId": "senior-day-12"
+        },
+        {
+          "age": 73,
+          "text": "你去社区量血压，把数值记在本子上，带给复诊的医生看。",
+          "stat": null,
+          "templateId": "senior-day-5"
+        },
+        {
+          "age": 74,
+          "text": "老朋友来串门，茶续了又续，你们又聊起年轻时的工作。",
+          "stat": null,
+          "templateId": "senior-old-friend"
+        },
+        {
+          "age": 74,
+          "text": "午觉醒来屋里很安静，你打开收音机，听完了一段天气预报。",
+          "stat": null,
+          "templateId": "senior-day-13"
+        },
+        {
+          "age": 74,
+          "text": "你不再赶早高峰出门，公交车空一些，能慢慢找个座位。",
+          "stat": null,
+          "templateId": "senior-day-8"
+        },
+        {
+          "age": 75,
+          "text": "日历翻过去一页，你想起有位老朋友很久没来，拨了个电话。",
+          "stat": null,
+          "templateId": "senior-day-2"
+        },
+        {
+          "age": 75,
+          "text": "一次复诊要转几趟车，你提前一天把路线写好。",
+          "stat": null,
+          "templateId": "senior-day-15"
+        },
+        {
+          "age": 75,
+          "text": "过节的消息一条条跳出来，你挑了几句最简单的话回复。",
+          "stat": null,
+          "templateId": "senior-day-23"
+        },
+        {
+          "age": 76,
+          "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+          "stat": null,
+          "templateId": "senior-phone"
+        },
+        {
+          "age": 76,
+          "text": "旧照片褪了色，你在背面补写还能记得的时间和地点。",
+          "stat": null,
+          "templateId": "senior-photo"
+        },
+        {
+          "age": 76,
+          "text": "视频结束后，你把手机靠在杯子旁，又看了一会儿刚才的截图。",
+          "stat": null,
+          "templateId": "senior-children-3"
+        },
+        {
+          "age": 77,
+          "text": "夜里醒来，你没有立刻起身，等眼睛适应了灯光才慢慢坐起。",
+          "stat": null,
+          "templateId": "senior-day-29"
+        },
+        {
+          "age": 78,
+          "text": "集市上的旧称换成了电子秤，你还是想多看一眼数字。",
+          "stat": null,
+          "templateId": "senior-day-16"
+        },
+        {
+          "age": 79,
+          "text": "你在窗边补衣服，线头穿不过针眼，换了副眼镜才看清。",
+          "stat": null,
+          "templateId": "senior-day-17"
+        },
+        {
+          "age": 80,
+          "text": "晚辈问起你的父母，你从柜子里取出那本封皮已经发脆的相册。",
+          "stat": null,
+          "templateId": "senior-children-5"
+        },
+        {
+          "age": 80,
+          "text": "你把冰箱里的食物分成小份，贴上日期，提醒自己不要放太久。",
+          "stat": null,
+          "templateId": "senior-day-28"
+        },
+        {
+          "age": 81,
+          "text": "你把医疗卡和证件放进小包，出门前又摸了一次拉链。",
+          "stat": null,
+          "templateId": "senior-day-14"
+        },
+        {
+          "age": 81,
+          "text": "孩子打电话来，你说没有什么事，只是刚好想听听声音。",
+          "stat": null,
+          "templateId": "senior-children-9"
+        },
+        {
+          "age": 82,
+          "text": "孩子陪你去复诊，坐在旁边把医生的话都记了下来。",
+          "stat": null,
+          "templateId": "senior-children-6"
+        },
+        {
+          "age": 83,
+          "text": "集市上的旧称换成了电子秤，你还是想多看一眼数字。",
+          "stat": null,
+          "templateId": "senior-day-16"
+        },
+        {
+          "age": 83,
+          "text": "广场的音乐响起，你没有急着加入，先在旁边跟着打拍子。",
+          "stat": null,
+          "templateId": "senior-dance"
+        },
+        {
+          "age": 84,
+          "text": "邻居送来自己腌的菜，你把洗干净的罐子还回去，里面装了几颗水果。",
+          "stat": null,
+          "templateId": "senior-day-10"
+        },
+        {
+          "age": 84,
+          "text": "楼下添了长椅，你走累了能坐一会儿，看人们来来往往。",
+          "stat": null,
+          "templateId": "senior-day-21"
+        },
+        {
+          "age": 85,
+          "text": "老友约你见面，最后因为一场雨改在下周，电话倒聊了很久。",
+          "stat": null,
+          "templateId": "senior-day-18"
+        },
+        {
+          "age": 86,
+          "text": "你把冰箱里的食物分成小份，贴上日期，提醒自己不要放太久。",
+          "stat": null,
+          "templateId": "senior-day-28"
+        },
+        {
+          "age": 87,
+          "text": "上楼时你歇了一会儿，决定下次少提一点东西。",
+          "stat": null,
+          "templateId": "senior-stairs"
+        },
+        {
+          "age": 87,
+          "text": "孩子打来视频，你先问吃饭没有，对方也问了同一句。",
+          "stat": null,
+          "templateId": "senior-family-call"
+        },
+        {
+          "age": 87,
+          "text": "日历翻过去一页，你想起有位老朋友很久没来，拨了个电话。",
+          "stat": null,
+          "templateId": "senior-day-2"
+        },
+        {
+          "age": 88,
+          "text": "你整理旧书时读到自己年轻时的批注，认出了熟悉的字迹。",
+          "stat": null,
+          "templateId": "senior-day-24"
+        },
+        {
+          "age": 89,
+          "text": "你把医疗卡和证件放进小包，出门前又摸了一次拉链。",
+          "stat": null,
+          "templateId": "senior-day-14"
+        },
+        {
+          "age": 89,
+          "text": "旧照片褪了色，你在背面补写还能记得的时间和地点。",
+          "stat": null,
+          "templateId": "senior-photo"
+        },
+        {
+          "age": 90,
+          "text": "你把家里的钥匙多配了一把，交给孩子时叮嘱别弄丢。",
+          "stat": null,
+          "templateId": "senior-children-7"
+        },
+        {
+          "age": 90,
+          "text": "你在窗边补衣服，线头穿不过针眼，换了副眼镜才看清。",
+          "stat": null,
+          "templateId": "senior-day-17"
+        },
+        {
+          "age": 90,
+          "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+          "stat": null,
+          "templateId": "senior-pension"
+        },
+        {
+          "age": 91,
+          "text": "午觉醒来屋里很安静，你打开收音机，听完了一段天气预报。",
+          "stat": null,
+          "templateId": "senior-day-13"
+        },
+        {
+          "age": 91,
+          "text": "91岁这一年，你因肺癌离开了。家人把你的旧照片收进了相册。",
+          "stat": "health.life_expectancy",
+          "node": "death"
+        }
+      ],
+      "history": [
+        {
+          "age": 0,
+          "happy": 65
+        },
+        {
+          "age": 1,
+          "happy": 66
+        },
+        {
+          "age": 2,
+          "happy": 66
+        },
+        {
+          "age": 3,
+          "happy": 69
+        },
+        {
+          "age": 4,
+          "happy": 71
+        },
+        {
+          "age": 5,
+          "happy": 71
+        },
+        {
+          "age": 6,
+          "happy": 71.8
+        },
+        {
+          "age": 7,
+          "happy": 71.8
+        },
+        {
+          "age": 8,
+          "happy": 73.8
+        },
+        {
+          "age": 9,
+          "happy": 74.6
+        },
+        {
+          "age": 10,
+          "happy": 74.6
+        },
+        {
+          "age": 11,
+          "happy": 75.3
+        },
+        {
+          "age": 12,
+          "happy": 77
+        },
+        {
+          "age": 13,
+          "happy": 80
+        },
+        {
+          "age": 14,
+          "happy": 79
+        },
+        {
+          "age": 15,
+          "happy": 80
+        },
+        {
+          "age": 16,
+          "happy": 81
+        },
+        {
+          "age": 17,
+          "happy": 82.8
+        },
+        {
+          "age": 18,
+          "happy": 82.8
+        },
+        {
+          "age": 19,
+          "happy": 82.5
+        },
+        {
+          "age": 20,
+          "happy": 85.3
+        },
+        {
+          "age": 21,
+          "happy": 85.3
+        },
+        {
+          "age": 22,
+          "happy": 85.3
+        },
+        {
+          "age": 23,
+          "happy": 87.3
+        },
+        {
+          "age": 24,
+          "happy": 87.3
+        },
+        {
+          "age": 25,
+          "happy": 90.3
+        },
+        {
+          "age": 26,
+          "happy": 92.1
+        },
+        {
+          "age": 27,
+          "happy": 95.1
+        },
+        {
+          "age": 28,
+          "happy": 96.1
+        },
+        {
+          "age": 29,
+          "happy": 96.1
+        },
+        {
+          "age": 30,
+          "happy": 99.1
+        },
+        {
+          "age": 31,
+          "happy": 99.8
+        },
+        {
+          "age": 32,
+          "happy": 100
+        },
+        {
+          "age": 33,
+          "happy": 100
+        },
+        {
+          "age": 34,
+          "happy": 100
+        },
+        {
+          "age": 35,
+          "happy": 100
+        },
+        {
+          "age": 36,
+          "happy": 100
+        },
+        {
+          "age": 37,
+          "happy": 100
+        },
+        {
+          "age": 38,
+          "happy": 100
+        },
+        {
+          "age": 39,
+          "happy": 98.7
+        },
+        {
+          "age": 40,
+          "happy": 99.7
+        },
+        {
+          "age": 41,
+          "happy": 100
+        },
+        {
+          "age": 42,
+          "happy": 100
+        },
+        {
+          "age": 43,
+          "happy": 100
+        },
+        {
+          "age": 44,
+          "happy": 99
+        },
+        {
+          "age": 45,
+          "happy": 100
+        },
+        {
+          "age": 46,
+          "happy": 100
+        },
+        {
+          "age": 47,
+          "happy": 100
+        },
+        {
+          "age": 48,
+          "happy": 100
+        },
+        {
+          "age": 49,
+          "happy": 100
+        },
+        {
+          "age": 50,
+          "happy": 100
+        },
+        {
+          "age": 51,
+          "happy": 99
+        },
+        {
+          "age": 52,
+          "happy": 100
+        },
+        {
+          "age": 53,
+          "happy": 100
+        },
+        {
+          "age": 54,
+          "happy": 100
+        },
+        {
+          "age": 55,
+          "happy": 100
+        },
+        {
+          "age": 56,
+          "happy": 100
+        },
+        {
+          "age": 57,
+          "happy": 100
+        },
+        {
+          "age": 58,
+          "happy": 100
+        },
+        {
+          "age": 59,
+          "happy": 100
+        },
+        {
+          "age": 60,
+          "happy": 100
+        },
+        {
+          "age": 61,
+          "happy": 100
+        },
+        {
+          "age": 62,
+          "happy": 100
+        },
+        {
+          "age": 63,
+          "happy": 100
+        },
+        {
+          "age": 64,
+          "happy": 100
+        },
+        {
+          "age": 65,
+          "happy": 100
+        },
+        {
+          "age": 66,
+          "happy": 100
+        },
+        {
+          "age": 67,
+          "happy": 100
+        },
+        {
+          "age": 68,
+          "happy": 100
+        },
+        {
+          "age": 69,
+          "happy": 100
+        },
+        {
+          "age": 70,
+          "happy": 99.7
+        },
+        {
+          "age": 71,
+          "happy": 100
+        },
+        {
+          "age": 72,
+          "happy": 100
+        },
+        {
+          "age": 73,
+          "happy": 100
+        },
+        {
+          "age": 74,
+          "happy": 100
+        },
+        {
+          "age": 75,
+          "happy": 100
+        },
+        {
+          "age": 76,
+          "happy": 100
+        },
+        {
+          "age": 77,
+          "happy": 100
+        },
+        {
+          "age": 78,
+          "happy": 100
+        },
+        {
+          "age": 79,
+          "happy": 100
+        },
+        {
+          "age": 80,
+          "happy": 100
+        },
+        {
+          "age": 81,
+          "happy": 100
+        },
+        {
+          "age": 82,
+          "happy": 100
+        },
+        {
+          "age": 83,
+          "happy": 100
+        },
+        {
+          "age": 84,
+          "happy": 100
+        },
+        {
+          "age": 85,
+          "happy": 100
+        },
+        {
+          "age": 86,
+          "happy": 100
+        },
+        {
+          "age": 87,
+          "happy": 100
+        },
+        {
+          "age": 88,
+          "happy": 100
+        },
+        {
+          "age": 89,
+          "happy": 100
+        },
+        {
+          "age": 90,
+          "happy": 100
+        },
+        {
+          "age": 91,
+          "happy": 100
+        }
+      ],
+      "pending": null,
+      "choices": [
+        {
+          "age": 15,
+          "decision": "school",
+          "choice": "general"
+        },
+        {
+          "age": 22,
+          "decision": "career",
+          "choice": "work"
+        },
+        {
+          "age": 25,
+          "decision": "city",
+          "choice": "县城"
+        },
+        {
+          "age": 29,
+          "decision": "marry",
+          "choice": "marry"
+        },
+        {
+          "age": 31,
+          "decision": "house",
+          "choice": "rent"
+        },
+        {
+          "age": 33,
+          "decision": "child",
+          "choice": "child"
+        },
+        {
+          "age": 35,
+          "decision": "midcareer",
+          "choice": "stay"
+        }
+      ],
+      "record": {
+        "junior": true,
+        "stage": false,
+        "general": false,
+        "completed": false,
+        "gaokao": false,
+        "admitted": false,
+        "elite": false,
+        "age22": "个体户",
+        "careerPlanAge": 22,
+        "job40": "个体户"
+      },
+      "repeatUsed": false,
+      "capture": true,
+      "verdictUsage": {
+        "verdict:school:chance:3": {
+          "count": 1,
+          "lastAge": 15
+        }
+      },
+      "mortgage": 0,
+      "peakIncome": 30576,
+      "industry": "business",
+      "retired": true,
+      "lastJob": "个体户",
+      "death": {
+        "category": "疾病",
+        "detail": "肺癌"
+      }
+    },
+    {
+      "name": "孙承宇",
+      "place": "饶平县",
+      "month": 8,
+      "templateUsage": {
+        "baby": {
+          "baby-used-clothes": {
+            "count": 1,
+            "lastAge": 1
+          },
+          "baby-vaccine": {
+            "count": 1,
+            "lastAge": 1
+          },
+          "baby-rain": {
+            "count": 1,
+            "lastAge": 2
+          },
+          "baby-first-question": {
+            "count": 1,
+            "lastAge": 2
+          },
+          "baby-checkup": {
+            "count": 1,
+            "lastAge": 3
+          },
+          "baby-library": {
+            "count": 1,
+            "lastAge": 4
+          },
+          "baby-birth-book": {
+            "count": 1,
+            "lastAge": 4
+          },
+          "baby-noodles": {
+            "count": 1,
+            "lastAge": 5
+          },
+          "baby-kindergarten": {
+            "count": 1,
+            "lastAge": 5
+          },
+          "baby-festival": {
+            "count": 1,
+            "lastAge": 5
+          }
+        },
+        "child": {
+          "child-absence": {
+            "count": 2,
+            "lastAge": 11
+          },
+          "child-eraser": {
+            "count": 1,
+            "lastAge": 7
+          },
+          "child-repaired-bag": {
+            "count": 1,
+            "lastAge": 7
+          },
+          "child-reading": {
+            "count": 1,
+            "lastAge": 8
+          },
+          "child-groceries": {
+            "count": 1,
+            "lastAge": 8
+          },
+          "child-team": {
+            "count": 1,
+            "lastAge": 8
+          },
+          "child-lantern": {
+            "count": 1,
+            "lastAge": 9
+          },
+          "child-summer": {
+            "count": 1,
+            "lastAge": 9
+          },
+          "child-parent-factory": {
+            "count": 1,
+            "lastAge": 10
+          },
+          "child-sports": {
+            "count": 1,
+            "lastAge": 11
+          },
+          "child-park": {
+            "count": 1,
+            "lastAge": 11
+          }
+        },
+        "junior": {
+          "junior-complete": {
+            "count": 1,
+            "lastAge": 12
+          },
+          "junior-finish-data": {
+            "count": 1,
+            "lastAge": 13
+          },
+          "junior-guidebook": {
+            "count": 1,
+            "lastAge": 14
+          },
+          "junior-bike-chain": {
+            "count": 1,
+            "lastAge": 14
+          },
+          "junior-mock": {
+            "count": 1,
+            "lastAge": 15
+          },
+          "junior-basketball": {
+            "count": 1,
+            "lastAge": 15
+          },
+          "junior-shoes": {
+            "count": 1,
+            "lastAge": 15
+          }
+        },
+        "high": {
+          "high-repair": {
+            "count": 1,
+            "lastAge": 16
+          },
+          "high-friend-note": {
+            "count": 1,
+            "lastAge": 17
+          }
+        },
+        "college": {
+          "college-fair": {
+            "count": 1,
+            "lastAge": 19
+          },
+          "college-laundry": {
+            "count": 1,
+            "lastAge": 19
+          },
+          "college-cheap-ticket": {
+            "count": 1,
+            "lastAge": 19
+          },
+          "college-call-home": {
+            "count": 1,
+            "lastAge": 20
+          },
+          "college-certificate": {
+            "count": 1,
+            "lastAge": 20
+          }
+        },
+        "adult": {
+          "adult-day-off": {
+            "count": 1,
+            "lastAge": 23
+          },
+          "adult-mother-2": {
+            "count": 1,
+            "lastAge": 23
+          },
+          "adult-parents-1": {
+            "count": 1,
+            "lastAge": 23
+          },
+          "adult-long-plan": {
+            "count": 1,
+            "lastAge": 24
+          },
+          "adult-pay": {
+            "count": 1,
+            "lastAge": 25
+          },
+          "adult-parents-2": {
+            "count": 1,
+            "lastAge": 25
+          },
+          "adult-mother-4": {
+            "count": 2,
+            "lastAge": 34
+          },
+          "adult-room-7": {
+            "count": 1,
+            "lastAge": 27
+          },
+          "adult-room-3": {
+            "count": 1,
+            "lastAge": 27
+          },
+          "adult-room-10": {
+            "count": 1,
+            "lastAge": 27
+          },
+          "adult-match": {
+            "count": 1,
+            "lastAge": 28
+          },
+          "adult-parents-3": {
+            "count": 1,
+            "lastAge": 29
+          },
+          "adult-room-4": {
+            "count": 1,
+            "lastAge": 29
+          },
+          "adult-room-1": {
+            "count": 1,
+            "lastAge": 29
+          },
+          "adult-parents-4": {
+            "count": 1,
+            "lastAge": 30
+          },
+          "adult-room-2": {
+            "count": 1,
+            "lastAge": 30
+          },
+          "adult-rent": {
+            "count": 1,
+            "lastAge": 30
+          },
+          "adult-room-11": {
+            "count": 1,
+            "lastAge": 31
+          },
+          "adult-room-9": {
+            "count": 1,
+            "lastAge": 32
+          },
+          "adult-room-0": {
+            "count": 1,
+            "lastAge": 33
+          },
+          "adult-move": {
+            "count": 1,
+            "lastAge": 33
+          },
+          "adult-marriage": {
+            "count": 1,
+            "lastAge": 33
+          },
+          "adult-room-5": {
+            "count": 1,
+            "lastAge": 35
+          }
+        },
+        "middle": {
+          "middle-ordinary-9": {
+            "count": 1,
+            "lastAge": 36
+          },
+          "middle-mother-5": {
+            "count": 1,
+            "lastAge": 36
+          },
+          "middle-delivery": {
+            "count": 2,
+            "lastAge": 46
+          },
+          "middle-ordinary-2": {
+            "count": 2,
+            "lastAge": 58
+          },
+          "middle-ordinary-8": {
+            "count": 2,
+            "lastAge": 44
+          },
+          "middle-exercise": {
+            "count": 1,
+            "lastAge": 38
+          },
+          "middle-retrain": {
+            "count": 2,
+            "lastAge": 53
+          },
+          "middle-work-2": {
+            "count": 1,
+            "lastAge": 39
+          },
+          "middle-ordinary-12": {
+            "count": 2,
+            "lastAge": 59
+          },
+          "middle-mother-0": {
+            "count": 2,
+            "lastAge": 50
+          },
+          "middle-ordinary-1": {
+            "count": 1,
+            "lastAge": 40
+          },
+          "middle-dinner": {
+            "count": 2,
+            "lastAge": 53
+          },
+          "middle-work-1": {
+            "count": 2,
+            "lastAge": 51
+          },
+          "middle-young-job": {
+            "count": 2,
+            "lastAge": 51
+          },
+          "middle-child-8": {
+            "count": 1,
+            "lastAge": 41
+          },
+          "middle-child-0": {
+            "count": 2,
+            "lastAge": 55
+          },
+          "middle-mother-1": {
+            "count": 2,
+            "lastAge": 52
+          },
+          "middle-old-friend": {
+            "count": 1,
+            "lastAge": 42
+          },
+          "middle-child-3": {
+            "count": 2,
+            "lastAge": 51
+          },
+          "middle-ordinary-10": {
+            "count": 1,
+            "lastAge": 43
+          },
+          "middle-ordinary-7": {
+            "count": 2,
+            "lastAge": 55
+          },
+          "middle-work-6": {
+            "count": 1,
+            "lastAge": 44
+          },
+          "middle-child-1": {
+            "count": 1,
+            "lastAge": 44
+          },
+          "middle-child-2": {
+            "count": 1,
+            "lastAge": 45
+          },
+          "middle-new-skills": {
+            "count": 1,
+            "lastAge": 45
+          },
+          "middle-work-3": {
+            "count": 1,
+            "lastAge": 46
+          },
+          "middle-ordinary-6": {
+            "count": 1,
+            "lastAge": 47
+          },
+          "middle-mother-6": {
+            "count": 1,
+            "lastAge": 48
+          },
+          "middle-work-7": {
+            "count": 2,
+            "lastAge": 54
+          },
+          "middle-ordinary-14": {
+            "count": 1,
+            "lastAge": 49
+          },
+          "middle-ordinary-5": {
+            "count": 2,
+            "lastAge": 57
+          },
+          "middle-child-9": {
+            "count": 1,
+            "lastAge": 53
+          },
+          "middle-health-file": {
+            "count": 1,
+            "lastAge": 54
+          },
+          "middle-future-plan": {
+            "count": 1,
+            "lastAge": 54
+          },
+          "middle-ordinary-4": {
+            "count": 1,
+            "lastAge": 56
+          },
+          "middle-work-0": {
+            "count": 1,
+            "lastAge": 57
+          },
+          "middle-ordinary-0": {
+            "count": 1,
+            "lastAge": 57
+          },
+          "middle-ordinary-13": {
+            "count": 1,
+            "lastAge": 58
+          },
+          "middle-work-5": {
+            "count": 1,
+            "lastAge": 58
+          },
+          "middle-savings": {
+            "count": 1,
+            "lastAge": 59
+          }
+        },
+        "senior": {
+          "senior-children-3": {
+            "count": 1,
+            "lastAge": 60
+          },
+          "senior-dance": {
+            "count": 1,
+            "lastAge": 61
+          },
+          "senior-pension": {
+            "count": 1,
+            "lastAge": 61
+          },
+          "senior-day-17": {
+            "count": 1,
+            "lastAge": 61
+          },
+          "senior-day-0": {
+            "count": 1,
+            "lastAge": 62
+          },
+          "senior-recipes": {
+            "count": 1,
+            "lastAge": 62
+          },
+          "senior-doctor": {
+            "count": 1,
+            "lastAge": 63
+          },
+          "senior-children-9": {
+            "count": 1,
+            "lastAge": 63
+          },
+          "senior-day-16": {
+            "count": 1,
+            "lastAge": 64
+          },
+          "senior-photo": {
+            "count": 1,
+            "lastAge": 65
+          },
+          "senior-day-10": {
+            "count": 1,
+            "lastAge": 66
+          },
+          "senior-day-25": {
+            "count": 1,
+            "lastAge": 66
+          }
+        }
+      },
+      "id": "粤-2026-410636·二代",
+      "seed": 2801848279,
+      "year": 2059,
+      "rngState": 3358848618,
+      "age": 66,
+      "alive": false,
+      "sex": "male",
+      "province": "广东",
+      "tier": "C",
+      "hukou": "urban",
+      "wealthQ": 1,
+      "parents": {
+        "mother": {
+          "name": "孙可欣",
+          "sex": "female",
+          "age": 91,
+          "birthAge": 33,
+          "job": "个体户",
+          "education": "初中及以下",
+          "alive": false,
+          "health": 0,
+          "away": false,
+          "storyDeathAge": 91,
+          "previousPlayer": true,
+          "diedAt": 58
+        },
+        "father": {
+          "name": "陈知远",
+          "sex": "male",
+          "birthAge": 30,
+          "age": 66,
+          "job": "工人",
+          "education": "初中及以下",
+          "income": 33440,
+          "assets": 0,
+          "alive": false,
+          "health": 0,
+          "away": false,
+          "diedAt": 36
+        }
+      },
+      "leftBehind": false,
+      "siblings": 2,
+      "attrs": {
+        "health": 91.39999999999975,
+        "happy": 100,
+        "knowledge": 53.099999999999916,
+        "social": 68.04999999999988,
+        "grind": 66
+      },
+      "gradePct": 21.60429184567191,
+      "edu": "junior",
+      "job": "退休",
+      "income": 36000,
+      "assets": 54680,
+      "city": "省会",
+      "married": true,
+      "kids": [
+        {
+          "bornAt": 33,
+          "hukou": "urban",
+          "wealthQ": 2
+        }
+      ],
+      "log": [
+        {
+          "age": 0,
+          "text": "2059年8月，你出生在广东饶平县的城区，名字叫孙承宇。你出生时，爸爸陈知远当时30岁，在工厂上班；妈妈孙可欣当时33岁，经营自己的小生意。那时家里的收入不宽裕，大笔支出都要提前攒钱。小时候，你和父母一起生活。",
+          "stat": null,
+          "node": "birth"
+        },
+        {
+          "age": 1,
+          "text": "妈妈孙可欣把你抱到窗边，教你辨认回家的那条路。",
+          "stat": null,
+          "templateId": "family-care-1",
+          "node": "familyCare",
+          "relative": "妈妈",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 1,
+          "text": "亲戚送来一袋小衣服，袖口折好，穿起来也很暖。",
+          "stat": null,
+          "templateId": "baby-used-clothes"
+        },
+        {
+          "age": 1,
+          "text": "接种本夹在户口本里，家人怕忘记，提前把它放进布袋。",
+          "stat": null,
+          "templateId": "baby-vaccine"
+        },
+        {
+          "age": 2,
+          "text": "妈妈孙可欣给你留了一只小碗，吃饭时总让你坐在伸手够得到的地方。",
+          "stat": null,
+          "templateId": "family-care-2",
+          "node": "familyCare",
+          "relative": "妈妈",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 2,
+          "text": "雨水从屋檐落下来，你蹲在门口看蚂蚁搬走饼干屑。",
+          "stat": null,
+          "templateId": "baby-rain"
+        },
+        {
+          "age": 2,
+          "text": "你反复问月亮为什么跟着人走，家人陪你走到了楼下。",
+          "stat": null,
+          "templateId": "baby-first-question"
+        },
+        {
+          "age": 3,
+          "text": "妈妈孙可欣牵着你去买菜，回家路上让你慢慢数过街的台阶。",
+          "stat": null,
+          "templateId": "family-care-3",
+          "node": "familyCare",
+          "relative": "妈妈",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 3,
+          "text": "社区体检时，你攥着小拳头，医生在生长曲线上画下一个点。",
+          "stat": null,
+          "templateId": "baby-checkup"
+        },
+        {
+          "age": 4,
+          "text": "妈妈孙可欣收好你的第一张画，夹进了家里的旧相册。",
+          "stat": null,
+          "templateId": "family-care-4",
+          "node": "familyCare",
+          "relative": "妈妈",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 4,
+          "text": "儿童阅览室的地垫很软，你挑了一本封面有小羊的绘本。",
+          "stat": null,
+          "templateId": "baby-library"
+        },
+        {
+          "age": 4,
+          "text": "家人翻到一份全国出生人口的历史记录，看过那个大数字，又转头看看身边小小的你。",
+          "stat": "births.national_2024",
+          "templateId": "baby-birth-book"
+        },
+        {
+          "age": 5,
+          "text": "妈妈孙可欣替你缝好书包的带子，说读书要带的东西都放得下。",
+          "stat": null,
+          "templateId": "family-care-5",
+          "node": "familyCare",
+          "relative": "妈妈",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 5,
+          "text": "厨房里飘来面汤的味道，你搬着小板凳等晚饭。",
+          "stat": null,
+          "templateId": "baby-noodles"
+        },
+        {
+          "age": 5,
+          "text": "幼儿园午睡时，你把家里带来的小毛巾压在枕头下面。",
+          "stat": null,
+          "templateId": "baby-kindergarten"
+        },
+        {
+          "age": 5,
+          "text": "元宵节，家人教你捏汤圆，你的那颗总是不够圆。",
+          "stat": null,
+          "templateId": "baby-festival"
+        },
+        {
+          "age": 6,
+          "text": "妈妈孙可欣陪你走到学校门口，等你进了教室才转身。",
+          "stat": null,
+          "templateId": "family-care-6",
+          "node": "familyCare",
+          "relative": "妈妈",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 6,
+          "text": "你生病请了假，同桌把当天的课堂笔记送到家门口。",
+          "stat": null,
+          "templateId": "child-absence"
+        },
+        {
+          "age": 7,
+          "text": "妈妈孙可欣翻出自己年轻时的照片，你第一次知道大人也曾是个孩子。",
+          "stat": null,
+          "templateId": "family-care-7",
+          "node": "familyCare",
+          "relative": "妈妈",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 7,
+          "text": "同桌把橡皮掰了一半给你，你们在课间又和好了。",
+          "stat": null,
+          "templateId": "child-eraser"
+        },
+        {
+          "age": 7,
+          "text": "书包拉链坏了，家人缝上一根绳子，你又背着它去上学。",
+          "stat": null,
+          "templateId": "child-repaired-bag"
+        },
+        {
+          "age": 8,
+          "text": "妈妈孙可欣小时候常常等父母回家。如今放学时，校门口总有人等你。",
+          "stat": null,
+          "templateId": "family-care-8",
+          "node": "familyCare",
+          "relative": "妈妈",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 8,
+          "text": "老师在讲台边放了一个旧书箱，你借走的书有很多折角。",
+          "stat": null,
+          "templateId": "child-reading"
+        },
+        {
+          "age": 8,
+          "text": "你第一次独自去楼下买盐，找零被你数了又数。",
+          "stat": null,
+          "templateId": "child-groceries"
+        },
+        {
+          "age": 8,
+          "text": "班里排节目，你站在队伍边上，终于记住了最后一个动作。",
+          "stat": null,
+          "templateId": "child-team"
+        },
+        {
+          "age": 9,
+          "text": "妈妈孙可欣陪你把错题重新读了一遍，没催你立刻给出答案。",
+          "stat": null,
+          "templateId": "family-care-9",
+          "node": "familyCare",
+          "relative": "妈妈",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 9,
+          "text": "学校让做手工灯笼，你和家人把旧挂历裁成细细的纸条。",
+          "stat": null,
+          "templateId": "child-lantern"
+        },
+        {
+          "age": 9,
+          "text": "暑假的风扇吱呀作响，你在练习册边上画了一整页小人。",
+          "stat": null,
+          "templateId": "child-summer"
+        },
+        {
+          "age": 10,
+          "text": "妈妈孙可欣讲起自己当年求学的路，你把这些故事写进了作文。",
+          "stat": null,
+          "templateId": "family-care-10",
+          "node": "familyCare",
+          "relative": "妈妈",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 10,
+          "text": "爸爸下了夜班才睡，你进门时轻轻把书包放在地上。",
+          "stat": null,
+          "templateId": "child-parent-factory"
+        },
+        {
+          "age": 11,
+          "text": "妈妈孙可欣替你把水壶装满，叮嘱你路上慢一点。",
+          "stat": null,
+          "templateId": "family-care-11",
+          "node": "familyCare",
+          "relative": "妈妈",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 11,
+          "text": "你生病请了假，同桌把当天的课堂笔记送到家门口。",
+          "stat": null,
+          "templateId": "child-absence"
+        },
+        {
+          "age": 11,
+          "text": "运动会上你没拿名次，跑完后同学还是把水递了过来。",
+          "stat": null,
+          "templateId": "child-sports"
+        },
+        {
+          "age": 11,
+          "text": "家人带你去公园，你把落叶夹进语文书当书签。",
+          "stat": null,
+          "templateId": "child-park"
+        },
+        {
+          "age": 12,
+          "text": "妈妈孙可欣坐在灯下听你说学校的事，这一天没有急着打断你。",
+          "stat": null,
+          "templateId": "family-care-12",
+          "node": "familyCare",
+          "relative": "妈妈",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 12,
+          "text": "学校核对毕业资料，你认真把姓名和证件号码又看了一遍。",
+          "stat": null,
+          "templateId": "junior-complete"
+        },
+        {
+          "age": 13,
+          "text": "班主任说起读完义务教育的重要，把毕业前需要补交的材料写在黑板上。",
+          "stat": "education.compulsory_retention",
+          "templateId": "junior-finish-data"
+        },
+        {
+          "age": 14,
+          "text": "亲戚送来的旧教辅有很多批注，你在空白处写自己的解法。",
+          "stat": null,
+          "templateId": "junior-guidebook"
+        },
+        {
+          "age": 14,
+          "text": "自行车掉了链子，同学蹲下来帮忙，手上沾满黑油。",
+          "stat": null,
+          "templateId": "junior-bike-chain"
+        },
+        {
+          "age": 15,
+          "text": "你完成初中学业，拿到了毕业证，接下来要面对中考。",
+          "stat": "education.compulsory_retention",
+          "node": "junior"
+        },
+        {
+          "age": 15,
+          "text": "模拟考成绩贴在教室后墙，你先看自己的名字，再看下一次考试日期。",
+          "stat": null,
+          "templateId": "junior-mock"
+        },
+        {
+          "age": 15,
+          "text": "傍晚的球场只剩半边有光，你们仍然多打了一会儿。",
+          "stat": null,
+          "templateId": "junior-basketball"
+        },
+        {
+          "age": 15,
+          "text": "体育课的鞋底磨平了，家人说周末带你去买新的。",
+          "stat": null,
+          "templateId": "junior-shoes"
+        },
+        {
+          "age": 15,
+          "text": "你选择了「争取普通高中」。",
+          "stat": null
+        },
+        {
+          "age": 15,
+          "text": "结果页刷新了几次，答案没有变化。这次竞争没有给你留下位置。你的全日制求学在这里停了下来。",
+          "stat": "education.general_hs_rate",
+          "node": "school",
+          "reason": "chance",
+          "outcome": "leave",
+          "dominant": "chance",
+          "contributions": {
+            "base": 2.522076764416852,
+            "wealth": -0.568964182228592,
+            "hukou": 0.0346909316982783
+          },
+          "probability": 0.8795105660610244,
+          "draw": 0.998728294391185,
+          "templateId": "verdict:school:chance:2",
+          "dice": [
+            {
+              "id": "school-stage",
+              "label": "高中阶段升学概率",
+              "p": 0.8795105660610244,
+              "u": 0.998728294391185,
+              "pass": false,
+              "contributions": {
+                "base": 2.522076764416852,
+                "wealth": -0.568964182228592,
+                "hukou": 0.0346909316982783
+              },
+              "factors": [
+                {
+                  "key": "wealth",
+                  "label": "家境",
+                  "logit": -0.568964182228592,
+                  "delta": -0.04851629485004849,
+                  "pp": -4.85162948500485
+                },
+                {
+                  "key": "hukou",
+                  "label": "求学条件",
+                  "logit": 0.0346909316982783,
+                  "delta": 0.0037249252803140953,
+                  "pp": 0.37249252803140953
+                }
+              ],
+              "positive": true,
+              "successLabel": "继续升学",
+              "failureLabel": "未能继续升学",
+              "nearMiss": false,
+              "closePass": false,
+              "gap": 0.11921772833016064
+            }
+          ]
+        },
+        {
+          "age": 16,
+          "text": "旧台灯闪了几次，家人换好灯泡，说这盏还能用。",
+          "stat": null,
+          "templateId": "high-repair"
+        },
+        {
+          "age": 17,
+          "text": "好友把鼓励的话写在便签背面，贴在你的水杯上。",
+          "stat": null,
+          "templateId": "high-friend-note"
+        },
+        {
+          "age": 19,
+          "text": "招聘会入口排着队，你把简历压平，又检查了一遍联系方式。",
+          "stat": null,
+          "templateId": "college-fair"
+        },
+        {
+          "age": 19,
+          "text": "晾衣绳上空出一个位置，你突然觉得自己已经习惯独自生活。",
+          "stat": null,
+          "templateId": "college-laundry"
+        },
+        {
+          "age": 19,
+          "text": "为买到便宜车票，你提前把回家的日期写在日历上。",
+          "stat": null,
+          "templateId": "college-cheap-ticket"
+        },
+        {
+          "age": 20,
+          "text": "给家里打电话，你说一切都好，挂掉后才想起没吃晚饭。",
+          "stat": null,
+          "templateId": "college-call-home"
+        },
+        {
+          "age": 20,
+          "text": "技能证书领到手，你先拍照发进家里的群。",
+          "stat": null,
+          "templateId": "college-certificate"
+        },
+        {
+          "age": 22,
+          "text": "你选择了「找一份工作」。",
+          "stat": null
+        },
+        {
+          "age": 22,
+          "text": "第一份稳定下来的工作是本地服务业。你开始算，到手的钱够不够房租和寄回家的那一笔。",
+          "stat": "career.youth_unemployment",
+          "node": "career",
+          "templateId": "career-22-work-本地服务业",
+          "reason": "本地服务业"
+        },
+        {
+          "age": 23,
+          "text": "休息日你把工作群设成免打扰，去河边慢慢走了一段。",
+          "stat": null,
+          "templateId": "adult-day-off"
+        },
+        {
+          "age": 23,
+          "text": "你给母亲买了双鞋，她先问价钱，试穿时却走了好几个来回。",
+          "stat": null,
+          "templateId": "adult-mother-2"
+        },
+        {
+          "age": 23,
+          "text": "爸爸陈知远的工作服袖口磨白了。你提起换新的，他说等下次。",
+          "stat": null,
+          "templateId": "adult-parents-1"
+        },
+        {
+          "age": 24,
+          "text": "体检后你把报告收好，和家人商量下次休假一起出去走走。",
+          "stat": null,
+          "templateId": "adult-long-plan"
+        },
+        {
+          "age": 25,
+          "text": "工资到账，你先把房租和给家里的钱分开，才看剩余金额。",
+          "stat": null,
+          "templateId": "adult-pay"
+        },
+        {
+          "age": 25,
+          "text": "父亲把一袋家里的土产塞进你的行李，你说太重，最后还是背上了。",
+          "stat": null,
+          "templateId": "adult-parents-2"
+        },
+        {
+          "age": 25,
+          "text": "你选择了「省会」。",
+          "stat": null
+        },
+        {
+          "age": 25,
+          "text": "你把生活搬到了省会。",
+          "stat": null
+        },
+        {
+          "age": 26,
+          "text": "你和母亲因为过年回哪儿拌了几句嘴，第二天还是先给她打了电话。",
+          "stat": null,
+          "templateId": "adult-mother-4"
+        },
+        {
+          "age": 27,
+          "text": "报销款迟迟没下来，你删掉购物车里的东西，先留够这个月的饭钱。",
+          "stat": null,
+          "templateId": "adult-room-7"
+        },
+        {
+          "age": 27,
+          "text": "你算着去公司的最后一班车，没参加同事临时约的那顿饭。",
+          "stat": null,
+          "templateId": "adult-room-3"
+        },
+        {
+          "age": 27,
+          "text": "你换了手机号码，挨个通知常联系的人，发现名单比想象的短。",
+          "stat": null,
+          "templateId": "adult-room-10"
+        },
+        {
+          "age": 28,
+          "text": "相亲时，你们先聊通勤，再聊以后想住在哪里。",
+          "stat": null,
+          "templateId": "adult-match"
+        },
+        {
+          "age": 29,
+          "text": "你教父亲把工作地点存进地图，他把截图留在相册的第一张。",
+          "stat": null,
+          "templateId": "adult-parents-3"
+        },
+        {
+          "age": 29,
+          "text": "搬家时你舍不得扔的东西装满一箱，最后还是留下了那口小电锅。",
+          "stat": null,
+          "templateId": "adult-room-4"
+        },
+        {
+          "age": 29,
+          "text": "租房合同快到期，你拍下水表和电表，把押金条单独收好。",
+          "stat": null,
+          "templateId": "adult-room-1"
+        },
+        {
+          "age": 29,
+          "text": "你选择了「尝试相亲与结婚」。",
+          "stat": null
+        },
+        {
+          "age": 29,
+          "text": "你们一起添置锅碗，开始商量两个人的日子。",
+          "stat": null
+        },
+        {
+          "age": 30,
+          "text": "父亲问你工作累不累，你们都先笑了，过了一会儿才继续说。",
+          "stat": null,
+          "templateId": "adult-parents-4"
+        },
+        {
+          "age": 30,
+          "text": "凌晨楼下的卷帘门拉开，你才发现自己还没睡，手机上是明天的排班。",
+          "stat": null,
+          "templateId": "adult-room-2"
+        },
+        {
+          "age": 30,
+          "text": "房东问要不要续租，你把通勤路线和搬家费用列在便签上。",
+          "stat": null,
+          "templateId": "adult-rent"
+        },
+        {
+          "age": 31,
+          "text": "工资单上的实发金额和你算的不一样，你第一次认真去问扣款明细。",
+          "stat": null,
+          "templateId": "adult-room-11"
+        },
+        {
+          "age": 31,
+          "text": "你选择了「继续租住」。",
+          "stat": null
+        },
+        {
+          "age": 31,
+          "text": "你续签了租房合同。",
+          "stat": null
+        },
+        {
+          "age": 32,
+          "text": "午休时你给家里回电话，说这边天气不错，没有提起刚才挨的批评。",
+          "stat": null,
+          "templateId": "adult-room-9"
+        },
+        {
+          "age": 33,
+          "text": "合租室友搬走了，客厅空出一角；你先问房东接下来的房租怎么算。",
+          "stat": null,
+          "templateId": "adult-room-0"
+        },
+        {
+          "age": 33,
+          "text": "搬家箱子上写着厨房和卧室，你先拆开了装电饭煲的那箱。",
+          "stat": null,
+          "templateId": "adult-move"
+        },
+        {
+          "age": 33,
+          "text": "朋友的婚礼请柬发来，群里开始讨论谁坐哪班车回去。",
+          "stat": null,
+          "templateId": "adult-marriage"
+        },
+        {
+          "age": 33,
+          "text": "你选择了「迎接孩子」。",
+          "stat": null
+        },
+        {
+          "age": 33,
+          "text": "孩子出生了。你的孩子出生时，家里的条件是：住在城里，收入紧张，每一笔学费都要提前攒。",
+          "stat": null
+        },
+        {
+          "age": 34,
+          "text": "你和母亲因为过年回哪儿拌了几句嘴，第二天还是先给她打了电话。",
+          "stat": null,
+          "templateId": "adult-mother-4"
+        },
+        {
+          "age": 35,
+          "text": "新住处隔音不好，隔壁的闹钟响起时，你也跟着醒了。",
+          "stat": null,
+          "templateId": "adult-room-5"
+        },
+        {
+          "age": 35,
+          "text": "你选择了「继续现在的工作」。",
+          "stat": null
+        },
+        {
+          "age": 35,
+          "text": "这一轮调整后，你仍在做本地服务业。工资没有中断，家里的开支也还要按月安排。",
+          "stat": null,
+          "node": "midcareer",
+          "industry": "service",
+          "probability": 0.12,
+          "contributions": {
+            "industry": 0.12
+          },
+          "footnote": "本次人生计算中，这一行业在35岁节点的岗位中断风险为 12%。来源：本地岗位风险参数；不是行业调查结果。",
+          "draw": 0.19026840920560062,
+          "dice": [
+            {
+              "id": "midcareer",
+              "label": "本次岗位中断概率",
+              "p": 0.12,
+              "u": 0.19026840920560062,
+              "pass": false,
+              "contributions": {
+                "base": -1.9924301646902063,
+                "industry": 0
+              },
+              "factors": [],
+              "positive": false,
+              "successLabel": "岗位中断",
+              "failureLabel": "岗位保留",
+              "nearMiss": false,
+              "closePass": false,
+              "gap": 0.07026840920560062
+            }
+          ],
+          "templateId": "midcareer-retained",
+          "reason": "retained_service"
+        },
+        {
+          "age": 36,
+          "text": "爸爸陈知远在66岁离开了。你翻出家里的旧照片，才发现许多话还没有来得及说。",
+          "stat": "health.life_expectancy_by_sex",
+          "node": "parentDeath"
+        },
+        {
+          "age": 36,
+          "text": "朋友借钱，你答应之前先看了下个月的还款日。",
+          "stat": null,
+          "templateId": "middle-ordinary-9"
+        },
+        {
+          "age": 36,
+          "text": "你发现母亲的电话号码本已经写满，给她买了新的，又怕她找不到旧号码。",
+          "stat": null,
+          "templateId": "middle-mother-5"
+        },
+        {
+          "age": 37,
+          "text": "你帮熟人研究送餐路线，才发现每个路口的等待都要算时间。",
+          "stat": null,
+          "templateId": "middle-delivery"
+        },
+        {
+          "age": 37,
+          "text": "旧同事发来聚会照片，你认出了几张脸，剩下的人想了很久。",
+          "stat": null,
+          "templateId": "middle-ordinary-2"
+        },
+        {
+          "age": 38,
+          "text": "你和家人因为一笔支出争了几句，饭后又坐下来重新算账。",
+          "stat": null,
+          "templateId": "middle-ordinary-8"
+        },
+        {
+          "age": 38,
+          "text": "体检提醒你多活动，你把久没穿的运动鞋重新擦干净。",
+          "stat": null,
+          "templateId": "middle-exercise"
+        },
+        {
+          "age": 38,
+          "text": "转岗培训需要重新做笔记，你把听不懂的地方用笔标出来。",
+          "stat": null,
+          "templateId": "middle-retrain"
+        },
+        {
+          "age": 39,
+          "text": "聚餐时年轻同事聊起新的工具，你回家后找了教程。",
+          "stat": null,
+          "templateId": "middle-work-2"
+        },
+        {
+          "age": 39,
+          "text": "你把重要证件装进同一个袋子，告诉家人平时放在哪里。",
+          "stat": null,
+          "templateId": "middle-ordinary-12"
+        },
+        {
+          "age": 39,
+          "text": "妈妈孙可欣不再一口气提起整桶水，你把小水壶放在她顺手的位置。",
+          "stat": null,
+          "templateId": "middle-mother-0"
+        },
+        {
+          "age": 40,
+          "text": "存折上的数字慢慢变长了，你却仍在超市比较两袋米的价钱。",
+          "stat": null,
+          "templateId": "middle-ordinary-1"
+        },
+        {
+          "age": 40,
+          "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+          "stat": null,
+          "templateId": "middle-dinner"
+        },
+        {
+          "age": 41,
+          "text": "你把工作资料分门放好，想让接手的人少走一些弯路。",
+          "stat": null,
+          "templateId": "middle-work-1"
+        },
+        {
+          "age": 41,
+          "text": "年轻亲戚请你帮忙看看简历，你把联系方式一栏单独圈出来。",
+          "stat": null,
+          "templateId": "middle-young-job"
+        },
+        {
+          "age": 41,
+          "text": "孩子问你当年为什么没继续读，你讲到一半，停下想了一会儿。",
+          "stat": null,
+          "templateId": "middle-child-8"
+        },
+        {
+          "age": 42,
+          "text": "孩子的试卷折了角，你先问他吃没吃饭，再一起看错在哪里。",
+          "stat": null,
+          "templateId": "middle-child-0"
+        },
+        {
+          "age": 42,
+          "text": "母亲的常用药换了包装，你和药师核对清楚，把服用时间写大一些。",
+          "stat": null,
+          "templateId": "middle-mother-1"
+        },
+        {
+          "age": 42,
+          "text": "旧相识来到附近，你们吃了顿便饭，话题从近况慢慢聊到家人。",
+          "stat": null,
+          "templateId": "middle-old-friend"
+        },
+        {
+          "age": 43,
+          "text": "你接到班主任的电话，走到楼道里，听完后才回去继续工作。",
+          "stat": null,
+          "templateId": "middle-child-3"
+        },
+        {
+          "age": 43,
+          "text": "你在药店报了自己的年龄，听见那个数字时突然停了一下。",
+          "stat": null,
+          "templateId": "middle-ordinary-10"
+        },
+        {
+          "age": 43,
+          "text": "你翻出年轻时写的计划，有些已经完成，有些连自己都忘了。",
+          "stat": null,
+          "templateId": "middle-ordinary-7"
+        },
+        {
+          "age": 44,
+          "text": "你听见有人谈退休，才开始认真查自己缴费的记录。",
+          "stat": null,
+          "templateId": "middle-work-6"
+        },
+        {
+          "age": 44,
+          "text": "你在家长群里看完通知，才发现明早还需要交一份手写材料。",
+          "stat": null,
+          "templateId": "middle-child-1"
+        },
+        {
+          "age": 44,
+          "text": "你和家人因为一笔支出争了几句，饭后又坐下来重新算账。",
+          "stat": null,
+          "templateId": "middle-ordinary-8"
+        },
+        {
+          "age": 45,
+          "text": "孩子想报的兴趣班和补课时间撞了，你们坐下来听他把话说完。",
+          "stat": null,
+          "templateId": "middle-child-2"
+        },
+        {
+          "age": 45,
+          "text": "同事准备继续读书，你也找来专业课教材，试着翻了开头。",
+          "stat": null,
+          "templateId": "middle-new-skills"
+        },
+        {
+          "age": 46,
+          "text": "工作上的称呼慢慢从名字变成了师傅，你一开始还不太习惯。",
+          "stat": null,
+          "templateId": "middle-work-3"
+        },
+        {
+          "age": 46,
+          "text": "你帮熟人研究送餐路线，才发现每个路口的等待都要算时间。",
+          "stat": null,
+          "templateId": "middle-delivery"
+        },
+        {
+          "age": 47,
+          "text": "家里水管漏了，师傅拆开墙角时，你拿盆接了整整一晚。",
+          "stat": null,
+          "templateId": "middle-ordinary-6"
+        },
+        {
+          "age": 48,
+          "text": "孩子也到了中考的年纪。你陪着孩子翻招生简章，想起自己当年的那张志愿表。",
+          "stat": "education.general_hs_rate"
+        },
+        {
+          "age": 48,
+          "text": "母亲说不想添麻烦，你没有劝太多，只把下次接她的时间定了下来。",
+          "stat": null,
+          "templateId": "middle-mother-6"
+        },
+        {
+          "age": 49,
+          "text": "一笔欠款到账后，你先补齐了拖着的维修费，才松了口气。",
+          "stat": null,
+          "templateId": "middle-work-7"
+        },
+        {
+          "age": 49,
+          "text": "你把窗帘拆下来洗，阳光照进屋里，灰尘在空中慢慢落下。",
+          "stat": null,
+          "templateId": "middle-ordinary-14"
+        },
+        {
+          "age": 50,
+          "text": "妈妈孙可欣不再一口气提起整桶水，你把小水壶放在她顺手的位置。",
+          "stat": null,
+          "templateId": "middle-mother-0"
+        },
+        {
+          "age": 51,
+          "text": "你接到班主任的电话，走到楼道里，听完后才回去继续工作。",
+          "stat": null,
+          "templateId": "middle-child-3"
+        },
+        {
+          "age": 51,
+          "text": "你把工作资料分门放好，想让接手的人少走一些弯路。",
+          "stat": null,
+          "templateId": "middle-work-1"
+        },
+        {
+          "age": 51,
+          "text": "年轻亲戚请你帮忙看看简历，你把联系方式一栏单独圈出来。",
+          "stat": null,
+          "templateId": "middle-young-job"
+        },
+        {
+          "age": 52,
+          "text": "母亲的常用药换了包装，你和药师核对清楚，把服用时间写大一些。",
+          "stat": null,
+          "templateId": "middle-mother-1"
+        },
+        {
+          "age": 52,
+          "text": "手机里要回复的消息很多，你先点开了家人的那一条。",
+          "stat": null,
+          "templateId": "middle-ordinary-5"
+        },
+        {
+          "age": 53,
+          "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+          "stat": null,
+          "templateId": "middle-dinner"
+        },
+        {
+          "age": 53,
+          "text": "转岗培训需要重新做笔记，你把听不懂的地方用笔标出来。",
+          "stat": null,
+          "templateId": "middle-retrain"
+        },
+        {
+          "age": 53,
+          "text": "你想替孩子做决定，话到嘴边又改成了：你自己最想选什么？",
+          "stat": null,
+          "templateId": "middle-child-9"
+        },
+        {
+          "age": 54,
+          "text": "一笔欠款到账后，你先补齐了拖着的维修费，才松了口气。",
+          "stat": null,
+          "templateId": "middle-work-7"
+        },
+        {
+          "age": 54,
+          "text": "社区更新健康档案，你找出上次体检忘了看的那张报告。",
+          "stat": null,
+          "templateId": "middle-health-file"
+        },
+        {
+          "age": 54,
+          "text": "饭后你和家人讨论退休以后想怎样生活，把想去的地方记下来。",
+          "stat": null,
+          "templateId": "middle-future-plan"
+        },
+        {
+          "age": 55,
+          "text": "你翻出年轻时写的计划，有些已经完成，有些连自己都忘了。",
+          "stat": null,
+          "templateId": "middle-ordinary-7"
+        },
+        {
+          "age": 55,
+          "text": "孩子的试卷折了角，你先问他吃没吃饭，再一起看错在哪里。",
+          "stat": null,
+          "templateId": "middle-child-0"
+        },
+        {
+          "age": 56,
+          "text": "你给自己预约体检，发现想选的那天还要上班，又往后挪了一周。",
+          "stat": null,
+          "templateId": "middle-ordinary-4"
+        },
+        {
+          "age": 57,
+          "text": "新来的同事向你请教，你讲到一半，发现有些经验已经不适用了。",
+          "stat": null,
+          "templateId": "middle-work-0"
+        },
+        {
+          "age": 57,
+          "text": "屋里的灯坏了，你站在凳子上换灯泡，家人在下面扶着凳脚。",
+          "stat": null,
+          "templateId": "middle-ordinary-0"
+        },
+        {
+          "age": 57,
+          "text": "手机里要回复的消息很多，你先点开了家人的那一条。",
+          "stat": null,
+          "templateId": "middle-ordinary-5"
+        },
+        {
+          "age": 58,
+          "text": "妈妈孙可欣在91岁离开了。你翻出家里的旧照片，才发现许多话还没有来得及说。",
+          "stat": "health.life_expectancy_by_sex",
+          "node": "parentDeath"
+        },
+        {
+          "age": 58,
+          "text": "同学聚会散场，有人赶夜班车，有人还要回去照顾老人。",
+          "stat": null,
+          "templateId": "middle-ordinary-13"
+        },
+        {
+          "age": 58,
+          "text": "旧同事发来聚会照片，你认出了几张脸，剩下的人想了很久。",
+          "stat": null,
+          "templateId": "middle-ordinary-2"
+        },
+        {
+          "age": 58,
+          "text": "公司通知换系统，你和同事对着新页面把操作步骤记下来。",
+          "stat": null,
+          "templateId": "middle-work-5"
+        },
+        {
+          "age": 59,
+          "text": "你把重要证件装进同一个袋子，告诉家人平时放在哪里。",
+          "stat": null,
+          "templateId": "middle-ordinary-12"
+        },
+        {
+          "age": 59,
+          "text": "你把存款和日常支出重新算了一遍，决定先修好家里的旧冰箱。",
+          "stat": null,
+          "templateId": "middle-savings"
+        },
+        {
+          "age": 60,
+          "text": "你收好工作时常用的物件，开始重新安排一天的时间。",
+          "stat": null
+        },
+        {
+          "age": 60,
+          "text": "视频结束后，你把手机靠在杯子旁，又看了一会儿刚才的截图。",
+          "stat": null,
+          "templateId": "senior-children-3"
+        },
+        {
+          "age": 61,
+          "text": "广场的音乐响起，你没有急着加入，先在旁边跟着打拍子。",
+          "stat": null,
+          "templateId": "senior-dance"
+        },
+        {
+          "age": 61,
+          "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+          "stat": null,
+          "templateId": "senior-pension"
+        },
+        {
+          "age": 61,
+          "text": "你在窗边补衣服，线头穿不过针眼，换了副眼镜才看清。",
+          "stat": null,
+          "templateId": "senior-day-17"
+        },
+        {
+          "age": 62,
+          "text": "早点摊的老板换成了年轻人，仍认得你爱吃哪一种。",
+          "stat": null,
+          "templateId": "senior-day-0"
+        },
+        {
+          "age": 62,
+          "text": "晚辈想学你做的菜，你边演示边说调味不用太着急。",
+          "stat": null,
+          "templateId": "senior-recipes"
+        },
+        {
+          "age": 63,
+          "text": "复诊时你拿出记好的问题，医生逐条告诉你该留意什么。",
+          "stat": null,
+          "templateId": "senior-doctor"
+        },
+        {
+          "age": 63,
+          "text": "孩子打电话来，你说没有什么事，只是刚好想听听声音。",
+          "stat": null,
+          "templateId": "senior-children-9"
+        },
+        {
+          "age": 64,
+          "text": "集市上的旧称换成了电子秤，你还是想多看一眼数字。",
+          "stat": null,
+          "templateId": "senior-day-16"
+        },
+        {
+          "age": 65,
+          "text": "旧照片褪了色，你在背面补写还能记得的时间和地点。",
+          "stat": null,
+          "templateId": "senior-photo"
+        },
+        {
+          "age": 66,
+          "text": "邻居送来自己腌的菜，你把洗干净的罐子还回去，里面装了几颗水果。",
+          "stat": null,
+          "templateId": "senior-day-10"
+        },
+        {
+          "age": 66,
+          "text": "你在理发店坐下，理发师先问水温，再问想剪到哪里。",
+          "stat": null,
+          "templateId": "senior-day-25"
+        },
+        {
+          "age": 66,
+          "text": "66岁这一年，你因心梗离开了。家人把你的旧照片收进了相册。",
+          "stat": "health.life_expectancy",
+          "node": "death"
+        }
+      ],
+      "history": [
+        {
+          "age": 0,
+          "happy": 65
+        },
+        {
+          "age": 1,
+          "happy": 66
+        },
+        {
+          "age": 2,
+          "happy": 67
+        },
+        {
+          "age": 3,
+          "happy": 67
+        },
+        {
+          "age": 4,
+          "happy": 68
+        },
+        {
+          "age": 5,
+          "happy": 70
+        },
+        {
+          "age": 6,
+          "happy": 69.7
+        },
+        {
+          "age": 7,
+          "happy": 68.7
+        },
+        {
+          "age": 8,
+          "happy": 68.7
+        },
+        {
+          "age": 9,
+          "happy": 70.4
+        },
+        {
+          "age": 10,
+          "happy": 70.4
+        },
+        {
+          "age": 11,
+          "happy": 71.4
+        },
+        {
+          "age": 12,
+          "happy": 71.10000000000001
+        },
+        {
+          "age": 13,
+          "happy": 70.80000000000001
+        },
+        {
+          "age": 14,
+          "happy": 70.50000000000001
+        },
+        {
+          "age": 15,
+          "happy": 71.50000000000001
+        },
+        {
+          "age": 16,
+          "happy": 72.50000000000001
+        },
+        {
+          "age": 17,
+          "happy": 73.50000000000001
+        },
+        {
+          "age": 18,
+          "happy": 73.20000000000002
+        },
+        {
+          "age": 19,
+          "happy": 74.90000000000002
+        },
+        {
+          "age": 20,
+          "happy": 74.90000000000002
+        },
+        {
+          "age": 21,
+          "happy": 74.60000000000002
+        },
+        {
+          "age": 22,
+          "happy": 75.40000000000002
+        },
+        {
+          "age": 23,
+          "happy": 79.20000000000002
+        },
+        {
+          "age": 24,
+          "happy": 78.90000000000002
+        },
+        {
+          "age": 25,
+          "happy": 78.90000000000002
+        },
+        {
+          "age": 26,
+          "happy": 79.90000000000002
+        },
+        {
+          "age": 27,
+          "happy": 82.90000000000002
+        },
+        {
+          "age": 28,
+          "happy": 82.90000000000002
+        },
+        {
+          "age": 29,
+          "happy": 85.60000000000002
+        },
+        {
+          "age": 30,
+          "happy": 86.60000000000002
+        },
+        {
+          "age": 31,
+          "happy": 87.30000000000003
+        },
+        {
+          "age": 32,
+          "happy": 89.10000000000002
+        },
+        {
+          "age": 33,
+          "happy": 91.10000000000002
+        },
+        {
+          "age": 34,
+          "happy": 92.10000000000002
+        },
+        {
+          "age": 35,
+          "happy": 93.10000000000002
+        },
+        {
+          "age": 36,
+          "happy": 94.80000000000003
+        },
+        {
+          "age": 37,
+          "happy": 96.60000000000002
+        },
+        {
+          "age": 38,
+          "happy": 98.40000000000002
+        },
+        {
+          "age": 39,
+          "happy": 100
+        },
+        {
+          "age": 40,
+          "happy": 100
+        },
+        {
+          "age": 41,
+          "happy": 100
+        },
+        {
+          "age": 42,
+          "happy": 100
+        },
+        {
+          "age": 43,
+          "happy": 100
+        },
+        {
+          "age": 44,
+          "happy": 100
+        },
+        {
+          "age": 45,
+          "happy": 100
+        },
+        {
+          "age": 46,
+          "happy": 100
+        },
+        {
+          "age": 47,
+          "happy": 100
+        },
+        {
+          "age": 48,
+          "happy": 100
+        },
+        {
+          "age": 49,
+          "happy": 100
+        },
+        {
+          "age": 50,
+          "happy": 100
+        },
+        {
+          "age": 51,
+          "happy": 100
+        },
+        {
+          "age": 52,
+          "happy": 100
+        },
+        {
+          "age": 53,
+          "happy": 100
+        },
+        {
+          "age": 54,
+          "happy": 100
+        },
+        {
+          "age": 55,
+          "happy": 100
+        },
+        {
+          "age": 56,
+          "happy": 100
+        },
+        {
+          "age": 57,
+          "happy": 100
+        },
+        {
+          "age": 58,
+          "happy": 100
+        },
+        {
+          "age": 59,
+          "happy": 99
+        },
+        {
+          "age": 60,
+          "happy": 100
+        },
+        {
+          "age": 61,
+          "happy": 100
+        },
+        {
+          "age": 62,
+          "happy": 100
+        },
+        {
+          "age": 63,
+          "happy": 100
+        },
+        {
+          "age": 64,
+          "happy": 100
+        },
+        {
+          "age": 65,
+          "happy": 100
+        },
+        {
+          "age": 66,
+          "happy": 100
+        }
+      ],
+      "pending": null,
+      "choices": [
+        {
+          "age": 15,
+          "decision": "school",
+          "choice": "general"
+        },
+        {
+          "age": 22,
+          "decision": "career",
+          "choice": "work"
+        },
+        {
+          "age": 25,
+          "decision": "city",
+          "choice": "省会"
+        },
+        {
+          "age": 29,
+          "decision": "marry",
+          "choice": "marry"
+        },
+        {
+          "age": 31,
+          "decision": "house",
+          "choice": "rent"
+        },
+        {
+          "age": 33,
+          "decision": "child",
+          "choice": "child"
+        },
+        {
+          "age": 35,
+          "decision": "midcareer",
+          "choice": "stay"
+        }
+      ],
+      "record": {
+        "junior": true,
+        "stage": false,
+        "general": false,
+        "completed": false,
+        "gaokao": false,
+        "admitted": false,
+        "elite": false,
+        "age22": "本地服务业",
+        "careerPlanAge": 22,
+        "job40": "本地服务业"
+      },
+      "repeatUsed": false,
+      "family": {
+        "generation": 2,
+        "rootId": "粤-2026-410636",
+        "ancestors": [
+          {
+            "id": "粤-2026-410636",
+            "seed": 62806410636,
+            "name": "孙可欣",
+            "year": 2026,
+            "sex": "female",
+            "age": 91,
+            "province": "广东",
+            "place": "饶平县",
+            "hukou": "rural",
+            "wealthQ": 1,
+            "edu": "junior",
+            "job": "个体户",
+            "city": "县城",
+            "leftBehind": true,
+            "settlement": {
+              "province": "广东",
+              "place": "饶平县",
+              "hukou": "urban",
+              "label": "广东饶平县"
+            },
+            "generation": 1
+          }
+        ],
+        "parentSpouse": {
+          "name": "陈知远",
+          "sex": "male",
+          "birthAge": 30,
+          "age": 30,
+          "job": "工人",
+          "education": "初中及以下",
+          "income": 33440,
+          "assets": 0
+        },
+        "resourcePercentile": 0.08895,
+        "mobilityRedraw": false
+      },
+      "capture": true,
+      "verdictUsage": {
+        "verdict:school:chance:2": {
+          "count": 1,
+          "lastAge": 15
+        }
+      },
+      "mortgage": 0,
+      "peakIncome": 40965,
+      "industry": "service",
+      "retired": true,
+      "lastJob": "本地服务业",
+      "death": {
+        "category": "疾病",
+        "detail": "心梗"
+      }
+    },
+    {
+      "name": "孙梓睿",
+      "place": "广州市",
+      "month": 10,
+      "templateUsage": {
+        "baby": {
+          "baby-noodles": {
+            "count": 1,
+            "lastAge": 1
+          },
+          "baby-checkup": {
+            "count": 1,
+            "lastAge": 1
+          },
+          "baby-rain": {
+            "count": 1,
+            "lastAge": 2
+          },
+          "baby-elevator": {
+            "count": 1,
+            "lastAge": 2
+          },
+          "baby-bracelet": {
+            "count": 1,
+            "lastAge": 2
+          },
+          "baby-kindergarten": {
+            "count": 1,
+            "lastAge": 3
+          },
+          "baby-festival": {
+            "count": 1,
+            "lastAge": 4
+          },
+          "baby-library": {
+            "count": 1,
+            "lastAge": 4
+          },
+          "baby-birth-book": {
+            "count": 1,
+            "lastAge": 5
+          },
+          "baby-blocks": {
+            "count": 1,
+            "lastAge": 5
+          }
+        },
+        "child": {
+          "child-lantern": {
+            "count": 2,
+            "lastAge": 11
+          },
+          "child-repaired-bag": {
+            "count": 2,
+            "lastAge": 11
+          },
+          "child-park": {
+            "count": 1,
+            "lastAge": 7
+          },
+          "child-library-card": {
+            "count": 1,
+            "lastAge": 8
+          },
+          "child-absence": {
+            "count": 1,
+            "lastAge": 8
+          },
+          "child-science": {
+            "count": 1,
+            "lastAge": 8
+          },
+          "child-team": {
+            "count": 1,
+            "lastAge": 9
+          },
+          "child-groceries": {
+            "count": 1,
+            "lastAge": 10
+          },
+          "child-sports": {
+            "count": 1,
+            "lastAge": 10
+          },
+          "child-reading": {
+            "count": 1,
+            "lastAge": 10
+          },
+          "child-summer": {
+            "count": 1,
+            "lastAge": 11
+          }
+        },
+        "junior": {
+          "junior-letter": {
+            "count": 1,
+            "lastAge": 12
+          },
+          "junior-options": {
+            "count": 1,
+            "lastAge": 12
+          },
+          "junior-basketball": {
+            "count": 1,
+            "lastAge": 12
+          },
+          "junior-complete": {
+            "count": 1,
+            "lastAge": 13
+          },
+          "junior-night-study": {
+            "count": 1,
+            "lastAge": 13
+          },
+          "junior-ranking": {
+            "count": 1,
+            "lastAge": 14
+          },
+          "junior-shoes": {
+            "count": 1,
+            "lastAge": 14
+          },
+          "junior-split": {
+            "count": 1,
+            "lastAge": 15
+          }
+        },
+        "high": {
+          "high-poster": {
+            "count": 1,
+            "lastAge": 16
+          },
+          "high-last-sports": {
+            "count": 1,
+            "lastAge": 17
+          },
+          "high-comfort": {
+            "count": 1,
+            "lastAge": 18
+          },
+          "high-repair": {
+            "count": 1,
+            "lastAge": 18
+          }
+        },
+        "college": {
+          "college-fair": {
+            "count": 1,
+            "lastAge": 19
+          },
+          "college-offer": {
+            "count": 1,
+            "lastAge": 19
+          },
+          "college-factory": {
+            "count": 1,
+            "lastAge": 20
+          },
+          "college-roommates": {
+            "count": 1,
+            "lastAge": 20
+          },
+          "college-presentation": {
+            "count": 1,
+            "lastAge": 20
+          },
+          "college-scholarship": {
+            "count": 1,
+            "lastAge": 21
+          },
+          "college-internship": {
+            "count": 1,
+            "lastAge": 21
+          },
+          "college-certificate": {
+            "count": 1,
+            "lastAge": 21
+          },
+          "college-cheap-ticket": {
+            "count": 1,
+            "lastAge": 22
+          },
+          "college-campus": {
+            "count": 1,
+            "lastAge": 22
+          }
+        },
+        "adult": {
+          "adult-parents-4": {
+            "count": 1,
+            "lastAge": 23
+          },
+          "adult-birth-chat": {
+            "count": 1,
+            "lastAge": 23
+          },
+          "adult-exam-result": {
+            "count": 1,
+            "lastAge": 24
+          },
+          "adult-parents-2": {
+            "count": 1,
+            "lastAge": 24
+          },
+          "adult-move": {
+            "count": 1,
+            "lastAge": 24
+          },
+          "adult-trade-1": {
+            "count": 1,
+            "lastAge": 25
+          },
+          "adult-trade-0": {
+            "count": 1,
+            "lastAge": 25
+          },
+          "adult-room-0": {
+            "count": 1,
+            "lastAge": 26
+          },
+          "adult-trade-4": {
+            "count": 1,
+            "lastAge": 26
+          },
+          "adult-mother-4": {
+            "count": 1,
+            "lastAge": 27
+          },
+          "adult-room-1": {
+            "count": 2,
+            "lastAge": 35
+          },
+          "adult-room-6": {
+            "count": 1,
+            "lastAge": 27
+          },
+          "adult-match": {
+            "count": 1,
+            "lastAge": 28
+          },
+          "adult-mother-0": {
+            "count": 1,
+            "lastAge": 28
+          },
+          "adult-day-off": {
+            "count": 1,
+            "lastAge": 28
+          },
+          "adult-parents-3": {
+            "count": 1,
+            "lastAge": 29
+          },
+          "adult-rent": {
+            "count": 1,
+            "lastAge": 30
+          },
+          "adult-parents-1": {
+            "count": 1,
+            "lastAge": 31
+          },
+          "adult-marriage": {
+            "count": 1,
+            "lastAge": 32
+          },
+          "adult-trade-3": {
+            "count": 1,
+            "lastAge": 32
+          },
+          "adult-room-3": {
+            "count": 1,
+            "lastAge": 33
+          },
+          "adult-room-4": {
+            "count": 1,
+            "lastAge": 33
+          },
+          "adult-room-5": {
+            "count": 1,
+            "lastAge": 34
+          },
+          "adult-wedding-plan": {
+            "count": 1,
+            "lastAge": 34
+          },
+          "adult-mother-2": {
+            "count": 1,
+            "lastAge": 34
+          }
+        },
+        "middle": {
+          "middle-health-file": {
+            "count": 2,
+            "lastAge": 53
+          },
+          "middle-repair": {
+            "count": 1,
+            "lastAge": 37
+          },
+          "middle-exercise": {
+            "count": 1,
+            "lastAge": 37
+          },
+          "middle-mother-7": {
+            "count": 1,
+            "lastAge": 37
+          },
+          "middle-parent-phone": {
+            "count": 2,
+            "lastAge": 43
+          },
+          "middle-mother-4": {
+            "count": 1,
+            "lastAge": 38
+          },
+          "middle-mother-5": {
+            "count": 1,
+            "lastAge": 39
+          },
+          "middle-work-0": {
+            "count": 2,
+            "lastAge": 45
+          },
+          "middle-ordinary-2": {
+            "count": 2,
+            "lastAge": 48
+          },
+          "middle-ordinary-14": {
+            "count": 1,
+            "lastAge": 40
+          },
+          "middle-work-6": {
+            "count": 2,
+            "lastAge": 52
+          },
+          "middle-mother-0": {
+            "count": 1,
+            "lastAge": 41
+          },
+          "middle-new-skills": {
+            "count": 2,
+            "lastAge": 53
+          },
+          "middle-future-plan": {
+            "count": 1,
+            "lastAge": 43
+          },
+          "middle-mother-2": {
+            "count": 1,
+            "lastAge": 43
+          },
+          "middle-ordinary-12": {
+            "count": 2,
+            "lastAge": 57
+          },
+          "middle-dinner": {
+            "count": 2,
+            "lastAge": 56
+          },
+          "middle-ordinary-4": {
+            "count": 1,
+            "lastAge": 44
+          },
+          "middle-old-friend": {
+            "count": 2,
+            "lastAge": 51
+          },
+          "middle-work-4": {
+            "count": 1,
+            "lastAge": 46
+          },
+          "middle-ordinary-11": {
+            "count": 2,
+            "lastAge": 52
+          },
+          "middle-parents-check": {
+            "count": 2,
+            "lastAge": 56
+          },
+          "middle-ordinary-8": {
+            "count": 1,
+            "lastAge": 48
+          },
+          "middle-ordinary-0": {
+            "count": 1,
+            "lastAge": 49
+          },
+          "middle-work-5": {
+            "count": 2,
+            "lastAge": 55
+          },
+          "middle-ordinary-3": {
+            "count": 1,
+            "lastAge": 51
+          },
+          "middle-work-2": {
+            "count": 1,
+            "lastAge": 51
+          },
+          "middle-ordinary-5": {
+            "count": 2,
+            "lastAge": 59
+          },
+          "middle-retrain": {
+            "count": 1,
+            "lastAge": 53
+          },
+          "middle-ordinary-13": {
+            "count": 1,
+            "lastAge": 54
+          },
+          "middle-work-1": {
+            "count": 1,
+            "lastAge": 54
+          },
+          "middle-ordinary-6": {
+            "count": 1,
+            "lastAge": 54
+          },
+          "middle-work-7": {
+            "count": 1,
+            "lastAge": 57
+          },
+          "middle-young-job": {
+            "count": 1,
+            "lastAge": 58
+          }
+        },
+        "senior": {
+          "senior-day-0": {
+            "count": 2,
+            "lastAge": 71
+          },
+          "senior-day-27": {
+            "count": 2,
+            "lastAge": 78
+          },
+          "senior-day-24": {
+            "count": 2,
+            "lastAge": 73
+          },
+          "senior-old-friend": {
+            "count": 2,
+            "lastAge": 68
+          },
+          "senior-pension": {
+            "count": 2,
+            "lastAge": 76
+          },
+          "senior-day-28": {
+            "count": 1,
+            "lastAge": 62
+          },
+          "senior-phone": {
+            "count": 1,
+            "lastAge": 63
+          },
+          "senior-archive": {
+            "count": 2,
+            "lastAge": 70
+          },
+          "senior-day-14": {
+            "count": 2,
+            "lastAge": 70
+          },
+          "senior-day-19": {
+            "count": 2,
+            "lastAge": 75
+          },
+          "senior-day-21": {
+            "count": 1,
+            "lastAge": 65
+          },
+          "senior-day-10": {
+            "count": 1,
+            "lastAge": 65
+          },
+          "senior-day-6": {
+            "count": 2,
+            "lastAge": 76
+          },
+          "senior-day-18": {
+            "count": 1,
+            "lastAge": 67
+          },
+          "senior-day-9": {
+            "count": 1,
+            "lastAge": 68
+          },
+          "senior-day-15": {
+            "count": 1,
+            "lastAge": 68
+          },
+          "senior-day-13": {
+            "count": 2,
+            "lastAge": 82
+          },
+          "senior-day-1": {
+            "count": 1,
+            "lastAge": 69
+          },
+          "senior-day-8": {
+            "count": 2,
+            "lastAge": 80
+          },
+          "senior-stairs": {
+            "count": 2,
+            "lastAge": 81
+          },
+          "senior-day-11": {
+            "count": 1,
+            "lastAge": 71
+          },
+          "senior-walk": {
+            "count": 1,
+            "lastAge": 72
+          },
+          "senior-calendar": {
+            "count": 2,
+            "lastAge": 78
+          },
+          "senior-day-7": {
+            "count": 1,
+            "lastAge": 72
+          },
+          "senior-dance": {
+            "count": 1,
+            "lastAge": 73
+          },
+          "senior-day-29": {
+            "count": 1,
+            "lastAge": 74
+          },
+          "senior-day-4": {
+            "count": 1,
+            "lastAge": 75
+          },
+          "senior-quilt": {
+            "count": 1,
+            "lastAge": 75
+          },
+          "senior-community": {
+            "count": 2,
+            "lastAge": 81
+          },
+          "senior-day-23": {
+            "count": 1,
+            "lastAge": 77
+          },
+          "senior-day-17": {
+            "count": 2,
+            "lastAge": 83
+          },
+          "senior-day-20": {
+            "count": 1,
+            "lastAge": 79
+          },
+          "senior-checkup": {
+            "count": 1,
+            "lastAge": 79
+          },
+          "senior-day-25": {
+            "count": 1,
+            "lastAge": 79
+          },
+          "senior-day-22": {
+            "count": 1,
+            "lastAge": 80
+          },
+          "senior-life-data": {
+            "count": 1,
+            "lastAge": 82
+          },
+          "senior-day-26": {
+            "count": 1,
+            "lastAge": 82
+          },
+          "senior-day-2": {
+            "count": 1,
+            "lastAge": 83
+          },
+          "senior-window": {
+            "count": 1,
+            "lastAge": 83
+          }
+        }
+      },
+      "id": "粤-2026-410636·三代",
+      "seed": 3132402072,
+      "year": 2092,
+      "rngState": 1022030291,
+      "age": 83,
+      "alive": false,
+      "sex": "male",
+      "province": "广东",
+      "tier": "C",
+      "hukou": "urban",
+      "wealthQ": 1,
+      "parents": {
+        "father": {
+          "name": "孙承宇",
+          "sex": "male",
+          "age": 66,
+          "birthAge": 33,
+          "job": "本地服务业",
+          "education": "初中及以下",
+          "alive": false,
+          "health": 0,
+          "away": false,
+          "storyDeathAge": 66,
+          "previousPlayer": true,
+          "diedAt": 33
+        },
+        "mother": {
+          "name": "郭书瑶",
+          "sex": "female",
+          "birthAge": 36,
+          "age": 84,
+          "job": "工人",
+          "education": "初中及以下",
+          "income": 27527,
+          "assets": 32367,
+          "alive": false,
+          "health": 0,
+          "away": false,
+          "diedAt": 48
+        }
+      },
+      "leftBehind": false,
+      "siblings": 2,
+      "attrs": {
+        "health": 96.41999999999973,
+        "happy": 100,
+        "knowledge": 59.0999999999999,
+        "social": 75.79999999999984,
+        "grind": 30
+      },
+      "gradePct": 72.54892872460145,
+      "edu": "college",
+      "job": "退休",
+      "income": 36000,
+      "assets": 616552,
+      "city": "省会",
+      "married": true,
+      "kids": [],
+      "log": [
+        {
+          "age": 0,
+          "text": "2092年10月，你出生在广东广州市的城区，名字叫孙梓睿。你出生时，爸爸孙承宇当时33岁，靠工作维持家用；妈妈郭书瑶当时36岁，在工厂上班。那时家里的收入不宽裕，大笔支出都要提前攒钱。小时候，你和父母一起生活。",
+          "stat": null,
+          "node": "birth"
+        },
+        {
+          "age": 1,
+          "text": "奶奶孙可欣把你抱到窗边，教你辨认回家的那条路。",
+          "stat": null,
+          "templateId": "family-care-1",
+          "node": "familyCare",
+          "relative": "奶奶",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 1,
+          "text": "厨房里飘来面汤的味道，你搬着小板凳等晚饭。",
+          "stat": null,
+          "templateId": "baby-noodles"
+        },
+        {
+          "age": 1,
+          "text": "社区体检时，你攥着小拳头，医生在生长曲线上画下一个点。",
+          "stat": null,
+          "templateId": "baby-checkup"
+        },
+        {
+          "age": 2,
+          "text": "奶奶孙可欣给你留了一只小碗，吃饭时总让你坐在伸手够得到的地方。",
+          "stat": null,
+          "templateId": "family-care-2",
+          "node": "familyCare",
+          "relative": "奶奶",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 2,
+          "text": "雨水从屋檐落下来，你蹲在门口看蚂蚁搬走饼干屑。",
+          "stat": null,
+          "templateId": "baby-rain"
+        },
+        {
+          "age": 2,
+          "text": "电梯门上映出你的影子，你伸手想摸另一个自己。",
+          "stat": null,
+          "templateId": "baby-elevator"
+        },
+        {
+          "age": 2,
+          "text": "家人把出生手环收进抽屉，你的名字写在一张新户口页上。",
+          "stat": null,
+          "templateId": "baby-bracelet"
+        },
+        {
+          "age": 3,
+          "text": "奶奶孙可欣牵着你去买菜，回家路上让你慢慢数过街的台阶。",
+          "stat": null,
+          "templateId": "family-care-3",
+          "node": "familyCare",
+          "relative": "奶奶",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 3,
+          "text": "幼儿园午睡时，你把家里带来的小毛巾压在枕头下面。",
+          "stat": null,
+          "templateId": "baby-kindergarten"
+        },
+        {
+          "age": 4,
+          "text": "奶奶孙可欣收好你的第一张画，夹进了家里的旧相册。",
+          "stat": null,
+          "templateId": "family-care-4",
+          "node": "familyCare",
+          "relative": "奶奶",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 4,
+          "text": "元宵节，家人教你捏汤圆，你的那颗总是不够圆。",
+          "stat": null,
+          "templateId": "baby-festival"
+        },
+        {
+          "age": 4,
+          "text": "儿童阅览室的地垫很软，你挑了一本封面有小羊的绘本。",
+          "stat": null,
+          "templateId": "baby-library"
+        },
+        {
+          "age": 5,
+          "text": "奶奶孙可欣替你缝好书包的带子，说读书要带的东西都放得下。",
+          "stat": null,
+          "templateId": "family-care-5",
+          "node": "familyCare",
+          "relative": "奶奶",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 5,
+          "text": "家人翻到一份全国出生人口的历史记录，看过那个大数字，又转头看看身边小小的你。",
+          "stat": "births.national_2024",
+          "templateId": "baby-birth-book"
+        },
+        {
+          "age": 5,
+          "text": "你把积木搭成歪歪扭扭的房子，家人没有急着替你扶正。",
+          "stat": null,
+          "templateId": "baby-blocks"
+        },
+        {
+          "age": 6,
+          "text": "奶奶孙可欣陪你走到学校门口，等你进了教室才转身。",
+          "stat": null,
+          "templateId": "family-care-6",
+          "node": "familyCare",
+          "relative": "奶奶",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 6,
+          "text": "学校让做手工灯笼，你和家人把旧挂历裁成细细的纸条。",
+          "stat": null,
+          "templateId": "child-lantern"
+        },
+        {
+          "age": 6,
+          "text": "书包拉链坏了，家人缝上一根绳子，你又背着它去上学。",
+          "stat": null,
+          "templateId": "child-repaired-bag"
+        },
+        {
+          "age": 7,
+          "text": "奶奶孙可欣翻出自己年轻时的照片，你第一次知道大人也曾是个孩子。",
+          "stat": null,
+          "templateId": "family-care-7",
+          "node": "familyCare",
+          "relative": "奶奶",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 7,
+          "text": "家人带你去公园，你把落叶夹进语文书当书签。",
+          "stat": null,
+          "templateId": "child-park"
+        },
+        {
+          "age": 8,
+          "text": "奶奶孙可欣小时候常常等父母回家。如今放学时，校门口总有人等你。",
+          "stat": null,
+          "templateId": "family-care-8",
+          "node": "familyCare",
+          "relative": "奶奶",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 8,
+          "text": "学校发了借书卡，你把它夹进最舍不得折的课本。",
+          "stat": null,
+          "templateId": "child-library-card"
+        },
+        {
+          "age": 8,
+          "text": "你生病请了假，同桌把当天的课堂笔记送到家门口。",
+          "stat": null,
+          "templateId": "child-absence"
+        },
+        {
+          "age": 8,
+          "text": "自然课上种的豆子终于发芽，你把尺子贴在杯子旁边。",
+          "stat": null,
+          "templateId": "child-science"
+        },
+        {
+          "age": 9,
+          "text": "奶奶孙可欣陪你把错题重新读了一遍，没催你立刻给出答案。",
+          "stat": null,
+          "templateId": "family-care-9",
+          "node": "familyCare",
+          "relative": "奶奶",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 9,
+          "text": "班里排节目，你站在队伍边上，终于记住了最后一个动作。",
+          "stat": null,
+          "templateId": "child-team"
+        },
+        {
+          "age": 10,
+          "text": "奶奶孙可欣讲起自己当年求学的路，你把这些故事写进了作文。",
+          "stat": null,
+          "templateId": "family-care-10",
+          "node": "familyCare",
+          "relative": "奶奶",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 10,
+          "text": "你第一次独自去楼下买盐，找零被你数了又数。",
+          "stat": null,
+          "templateId": "child-groceries"
+        },
+        {
+          "age": 10,
+          "text": "运动会上你没拿名次，跑完后同学还是把水递了过来。",
+          "stat": null,
+          "templateId": "child-sports"
+        },
+        {
+          "age": 10,
+          "text": "老师在讲台边放了一个旧书箱，你借走的书有很多折角。",
+          "stat": null,
+          "templateId": "child-reading"
+        },
+        {
+          "age": 11,
+          "text": "奶奶孙可欣替你把水壶装满，叮嘱你路上慢一点。",
+          "stat": null,
+          "templateId": "family-care-11",
+          "node": "familyCare",
+          "relative": "奶奶",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 11,
+          "text": "学校让做手工灯笼，你和家人把旧挂历裁成细细的纸条。",
+          "stat": null,
+          "templateId": "child-lantern"
+        },
+        {
+          "age": 11,
+          "text": "书包拉链坏了，家人缝上一根绳子，你又背着它去上学。",
+          "stat": null,
+          "templateId": "child-repaired-bag"
+        },
+        {
+          "age": 11,
+          "text": "暑假的风扇吱呀作响，你在练习册边上画了一整页小人。",
+          "stat": null,
+          "templateId": "child-summer"
+        },
+        {
+          "age": 12,
+          "text": "奶奶孙可欣坐在灯下听你说学校的事，这一天没有急着打断你。",
+          "stat": null,
+          "templateId": "family-care-12",
+          "node": "familyCare",
+          "relative": "奶奶",
+          "relativeName": "孙可欣"
+        },
+        {
+          "age": 12,
+          "text": "老师让写给未来的自己，你想了很久才落笔。",
+          "stat": null,
+          "templateId": "junior-letter"
+        },
+        {
+          "age": 12,
+          "text": "招生老师带来实训课的照片，你第一次仔细看另一条升学路线。",
+          "stat": null,
+          "templateId": "junior-options"
+        },
+        {
+          "age": 12,
+          "text": "傍晚的球场只剩半边有光，你们仍然多打了一会儿。",
+          "stat": null,
+          "templateId": "junior-basketball"
+        },
+        {
+          "age": 13,
+          "text": "学校核对毕业资料，你认真把姓名和证件号码又看了一遍。",
+          "stat": null,
+          "templateId": "junior-complete"
+        },
+        {
+          "age": 13,
+          "text": "晚自习的铃响过，你和同桌在走廊上再对了一遍答案。",
+          "stat": null,
+          "templateId": "junior-night-study"
+        },
+        {
+          "age": 14,
+          "text": "这次成绩退了几名，你把试卷重新叠好，没有急着扔进书包。",
+          "stat": null,
+          "templateId": "junior-ranking"
+        },
+        {
+          "age": 14,
+          "text": "体育课的鞋底磨平了，家人说周末带你去买新的。",
+          "stat": null,
+          "templateId": "junior-shoes"
+        },
+        {
+          "age": 15,
+          "text": "你完成初中学业，拿到了毕业证，接下来要面对中考。",
+          "stat": "education.compulsory_retention",
+          "node": "junior"
+        },
+        {
+          "age": 15,
+          "text": "班会讲到了普高和中职，老师让大家把招生简章带回家。",
+          "stat": null,
+          "templateId": "junior-split"
+        },
+        {
+          "age": 15,
+          "text": "你选择了「争取普通高中」。",
+          "stat": null
+        },
+        {
+          "age": 15,
+          "text": "你一边读书一边惦记家里的开销。少掉的准备没有在结果出来时被补回来。你接下来去读中职，先学一门能谋生的手艺。",
+          "stat": "education.general_hs_rate",
+          "node": "school",
+          "reason": "wealth",
+          "outcome": "vocational",
+          "dominant": "wealth",
+          "contributions": {
+            "base": 0.7545358566312643,
+            "wealth": -0.9753671695347292,
+            "hukou": 0.052036397547417436,
+            "grade": 0.11159485787808869
+          },
+          "probability": 0.48570388330967473,
+          "draw": 0.7050027621444315,
+          "templateId": "verdict:school:wealth:3",
+          "dice": [
+            {
+              "id": "school-general",
+              "label": "普通高中录取概率",
+              "p": 0.48570388330967473,
+              "u": 0.7050027621444315,
+              "pass": false,
+              "contributions": {
+                "base": 0.7545358566312643,
+                "wealth": -0.9753671695347292,
+                "hukou": 0.052036397547417436,
+                "grade": 0.11159485787808869
+              },
+              "factors": [
+                {
+                  "key": "wealth",
+                  "label": "家境",
+                  "logit": -0.9753671695347292,
+                  "delta": -0.22896461168584792,
+                  "pp": -22.896461168584793
+                },
+                {
+                  "key": "grade",
+                  "label": "成绩",
+                  "logit": 0.11159485787808869,
+                  "delta": 0.027802703918798133,
+                  "pp": 2.7802703918798133
+                },
+                {
+                  "key": "hukou",
+                  "label": "求学条件",
+                  "logit": 0.052036397547417436,
+                  "delta": 0.01298587369616272,
+                  "pp": 1.298587369616272
+                }
+              ],
+              "positive": true,
+              "successLabel": "普通高中录取",
+              "failureLabel": "未录取普通高中",
+              "nearMiss": false,
+              "closePass": false,
+              "gap": 0.21929887883475674
+            }
+          ]
+        },
+        {
+          "age": 16,
+          "text": "走廊的招生海报换了新的，你停下来看了看本科和专科的区别。",
+          "stat": null,
+          "templateId": "high-poster"
+        },
+        {
+          "age": 17,
+          "text": "操场上同学喊你去跑步，你合上习题册，决定透口气。",
+          "stat": null,
+          "templateId": "high-last-sports"
+        },
+        {
+          "age": 18,
+          "text": "你完成了高中阶段的学业。家人翻着那张毕业证，问以后打算去哪里。",
+          "stat": "education.hs_stage_gross_enroll",
+          "node": "completion",
+          "reason": "chance",
+          "outcome": "completed",
+          "dominant": "chance",
+          "contributions": {
+            "base": 3.3627237945802335,
+            "wealth": -3.589843722678779
+          },
+          "probability": 0.44346284115541124,
+          "draw": 0.4027392764110118,
+          "templateId": "verdict:completion:chance:2"
+        },
+        {
+          "age": 18,
+          "text": "考砸后家人没追问分数，只给你留了一碗热汤。",
+          "stat": null,
+          "templateId": "high-comfort"
+        },
+        {
+          "age": 18,
+          "text": "旧台灯闪了几次，家人换好灯泡，说这盏还能用。",
+          "stat": null,
+          "templateId": "high-repair"
+        },
+        {
+          "age": 18,
+          "text": "你选择了「参加高考 / 职教升学考试」。",
+          "stat": null
+        },
+        {
+          "age": 18,
+          "text": "结果页刷新了几次，答案没有变化。这次竞争没有给你留下位置。",
+          "stat": "province_tier.C",
+          "node": "exam",
+          "reason": "chance",
+          "outcome": "rejected",
+          "dominant": "chance",
+          "contributions": {
+            "base": -0.4492592930968442,
+            "tier": -0.5822657709990576,
+            "wealth": -3.637978807091713e-12,
+            "hukou": 0.1734546584870259,
+            "grade": 0.26598800171554016,
+            "effort": -0.14430256634654143
+          },
+          "probability": 0.32379515650048324,
+          "draw": 0.6406278808135539,
+          "templateId": "verdict:exam:chance:2",
+          "dice": [
+            {
+              "id": "exam-bachelor",
+              "label": "本科录取概率",
+              "p": 0.32379515650048324,
+              "u": 0.6406278808135539,
+              "pass": false,
+              "contributions": {
+                "base": -0.4492592930968442,
+                "tier": -0.5822657709990576,
+                "wealth": -3.637978807091713e-12,
+                "hukou": 0.1734546584870259,
+                "grade": 0.26598800171554016,
+                "effort": -0.14430256634654143
+              },
+              "factors": [
+                {
+                  "key": "tier",
+                  "label": "省份",
+                  "logit": -0.5822657709990576,
+                  "delta": -0.1377511286242411,
+                  "pp": -13.77511286242411
+                },
+                {
+                  "key": "grade",
+                  "label": "成绩",
+                  "logit": 0.26598800171554016,
+                  "delta": 0.05532003384657458,
+                  "pp": 5.5320033846574574
+                },
+                {
+                  "key": "hukou",
+                  "label": "求学条件",
+                  "logit": 0.1734546584870259,
+                  "delta": 0.0367625012096785,
+                  "pp": 3.67625012096785
+                }
+              ],
+              "positive": true,
+              "successLabel": "本科录取",
+              "failureLabel": "未录取本科",
+              "nearMiss": false,
+              "closePass": false,
+              "gap": 0.3168327243130707
+            },
+            {
+              "id": "exam-211",
+              "label": "211及以上录取概率",
+              "p": 0.014889939259496462,
+              "u": 0.6406278808135539,
+              "pass": false,
+              "contributions": {
+                "base": -3.611136376766808,
+                "tier": -0.35667494393873245,
+                "wealth": -0.8128059746031795,
+                "hukou": 0.5885496909922949
+              },
+              "factors": [
+                {
+                  "key": "wealth",
+                  "label": "家境",
+                  "logit": -0.8128059746031795,
+                  "delta": -0.018059975018098397,
+                  "pp": -1.8059975018098398
+                },
+                {
+                  "key": "hukou",
+                  "label": "求学条件",
+                  "logit": 0.5885496909922949,
+                  "delta": 0.006568941479367912,
+                  "pp": 0.6568941479367911
+                },
+                {
+                  "key": "tier",
+                  "label": "省份",
+                  "logit": -0.35667494393873245,
+                  "delta": -0.0062465222704946605,
+                  "pp": -0.6246522270494661
+                }
+              ],
+              "positive": true,
+              "successLabel": "211及以上录取",
+              "failureLabel": "未录取",
+              "nearMiss": false,
+              "closePass": false,
+              "gap": 0.6257379415540575
+            },
+            {
+              "id": "exam-985",
+              "label": "985录取概率",
+              "p": 0.00451494320074913,
+              "u": 0.6406278808135539,
+              "pass": false,
+              "contributions": {
+                "base": -4.814906278425042,
+                "tier": -0.35667494393873245,
+                "wealth": -0.8128059746031795,
+                "hukou": 0.5885496909922949
+              },
+              "factors": [
+                {
+                  "key": "wealth",
+                  "label": "家境",
+                  "logit": -0.8128059746031795,
+                  "delta": -0.005605442768379696,
+                  "pp": -0.5605442768379696
+                },
+                {
+                  "key": "hukou",
+                  "label": "求学条件",
+                  "logit": 0.5885496909922949,
+                  "delta": 0.0020035102420596093,
+                  "pp": 0.20035102420596093
+                },
+                {
+                  "key": "tier",
+                  "label": "省份",
+                  "logit": -0.35667494393873245,
+                  "delta": -0.0019225193241823348,
+                  "pp": -0.19225193241823346
+                }
+              ],
+              "positive": true,
+              "successLabel": "985录取",
+              "failureLabel": "未录取",
+              "nearMiss": false,
+              "closePass": false,
+              "gap": 0.6361129376128049
+            }
+          ]
+        },
+        {
+          "age": 19,
+          "text": "招聘会入口排着队，你把简历压平，又检查了一遍联系方式。",
+          "stat": null,
+          "templateId": "college-fair"
+        },
+        {
+          "age": 19,
+          "text": "班群里陆续有人报喜，你关掉消息，继续修改自己的简历。",
+          "stat": null,
+          "templateId": "college-offer"
+        },
+        {
+          "age": 19,
+          "text": "你选择了「接受专科或工作」。",
+          "stat": null
+        },
+        {
+          "age": 19,
+          "text": "你收起复习资料，先把专科和就业这条路走下去。",
+          "stat": null
+        },
+        {
+          "age": 20,
+          "text": "实习车间的交接班铃响了，你学着在记录本上写清每一道工序。",
+          "stat": null,
+          "templateId": "college-factory"
+        },
+        {
+          "age": 20,
+          "text": "室友带回家乡特产，桌上摆满了不同口味的小袋零食。",
+          "stat": null,
+          "templateId": "college-roommates"
+        },
+        {
+          "age": 20,
+          "text": "汇报时你没再一直盯着稿纸，同伴在台下悄悄点头。",
+          "stat": null,
+          "templateId": "college-presentation"
+        },
+        {
+          "age": 21,
+          "text": "你把奖学金申请材料理好，最后一页还缺老师签字。",
+          "stat": null,
+          "templateId": "college-scholarship"
+        },
+        {
+          "age": 21,
+          "text": "实习面试结束，你在地铁里重新回想刚才没答好的问题。",
+          "stat": null,
+          "templateId": "college-internship"
+        },
+        {
+          "age": 21,
+          "text": "技能证书领到手，你先拍照发进家里的群。",
+          "stat": null,
+          "templateId": "college-certificate"
+        },
+        {
+          "age": 21,
+          "text": "你选择了「准备专升本 / 继续升学」。",
+          "stat": null
+        },
+        {
+          "age": 21,
+          "text": "继续升学这条路没有走通，你把课本收好，先去积累工作经验。",
+          "stat": null
+        },
+        {
+          "age": 22,
+          "text": "为买到便宜车票，你提前把回家的日期写在日历上。",
+          "stat": null,
+          "templateId": "college-cheap-ticket"
+        },
+        {
+          "age": 22,
+          "text": "你从招生宣传栏前走过，想起当年翻得起毛的志愿表。",
+          "stat": null,
+          "templateId": "college-campus"
+        },
+        {
+          "age": 22,
+          "text": "你选择了「找一份工作」。",
+          "stat": null
+        },
+        {
+          "age": 22,
+          "text": "第一份稳定下来的工作是个体户。你开始算，到手的钱够不够房租和寄回家的那一笔。",
+          "stat": "career.youth_unemployment",
+          "node": "career",
+          "templateId": "career-22-work-个体户",
+          "reason": "个体户"
+        },
+        {
+          "age": 23,
+          "text": "父亲问你工作累不累，你们都先笑了，过了一会儿才继续说。",
+          "stat": null,
+          "templateId": "adult-parents-4"
+        },
+        {
+          "age": 23,
+          "text": "同事在午饭时聊起是否要孩子，大家的顾虑并不一样。",
+          "stat": null,
+          "templateId": "adult-birth-chat"
+        },
+        {
+          "age": 23,
+          "text": "你选择了「继续工作」。",
+          "stat": null
+        },
+        {
+          "age": 24,
+          "text": "考公公告更新了，你把专业要求和备考安排看了一遍，才关掉浏览器。",
+          "stat": null,
+          "templateId": "adult-exam-result"
+        },
+        {
+          "age": 24,
+          "text": "父亲把一袋家里的土产塞进你的行李，你说太重，最后还是背上了。",
+          "stat": null,
+          "templateId": "adult-parents-2"
+        },
+        {
+          "age": 24,
+          "text": "搬家箱子上写着厨房和卧室，你先拆开了装电饭煲的那箱。",
+          "stat": null,
+          "templateId": "adult-move"
+        },
+        {
+          "age": 24,
+          "text": "你选择了「继续工作」。",
+          "stat": null
+        },
+        {
+          "age": 25,
+          "text": "你把退回来的货重新检查，算了算这单最后还剩多少利润。",
+          "stat": null,
+          "templateId": "adult-trade-1"
+        },
+        {
+          "age": 25,
+          "text": "进货的钱先付出去了，你坐在店里等今天第一位客人。",
+          "stat": null,
+          "templateId": "adult-trade-0"
+        },
+        {
+          "age": 25,
+          "text": "你选择了「省会」。",
+          "stat": null
+        },
+        {
+          "age": 25,
+          "text": "你把生活搬到了省会。",
+          "stat": null
+        },
+        {
+          "age": 25,
+          "text": "你选择了「备考公务员」。",
+          "stat": null
+        },
+        {
+          "age": 25,
+          "text": "这次没有拿到有限的录用名额。你收起准考证，先把这段日子的花销补回去。",
+          "stat": "career.guokao_ratio",
+          "node": "civil",
+          "templateId": "civil-failure-1",
+          "reason": "competition",
+          "draw": 0.39241846185177565,
+          "probability": 0.013164563157742767,
+          "contributions": {
+            "degree": 0,
+            "region": 0.05,
+            "grade": 0.07567657191872562
+          },
+          "dice": [
+            {
+              "id": "civil",
+              "label": "公务员录用概率",
+              "p": 0.013164563157742767,
+              "u": 0.39241846185177565,
+              "pass": false,
+              "contributions": {
+                "degree": 0,
+                "region": 0.05,
+                "grade": 0.07567657191872562,
+                "base": -4.442651256490317
+              },
+              "factors": [
+                {
+                  "key": "grade",
+                  "label": "成绩",
+                  "logit": 0.07567657191872562,
+                  "delta": 0.0009477639985691847,
+                  "pp": 0.09477639985691846
+                },
+                {
+                  "key": "region",
+                  "label": "报考地区",
+                  "logit": 0.05,
+                  "delta": 0.0006339981558269644,
+                  "pp": 0.06339981558269644
+                }
+              ],
+              "positive": true,
+              "successLabel": "录用",
+              "failureLabel": "未录用",
+              "nearMiss": false,
+              "closePass": false,
+              "gap": 0.37925389869403286
+            }
+          ]
+        },
+        {
+          "age": 26,
+          "text": "合租室友搬走了，客厅空出一角；你先问房东接下来的房租怎么算。",
+          "stat": null,
+          "templateId": "adult-room-0"
+        },
+        {
+          "age": 26,
+          "text": "熟客想赊账，你犹豫了一会儿，还是把账记进了本子。",
+          "stat": null,
+          "templateId": "adult-trade-4"
+        },
+        {
+          "age": 26,
+          "text": "你选择了「继续工作」。",
+          "stat": null
+        },
+        {
+          "age": 27,
+          "text": "你和母亲因为过年回哪儿拌了几句嘴，第二天还是先给她打了电话。",
+          "stat": null,
+          "templateId": "adult-mother-4"
+        },
+        {
+          "age": 27,
+          "text": "租房合同快到期，你拍下水表和电表，把押金条单独收好。",
+          "stat": null,
+          "templateId": "adult-room-1"
+        },
+        {
+          "age": 27,
+          "text": "你第一次给自己买了整套床单，被子铺好后坐着发了会儿呆。",
+          "stat": null,
+          "templateId": "adult-room-6"
+        },
+        {
+          "age": 27,
+          "text": "你选择了「继续工作」。",
+          "stat": null
+        },
+        {
+          "age": 28,
+          "text": "相亲时，你们先聊通勤，再聊以后想住在哪里。",
+          "stat": null,
+          "templateId": "adult-match"
+        },
+        {
+          "age": 28,
+          "text": "妈妈郭书瑶把你小时候的奖状找出来，问你要不要一起带走。",
+          "stat": null,
+          "templateId": "adult-mother-0"
+        },
+        {
+          "age": 28,
+          "text": "休息日你把工作群设成免打扰，去河边慢慢走了一段。",
+          "stat": null,
+          "templateId": "adult-day-off"
+        },
+        {
+          "age": 28,
+          "text": "你选择了「备考事业单位」。",
+          "stat": null
+        },
+        {
+          "age": 28,
+          "text": "录用通知没有来，这一轮竞争结束了。这段时间的复习没有换来录用，你得重新安排每天那几个小时。",
+          "stat": "career.tizhi_share",
+          "node": "civil",
+          "templateId": "civil-failure-2",
+          "reason": "competition",
+          "draw": 0.4786025816574693,
+          "probability": 0.05079763205663039,
+          "contributions": {
+            "degree": 0,
+            "region": 0.05,
+            "grade": 0.07727657191872558
+          },
+          "dice": [
+            {
+              "id": "civil",
+              "label": "事业岗位录用概率",
+              "p": 0.05079763205663039,
+              "u": 0.4786025816574693,
+              "pass": false,
+              "contributions": {
+                "degree": 0,
+                "region": 0.05,
+                "grade": 0.07727657191872558,
+                "base": -3.0550488507104103
+              },
+              "factors": [
+                {
+                  "key": "grade",
+                  "label": "成绩",
+                  "logit": 0.07727657191872558,
+                  "delta": 0.003599328614115674,
+                  "pp": 0.3599328614115674
+                },
+                {
+                  "key": "region",
+                  "label": "报考地区",
+                  "logit": 0.05,
+                  "delta": 0.002357422533262335,
+                  "pp": 0.2357422533262335
+                }
+              ],
+              "positive": true,
+              "successLabel": "录用",
+              "failureLabel": "未录用",
+              "nearMiss": false,
+              "closePass": false,
+              "gap": 0.42780494960083887
+            }
+          ]
+        },
+        {
+          "age": 29,
+          "text": "你教父亲把工作地点存进地图，他把截图留在相册的第一张。",
+          "stat": null,
+          "templateId": "adult-parents-3"
+        },
+        {
+          "age": 29,
+          "text": "你选择了「尝试相亲与结婚」。",
+          "stat": null
+        },
+        {
+          "age": 29,
+          "text": "你们一起添置锅碗，开始商量两个人的日子。",
+          "stat": null
+        },
+        {
+          "age": 29,
+          "text": "你选择了「备考事业单位」。",
+          "stat": null
+        },
+        {
+          "age": 29,
+          "text": "等待到结果公布，你还是没有等到那个名额。备考和挣钱挤在一起，接下来得先给哪一边留时间？",
+          "stat": "career.tizhi_share",
+          "node": "civil",
+          "templateId": "civil-failure-3",
+          "reason": "competition",
+          "draw": 0.7318476890213788,
+          "probability": 0.05077449277463603,
+          "contributions": {
+            "degree": 0,
+            "region": 0.05,
+            "grade": 0.07679657191872556
+          },
+          "dice": [
+            {
+              "id": "civil",
+              "label": "事业岗位录用概率",
+              "p": 0.05077449277463603,
+              "u": 0.7318476890213788,
+              "pass": false,
+              "contributions": {
+                "degree": 0,
+                "region": 0.05,
+                "grade": 0.07679657191872556,
+                "base": -3.0550488507104103
+              },
+              "factors": [
+                {
+                  "key": "grade",
+                  "label": "成绩",
+                  "logit": 0.07679657191872556,
+                  "delta": 0.003576189332121317,
+                  "pp": 0.3576189332121317
+                },
+                {
+                  "key": "region",
+                  "label": "报考地区",
+                  "logit": 0.05,
+                  "delta": 0.002356403459016866,
+                  "pp": 0.23564034590168662
+                }
+              ],
+              "positive": true,
+              "successLabel": "录用",
+              "failureLabel": "未录用",
+              "nearMiss": false,
+              "closePass": false,
+              "gap": 0.6810731962467427
+            }
+          ]
+        },
+        {
+          "age": 30,
+          "text": "房东问要不要续租，你把通勤路线和搬家费用列在便签上。",
+          "stat": null,
+          "templateId": "adult-rent"
+        },
+        {
+          "age": 30,
+          "text": "你选择了「继续工作」。",
+          "stat": null
+        },
+        {
+          "age": 31,
+          "text": "爸爸孙承宇的工作服袖口磨白了。你提起换新的，他说等下次。",
+          "stat": null,
+          "templateId": "adult-parents-1"
+        },
+        {
+          "age": 31,
+          "text": "你选择了「继续租住」。",
+          "stat": null
+        },
+        {
+          "age": 31,
+          "text": "你续签了租房合同。",
+          "stat": null
+        },
+        {
+          "age": 31,
+          "text": "你选择了「继续工作」。",
+          "stat": null
+        },
+        {
+          "age": 32,
+          "text": "朋友的婚礼请柬发来，群里开始讨论谁坐哪班车回去。",
+          "stat": null,
+          "templateId": "adult-marriage"
+        },
+        {
+          "age": 32,
+          "text": "临近节日，货比平时卖得快，你关店后又补了一次货。",
+          "stat": null,
+          "templateId": "adult-trade-3"
+        },
+        {
+          "age": 32,
+          "text": "你选择了「继续工作」。",
+          "stat": null
+        },
+        {
+          "age": 33,
+          "text": "爸爸孙承宇在66岁离开了。你翻出家里的旧照片，才发现许多话还没有来得及说。",
+          "stat": "health.life_expectancy_by_sex",
+          "node": "parentDeath"
+        },
+        {
+          "age": 33,
+          "text": "你算着去公司的最后一班车，没参加同事临时约的那顿饭。",
+          "stat": null,
+          "templateId": "adult-room-3"
+        },
+        {
+          "age": 33,
+          "text": "搬家时你舍不得扔的东西装满一箱，最后还是留下了那口小电锅。",
+          "stat": null,
+          "templateId": "adult-room-4"
+        },
+        {
+          "age": 33,
+          "text": "你选择了「暂时不生育」。",
+          "stat": null
+        },
+        {
+          "age": 33,
+          "text": "你选择了「继续工作」。",
+          "stat": null
+        },
+        {
+          "age": 34,
+          "text": "新住处隔音不好，隔壁的闹钟响起时，你也跟着醒了。",
+          "stat": null,
+          "templateId": "adult-room-5"
+        },
+        {
+          "age": 34,
+          "text": "翻到婚礼时留下的清单，你们聊起当初一起置办生活用品的日子。",
+          "stat": null,
+          "templateId": "adult-wedding-plan"
+        },
+        {
+          "age": 34,
+          "text": "你给母亲买了双鞋，她先问价钱，试穿时却走了好几个来回。",
+          "stat": null,
+          "templateId": "adult-mother-2"
+        },
+        {
+          "age": 34,
+          "text": "你选择了「备考事业单位」。",
+          "stat": null
+        },
+        {
+          "age": 34,
+          "text": "这次报考走到了结果公布，却没有走到入职。书桌还在原处，你却要重新想清楚明年是否继续坐下来。",
+          "stat": "career.tizhi_share",
+          "node": "civil",
+          "templateId": "civil-failure-4",
+          "reason": "competition",
+          "draw": 0.5302338227629662,
+          "probability": 0.050658945941122795,
+          "contributions": {
+            "degree": 0,
+            "region": 0.05,
+            "grade": 0.07439657191872548
+          },
+          "dice": [
+            {
+              "id": "civil",
+              "label": "事业岗位录用概率",
+              "p": 0.050658945941122795,
+              "u": 0.5302338227629662,
+              "pass": false,
+              "contributions": {
+                "degree": 0,
+                "region": 0.05,
+                "grade": 0.07439657191872548,
+                "base": -3.0550488507104103
+              },
+              "factors": [
+                {
+                  "key": "grade",
+                  "label": "成绩",
+                  "logit": 0.07439657191872548,
+                  "delta": 0.0034606424986080644,
+                  "pp": 0.3460642498608064
+                },
+                {
+                  "key": "region",
+                  "label": "报考地区",
+                  "logit": 0.05,
+                  "delta": 0.002351313926300995,
+                  "pp": 0.2351313926300995
+                }
+              ],
+              "positive": true,
+              "successLabel": "录用",
+              "failureLabel": "未录用",
+              "nearMiss": false,
+              "closePass": false,
+              "gap": 0.47957487682184335
+            }
+          ]
+        },
+        {
+          "age": 35,
+          "text": "租房合同快到期，你拍下水表和电表，把押金条单独收好。",
+          "stat": null,
+          "templateId": "adult-room-1"
+        },
+        {
+          "age": 35,
+          "text": "你选择了「继续现在的工作」。",
+          "stat": null
+        },
+        {
+          "age": 35,
+          "text": "个体户的工作结束了。你带着这些年的经验重新找活，最后接上了工厂工人的收入。",
+          "stat": null,
+          "node": "midcareer",
+          "industry": "business",
+          "probability": 0.16,
+          "contributions": {
+            "industry": 0.16
+          },
+          "footnote": "本次人生计算中，这一行业在35岁节点的岗位中断风险为 16%。来源：本地岗位风险参数；不是行业调查结果。",
+          "draw": 0.1523539493791759,
+          "dice": [
+            {
+              "id": "midcareer",
+              "label": "本次岗位中断概率",
+              "p": 0.16,
+              "u": 0.1523539493791759,
+              "pass": true,
+              "contributions": {
+                "base": -1.9924301646902063,
+                "industry": 0.33420208808667407
+              },
+              "factors": [
+                {
+                  "key": "industry",
+                  "label": "所在行业",
+                  "logit": 0.33420208808667407,
+                  "delta": 0.04000000000000001,
+                  "pp": 4.000000000000001
+                }
+              ],
+              "positive": false,
+              "successLabel": "岗位中断",
+              "failureLabel": "岗位保留",
+              "nearMiss": false,
+              "closePass": false,
+              "gap": 0.007646050620824102
+            }
+          ],
+          "templateId": "midcareer-reemployed",
+          "reason": "business"
+        },
+        {
+          "age": 35,
+          "text": "你选择了「继续工作」。",
+          "stat": null
+        },
+        {
+          "age": 36,
+          "text": "社区更新健康档案，你找出上次体检忘了看的那张报告。",
+          "stat": null,
+          "templateId": "middle-health-file"
+        },
+        {
+          "age": 37,
+          "text": "家里的水龙头又滴水，你照着教程换了密封圈。",
+          "stat": null,
+          "templateId": "middle-repair"
+        },
+        {
+          "age": 37,
+          "text": "体检提醒你多活动，你把久没穿的运动鞋重新擦干净。",
+          "stat": null,
+          "templateId": "middle-exercise"
+        },
+        {
+          "age": 37,
+          "text": "你在医院走廊替母亲排队，手机上同时亮着工作群的消息。",
+          "stat": null,
+          "templateId": "middle-mother-7"
+        },
+        {
+          "age": 38,
+          "text": "你教长辈用手机挂号，对方又问了一遍，你把步骤写在纸上。",
+          "stat": null,
+          "templateId": "middle-parent-phone"
+        },
+        {
+          "age": 38,
+          "text": "母亲想来你身边住几天，你腾出柜子，提前把床单洗好。",
+          "stat": null,
+          "templateId": "middle-mother-4"
+        },
+        {
+          "age": 39,
+          "text": "你发现母亲的电话号码本已经写满，给她买了新的，又怕她找不到旧号码。",
+          "stat": null,
+          "templateId": "middle-mother-5"
+        },
+        {
+          "age": 39,
+          "text": "新来的同事向你请教，你讲到一半，发现有些经验已经不适用了。",
+          "stat": null,
+          "templateId": "middle-work-0"
+        },
+        {
+          "age": 39,
+          "text": "旧同事发来聚会照片，你认出了几张脸，剩下的人想了很久。",
+          "stat": null,
+          "templateId": "middle-ordinary-2"
+        },
+        {
+          "age": 40,
+          "text": "你把窗帘拆下来洗，阳光照进屋里，灰尘在空中慢慢落下。",
+          "stat": null,
+          "templateId": "middle-ordinary-14"
+        },
+        {
+          "age": 41,
+          "text": "你听见有人谈退休，才开始认真查自己缴费的记录。",
+          "stat": null,
+          "templateId": "middle-work-6"
+        },
+        {
+          "age": 41,
+          "text": "妈妈郭书瑶不再一口气提起整桶水，你把小水壶放在她顺手的位置。",
+          "stat": null,
+          "templateId": "middle-mother-0"
+        },
+        {
+          "age": 42,
+          "text": "同事准备继续读书，你也找来专业课教材，试着翻了开头。",
+          "stat": null,
+          "templateId": "middle-new-skills"
+        },
+        {
+          "age": 43,
+          "text": "饭后你和家人讨论退休以后想怎样生活，把想去的地方记下来。",
+          "stat": null,
+          "templateId": "middle-future-plan"
+        },
+        {
+          "age": 43,
+          "text": "母亲把你的生日记得很牢，却忘了上次复查是哪一天。",
+          "stat": null,
+          "templateId": "middle-mother-2"
+        },
+        {
+          "age": 43,
+          "text": "你教长辈用手机挂号，对方又问了一遍，你把步骤写在纸上。",
+          "stat": null,
+          "templateId": "middle-parent-phone"
+        },
+        {
+          "age": 44,
+          "text": "你把重要证件装进同一个袋子，告诉家人平时放在哪里。",
+          "stat": null,
+          "templateId": "middle-ordinary-12"
+        },
+        {
+          "age": 44,
+          "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+          "stat": null,
+          "templateId": "middle-dinner"
+        },
+        {
+          "age": 44,
+          "text": "你给自己预约体检，发现想选的那天还要上班，又往后挪了一周。",
+          "stat": null,
+          "templateId": "middle-ordinary-4"
+        },
+        {
+          "age": 45,
+          "text": "旧相识来到附近，你们吃了顿便饭，话题从近况慢慢聊到家人。",
+          "stat": null,
+          "templateId": "middle-old-friend"
+        },
+        {
+          "age": 45,
+          "text": "新来的同事向你请教，你讲到一半，发现有些经验已经不适用了。",
+          "stat": null,
+          "templateId": "middle-work-0"
+        },
+        {
+          "age": 46,
+          "text": "你准备下班时有人来找，家里的晚饭只好再热一次。",
+          "stat": null,
+          "templateId": "middle-work-4"
+        },
+        {
+          "age": 47,
+          "text": "衣柜里有件年轻时买的外套，你试穿了一次，还是叠好放回去。",
+          "stat": null,
+          "templateId": "middle-ordinary-11"
+        },
+        {
+          "age": 47,
+          "text": "陪家人去复查，你把药盒照片和医嘱存在手机同一个文件夹。",
+          "stat": null,
+          "templateId": "middle-parents-check"
+        },
+        {
+          "age": 48,
+          "text": "妈妈郭书瑶在84岁离开了。你翻出家里的旧照片，才发现许多话还没有来得及说。",
+          "stat": "health.life_expectancy_by_sex",
+          "node": "parentDeath"
+        },
+        {
+          "age": 48,
+          "text": "旧同事发来聚会照片，你认出了几张脸，剩下的人想了很久。",
+          "stat": null,
+          "templateId": "middle-ordinary-2"
+        },
+        {
+          "age": 48,
+          "text": "你和家人因为一笔支出争了几句，饭后又坐下来重新算账。",
+          "stat": null,
+          "templateId": "middle-ordinary-8"
+        },
+        {
+          "age": 49,
+          "text": "屋里的灯坏了，你站在凳子上换灯泡，家人在下面扶着凳脚。",
+          "stat": null,
+          "templateId": "middle-ordinary-0"
+        },
+        {
+          "age": 50,
+          "text": "公司通知换系统，你和同事对着新页面把操作步骤记下来。",
+          "stat": null,
+          "templateId": "middle-work-5"
+        },
+        {
+          "age": 51,
+          "text": "通勤的路修了新桥，你试走一遍，记住了新的公交站。",
+          "stat": null,
+          "templateId": "middle-ordinary-3"
+        },
+        {
+          "age": 51,
+          "text": "旧相识来到附近，你们吃了顿便饭，话题从近况慢慢聊到家人。",
+          "stat": null,
+          "templateId": "middle-old-friend"
+        },
+        {
+          "age": 51,
+          "text": "聚餐时年轻同事聊起新的工具，你回家后找了教程。",
+          "stat": null,
+          "templateId": "middle-work-2"
+        },
+        {
+          "age": 52,
+          "text": "衣柜里有件年轻时买的外套，你试穿了一次，还是叠好放回去。",
+          "stat": null,
+          "templateId": "middle-ordinary-11"
+        },
+        {
+          "age": 52,
+          "text": "手机里要回复的消息很多，你先点开了家人的那一条。",
+          "stat": null,
+          "templateId": "middle-ordinary-5"
+        },
+        {
+          "age": 52,
+          "text": "你听见有人谈退休，才开始认真查自己缴费的记录。",
+          "stat": null,
+          "templateId": "middle-work-6"
+        },
+        {
+          "age": 53,
+          "text": "转岗培训需要重新做笔记，你把听不懂的地方用笔标出来。",
+          "stat": null,
+          "templateId": "middle-retrain"
+        },
+        {
+          "age": 53,
+          "text": "同事准备继续读书，你也找来专业课教材，试着翻了开头。",
+          "stat": null,
+          "templateId": "middle-new-skills"
+        },
+        {
+          "age": 53,
+          "text": "社区更新健康档案，你找出上次体检忘了看的那张报告。",
+          "stat": null,
+          "templateId": "middle-health-file"
+        },
+        {
+          "age": 54,
+          "text": "同学聚会散场，有人赶夜班车，有人还要回去照顾老人。",
+          "stat": null,
+          "templateId": "middle-ordinary-13"
+        },
+        {
+          "age": 54,
+          "text": "你把工作资料分门放好，想让接手的人少走一些弯路。",
+          "stat": null,
+          "templateId": "middle-work-1"
+        },
+        {
+          "age": 54,
+          "text": "家里水管漏了，师傅拆开墙角时，你拿盆接了整整一晚。",
+          "stat": null,
+          "templateId": "middle-ordinary-6"
+        },
+        {
+          "age": 55,
+          "text": "公司通知换系统，你和同事对着新页面把操作步骤记下来。",
+          "stat": null,
+          "templateId": "middle-work-5"
+        },
+        {
+          "age": 56,
+          "text": "难得家里人都准时回来，饭菜热了又热，终于一起坐下。",
+          "stat": null,
+          "templateId": "middle-dinner"
+        },
+        {
+          "age": 56,
+          "text": "陪家人去复查，你把药盒照片和医嘱存在手机同一个文件夹。",
+          "stat": null,
+          "templateId": "middle-parents-check"
+        },
+        {
+          "age": 57,
+          "text": "一笔欠款到账后，你先补齐了拖着的维修费，才松了口气。",
+          "stat": null,
+          "templateId": "middle-work-7"
+        },
+        {
+          "age": 57,
+          "text": "你把重要证件装进同一个袋子，告诉家人平时放在哪里。",
+          "stat": null,
+          "templateId": "middle-ordinary-12"
+        },
+        {
+          "age": 58,
+          "text": "年轻亲戚请你帮忙看看简历，你把联系方式一栏单独圈出来。",
+          "stat": null,
+          "templateId": "middle-young-job"
+        },
+        {
+          "age": 59,
+          "text": "手机里要回复的消息很多，你先点开了家人的那一条。",
+          "stat": null,
+          "templateId": "middle-ordinary-5"
+        },
+        {
+          "age": 60,
+          "text": "你收好工作时常用的物件，开始重新安排一天的时间。",
+          "stat": null
+        },
+        {
+          "age": 60,
+          "text": "早点摊的老板换成了年轻人，仍认得你爱吃哪一种。",
+          "stat": null,
+          "templateId": "senior-day-0"
+        },
+        {
+          "age": 61,
+          "text": "老朋友说起当年的工作，你们记得的细节不一样，谁也没有争。",
+          "stat": null,
+          "templateId": "senior-day-27"
+        },
+        {
+          "age": 61,
+          "text": "你整理旧书时读到自己年轻时的批注，认出了熟悉的字迹。",
+          "stat": null,
+          "templateId": "senior-day-24"
+        },
+        {
+          "age": 61,
+          "text": "老朋友来串门，茶续了又续，你们又聊起年轻时的工作。",
+          "stat": null,
+          "templateId": "senior-old-friend"
+        },
+        {
+          "age": 62,
+          "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+          "stat": null,
+          "templateId": "senior-pension"
+        },
+        {
+          "age": 62,
+          "text": "你把冰箱里的食物分成小份，贴上日期，提醒自己不要放太久。",
+          "stat": null,
+          "templateId": "senior-day-28"
+        },
+        {
+          "age": 63,
+          "text": "手机又弹出更新提示，你请晚辈把常用按钮放回原处。",
+          "stat": null,
+          "templateId": "senior-phone"
+        },
+        {
+          "age": 63,
+          "text": "整理旧物时翻出毕业证，你把压弯的封皮轻轻抚平。",
+          "stat": null,
+          "templateId": "senior-archive"
+        },
+        {
+          "age": 63,
+          "text": "你把医疗卡和证件放进小包，出门前又摸了一次拉链。",
+          "stat": null,
+          "templateId": "senior-day-14"
+        },
+        {
+          "age": 64,
+          "text": "你学会把手机声音调大，家人的消息终于不再漏掉。",
+          "stat": null,
+          "templateId": "senior-day-19"
+        },
+        {
+          "age": 65,
+          "text": "楼下添了长椅，你走累了能坐一会儿，看人们来来往往。",
+          "stat": null,
+          "templateId": "senior-day-21"
+        },
+        {
+          "age": 65,
+          "text": "邻居送来自己腌的菜，你把洗干净的罐子还回去，里面装了几颗水果。",
+          "stat": null,
+          "templateId": "senior-day-10"
+        },
+        {
+          "age": 66,
+          "text": "家里的门锁换了，你试开了几次，才把备用钥匙收好。",
+          "stat": null,
+          "templateId": "senior-day-6"
+        },
+        {
+          "age": 67,
+          "text": "老友约你见面，最后因为一场雨改在下周，电话倒聊了很久。",
+          "stat": null,
+          "templateId": "senior-day-18"
+        },
+        {
+          "age": 68,
+          "text": "天气预报说降温，你把厚衣服拿出来，又给家人发了条提醒。",
+          "stat": null,
+          "templateId": "senior-day-9"
+        },
+        {
+          "age": 68,
+          "text": "一次复诊要转几趟车，你提前一天把路线写好。",
+          "stat": null,
+          "templateId": "senior-day-15"
+        },
+        {
+          "age": 68,
+          "text": "老朋友来串门，茶续了又续，你们又聊起年轻时的工作。",
+          "stat": null,
+          "templateId": "senior-old-friend"
+        },
+        {
+          "age": 69,
+          "text": "午觉醒来屋里很安静，你打开收音机，听完了一段天气预报。",
+          "stat": null,
+          "templateId": "senior-day-13"
+        },
+        {
+          "age": 69,
+          "text": "你把常联系的电话号码抄在纸上，放在座机旁边。",
+          "stat": null,
+          "templateId": "senior-day-1"
+        },
+        {
+          "age": 70,
+          "text": "你不再赶早高峰出门，公交车空一些，能慢慢找个座位。",
+          "stat": null,
+          "templateId": "senior-day-8"
+        },
+        {
+          "age": 70,
+          "text": "你把医疗卡和证件放进小包，出门前又摸了一次拉链。",
+          "stat": null,
+          "templateId": "senior-day-14"
+        },
+        {
+          "age": 70,
+          "text": "整理旧物时翻出毕业证，你把压弯的封皮轻轻抚平。",
+          "stat": null,
+          "templateId": "senior-archive"
+        },
+        {
+          "age": 71,
+          "text": "上楼时你歇了一会儿，决定下次少提一点东西。",
+          "stat": null,
+          "templateId": "senior-stairs"
+        },
+        {
+          "age": 71,
+          "text": "早点摊的老板换成了年轻人，仍认得你爱吃哪一种。",
+          "stat": null,
+          "templateId": "senior-day-0"
+        },
+        {
+          "age": 71,
+          "text": "你把常用的碗搬到低处，不想再踮脚去够上层柜子。",
+          "stat": null,
+          "templateId": "senior-day-11"
+        },
+        {
+          "age": 72,
+          "text": "晨练的路走得慢了些，你在树荫下停下，和熟人打招呼。",
+          "stat": null,
+          "templateId": "senior-walk"
+        },
+        {
+          "age": 72,
+          "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+          "stat": null,
+          "templateId": "senior-calendar"
+        },
+        {
+          "age": 72,
+          "text": "你整理抽屉里积下的票据，最下面压着年轻时的一张车票。",
+          "stat": null,
+          "templateId": "senior-day-7"
+        },
+        {
+          "age": 73,
+          "text": "广场的音乐响起，你没有急着加入，先在旁边跟着打拍子。",
+          "stat": null,
+          "templateId": "senior-dance"
+        },
+        {
+          "age": 73,
+          "text": "你整理旧书时读到自己年轻时的批注，认出了熟悉的字迹。",
+          "stat": null,
+          "templateId": "senior-day-24"
+        },
+        {
+          "age": 74,
+          "text": "夜里醒来，你没有立刻起身，等眼睛适应了灯光才慢慢坐起。",
+          "stat": null,
+          "templateId": "senior-day-29"
+        },
+        {
+          "age": 75,
+          "text": "你学会把手机声音调大，家人的消息终于不再漏掉。",
+          "stat": null,
+          "templateId": "senior-day-19"
+        },
+        {
+          "age": 75,
+          "text": "街口的店重新装修，招牌换了，你还是习惯叫它原来的名字。",
+          "stat": null,
+          "templateId": "senior-day-4"
+        },
+        {
+          "age": 75,
+          "text": "晴天你把被子拿出去晒，傍晚收回来时带着暖暖的味道。",
+          "stat": null,
+          "templateId": "senior-quilt"
+        },
+        {
+          "age": 76,
+          "text": "领取养老金后，你先记下日常开销，再去市场挑新鲜蔬菜。",
+          "stat": null,
+          "templateId": "senior-pension"
+        },
+        {
+          "age": 76,
+          "text": "社区活动室开门，你把上次没下完的棋重新摆好。",
+          "stat": null,
+          "templateId": "senior-community"
+        },
+        {
+          "age": 76,
+          "text": "家里的门锁换了，你试开了几次，才把备用钥匙收好。",
+          "stat": null,
+          "templateId": "senior-day-6"
+        },
+        {
+          "age": 77,
+          "text": "过节的消息一条条跳出来，你挑了几句最简单的话回复。",
+          "stat": null,
+          "templateId": "senior-day-23"
+        },
+        {
+          "age": 78,
+          "text": "老朋友说起当年的工作，你们记得的细节不一样，谁也没有争。",
+          "stat": null,
+          "templateId": "senior-day-27"
+        },
+        {
+          "age": 78,
+          "text": "新日历挂上墙，你用笔圈出家人计划回来的日子。",
+          "stat": null,
+          "templateId": "senior-calendar"
+        },
+        {
+          "age": 78,
+          "text": "你在窗边补衣服，线头穿不过针眼，换了副眼镜才看清。",
+          "stat": null,
+          "templateId": "senior-day-17"
+        },
+        {
+          "age": 79,
+          "text": "你翻到父母的旧照片，发现自己越来越像记忆里的他们。",
+          "stat": null,
+          "templateId": "senior-day-20"
+        },
+        {
+          "age": 79,
+          "text": "体检报告装进旧文件袋，你按医嘱在药盒上贴了标签。",
+          "stat": null,
+          "templateId": "senior-checkup"
+        },
+        {
+          "age": 79,
+          "text": "你在理发店坐下，理发师先问水温，再问想剪到哪里。",
+          "stat": null,
+          "templateId": "senior-day-25"
+        },
+        {
+          "age": 80,
+          "text": "你不再赶早高峰出门，公交车空一些，能慢慢找个座位。",
+          "stat": null,
+          "templateId": "senior-day-8"
+        },
+        {
+          "age": 80,
+          "text": "你把常吃的药列了清单，去不同科室时都随身带着。",
+          "stat": null,
+          "templateId": "senior-day-22"
+        },
+        {
+          "age": 81,
+          "text": "上楼时你歇了一会儿，决定下次少提一点东西。",
+          "stat": null,
+          "templateId": "senior-stairs"
+        },
+        {
+          "age": 81,
+          "text": "社区活动室开门，你把上次没下完的棋重新摆好。",
+          "stat": null,
+          "templateId": "senior-community"
+        },
+        {
+          "age": 82,
+          "text": "健康讲座说起全国人均预期寿命，你听完那个数字，还是按自己的步子走回家。",
+          "stat": "health.life_expectancy",
+          "templateId": "senior-life-data"
+        },
+        {
+          "age": 82,
+          "text": "厨房的锅盖柄松了，你找来螺丝刀，修好后敲了敲试试。",
+          "stat": null,
+          "templateId": "senior-day-26"
+        },
+        {
+          "age": 82,
+          "text": "午觉醒来屋里很安静，你打开收音机，听完了一段天气预报。",
+          "stat": null,
+          "templateId": "senior-day-13"
+        },
+        {
+          "age": 83,
+          "text": "你在窗边补衣服，线头穿不过针眼，换了副眼镜才看清。",
+          "stat": null,
+          "templateId": "senior-day-17"
+        },
+        {
+          "age": 83,
+          "text": "日历翻过去一页，你想起有位老朋友很久没来，拨了个电话。",
+          "stat": null,
+          "templateId": "senior-day-2"
+        },
+        {
+          "age": 83,
+          "text": "窗边的花又开了，你挪了挪花盆，让它多晒一会儿太阳。",
+          "stat": null,
+          "templateId": "senior-window"
+        },
+        {
+          "age": 83,
+          "text": "83岁这一年，你因脑卒中离开了。家人把你的旧照片收进了相册。",
+          "stat": "health.life_expectancy",
+          "node": "death"
+        }
+      ],
+      "history": [
+        {
+          "age": 0,
+          "happy": 65
+        },
+        {
+          "age": 1,
+          "happy": 66
+        },
+        {
+          "age": 2,
+          "happy": 69
+        },
+        {
+          "age": 3,
+          "happy": 69
+        },
+        {
+          "age": 4,
+          "happy": 70
+        },
+        {
+          "age": 5,
+          "happy": 71
+        },
+        {
+          "age": 6,
+          "happy": 71
+        },
+        {
+          "age": 7,
+          "happy": 71
+        },
+        {
+          "age": 8,
+          "happy": 71
+        },
+        {
+          "age": 9,
+          "happy": 71
+        },
+        {
+          "age": 10,
+          "happy": 72.8
+        },
+        {
+          "age": 11,
+          "happy": 73.8
+        },
+        {
+          "age": 12,
+          "happy": 75.5
+        },
+        {
+          "age": 13,
+          "happy": 75.5
+        },
+        {
+          "age": 14,
+          "happy": 74.5
+        },
+        {
+          "age": 15,
+          "happy": 74.5
+        },
+        {
+          "age": 16,
+          "happy": 74.2
+        },
+        {
+          "age": 17,
+          "happy": 76
+        },
+        {
+          "age": 18,
+          "happy": 79
+        },
+        {
+          "age": 19,
+          "happy": 79
+        },
+        {
+          "age": 20,
+          "happy": 80
+        },
+        {
+          "age": 21,
+          "happy": 80.7
+        },
+        {
+          "age": 22,
+          "happy": 83.5
+        },
+        {
+          "age": 23,
+          "happy": 84.5
+        },
+        {
+          "age": 24,
+          "happy": 86.3
+        },
+        {
+          "age": 25,
+          "happy": 88.3
+        },
+        {
+          "age": 26,
+          "happy": 87.3
+        },
+        {
+          "age": 27,
+          "happy": 90
+        },
+        {
+          "age": 28,
+          "happy": 92
+        },
+        {
+          "age": 29,
+          "happy": 90.8
+        },
+        {
+          "age": 30,
+          "happy": 86.8
+        },
+        {
+          "age": 31,
+          "happy": 87.8
+        },
+        {
+          "age": 32,
+          "happy": 88.8
+        },
+        {
+          "age": 33,
+          "happy": 90.8
+        },
+        {
+          "age": 34,
+          "happy": 93.8
+        },
+        {
+          "age": 35,
+          "happy": 91.8
+        },
+        {
+          "age": 36,
+          "happy": 91.5
+        },
+        {
+          "age": 37,
+          "happy": 92.5
+        },
+        {
+          "age": 38,
+          "happy": 94.3
+        },
+        {
+          "age": 39,
+          "happy": 98.1
+        },
+        {
+          "age": 40,
+          "happy": 99.1
+        },
+        {
+          "age": 41,
+          "happy": 100
+        },
+        {
+          "age": 42,
+          "happy": 100
+        },
+        {
+          "age": 43,
+          "happy": 100
+        },
+        {
+          "age": 44,
+          "happy": 100
+        },
+        {
+          "age": 45,
+          "happy": 100
+        },
+        {
+          "age": 46,
+          "happy": 100
+        },
+        {
+          "age": 47,
+          "happy": 100
+        },
+        {
+          "age": 48,
+          "happy": 100
+        },
+        {
+          "age": 49,
+          "happy": 100
+        },
+        {
+          "age": 50,
+          "happy": 100
+        },
+        {
+          "age": 51,
+          "happy": 100
+        },
+        {
+          "age": 52,
+          "happy": 100
+        },
+        {
+          "age": 53,
+          "happy": 99.7
+        },
+        {
+          "age": 54,
+          "happy": 100
+        },
+        {
+          "age": 55,
+          "happy": 100
+        },
+        {
+          "age": 56,
+          "happy": 100
+        },
+        {
+          "age": 57,
+          "happy": 100
+        },
+        {
+          "age": 58,
+          "happy": 100
+        },
+        {
+          "age": 59,
+          "happy": 100
+        },
+        {
+          "age": 60,
+          "happy": 100
+        },
+        {
+          "age": 61,
+          "happy": 100
+        },
+        {
+          "age": 62,
+          "happy": 100
+        },
+        {
+          "age": 63,
+          "happy": 100
+        },
+        {
+          "age": 64,
+          "happy": 100
+        },
+        {
+          "age": 65,
+          "happy": 100
+        },
+        {
+          "age": 66,
+          "happy": 100
+        },
+        {
+          "age": 67,
+          "happy": 100
+        },
+        {
+          "age": 68,
+          "happy": 100
+        },
+        {
+          "age": 69,
+          "happy": 100
+        },
+        {
+          "age": 70,
+          "happy": 100
+        },
+        {
+          "age": 71,
+          "happy": 100
+        },
+        {
+          "age": 72,
+          "happy": 100
+        },
+        {
+          "age": 73,
+          "happy": 100
+        },
+        {
+          "age": 74,
+          "happy": 100
+        },
+        {
+          "age": 75,
+          "happy": 100
+        },
+        {
+          "age": 76,
+          "happy": 100
+        },
+        {
+          "age": 77,
+          "happy": 100
+        },
+        {
+          "age": 78,
+          "happy": 100
+        },
+        {
+          "age": 79,
+          "happy": 100
+        },
+        {
+          "age": 80,
+          "happy": 100
+        },
+        {
+          "age": 81,
+          "happy": 100
+        },
+        {
+          "age": 82,
+          "happy": 100
+        },
+        {
+          "age": 83,
+          "happy": 100
+        }
+      ],
+      "pending": null,
+      "choices": [
+        {
+          "age": 15,
+          "decision": "school",
+          "choice": "general"
+        },
+        {
+          "age": 18,
+          "decision": "exam",
+          "choice": "exam"
+        },
+        {
+          "age": 19,
+          "decision": "repeat",
+          "choice": "college"
+        },
+        {
+          "age": 21,
+          "decision": "upgrade",
+          "choice": "upgrade"
+        },
+        {
+          "age": 22,
+          "decision": "career",
+          "choice": "work"
+        },
+        {
+          "age": 23,
+          "decision": "careerPlan",
+          "choice": "work"
+        },
+        {
+          "age": 24,
+          "decision": "careerPlan",
+          "choice": "work"
+        },
+        {
+          "age": 25,
+          "decision": "city",
+          "choice": "省会"
+        },
+        {
+          "age": 25,
+          "decision": "careerPlan",
+          "choice": "civil"
+        },
+        {
+          "age": 26,
+          "decision": "careerPlan",
+          "choice": "work"
+        },
+        {
+          "age": 27,
+          "decision": "careerPlan",
+          "choice": "work"
+        },
+        {
+          "age": 28,
+          "decision": "careerPlan",
+          "choice": "institution"
+        },
+        {
+          "age": 29,
+          "decision": "marry",
+          "choice": "marry"
+        },
+        {
+          "age": 29,
+          "decision": "careerPlan",
+          "choice": "institution"
+        },
+        {
+          "age": 30,
+          "decision": "careerPlan",
+          "choice": "work"
+        },
+        {
+          "age": 31,
+          "decision": "house",
+          "choice": "rent"
+        },
+        {
+          "age": 31,
+          "decision": "careerPlan",
+          "choice": "work"
+        },
+        {
+          "age": 32,
+          "decision": "careerPlan",
+          "choice": "work"
+        },
+        {
+          "age": 33,
+          "decision": "child",
+          "choice": "no"
+        },
+        {
+          "age": 33,
+          "decision": "careerPlan",
+          "choice": "work"
+        },
+        {
+          "age": 34,
+          "decision": "careerPlan",
+          "choice": "institution"
+        },
+        {
+          "age": 35,
+          "decision": "midcareer",
+          "choice": "stay"
+        },
+        {
+          "age": 35,
+          "decision": "careerPlan",
+          "choice": "work"
+        }
+      ],
+      "record": {
+        "junior": true,
+        "stage": true,
+        "general": false,
+        "completed": true,
+        "gaokao": true,
+        "admitted": false,
+        "elite": false,
+        "age22": "个体户",
+        "careerPlanAge": 35,
+        "civilAttempts": 4,
+        "job40": "工厂工人"
+      },
+      "repeatUsed": true,
+      "family": {
+        "generation": 3,
+        "rootId": "粤-2026-410636",
+        "ancestors": [
+          {
+            "id": "粤-2026-410636",
+            "seed": 62806410636,
+            "name": "孙可欣",
+            "year": 2026,
+            "sex": "female",
+            "age": 91,
+            "province": "广东",
+            "place": "饶平县",
+            "hukou": "rural",
+            "wealthQ": 1,
+            "edu": "junior",
+            "job": "个体户",
+            "city": "县城",
+            "leftBehind": true,
+            "settlement": {
+              "province": "广东",
+              "place": "饶平县",
+              "hukou": "urban",
+              "label": "广东饶平县"
+            },
+            "generation": 1
+          },
+          {
+            "id": "粤-2026-410636·二代",
+            "seed": 2801848279,
+            "name": "孙承宇",
+            "year": 2059,
+            "sex": "male",
+            "age": 66,
+            "province": "广东",
+            "place": "饶平县",
+            "hukou": "urban",
+            "wealthQ": 1,
+            "edu": "junior",
+            "job": "本地服务业",
+            "city": "省会",
+            "leftBehind": false,
+            "settlement": {
+              "province": "广东",
+              "place": "广州市",
+              "hukou": "urban",
+              "label": "广东广州市"
+            },
+            "generation": 2
+          }
+        ],
+        "parentSpouse": {
+          "name": "郭书瑶",
+          "sex": "female",
+          "birthAge": 36,
+          "age": 36,
+          "job": "工人",
+          "education": "初中及以下",
+          "income": 27527,
+          "assets": 32367
+        },
+        "resourcePercentile": 0.08895,
+        "mobilityRedraw": false
+      },
+      "capture": true,
+      "verdictUsage": {
+        "verdict:school:wealth:3": {
+          "count": 1,
+          "lastAge": 15
+        },
+        "verdict:completion:chance:2": {
+          "count": 1,
+          "lastAge": 18
+        },
+        "verdict:exam:chance:2": {
+          "count": 1,
+          "lastAge": 18
+        }
+      },
+      "mortgage": 0,
+      "peakIncome": 69575,
+      "industry": "manufacturing",
+      "examGapUntil": 35,
+      "retired": true,
+      "lastJob": "工厂工人",
+      "death": {
+        "category": "疾病",
+        "detail": "脑卒中"
+      }
+    }
+  ]
+}

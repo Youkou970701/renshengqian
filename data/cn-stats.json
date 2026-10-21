@@ -1,0 +1,471 @@
+{
+  "_readme": "投胎模拟器·中国版 统计底表。由 Claude 维护，Codex 只读引用、不得改数。status: 已核=有出处原文数字；估算=Claude 按公开数推算，需后续用《中国统计年鉴2025》替换；参数=游戏机制参数，不是统计数，可调但要过校准测试。",
+  "_updated": "2026-10-21（第二版：01 验收后补数）",
+  "births": {
+    "national_2024": {
+      "value": 954,
+      "unit": "万人",
+      "year": 2024,
+      "source": "国家统计局 2024 年统计公报",
+      "status": "已核"
+    },
+    "by_province_2024": {
+      "_unit": "万人；抽签权重 = 本表数值归一化",
+      "_note": "前 12 省来自第一财经 2025 汇总（江苏、广西为记者按出生率测算）；其余 19 省为 Claude 按常住人口×出生率估算，合计比全国 954 少约 3%，归一化后不影响相对权重",
+      "广东": {
+        "value": 113.0,
+        "status": "已核"
+      },
+      "河南": {
+        "value": 76.2,
+        "status": "已核"
+      },
+      "山东": {
+        "value": 64.9,
+        "status": "已核"
+      },
+      "四川": {
+        "value": 53.6,
+        "status": "已核"
+      },
+      "江苏": {
+        "value": 42.6,
+        "status": "估算"
+      },
+      "广西": {
+        "value": 42.0,
+        "status": "估算"
+      },
+      "贵州": {
+        "value": 41.5,
+        "status": "已核"
+      },
+      "浙江": {
+        "value": 41.0,
+        "status": "已核"
+      },
+      "湖南": {
+        "value": 38.6,
+        "status": "已核"
+      },
+      "安徽": {
+        "value": 37.8,
+        "status": "已核"
+      },
+      "湖北": {
+        "value": 31.4,
+        "status": "已核"
+      },
+      "江西": {
+        "value": 30.0,
+        "status": "已核"
+      },
+      "河北": {
+        "value": 44.0,
+        "status": "估算"
+      },
+      "云南": {
+        "value": 40.5,
+        "status": "估算"
+      },
+      "福建": {
+        "value": 32.0,
+        "status": "估算"
+      },
+      "陕西": {
+        "value": 25.0,
+        "status": "估算"
+      },
+      "新疆": {
+        "value": 21.0,
+        "status": "估算"
+      },
+      "山西": {
+        "value": 20.0,
+        "status": "估算"
+      },
+      "重庆": {
+        "value": 17.0,
+        "status": "估算"
+      },
+      "辽宁": {
+        "value": 17.0,
+        "status": "估算"
+      },
+      "甘肃": {
+        "value": 16.0,
+        "status": "估算"
+      },
+      "北京": {
+        "value": 13.0,
+        "status": "估算"
+      },
+      "内蒙古": {
+        "value": 11.0,
+        "status": "估算"
+      },
+      "上海": {
+        "value": 9.6,
+        "status": "估算"
+      },
+      "海南": {
+        "value": 8.5,
+        "status": "估算"
+      },
+      "黑龙江": {
+        "value": 7.8,
+        "status": "估算"
+      },
+      "吉林": {
+        "value": 7.5,
+        "status": "估算"
+      },
+      "天津": {
+        "value": 6.5,
+        "status": "估算"
+      },
+      "宁夏": {
+        "value": 6.5,
+        "status": "估算"
+      },
+      "青海": {
+        "value": 5.0,
+        "status": "估算"
+      },
+      "西藏": {
+        "value": 4.5,
+        "status": "估算"
+      }
+    },
+    "rural_share_of_births": {
+      "value": 0.4,
+      "status": "估算",
+      "note": "2024 常住人口城镇化率约 67%，农村生育率更高，出生中农村占比取 40%；各省按自身城镇化水平在 ±20pp 内浮动，Codex 用 province_tier.urban_share"
+    }
+  },
+  "province_tier": {
+    "_note": "高考与资源档位。bachelor_rate = 高考报名者本科录取率；全部为 估算，依据：2023 年上海 79%/北京 77%/海南 67%/天津 66%/河南 47%/广东 40%（RFA 转载各省考试院数据），2024 全国 44.8%，2025 全国约 37.7%（503.5 万/1335 万）。同一档内各省共用数值",
+    "S": {
+      "provinces": [
+        "北京",
+        "上海",
+        "天津"
+      ],
+      "bachelor_rate": 0.7,
+      "elite_mult": 4.0,
+      "urban_share": 0.88,
+      "status": "估算"
+    },
+    "A": {
+      "provinces": [
+        "江苏",
+        "浙江",
+        "吉林",
+        "海南",
+        "辽宁",
+        "黑龙江",
+        "宁夏",
+        "青海",
+        "西藏",
+        "内蒙古"
+      ],
+      "bachelor_rate": 0.48,
+      "elite_mult": 1.3,
+      "urban_share": 0.65,
+      "status": "估算"
+    },
+    "B": {
+      "provinces": [
+        "湖北",
+        "陕西",
+        "重庆",
+        "福建",
+        "山西",
+        "新疆",
+        "甘肃",
+        "江西",
+        "湖南",
+        "安徽",
+        "河北",
+        "云南"
+      ],
+      "bachelor_rate": 0.4,
+      "elite_mult": 0.9,
+      "urban_share": 0.58,
+      "status": "估算"
+    },
+    "C": {
+      "provinces": [
+        "河南",
+        "山东",
+        "广东",
+        "四川",
+        "广西",
+        "贵州"
+      ],
+      "bachelor_rate": 0.36,
+      "elite_mult": 0.7,
+      "urban_share": 0.56,
+      "status": "估算"
+    }
+  },
+  "education": {
+    "compulsory_retention": {
+      "value": 0.959,
+      "year": 2024,
+      "source": "2024 年全国教育事业发展统计公报：九年义务教育巩固率 95.9%",
+      "status": "已核"
+    },
+    "junior_graduates": {
+      "value": 1698.24,
+      "unit": "万人",
+      "year": 2024,
+      "source": "同上（第一财经测算引用）",
+      "status": "已核"
+    },
+    "general_hs_enroll": {
+      "value": 1036.2,
+      "unit": "万人",
+      "year": 2024,
+      "source": "同上",
+      "status": "已核"
+    },
+    "general_hs_rate": {
+      "value": 0.61,
+      "year": 2024,
+      "source": "普高招生/初中毕业生 = 61.02%（第一财经计算，非官方指标）",
+      "status": "已核"
+    },
+    "hs_stage_gross_enroll": {
+      "value": 0.92,
+      "year": 2024,
+      "source": "同上：高中阶段毛入学率 92.0%（含中职）",
+      "status": "已核"
+    },
+    "higher_ed_gross_enroll": {
+      "value": 0.608,
+      "year": 2024,
+      "source": "同上：高等教育毛入学率 60.8%（含专科、成人）",
+      "status": "已核"
+    },
+    "gaokao_applicants": {
+      "value": 1335,
+      "unit": "万人",
+      "year": 2025,
+      "source": "教育部，21 世纪经济报道",
+      "status": "已核"
+    },
+    "bachelor_admitted": {
+      "value": 503.5,
+      "unit": "万人",
+      "year": 2025,
+      "source": "网易转载统计数，本科录取率≈37.7%",
+      "status": "估算"
+    },
+    "poor_rural_hs_completion": {
+      "value": 0.37,
+      "source": "斯坦福 REAP 张林秀演讲引用：贫困农村仅 37% 读完高中，城市超九成（年份较早）",
+      "status": "已核"
+    },
+    "elite_985_rate": {
+      "value": 0.016,
+      "note": "985 本科占高考报名约 1.6%",
+      "status": "估算"
+    },
+    "elite_211_rate": {
+      "value": 0.05,
+      "note": "211（含 985）约 5%",
+      "status": "估算"
+    },
+    "rural_share_pku": {
+      "value": 0.142,
+      "year": 2013,
+      "source": "北京大学首次公布农村生源比例 14.2%；2014 年 18.5%",
+      "status": "已核"
+    },
+    "kaoyan_applicants": {
+      "value": 388,
+      "unit": "万人",
+      "year": 2025,
+      "source": "教育部（第一财经）",
+      "status": "已核"
+    },
+    "kaoyan_admit_ratio": {
+      "value": 0.24,
+      "year": 2023,
+      "source": "2023 报录比约 24%",
+      "status": "估算"
+    },
+    "master_enroll": {
+      "value": 110.35,
+      "unit": "万人",
+      "year": 2022,
+      "source": "2022 年全国教育事业发展统计公报：硕士生招生 110.35 万（研究生合计 124.25 万）；2023 年研究生招生约 130 万",
+      "status": "已核"
+    },
+    "master_share_of_cohort": {
+      "value": 0.07,
+      "status": "估算",
+      "note": "硕士年招生约 110–115 万 ÷ 同龄人口约 1600 万 ≈ 7%"
+    }
+  },
+  "career": {
+    "youth_unemployment": {
+      "value": 0.165,
+      "year": "2025-12",
+      "source": "国家统计局，城镇不含在校生 16–24 岁失业率",
+      "status": "已核"
+    },
+    "guokao_ratio": {
+      "value": 86,
+      "year": 2025,
+      "source": "2025 国考 3.97 万岗位，341.6 万人过审，约 86:1（中新网）",
+      "status": "已核"
+    },
+    "guokao_ratio_2026": {
+      "value": 84,
+      "year": 2026,
+      "source": "2026 国考招录 38119 人，截至 2025-10-24 报名过审 3207060 人（中公，北京日报），相除约 84:1；中公自报平均竞争比 92:1，口径不一",
+      "status": "估算"
+    },
+    "tizhi_share": {
+      "value": 0.05,
+      "status": "估算",
+      "note": "公务员约 700 余万 + 事业单位人员约 3000 万，占就业人员约 7.4 亿的 5% 左右（体制内=公务员+事业编，含教师医生）"
+    },
+    "primary_sector_share": {
+      "value": 0.23,
+      "year": 2023,
+      "status": "待核",
+      "note": "第一产业就业人员占比约 23%（国家统计局年鉴口径，存量含大量中老年）；2026 年出生队列成年后务农比例会远低于此"
+    },
+    "gig_share": {
+      "value": 0.02,
+      "status": "估算",
+      "note": "美团 2023 年有收入骑手约 745 万 + 网约车持证司机约 700 万，约占就业人员 2%"
+    }
+  },
+  "health": {
+    "life_expectancy": {
+      "value": 79.0,
+      "year": 2024,
+      "source": "国家卫健委 2025 两会：2024 人均预期寿命 79 岁；8 省超 80 岁（京津沪鲁苏浙粤琼）",
+      "status": "已核"
+    },
+    "life_expectancy_by_sex": {
+      "male": 76.5,
+      "female": 82.0,
+      "status": "估算",
+      "note": "按 2020 普查男 75.4/女 80.9 平移至 79.0"
+    },
+    "life_expectancy_by_tier": {
+      "S": 82.5,
+      "A": 79.5,
+      "B": 78.5,
+      "C": 79.0,
+      "status": "估算",
+      "note": "西藏、青海、新疆、云南、贵州实际偏低约 3–7 岁，Codex 在 province_overrides 里单独压低"
+    },
+    "province_overrides": {
+      "西藏": 72.5,
+      "青海": 74.5,
+      "新疆": 75.5,
+      "云南": 76.5,
+      "贵州": 76.5,
+      "status": "估算"
+    },
+    "infant_mortality": {
+      "value": 0.004,
+      "year": 2024,
+      "source": "国家卫健委：婴儿死亡率 4.0‰",
+      "status": "待核"
+    },
+    "under5_mortality": {
+      "value": 0.0056,
+      "year": 2024,
+      "source": "国家卫健委：5 岁以下儿童死亡率 5.6‰",
+      "status": "待核"
+    }
+  },
+  "family": {
+    "left_behind_share_rural": {
+      "value": 0.377,
+      "year": 2013,
+      "source": "全国妇联：农村留守儿童 6102 万，占农村儿童 37.7%",
+      "status": "待核"
+    },
+    "marriage_registrations": {
+      "value": 610.6,
+      "unit": "万对",
+      "year": 2024,
+      "source": "民政部 2024 年结婚登记",
+      "status": "待核"
+    },
+    "first_marriage_age": {
+      "value": 28.7,
+      "year": 2020,
+      "source": "七普平均初婚年龄",
+      "status": "待核"
+    },
+    "tfr": {
+      "value": 1.0,
+      "status": "估算",
+      "note": "近年总和生育率约 1.0–1.1"
+    }
+  },
+  "helplines": {
+    "psych": {
+      "value": "12356",
+      "note": "全国统一心理援助热线（2025 年起开通），上线前 Claude 再核一次号码",
+      "status": "待核"
+    }
+  },
+  "calibration_targets_v2": {
+    "_note": "02 阶段新增的校准目标。status=参数 表示这是 Claude 定的产品目标（依据写在 basis），不是已核统计；数字可以和 Claude 商量调整，但不能为了 PASS 改测试",
+    "urban_q5_bachelor": {
+      "min": 0.6,
+      "max": 0.85,
+      "status": "参数",
+      "basis": "S 档报名者本科率约 70%，高收入城市家庭集中在高档位、几乎全读普高；原 41% 与「城市中产大概率上本科」矛盾"
+    },
+    "rural_q1_bachelor": {
+      "min": 0.08,
+      "max": 0.18,
+      "status": "参数",
+      "basis": "01 实测 14.8%，保留"
+    },
+    "wealth_gradient": {
+      "rule": "城乡各自 Q1<Q2<Q3<Q4<Q5 严格递增，且 Q5−Q3 ≥ 10pp",
+      "status": "参数",
+      "basis": "01 实测 Q3–Q5 几乎持平（38→41%），家境在 Q2 以上不起作用，不合常识"
+    },
+    "hukou_gap_same_q": {
+      "rule": "同家境 Q3：城市本科率 − 农村本科率 ≥ 5pp",
+      "status": "参数",
+      "basis": "01 中 bachelorUrban=0，同家境城乡完全相同；城乡教育资源差（县中/超级中学、北大农村生源约 14%）应在家境之外独立起作用"
+    },
+    "master_of_cohort": {
+      "min": 0.04,
+      "max": 0.09,
+      "status": "估算",
+      "basis": "education.master_share_of_cohort；01 实测 1%"
+    },
+    "tizhi_by_35": {
+      "min": 0.03,
+      "max": 0.07,
+      "status": "估算",
+      "basis": "career.tizhi_share；01 实测 0.07%"
+    },
+    "gig_at_40": {
+      "max": 0.05,
+      "status": "估算",
+      "basis": "career.gig_share 约 2%，给游戏化放宽到 5%；01 实测 16%"
+    },
+    "farming_at_40_rural_origin": {
+      "min": 0.05,
+      "max": 0.2,
+      "status": "参数",
+      "basis": "01 完全没有务农职业；农村出身者成年后仍有一部分务农"
+    }
+  }
+}
