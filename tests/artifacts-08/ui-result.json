@@ -1,0 +1,432 @@
+{
+  "results": [
+    {
+      "case": "默认设置、连续12次重抽、未开始不入图鉴",
+      "pass": true,
+      "rerolled": 13,
+      "automatic": false,
+      "duration": 30
+    },
+    {
+      "case": "每日签和接力孩子隐藏重抽并说明原因",
+      "pass": true
+    },
+    {
+      "case": "旧自动开启存档迁移关闭，旧10分钟迁移30分钟",
+      "pass": true
+    },
+    {
+      "case": "375px连续真实15秒滚动不推进、不自动选",
+      "pass": true,
+      "wallSeconds": 15.902,
+      "before": {
+        "age": 15,
+        "pending": "school",
+        "rngState": 337779872,
+        "choices": 0,
+        "log": 31
+      },
+      "after": {
+        "age": 15,
+        "pending": "school",
+        "rngState": 337779872,
+        "choices": 0,
+        "log": 31
+      },
+      "bodyOverflow": "hidden",
+      "modal": true
+    },
+    {
+      "case": "选择后释放遮罩、body滚动与背景交互",
+      "pass": true
+    },
+    {
+      "case": "新版主动开启偏好刷新后保留",
+      "pass": true
+    },
+    {
+      "case": "主动开启10秒倒计时，3秒后触摸卡片，15秒后仍未选择",
+      "pass": true
+    },
+    {
+      "case": "卡片内部滚动停止倒计时",
+      "pass": true
+    },
+    {
+      "case": "后台暂停15秒，返回继续剩余7秒，只自动选择一次",
+      "pass": true
+    },
+    {
+      "case": "游戏暂停时自动倒计时不推进",
+      "pass": true
+    },
+    {
+      "case": "骰子揭晓后未关闭弹层，60秒内年龄仍冻结",
+      "pass": true
+    },
+    {
+      "case": "桌面原位呈现，767模态/768非模态，动态切换释放滚动锁",
+      "pass": true
+    },
+    {
+      "case": "30分钟档浏览器虚拟时钟完整一局",
+      "pass": true,
+      "clockSeconds": 1872.5039999999979,
+      "viewingSeconds": 1800,
+      "decisionWaitSeconds": 70,
+      "diceWaitSeconds": 2.4,
+      "age": 67,
+      "id": "粤-2026-694669",
+      "engineStateIdentical": true,
+      "delays": [
+        {
+          "age": 0,
+          "weight": 0.6,
+          "seconds": 18.749999999999982
+        },
+        {
+          "age": 1,
+          "weight": 0.6,
+          "seconds": 18.749999999999986
+        },
+        {
+          "age": 2,
+          "weight": 0.6,
+          "seconds": 18.749999999999986
+        },
+        {
+          "age": 3,
+          "weight": 0.6,
+          "seconds": 18.749999999999986
+        },
+        {
+          "age": 4,
+          "weight": 0.6,
+          "seconds": 18.749999999999986
+        },
+        {
+          "age": 5,
+          "weight": 0.6,
+          "seconds": 18.749999999999986
+        },
+        {
+          "age": 6,
+          "weight": 0.6,
+          "seconds": 18.749999999999986
+        },
+        {
+          "age": 7,
+          "weight": 0.6,
+          "seconds": 18.749999999999982
+        },
+        {
+          "age": 8,
+          "weight": 0.6,
+          "seconds": 18.749999999999986
+        },
+        {
+          "age": 9,
+          "weight": 0.6,
+          "seconds": 18.749999999999986
+        },
+        {
+          "age": 10,
+          "weight": 0.6,
+          "seconds": 18.749999999999986
+        },
+        {
+          "age": 11,
+          "weight": 0.6,
+          "seconds": 18.749999999999986
+        },
+        {
+          "age": 12,
+          "weight": 0.6,
+          "seconds": 18.749999999999986
+        },
+        {
+          "age": 13,
+          "weight": 0.6,
+          "seconds": 18.74999999999999
+        },
+        {
+          "age": 14,
+          "weight": 0.6,
+          "seconds": 18.74999999999999
+        },
+        {
+          "age": 15,
+          "weight": 2,
+          "seconds": 62.499999999999964
+        },
+        {
+          "age": 16,
+          "weight": 0.6,
+          "seconds": 18.74999999999999
+        },
+        {
+          "age": 17,
+          "weight": 0.6,
+          "seconds": 18.74999999999999
+        },
+        {
+          "age": 18,
+          "weight": 2,
+          "seconds": 62.49999999999996
+        },
+        {
+          "age": 19,
+          "weight": 0.6,
+          "seconds": 18.74999999999999
+        },
+        {
+          "age": 20,
+          "weight": 0.6,
+          "seconds": 18.749999999999986
+        },
+        {
+          "age": 21,
+          "weight": 0.6,
+          "seconds": 18.749999999999986
+        },
+        {
+          "age": 22,
+          "weight": 2,
+          "seconds": 62.49999999999996
+        },
+        {
+          "age": 23,
+          "weight": 0.6,
+          "seconds": 18.749999999999993
+        },
+        {
+          "age": 24,
+          "weight": 0.6,
+          "seconds": 18.74999999999999
+        },
+        {
+          "age": 25,
+          "weight": 2,
+          "seconds": 62.49999999999998
+        },
+        {
+          "age": 26,
+          "weight": 0.6,
+          "seconds": 18.749999999999993
+        },
+        {
+          "age": 27,
+          "weight": 0.6,
+          "seconds": 18.749999999999993
+        },
+        {
+          "age": 28,
+          "weight": 0.6,
+          "seconds": 18.749999999999993
+        },
+        {
+          "age": 29,
+          "weight": 2,
+          "seconds": 62.5
+        },
+        {
+          "age": 30,
+          "weight": 0.6,
+          "seconds": 18.749999999999996
+        },
+        {
+          "age": 31,
+          "weight": 2,
+          "seconds": 62.49999999999999
+        },
+        {
+          "age": 32,
+          "weight": 0.6,
+          "seconds": 18.750000000000004
+        },
+        {
+          "age": 33,
+          "weight": 2,
+          "seconds": 62.500000000000014
+        },
+        {
+          "age": 34,
+          "weight": 0.6,
+          "seconds": 18.750000000000004
+        },
+        {
+          "age": 35,
+          "weight": 2,
+          "seconds": 62.500000000000014
+        },
+        {
+          "age": 36,
+          "weight": 0.6,
+          "seconds": 18.750000000000004
+        },
+        {
+          "age": 37,
+          "weight": 0.6,
+          "seconds": 18.750000000000004
+        },
+        {
+          "age": 38,
+          "weight": 0.6,
+          "seconds": 18.750000000000004
+        },
+        {
+          "age": 39,
+          "weight": 0.6,
+          "seconds": 18.750000000000004
+        },
+        {
+          "age": 40,
+          "weight": 0.6,
+          "seconds": 18.750000000000004
+        },
+        {
+          "age": 41,
+          "weight": 0.6,
+          "seconds": 18.750000000000007
+        },
+        {
+          "age": 42,
+          "weight": 0.6,
+          "seconds": 18.750000000000007
+        },
+        {
+          "age": 43,
+          "weight": 0.6,
+          "seconds": 18.75000000000001
+        },
+        {
+          "age": 44,
+          "weight": 0.6,
+          "seconds": 18.750000000000007
+        },
+        {
+          "age": 45,
+          "weight": 0.6,
+          "seconds": 18.750000000000007
+        },
+        {
+          "age": 46,
+          "weight": 0.6,
+          "seconds": 18.750000000000007
+        },
+        {
+          "age": 47,
+          "weight": 0.6,
+          "seconds": 18.750000000000007
+        },
+        {
+          "age": 48,
+          "weight": 0.6,
+          "seconds": 18.75000000000001
+        },
+        {
+          "age": 49,
+          "weight": 0.6,
+          "seconds": 18.75000000000001
+        },
+        {
+          "age": 50,
+          "weight": 0.6,
+          "seconds": 18.750000000000007
+        },
+        {
+          "age": 51,
+          "weight": 0.6,
+          "seconds": 18.750000000000014
+        },
+        {
+          "age": 52,
+          "weight": 0.6,
+          "seconds": 18.75000000000001
+        },
+        {
+          "age": 53,
+          "weight": 0.6,
+          "seconds": 18.75000000000001
+        },
+        {
+          "age": 54,
+          "weight": 2,
+          "seconds": 62.50000000000004
+        },
+        {
+          "age": 55,
+          "weight": 0.6,
+          "seconds": 18.750000000000014
+        },
+        {
+          "age": 56,
+          "weight": 0.6,
+          "seconds": 18.750000000000014
+        },
+        {
+          "age": 57,
+          "weight": 0.6,
+          "seconds": 18.750000000000014
+        },
+        {
+          "age": 58,
+          "weight": 0.6,
+          "seconds": 18.750000000000014
+        },
+        {
+          "age": 59,
+          "weight": 0.6,
+          "seconds": 18.750000000000014
+        },
+        {
+          "age": 60,
+          "weight": 2,
+          "seconds": 62.50000000000005
+        },
+        {
+          "age": 61,
+          "weight": 0.6,
+          "seconds": 18.75000000000002
+        },
+        {
+          "age": 62,
+          "weight": 0.6,
+          "seconds": 18.75000000000002
+        },
+        {
+          "age": 63,
+          "weight": 0.6,
+          "seconds": 18.75000000000002
+        },
+        {
+          "age": 64,
+          "weight": 0.6,
+          "seconds": 18.750000000000025
+        },
+        {
+          "age": 65,
+          "weight": 2,
+          "seconds": 62.50000000000011
+        },
+        {
+          "age": 66,
+          "weight": 0.6,
+          "seconds": 18.75000000000005
+        },
+        {
+          "age": 67,
+          "weight": 2,
+          "seconds": 62.500000000000234
+        }
+      ]
+    },
+    {
+      "case": "一分钟极速局，自动偏好关闭时仍全自动并完整终局",
+      "pass": true,
+      "seconds": 60,
+      "engineStateIdentical": true
+    }
+  ],
+  "errors": []
+}

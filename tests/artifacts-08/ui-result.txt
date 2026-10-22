@@ -1,0 +1,14 @@
+PASS {"case":"默认设置、连续12次重抽、未开始不入图鉴","pass":true,"rerolled":13,"automatic":false,"duration":30}
+PASS {"case":"每日签和接力孩子隐藏重抽并说明原因","pass":true}
+PASS {"case":"旧自动开启存档迁移关闭，旧10分钟迁移30分钟","pass":true}
+PASS {"case":"375px连续真实15秒滚动不推进、不自动选","pass":true,"wallSeconds":15.902,"before":{"age":15,"pending":"school","rngState":337779872,"choices":0,"log":31},"after":{"age":15,"pending":"school","rngState":337779872,"choices":0,"log":31},"bodyOverflow":"hidden","modal":true}
+PASS {"case":"选择后释放遮罩、body滚动与背景交互","pass":true}
+PASS {"case":"新版主动开启偏好刷新后保留","pass":true}
+PASS {"case":"主动开启10秒倒计时，3秒后触摸卡片，15秒后仍未选择","pass":true}
+PASS {"case":"卡片内部滚动停止倒计时","pass":true}
+PASS {"case":"后台暂停15秒，返回继续剩余7秒，只自动选择一次","pass":true}
+PASS {"case":"游戏暂停时自动倒计时不推进","pass":true}
+PASS {"case":"骰子揭晓后未关闭弹层，60秒内年龄仍冻结","pass":true}
+PASS {"case":"桌面原位呈现，767模态/768非模态，动态切换释放滚动锁","pass":true}
+PASS {"case":"30分钟档浏览器虚拟时钟完整一局","pass":true,"clockSeconds":1872.5039999999979,"viewingSeconds":1800,"decisionWaitSeconds":70,"diceWaitSeconds":2.4,"age":67,"id":"粤-2026-694669","engineStateIdentical":true}
+PASS {"case":"一分钟极速局，自动偏好关闭时仍全自动并完整终局","pass":true,"seconds":60,"engineStateIdentical":true}

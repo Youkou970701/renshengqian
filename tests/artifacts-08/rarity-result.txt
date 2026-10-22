@@ -1,0 +1,37 @@
+Rarity 0 / 100000
+Rarity 20000 / 100000
+Rarity 40000 / 100000
+Rarity 60000 / 100000
+Rarity 80000 / 100000
+Rarity complete {
+  'rural-degree': 1302,
+  'left-985': 74,
+  'repeat-degree': 50,
+  'civil-third': 980,
+  'near-one': 6139,
+  'beijing-college': 162,
+  century: 3403,
+  hometown: 1034,
+  master: 8287,
+  public: 5713,
+  'rural-master': 859,
+  'left-degree': 4006,
+  teacher: 218,
+  medical: 215,
+  technician: 4908,
+  business: 1603,
+  company: 224,
+  house: 72,
+  parent: 72927,
+  together: 76937,
+  city: 3739,
+  million: 1541,
+  'long-life': 55555,
+  college: 5005,
+  upgrade: 410,
+  'first-master': 4923,
+  'civil-first': 2009,
+  general: 7971,
+  'high-complete': 74399,
+  degree: 37277
+}

@@ -1,0 +1,17 @@
+{
+  "engineHash": "c6853ce214043586c06953bb8afee512edac4ad62ca61ce5a782f7773c8ada34",
+  "files": {
+    "data/cn-stats.json": {
+      "sha256": "a76e02a7a4c2054cf468038f5e06afa62ba72fd6219920902da6b553ba57f146",
+      "modifiedAt": "2026-10-22T04:03:08.368Z"
+    },
+    "docs/codex-handoff-09-v2.md": {
+      "sha256": "11e6632d0e0186577c3a73bab080a55760c1cdc17c636488ed009f5926e4ef18",
+      "modifiedAt": "2026-10-22T04:02:42.994Z"
+    },
+    "docs/design-v2.md": {
+      "sha256": "1f0e365d8f8794fff5a0d9c7f7a263b39e75aa24bc7b927fc76489e9f5bf25a8",
+      "modifiedAt": "2026-10-22T04:02:42.994Z"
+    }
+  }
+}

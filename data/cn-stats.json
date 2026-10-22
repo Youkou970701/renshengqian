@@ -1,6 +1,6 @@
 {
   "_readme": "人生签·中国版 统计底表。由 Claude 维护，Codex 只读引用、不得改数。status: 已核=有出处原文数字；估算=Claude 按公开数推算，需后续用《中国统计年鉴2025》替换；参数=游戏机制参数，不是统计数，可调但要过校准测试。",
-  "_updated": "2026-10-21（第二版：01 验收后补数）",
+  "_updated": "2026-10-22（第三版：v2 设计补经济数据）",
   "births": {
     "national_2024": {
       "value": 954,
@@ -141,6 +141,13 @@
       "value": 0.4,
       "status": "估算",
       "note": "2024 常住人口城镇化率约 67%，农村生育率更高，出生中农村占比取 40%；各省按自身城镇化水平在 ±20pp 内浮动，Codex 用 province_tier.urban_share"
+    },
+    "deaths_2024": {
+      "value": 1093,
+      "unit": "万人",
+      "year": 2024,
+      "status": "待核",
+      "note": "2024 年全国死亡人口，用于首页实时计数；上线前 Claude 核国家统计局公报原文"
     }
   },
   "province_tier": {
@@ -307,6 +314,15 @@
       "value": 0.07,
       "status": "估算",
       "note": "硕士年招生约 110–115 万 ÷ 同龄人口约 1600 万 ≈ 7%"
+    },
+    "private_hs_share": {
+      "value": 0.17,
+      "status": "待核",
+      "note": "民办普通高中在校生占普高约 15–20%，用于「没考上公办普高 → 交钱读民办高中」路线；上线前核《全国教育事业发展统计公报》民办教育章节"
+    },
+    "study_abroad": {
+      "status": "参数",
+      "note": "出国留学只对家境前 20% 的城市家庭开放（国际学校 / 本科 / 硕士留学），数量级每年数十万人，具体比例待核"
     }
   },
   "career": {
@@ -398,8 +414,8 @@
       "value": 610.6,
       "unit": "万对",
       "year": 2024,
-      "source": "民政部 2024 年结婚登记",
-      "status": "待核"
+      "source": "民政部《2024年4季度民政统计数据》",
+      "status": "已核"
     },
     "first_marriage_age": {
       "value": 28.7,
@@ -411,6 +427,30 @@
       "value": 1.0,
       "status": "估算",
       "note": "近年总和生育率约 1.0–1.1"
+    },
+    "divorce_registrations": {
+      "value": 262.1,
+      "unit": "万对",
+      "year": 2024,
+      "source": "民政部《2024年4季度民政统计数据》（季度口径；年鉴口径可能更高，2023 年两口径差约 100 万对）",
+      "status": "已核"
+    },
+    "bride_price": {
+      "rural_mean_2024": {
+        "value": 128000,
+        "unit": "元",
+        "year": 2024,
+        "source": "凤凰网转引「全国婚俗调研数据」：2024 年农村平均彩礼 12.8 万元（原始调查和口径不明）",
+        "status": "估算"
+      },
+      "examples": {
+        "note": "甘肃天祝县倡导标准 ≤6 万，2025 上半年农村平均降至 5.6 万；江西崇义县低彩礼标准 ≤3.9 万；宁夏新规后全区平均下降 35%（地方新闻）",
+        "status": "已核"
+      },
+      "model": {
+        "status": "参数",
+        "note": "没有权威分省统计。游戏里按 省份 × 城乡 给一个区间：全国农村中位约 10–15 万，城市普遍低于农村，个别高彩礼地区可到 20–30 万以上，低的 3–6 万。只在相亲 / 婚礼卡上显示「当地大致行情」数字，不写省份对比、不评价。Claude 拿到权威分省调查后替换"
+      }
     }
   },
   "helplines": {
@@ -466,6 +506,112 @@
       "max": 0.2,
       "status": "参数",
       "basis": "01 完全没有务农职业；农村出身者成年后仍有一部分务农"
+    }
+  },
+  "economy": {
+    "_note": "v2 收入系统的校准锚点。income_quintiles 是人均可支配收入（含不工作的人口，按人头），不是工资；工资锚点看 wage_* 和 migrant_*",
+    "disposable_income_mean": {
+      "value": 41314,
+      "unit": "元/人/年",
+      "year": 2024,
+      "source": "国家统计局 2024 年居民收入和消费支出情况",
+      "status": "已核"
+    },
+    "disposable_income_median": {
+      "value": 34707,
+      "unit": "元/人/年",
+      "year": 2024,
+      "source": "同上",
+      "status": "已核"
+    },
+    "income_quintiles": {
+      "value": [
+        9542,
+        21608,
+        33925,
+        53359,
+        98809
+      ],
+      "unit": "元/人/年",
+      "year": 2024,
+      "source": "同上，五等份：低/中低/中/中高/高",
+      "status": "已核"
+    },
+    "migrant_monthly_income": {
+      "value": 4961,
+      "unit": "元/月",
+      "year": 2024,
+      "source": "国家统计局 2024 年农民工监测调查报告（外出 5634、本地 4291）",
+      "status": "已核"
+    },
+    "migrant_monthly_outbound": {
+      "value": 5634,
+      "unit": "元/月",
+      "year": 2024,
+      "status": "已核"
+    },
+    "migrant_monthly_local": {
+      "value": 4291,
+      "unit": "元/月",
+      "year": 2024,
+      "status": "已核"
+    },
+    "migrant_workers_total": {
+      "value": 29973,
+      "unit": "万人",
+      "year": 2024,
+      "source": "同上",
+      "status": "已核"
+    },
+    "wage_nonprivate_mean": {
+      "value": 124110,
+      "unit": "元/年",
+      "year": 2024,
+      "source": "国家统计局：城镇非私营单位就业人员年平均工资",
+      "status": "已核"
+    },
+    "wage_private_mean": {
+      "value": 69476,
+      "unit": "元/年",
+      "year": 2024,
+      "source": "国家统计局：城镇私营单位就业人员年平均工资",
+      "status": "已核"
+    },
+    "wage_it_nonprivate": {
+      "value": 238966,
+      "unit": "元/年",
+      "year": 2024,
+      "source": "同上，信息传输、软件和信息技术服务业（非私营，最高）",
+      "status": "已核"
+    },
+    "wage_finance_nonprivate": {
+      "value": 201883,
+      "unit": "元/年",
+      "year": 2024,
+      "source": "同上，金融业（非私营，第二）",
+      "status": "已核"
+    },
+    "wage_low_industries": {
+      "note": "农林牧渔、住宿餐饮、水利环境公共设施、居民服务修理为最低一档；具体数值待从统计局表 1–5 补",
+      "status": "待核"
+    }
+  },
+  "society": {
+    "_note": "v2 剧本库的发生率锚点。找不到统计的剧本用 params，标 status=参数",
+    "telecom_fraud_solved": {
+      "value": 29.4,
+      "unit": "万起",
+      "year": 2024,
+      "source": "公安部通报：2024 年破获电信网络诈骗案件 29.4 万起（破案数，不是受害人数）",
+      "status": "已核"
+    },
+    "road_deaths": {
+      "status": "待核",
+      "note": "全国道路交通事故死亡人数，官方口径约 6 万/年量级，Claude 待补原文"
+    },
+    "special_admission_plans": {
+      "status": "参数",
+      "note": "国家专项（贫困地区，中央部属和省属重点高校）、高校专项（县以下农村、成绩优良）、地方专项（省属重点高校招农村学生）。全国合计规模待核；游戏里给家境 Q1–Q2 农村、成绩前 20% 的学生一次额外录取机会"
     }
   }
 }
