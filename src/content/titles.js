@@ -1,3 +1,4 @@
+import {scenarioNarrativeAge,civilNarrativeAttempts} from './narrative-facts.js';
 import {polishNarrative} from './narrative-copy.js';
 import {SCENARIOS} from './scenarios.js';
 import {JOBS} from './jobs.js';
@@ -19,7 +20,7 @@ function pattern(id,body,kind,priority,description,match,{shareBody=body,detail=
 }
 const fact=(values,evidence,score=0)=>({values,evidence,score});
 const recordFact=(f,field,value,values,score=0)=>fact(values,{kind:'record',field,value},score);
-const scenarioFact=(h,values={})=>fact({age:h.endedAt,startedAge:h.startedAt,...values},{kind:'scenario',id:h.id,startedAt:h.startedAt,endedAt:h.endedAt,outcome:h.outcome,heavy:!!h.heavy,choices:(h.choices??[]).map(x=>({...x}))});
+const scenarioFact=(h,values={})=>fact({age:scenarioNarrativeAge(h),startedAge:h.startedAt,...values},{kind:'scenario',id:h.id,startedAt:h.startedAt,endedAt:h.endedAt,outcome:h.outcome,heavy:!!h.heavy,choices:(h.choices??[]).map(x=>({...x}))});
 const storyMatch=(id,outcomes,extra=()=>({}))=>f=>{const h=f.completedScenarios.find(h=>h.id===id&&outcomes.includes(h.outcome));if(!h)return null;const values=extra(h,f);return values===null?null:scenarioFact(h,values);};
 const story=(id,outcome,body,priority,description,extra=()=>({}),shareBody=body)=>({...pattern(`story-${id}${outcome?'-'+outcome:''}`,body,'scenario',priority,description,storyMatch(id,outcome?[outcome]:['good','bad','mixed','rehabilitated'],extra),{shareBody,detail:body.replace(/^.*?岁/,'').replace(/\{[^}]*\}/g,'这次')}),scenarioId:id,outcome});
 
@@ -60,7 +61,7 @@ const outcomes=[
  story('luck-mentor','good','在{age}岁交付项目挣到额外报酬',85,'完成项目交付结局'),
  story('luck-inheritance','good','在{age}岁继承一笔遗产',86,'完成财产手续结局'),
  
- story('body-parent','good','在{age}岁等父母病情稳定继续照护',86,'完成父母入院及后续照护'),
+ story('body-parent','good','在{age}岁等父母病情稳定继续照护',24,'完成父母入院及后续照护'),
  story('accident-water','good','在{age}岁呼叫救援等来报平安',79,'完成救援后续'),
 ];
 // Explicit exits get low priority: avoiding an invitation is not an accident,
@@ -85,8 +86,8 @@ const scenes=[
  ['boundary-drunk','酒后争执在{age}岁赔钱收场',76,'酒后争执在{age}岁赔钱收场'],['boundary-driving','酒后开车在{age}岁被暂扣驾照',77,'喝酒犯错后在{age}岁改乘公共交通'],
  ['jianghu-esport','参加青训到{age}岁仍没能晋级',75],['jianghu-south','南下找工到{age}岁还被拖欠工资',75],['jianghu-apprentice','交钱学手艺到{age}岁却没等到工作',75],
  ['trap-loan','借款到期在{age}岁开始逐笔还账',76],['trap-investment','买入理财到{age}岁仍无法提现',79,'存入钱款到{age}岁仍无法取回'],['trap-parents','在{age}岁替父母退货只追回部分钱',72],
- ['family-parents-separate','父母离婚后在{age}岁按约分别探望',83],['family-betrayal','伴侣出轨后在{age}岁分居生活',83],['family-child-school','在{age}岁陪厌学孩子求助调整上学安排',71],['family-domestic','遭遇家庭暴力后在{age}岁咨询保护令',85,'在{age}岁咨询法律援助寻求保护'],
- ['body-major','重病确诊后在{age}岁安排治疗',95],['body-mood','持续低落后在{age}岁就医复诊',77],['body-occupational','在{age}岁查出肺部损伤',96],['body-parent','父母入院后在{age}岁安排轮流照护',78],
+ ['family-parents-separate','{age}岁父母离婚后两边跑着长大',83],['family-betrayal','伴侣出轨后在{age}岁分居生活',83],['family-child-school','在{age}岁陪厌学孩子求助调整上学安排',71],['family-domestic','遭遇家庭暴力后在{age}岁咨询保护令',85,'在{age}岁咨询法律援助寻求保护'],
+ ['body-major','重病确诊后在{age}岁安排治疗',24],['body-mood','持续低落后在{age}岁就医复诊',24],['body-occupational','在{age}岁查出肺部损伤',24],['body-parent','父母入院后在{age}岁安排轮流照护',24],
  ['warm-neighbor','敲开邻居门一起做了顿饭',41],['warm-reunion','回家见了多年未见同桌',42],['warm-library','读完一本书结识两位书友',43],['warm-garden','把快枯花养出新叶',40],
  ['warm-repair','修好父亲舍不得扔掉收音机',43],['warm-pet','救下小猫找到领养人',46],['warm-volunteer','完成社区活动认识一楼邻居',43],['warm-cooking','照母亲语音学会家乡菜',42],
  ['warm-music','参加合唱完成一场演出',47],['warm-walk','跟朋友坚持饭后散步',42],['warm-class','回夜校学完一门课程',46],['warm-lost','找回钱包证件和现金',43],
@@ -108,8 +109,8 @@ const sceneTitles=scenes.map(([id,body,priority,shareBody=body])=>story(id,'',bo
 const businessVenture=rows=>rows.every(x=>['shop','online'].includes(x.type))?'店':rows.every(x=>x.type==='factory')?'工厂':'生意';
 
 const other=[
- pattern('civil-retry','考了{attempts}次终于考上{destination}','career',94,'实际考试录用 publicPath，至少两次；仅 tizhiBy35 不是上岸证据',f=>f.record.civilAttempts>1&&['civil-exam','institution-recruitment'].includes(f.record.publicPath)?recordFact(f,'publicPath',f.record.publicPath,{attempts:f.record.civilAttempts,destination:f.record.publicPath==='civil-exam'?'公务员':'事业单位'}):null),
- pattern('civil-not-admitted','考公{attempts}次仍未录用','career',84,'至少两次且从未有 publicPath/tizhiBy35 录用记录',f=>f.record.civilAttempts>1&&!f.record.publicPath&&!f.record.tizhiBy35?recordFact(f,'civilAttempts',f.record.civilAttempts,{attempts:f.record.civilAttempts}):null),
+ pattern('civil-retry','考了{attempts}次终于考上{destination}','career',94,'实际考试录用 publicPath，至少两次；仅 tizhiBy35 不是上岸证据',f=>civilNarrativeAttempts(f.s)>1&&['civil-exam','institution-recruitment'].includes(f.record.publicPath)?recordFact(f,'publicPath',f.record.publicPath,{attempts:civilNarrativeAttempts(f.s),destination:f.record.publicPath==='civil-exam'?'公务员':'事业单位'}):null),
+ pattern('civil-not-admitted','考公{attempts}次仍未录用','career',84,'至少两次且从未有 publicPath/tizhiBy35 录用记录',f=>civilNarrativeAttempts(f.s)>1&&!f.record.publicPath&&!f.record.tizhiBy35?recordFact(f,'civilAttempts',f.record.civilAttempts,{attempts:civilNarrativeAttempts(f.s)}):null),
  pattern('master-retry','考了{attempts}次终于读上研究生','education',93,'masterAdmitted 且至少两次考试',f=>f.record.masterAttempts>1&&f.record.masterAdmitted?recordFact(f,'masterAttempts',f.record.masterAttempts,{attempts:f.record.masterAttempts}):null),
  pattern('master-not-admitted','考研{attempts}次仍未被录取','education',82,'至少两次且 masterAdmitted 不为真',f=>f.record.masterAttempts>1&&!f.record.masterAdmitted?recordFact(f,'masterAttempts',f.record.masterAttempts,{attempts:f.record.masterAttempts}):null),
  pattern('left-behind-elite','留守长大考上{campus}','education',99,'留守经历且真实985/211本科记录',f=>f.s.leftBehind&&['985','211'].includes(f.s.eliteUndergrad??f.s.edu)?fact({campus:f.s.eliteUndergrad??f.s.edu},{kind:'education',leftBehind:true,value:f.s.eliteUndergrad??f.s.edu}):null),
@@ -159,16 +160,19 @@ const authoredTitles=SCENARIOS.filter(d=>d.endFacts).flatMap(def=>{
   const prior=legacyTitles.find(t=>t.id===`story-${def.id}-${outcome}`);
   const generic=legacyTitles.find(t=>t.id===`story-${def.id}`);
   let priority=outcome==='avoided'?26:prior?.priority??generic?.priority??(def.positive?46:74);
-  if(['body-major','body-occupational'].includes(def.id)&&outcome!=='bad')priority=outcome==='good'?58:80;
+  // Disease follows explicit avoided exits (26), ahead of ordinary life fallback (0).
+  // Distinctive longevity and early-death facts retain their existing priority.
+  if(def.category==='body')priority=24;
   const id=prior&&!usedIds.has(prior.id)?prior.id:`branch-${def.id}-${key}`;usedIds.add(id);
   groups.set(signature,{id,outcomes:new Set([outcome]),result,priority});
  };
  for(const [outcome,result]of Object.entries(def.endFacts))collect(outcome,outcome,result);
  for(const [index,st]of def.steps.entries())for(const o of st.options)for(const [outcome,result]of Object.entries(o.endFacts??{}))collect(`${index}-${o.id}-${outcome}`,outcome,result);
- return [...groups.values()].map(({id,outcomes,result,priority})=>({...pattern(id,`在{age}岁${result.title}`,'scenario',priority,'本局已完成的具体分支事实，年龄取该分支结束时点',f=>{
+ const displayBody=text=>text==='父母离婚后按约分别探望'?'{age}岁父母离婚后两边跑着长大':`在{age}岁${text}`;
+ return [...groups.values()].map(({id,outcomes,result,priority})=>({...pattern(id,displayBody(result.title),'scenario',priority,'本局已完成的具体分支事实，年龄与传记共用事实时点（父母离婚取开始，其余分支取结束）',f=>{
   const h=f.completedScenarios.find(h=>h.id===def.id&&outcomes.has(h.outcome)&&h.resultFact?.title===result.title&&h.resultFact.shareTitle===(result.shareTitle??result.title));
   return h?scenarioFact(h):null;
- },{shareBody:`在{age}岁${result.shareTitle??result.title}`}),scenarioId:def.id,outcome:[...outcomes].join('/') }));
+ },{shareBody:displayBody(result.shareTitle??result.title)}),scenarioId:def.id,outcome:[...outcomes].join('/') }));
 });
 const retainedTitles=legacyTitles.filter(t=>!branchFactIds.has(t.scenarioId));
 export const TITLES=[...retainedTitles,...authoredTitles];

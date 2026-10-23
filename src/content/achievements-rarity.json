@@ -1,6 +1,6 @@
 {
   "n": 100000,
-  "engineHash": "a78a20b17d0df0dd0b76fedcb93e0045b2488dad87bc4983c667a589ad69ba5a",
+  "engineHash": "4616ca7ab3f1ebd07fbd942c00f7c5652b86f83ea22aef101aedaad9f9802f30",
   "policy": "固定种子100000个第一代出生：70%默认自动、10%落榜时复读、10%有机会时尝试买房、10%每年学习；其余抉择自动，单局终局评价。",
   "counts": {
     "rural-degree": 1201,

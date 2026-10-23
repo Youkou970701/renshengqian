@@ -1,21 +1,23 @@
 import {polishNarrative} from '../content/narrative-copy.js';
 import {scenarioResultFacts} from '../content/scenario-result-facts.js';
+import {scenarioNarrativeAge} from '../content/narrative-facts.js';
+import {careerPhrase,careerYearsPhrase} from '../content/career-copy.js';
 import {sceneFacts,completedSceneFacts,avoidedFacts} from '../content/biography-facts.js';
 import {selectTitle} from '../content/titles.js';
 import {lifeColor} from '../content/life-colors.js';
 import {JOB_BY_ID} from '../content/jobs.js';
 import {SCENARIOS} from '../content/scenarios.js';
 
-export const BIOGRAPHY_STIFF_EXPRESSIONS=['住址的分开','未完成','自己的求学路','需要认真面对的波折','办完手续','办完继承手续','登记结婚','公务岗位','结束在岗工作','编辑写作者'];
+export const BIOGRAPHY_STIFF_EXPRESSIONS=['住址的分开','未完成','自己的求学路','需要认真面对的波折','办完手续','办完继承手续','登记结婚','公务岗位','结束在岗工作','编辑写作者','做务农','做个体户','做军人','做自由职业者','按约分别探望'];
 const schoolNames={college:'专科',bachelor:'本科','211':'211大学','985':'985大学'};
 const emptyJobs=new Set(['待业','尚未就业','退休','研究生在读']);
 const byId=Object.fromEntries(SCENARIOS.map(x=>[x.id,x]));
 function storyEvent(h){
  const def=byId[h.id];if(!def||def.category==='warmth'||!h.outcome||h.outcome==='skipped'||h.endedAt==null)return null;
  const branch=scenarioResultFacts(h,def);
- if(branch&&h.id==='family-parents-separate')return {age:h.startedAt,text:'父母离婚',shareText:'父母离婚',source:'scenarioHistory',id:h.id,outcome:h.outcome};
- if(branch)return {age:branch.age,text:branch.text,shareText:branch.shareText,source:'scenarioHistory',id:h.id,outcome:h.outcome};
- const first=h.choices?.[0],last=h.choices?.at(-1);let age=completedSceneFacts[h.id]?h.endedAt:h.startedAt,text=completedSceneFacts[h.id]??sceneFacts[h.id];
+ if(branch&&h.id==='family-parents-separate')return {age:scenarioNarrativeAge(h),text:'父母离婚',shareText:'父母离婚',source:'scenarioHistory',id:h.id,outcome:h.outcome};
+ if(branch)return {age:scenarioNarrativeAge(h),text:branch.text,shareText:branch.shareText,source:'scenarioHistory',id:h.id,outcome:h.outcome};
+ const first=h.choices?.[0],last=h.choices?.at(-1);let age=h.id==='family-parents-separate'?scenarioNarrativeAge(h):completedSceneFacts[h.id]?h.endedAt:h.startedAt,text=completedSceneFacts[h.id]??sceneFacts[h.id];
  const effects=[...(h.choices??[]).map(c=>def.steps[c.index]?.options.find(o=>o.id===c.choice)?.effects),def.outcomeEffects?.[h.outcome]].filter(e=>e&&typeof e==='object');
  const total=key=>effects.reduce((sum,e)=>sum+(typeof e[key]==='number'?e[key]:0),0);
  const spent=effects.reduce((sum,e)=>sum-Math.min(0,e.assetsDelta??0),0);
@@ -73,7 +75,7 @@ export function biography(s){
  if(s.occupation)jobAt(s.occupation.startedAt,JOB_BY_ID[s.occupation.id]?.name,'occupation.startedAt');
  const uniqueJobs=jobs.sort((a,b)=>a.age-b.age).filter((x,i,a)=>!a.slice(0,i).some(y=>y.name===x.name));
  const chosenJobs=uniqueJobs.length>1?[uniqueJobs[0],uniqueJobs.at(-1)]:uniqueJobs;
- for(const [i,j]of chosenJobs.entries())add(j.age,j.name==='工厂工人'?(i?'转到工厂上班':'在工厂上班'):`${i?'转做':'做'}${j.name}`,j.source);
+ for(const [i,j]of chosenJobs.entries())add(j.age,careerPhrase(j.name,i>0),j.source);
  const jobLoss=(s.incomeHistory??[]).find(row=>row.reasons?.some(e=>e.kind==='layoff'))??(s.log??[]).find(e=>e.incomeEvent==='layoff');
  if(jobLoss)add(jobLoss.age,'失业后重新找工作',jobLoss.incomeEvent?'log.layoff':'incomeHistory.layoff');
  let marriageCount=0;
@@ -90,10 +92,10 @@ export function biography(s){
  let summary=null;const e=title.evidence??{},v=title.values??{};
  const businesses=s.businessHistory??[];
  const venture=v.venture??(businesses.length&&businesses.every(b=>['shop','online'].includes(b.type))?'店':businesses.length&&businesses.every(b=>b.type==='factory')?'工厂':'生意');
- if(e.kind==='career'&&e.years>0)summary=`前后做了${e.years}年${JOB_BY_ID[e.jobId]?.name??'这份工作'}`;
+ if(e.kind==='career'&&e.years>0)summary=careerYearsPhrase(JOB_BY_ID[e.jobId]?.name??'这份工作',e.years);
  if(e.kind==='promotion')summary=`从${JOB_BY_ID[e.jobId]?.levels[0]?.title??'入门岗位'}做到${e.rank}`;
- if(title.id==='civil-retry')summary=`先后考了${r.civilAttempts}次，终于${r.publicPath==='institution-recruitment'?'考进事业单位':'考上公务员'}`;
- if(title.id==='civil-not-admitted')summary=`考公${r.civilAttempts}次，始终没被录用`;
+ if(title.id==='civil-retry')summary=`先后考了${v.attempts}次，终于${r.publicPath==='institution-recruitment'?'考进事业单位':'考上公务员'}`;
+ if(title.id==='civil-not-admitted')summary=`考公${v.attempts}次，始终没被录用`;
  if(title.id==='master-retry')summary=`考了${r.masterAttempts}次才读上研究生`;
  if(title.id==='master-not-admitted')summary=`考研${r.masterAttempts}次，始终没被录取`;
  if(title.id==='parent-support')summary=`给父母治病前后花了${r.parentMedicalPaid}元`;

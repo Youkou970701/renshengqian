@@ -5,3 +5,4 @@ dist/
 
 # v2 验收证据（截图、日志，约 42MB，含本机路径）只留本地，不进公开仓库
 tests/artifacts-09/
+tests/artifacts-10/

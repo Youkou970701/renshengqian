@@ -27,5 +27,5 @@ export function terminalText(s) {
  const job=s.lastJob ?? s.job;
  const work=job && !['尚未就业','待业','在读','研究生在读','退休','居民养老 / 零工','转行学习中'].includes(job) ? `你最后一份工作是${job}。` : '';
  const ending=s.death?.detail ? `${s.age}岁这一年，你因${s.death.detail}离开了。` : `这一生走到了${s.age}岁。`;
- return `${s.name || '你'}，${ending}${work}${childStartingText(s)}`;
+ return `${s.name || '你'}，${ending}${work}`;
 }

@@ -91,15 +91,15 @@ test('稀有严重后果优先于主动躲开和温暖片段；换seed不改变�
  assert.equal(selectTitle({...s,seed:s.seed+1}).id,selectTitle(s).id);
 });
 
-test('单次开关店属于普通轨迹；长期病损、多次录取、高额资产和晚年结婚优先',()=>{
+test('普通生意轨迹优先于疾病；多次录取、高额资产和晚年结婚仍优先',()=>{
  const businesses=[{type:'shop',startedAt:30,closedAt:35}];
  const ordinary={...base(),businessHistory:businesses};
  const opened=titleCandidates(ordinary).find(t=>t.id==='shop-open'),closed=titleCandidates(ordinary).find(t=>t.id==='shop-close');
  assert.equal(opened.score,64);assert.equal(closed.score,72);
  const medical=h('body-occupational','bad',[chosen(0,'evaluate'),chosen(1,'follow')]);
- assert.equal(selectTitle({...ordinary,scenarioHistory:[medical]}).evidence.id,'body-occupational');
+ assert.equal(selectTitle({...ordinary,scenarioHistory:[medical]}).id,'shop-close');
  const major=h('body-major','mixed',[chosen(0,'check'),chosen(1,'plan')]);
- assert.equal(selectTitle({...ordinary,scenarioHistory:[major]}).evidence.id,'body-major');
+ assert.equal(selectTitle({...ordinary,scenarioHistory:[major]}).id,'shop-close');
  const parents=h('family-parents-separate','mixed',[chosen(0,'ask',10),chosen(1,'timetable',11)],{startedAt:10,endedAt:11});
  assert.equal(selectTitle({...ordinary,scenarioHistory:[parents]}).evidence.id,'family-parents-separate');
  assert.equal(selectTitle({...ordinary,record:{masterAttempts:2,masterAdmitted:true}}).id,'master-retry');
@@ -107,7 +107,7 @@ test('单次开关店属于普通轨迹；长期病损、多次录取、高额�
  assert.equal(selectTitle({...ordinary,relationshipHistory:[{kind:'marriage',age:73}]}).id,'late-marriage');
 });
 
-test('多次创业或关门按真实次数提升，长期病损仍优先，不以渲染变量拆分模式',()=>{
+test('多次创业或关门按真实次数提升并优先于疾病，不以渲染变量拆分模式',()=>{
  const businesses=Array.from({length:3},(_,i)=>({type:'shop',startedAt:25+i*5,closedAt:27+i*5}));
  const once=titleCandidates({...base(),businessHistory:businesses.slice(0,1)}).find(t=>t.id==='shop-close');
  const twice=titleCandidates({...base(),businessHistory:businesses.slice(0,2)}).find(t=>t.id==='shop-close');
@@ -115,7 +115,7 @@ test('多次创业或关门按真实次数提升，长期病损仍优先，不�
  assert.equal(once.id,twice.id);assert.equal(twice.id,thrice.id);assert.ok(once.score<twice.score&&twice.score<thrice.score);
  assert.equal(selectTitle({...base(),businessHistory:businesses}).id,'shop-close');
  const medical=h('body-occupational','bad',[chosen(0,'evaluate'),chosen(1,'follow')]);
- assert.equal(selectTitle({...base(),businessHistory:businesses,scenarioHistory:[medical]}).evidence.id,'body-occupational');
+ assert.equal(selectTitle({...base(),businessHistory:businesses,scenarioHistory:[medical]}).id,'shop-close');
 });
 
 test('真实完整人生的称号在capture:true/false保持相同；所有实际候选的语法和变量完整',()=>{
