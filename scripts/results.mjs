@@ -115,7 +115,7 @@ ${samples.map(s=>`### ${s.hukou==='urban'?'城市 Q5':'农村 Q1 · 留守'}：$
 
 实际跑通出生卡、暂停、手动抉择、25岁迁居后同龄事业计划、终局与续档。控制台无运行错误。375px实际iframe检查：内容宽375px / 滚动宽375px，PASS；截图保存在tests/ui-mobile-02.png。朴素样式沿用01，本阶段没有视觉设计。
 
-![375px出生卡验收](/Users/xiaoyang/Dev/workspace/toutai-sim/tests/ui-mobile-02.png)
+![375px出生卡验收](../tests/ui-mobile-02.png)
 
 ## 数据与口径说明
 
