@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createBirth} from '../src/engine/birth.js';
 import {step} from '../src/engine/life.js';
+import {summary} from '../src/engine/summary.js';
 import {birthCard,endCard,familyCard,cardText} from '../src/ui/share-cards.js';
 import {findBannedWords} from './banned-words.js';
 test('分享卡为1080×1920，本地SVG含真实编号，不印网址且文案通过扫描',()=>{
@@ -23,7 +24,22 @@ test('分享卡为1080×1920，本地SVG含真实编号，不印网址且文案�
 test('终局高亮格落在对应学历群体，出生卡父母年龄不随玩家年龄漂移',()=>{
  let b=createBirth('粤-2026-694669');const born=birthCard(b);while(b.alive)b=step(b,{auto:true}).state;
  assert.match(cardText(birthCard(b)),/当时 32 岁/);assert.match(cardText(born),/当时 32 岁/);
- assert.equal((endCard(b).match(/width="82" height="82"/g)||[]).length,100);
+ for(const edu of ['master','junior']) {
+  const life={...b,edu},svg=endCard(life),n=Math.round(summary(life).bachelorPer100);
+  const cells=Array.from(svg.matchAll(/<rect\b[^>]*data-role="person-cell"[^>]*\/>/g),match=>Object.fromEntries(Array.from(match[0].matchAll(/([\w-]+)="([^"]*)"/g),attribute=>[attribute[1],attribute[2]])));
+  assert.equal(cells.length,100,'the card must render 100 person cells regardless of cell size');
+  assert.deepEqual(cells.map(cell=>Number(cell['data-person-index'])),Array.from({length:100},(_,i)=>i),'person cells must retain their reading order');
+  assert.equal(cells.filter(cell=>cell['data-education-group']==='bachelor').length,n);
+  for(const [index,cell] of cells.entries()) assert.equal(cell['data-education-group'],index<n?'bachelor':'other');
+  const highlighted=cells.filter(cell=>cell['data-highlight']==='true');
+  assert.equal(highlighted.length,1,'exactly one person cell represents the player');
+  assert.equal(Number(highlighted[0]['data-person-index']),edu==='master'?n-1:99,'highlight must occupy the player’s corresponding education group');
+  assert.equal(highlighted[0]['data-education-group'],edu==='master'?'bachelor':'other');
+  assert.equal(highlighted[0].fill,'#ed563c');
+  assert.ok(highlighted[0].class.split(' ').includes('is-you'));
+ }
+ assert.match(cardText(endCard({...b,edu:'none'})),/你初中没读完/);
+ assert.doesNotMatch(cardText(endCard({...b,edu:'none'})),/初中未完成|你读到初中没读完/);
  assert.ok(cardText(endCard({...b,edu:'master'})).includes('硕士'));
  assert.ok(cardText(endCard(b,{badge:'今日签 · 第 2 局'})).includes('今日签 · 第 2 局'));
  assert.ok(!cardText(endCard(b,{badge:'今日签 · 第 2 局'})).includes('首局'));

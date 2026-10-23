@@ -1,0 +1,10 @@
+import {SCENARIO_CARDS} from '../../engine/scenarios.js';
+import {RELATIONSHIP_CARDS} from './relationships.js';
+import {LATE_FAMILY_CARDS} from './late-family.js';
+import {PENSION_CARDS} from './pension.js';
+import {CORE_CARDS} from './core.js';
+import {EXTRA_CARDS} from './education.js';
+import {WORK_CARDS} from './work.js';
+import {STUDENT_FINANCE_CARDS} from './student-finance.js';
+export const CARDS=[...CORE_CARDS,...EXTRA_CARDS,...STUDENT_FINANCE_CARDS,...WORK_CARDS,...PENSION_CARDS,...SCENARIO_CARDS,...RELATIONSHIP_CARDS,...LATE_FAMILY_CARDS];
+export const CARD_BY_ID=Object.fromEntries(CARDS.map(c=>[c.id,c]));

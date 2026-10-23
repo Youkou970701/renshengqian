@@ -2,12 +2,18 @@ import { drawBirth } from '../src/engine/birth.js';
 import { simulate } from '../src/engine/life.js';
 import { isBachelor } from '../src/engine/education.js';
 import { DATA, PROVINCES, BIRTH_WEIGHTS, BIRTH_TOTAL } from '../src/engine/stats.js';
+export function schoolObservation(b,s){
+ const r=s.record,poor=b.hukou==='rural'&&b.wealthQ<=2;
+ return {sampleSize:1,highSchoolKnown:Number(['county','city'].includes(s.highSchoolLocation)),countyHighSchool:Number(s.highSchoolLocation==='county'),gaokao:Number(!!r.gaokao),specialEligible:Number(!!r.specialEligible),specialAdmitted:Number(!!r.specialAdmitted),specialPoorAdmitted:Number(poor&&!!r.gaokao&&!!r.specialAdmitted),specialExams:Number(poor&&!!r.gaokao)};
+}
+export function recordSchoolObservation(table,key,b,s){const observation=schoolObservation(b,s),row=table[key]??={};for(const [k,v] of Object.entries(observation))row[k]=(row[k]??0)+v;}
 export function cohort(n=100000,offset=0){
- const c={n,births:{},rural:0,under5:0,survive16:0,junior16:0,junior:0,general:0,stage:0,poor:0,poorComplete:0,exams:0,admit:0,elite:0,eliteRural:0,bachelor:0,lifespan:0,sex:{male:{n:0,age:0},female:{n:0,age:0}},provinceAge:{},edu:{},tiers:{},matrix:{},career:{},causes:{},income:[],strata:{},master:0,tizhi35:0,at40:0,ruralAt40:0,gig40:0,farming40:0,jobs40:{}};
+ const c={n,competitionAdmitted:0,specialAdmitted:0,specialPoorAdmitted:0,specialExams:0,specialEligible:0,schoolStrata:{},schoolByWealth:{},publicGeneral:0,privateGeneral:0,births:{},rural:0,under5:0,survive16:0,junior16:0,junior:0,general:0,stage:0,poor:0,poorComplete:0,exams:0,admit:0,elite:0,eliteRural:0,bachelor:0,lifespan:0,sex:{male:{n:0,age:0},female:{n:0,age:0}},provinceAge:{},edu:{},tiers:{},matrix:{},career:{},causes:{},income:[],strata:{},master:0,tizhi35:0,publicPaths:{},at40:0,ruralAt40:0,gig40:0,farming40:0,jobs40:{}};
  for(let i=0;i<n;i++){
-  const b=drawBirth((Math.imul(i+offset,2654435761)+123456789)>>>0);const s=simulate(b);const r=s.record;
+  const b=drawBirth((Math.imul(i+offset,2654435761)+123456789)>>>0);const s=simulate(b);const r=s.record;c.competitionAdmitted+=!!r.competitionAdmitted;c.specialAdmitted+=!!r.specialAdmitted;c.specialPoorAdmitted+=Number(b.hukou==='rural'&&b.wealthQ<=2&&!!r.gaokao&&!!r.specialAdmitted);c.specialExams+=b.hukou==='rural'&&b.wealthQ<=2&&r.gaokao;c.specialEligible+=!!r.specialEligible;c.publicGeneral+=!!r.publicGeneralEver;c.privateGeneral+=!!r.privateGeneral;
+  recordSchoolObservation(c.schoolStrata,`${b.tier}:${b.hukou}:Q${b.wealthQ}`,b,s);recordSchoolObservation(c.schoolByWealth,`${b.hukou}:Q${b.wealthQ}`,b,s);
   c.births[b.province]=(c.births[b.province]??0)+1;c.rural+=b.hukou==='rural';c.under5+=s.age<5;c.survive16+=s.age>=16;c.junior16+=s.age>=16&&r.junior;c.junior+=r.junior;c.general+=r.general;c.stage+=r.stage;
-  const poor=b.hukou==='rural'&&b.wealthQ===1;c.poor+=poor;c.poorComplete+=poor&&r.completed;c.exams+=r.gaokao;c.admit+=r.admitted;c.elite+=r.elite;c.eliteRural+=r.elite&&b.hukou==='rural';c.bachelor+=isBachelor(s);c.master+=s.edu==='master';c.tizhi35+=!!r.tizhiBy35;if(r.job40){c.at40++;c.ruralAt40+=s.hukou==='rural';c.gig40+=['外卖骑手','网约车司机'].includes(r.job40);c.farming40+=s.hukou==='rural'&&r.job40==='务农';c.jobs40[r.job40]=(c.jobs40[r.job40]??0)+1;}c.lifespan+=s.age;
+  const poor=b.hukou==='rural'&&b.wealthQ===1;c.poor+=poor;c.poorComplete+=poor&&r.completed;c.exams+=r.gaokao;c.admit+=r.admitted;c.elite+=r.elite;c.eliteRural+=r.elite&&b.hukou==='rural';c.bachelor+=isBachelor(s);c.master+=s.edu==='master';c.tizhi35+=!!r.tizhiBy35;if(r.tizhiBy35)c.publicPaths[r.publicPath??'legacy']=(c.publicPaths[r.publicPath??'legacy']??0)+1;if(r.job40){c.at40++;c.ruralAt40+=s.hukou==='rural';c.gig40+=['外卖骑手','网约车司机'].includes(r.job40);c.farming40+=s.hukou==='rural'&&r.job40==='务农';c.jobs40[r.job40]=(c.jobs40[r.job40]??0)+1;}c.lifespan+=s.age;
   c.sex[s.sex].n++;c.sex[s.sex].age+=s.age;
   const pa=c.provinceAge[s.province]??={n:0,age:0,bachelor:0,income:[]};pa.n++;pa.age+=s.age;pa.bachelor+=isBachelor(s);pa.income.push(s.peakIncome??0);
   c.edu[s.edu]=(c.edu[s.edu]??0)+1;const t=c.tiers[s.tier]??={n:0,exams:0,admit:0,bachelor:0};t.n++;t.exams+=r.gaokao;t.admit+=r.admitted;t.bachelor+=isBachelor(s);
@@ -41,3 +47,10 @@ export function checks(c,e){const rows=[];const row=(name,value,min,max,unit='%'
  return rows;}
 export const formatValue=r=>`${r.value.toFixed(3)}${r.unit}`;
 export const formatTarget=r=>`${Number(r.min.toFixed(4))}–${r.max===Infinity?'∞':Number(r.max.toFixed(4))}${r.unit}`;
+// 09a product targets, additional to (and never replacing) the original 25.
+export function educationChecks(c){
+ return [
+  {name:'竞赛录取占出生队列',value:100*c.competitionAdmitted/c.n,min:.1,max:.3,unit:'%'},
+  {name:'专项录取占农村Q1-Q2高考人群',value:100*c.specialPoorAdmitted/c.specialExams,min:3,max:8,unit:'%'},
+ ].map(r=>({...r,pass:Number.isFinite(r.value)&&r.value>=r.min&&r.value<=r.max}));
+}

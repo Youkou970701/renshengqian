@@ -11,11 +11,16 @@ import {P} from '../src/engine/params.js';
 import {birthText,familyText,terminalText} from '../src/content/presentation.js';
 import {footnote,resolveStat,visibleFootnote} from '../src/content/footnotes.js';
 import {findBannedWords} from './banned-words.js';
+import {DATA,PROVINCES} from '../src/engine/stats.js';
 
 const criticalNodes=new Set(['school','exam','career','civil','master','midcareer','death']);
-function checkText(text, context) {
+function checkText(text, context, {sourcePage=false}={}) {
   assert.equal(typeof text, 'string', `${context}: expected text`);
-  assert.deepEqual(findBannedWords(text), [], `${context}: player terminology leaked: ${text}`);
+  // The dedicated Sources page preserves the read-only table's original audit
+  // statuses so readers can judge provenance. Only 已核 / 待核 / 估算 are exempt
+  // there; the home page and all game copy still use the complete banned list.
+  const sourceStatuses=new Set(sourcePage?['已核','待核','估算']:[]);
+  assert.deepEqual(findBannedWords(text).filter(word=>!sourceStatuses.has(word)), [], `${context}: player terminology leaked: ${text}`);
   assert.doesNotMatch(text, /undefined|\[object Object\]/, `${context}: broken interpolation`);
 }
 
@@ -107,7 +112,11 @@ test('2000 complete lives: actual logs, birth cards, endings and rendered UI con
   assert.ok(directSources>0,'sample must exercise actual industry risk citations');
   assert.ok(leftBehind>0,'sample must exercise left-behind children');
   for(const node of criticalNodes) assert.ok(seenCritical.get(node)>0,`sample never exercised ${node}`);
-  checkText(renderToStaticMarkup(React.createElement(ui.Sources)).replace(/<[^>]*>/g,''),'rendered sources');
+  const sources=renderToStaticMarkup(React.createElement(ui.Sources)).replace(/<[^>]*>/g,'');
+  checkText(sources,'rendered sources',{sourcePage:true});
+  for(const status of ['已核','待核','估算']) assert.ok(sources.includes(status),`sources must retain ${status}`);
+  assert.ok(sources.includes(DATA.births.by_province_2024._note),'sources must preserve the original province-data note');
+  for(const province of PROVINCES) assert.ok(sources.includes(`2024 年${province}出生人口 ${DATA.births.by_province_2024[province].value} 万人，数据状态：${DATA.births.by_province_2024[province].status}`),`${province}: original status missing from sources`);
   const originalStorage=Object.getOwnPropertyDescriptor(globalThis,'localStorage');
   const originalLocation=Object.getOwnPropertyDescriptor(globalThis,'location');
   try {
@@ -118,7 +127,13 @@ test('2000 complete lives: actual logs, birth cards, endings and rendered UI con
       Object.defineProperty(globalThis,'localStorage',{value:{getItem:()=>JSON.stringify(saved)},configurable:true});
       const text=renderToStaticMarkup(React.createElement(ui.default)).replace(/<[^>]*>/g,'');
       checkText(text,`full app screen ${screen}`);
-      assert.ok(text.includes({home:'新的出生',birth:'出生登记卡',play:'今年的重心',end:'这一生的终局'}[screen]),`${screen}: failed to restore screen under test`);
+      if(screen==='home') {
+        // Includes hidden screen-reader copy and collapsed details, not just
+        // the initially visible hero text.
+        assert.doesNotMatch(text,/已核|待核|估算/,'home must use player-facing data labels throughout');
+        for(const copy of ['推算','初步数据','家庭暴力','刚刚出生','你的前世']) assert.ok(text.includes(copy),`home missing ${copy}`);
+      }
+      assert.ok(text.includes({home:'如果人生重新抽签。',birth:'出生登记卡',play:'今年的重心',end:'这一生的终局'}[screen]),`${screen}: failed to restore screen under test`);
     }
   } finally {
     if(originalStorage) Object.defineProperty(globalThis,'localStorage',originalStorage); else delete globalThis.localStorage;

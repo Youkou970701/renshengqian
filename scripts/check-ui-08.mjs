@@ -1,3 +1,5 @@
+import {build} from 'esbuild';
+import {fileURLToPath} from 'node:url';
 import {createRequire} from 'node:module';
 import {homedir} from 'node:os';
 import {join} from 'node:path';
@@ -8,13 +10,18 @@ import {step} from '../src/engine/life.js';
 import {deriveChild} from '../src/engine/family.js';
 const require=createRequire(join(homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/package.json'));
 const {chromium}=require('playwright');
-const url=process.env.UI_URL??'http://127.0.0.1:5188/',out='tests/artifacts-08';mkdirSync(out,{recursive:true});
+const url=process.env.UI_URL??'http://127.0.0.1:5188/',out=process.env.V2_UI_OUTPUT??'tests/artifacts-08';mkdirSync(out,{recursive:true});
 const birth=createBirth('粤-2026-694669');let school=birth;
 while(school.alive&&school.pending?.id!=='school')school=step(school,{auto:true}).state;
 assert.equal(school.pending.id,'school');
 const save=(life,extra={})=>({schemaVersion:2,screen:'play',life,birthOrigin:birth,peers:[1,2,3,4].map(i=>drawBirth((life.seed+Math.imul(i,2654435761))>>>0,life.year)),mode:'normal',automaticVersion:1,automatic:false,duration:30,speed:1,focus:'auto',paused:false,reveal:null,revealQueue:[],familyRows:[],familyGoal:'free',pacingElapsedMs:0,...extra});
 const read=p=>p.evaluate(()=>JSON.parse(localStorage.getItem('toutai-sim:v2')));
 const fingerprint=s=>({age:s.life.age,pending:s.life.pending?.id,rngState:s.life.rngState,choices:s.life.choices.length,log:s.life.log.length});
+// Bundle the real pure engine for an independent comparison inside the same
+// browser runtime. Production builds expose no /src path; Node and Chromium
+// can differ by one ULP in Math.log, so cross-runtime equality is not used.
+const engineBuild=await build({entryPoints:[fileURLToPath(new URL('../src/engine/life.js',import.meta.url))],bundle:true,write:false,format:'esm',platform:'browser'});
+const engineURL='data:text/javascript;base64,'+Buffer.from(engineBuild.outputFiles[0].text).toString('base64');
 const browser=await chromium.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'}),errors=[],results=[];
 try{
  const context=await browser.newContext({viewport:{width:375,height:812},isMobile:true,hasTouch:true});
@@ -60,7 +67,13 @@ try{
   else if(s.life.pending){await q.clock.runFor(10000);clockSeconds+=10;decisionWait+=10;}
   else {const {normalPacing}=await import('../src/ui/pacing.js');const timing=normalPacing(s.life,{duration:s.duration,elapsedMs:s.pacingElapsedMs,focus:s.focus,important:s.pacingImportantAge===s.life.age});const ms=Math.ceil(timing.delayMs)+1;delays.push({age:s.life.age,weight:timing.weight,seconds:timing.delayMs/1000});await q.clock.runFor(ms);clockSeconds+=ms/1000;}
  }
- const end=await read(q);assert.ok(clockSeconds>=1440&&clockSeconds<=2160);assert.ok(Math.abs(end.pacingElapsedMs-1800000)<.01);const expected=await q.evaluate(async b=>{const {simulate}=await import('/src/engine/life.js');return simulate(b,{capture:true});},birth);assert.deepEqual({...end.life,capture:true},expected);
+ const end=await read(q);
+ // Compare every field with the independently bundled engine in the same browser.
+ // JSON normalization only mirrors localStorage persistence; no tolerance or rounding.
+ // v2 counts only advancing time: decision countdowns and dice waits are reported separately.
+ // More choices can legitimately increase wall-clock time without changing the 30-minute budget.
+ const viewingSeconds=end.pacingElapsedMs/1000;
+ assert.ok(viewingSeconds>=1500&&viewingSeconds<=2100);assert.ok(clockSeconds>=viewingSeconds);assert.ok(Math.abs(end.pacingElapsedMs-1800000)<.01);const expected=await q.evaluate(async({birth,engineURL})=>{const {simulate}=await import(engineURL);return JSON.parse(JSON.stringify(simulate(birth,{capture:true})));},{birth,engineURL});assert.deepEqual({...end.life,capture:true},expected);
  results.push({case:'30分钟档浏览器虚拟时钟完整一局',pass:true,clockSeconds,viewingSeconds:end.pacingElapsedMs/1000,decisionWaitSeconds:decisionWait,diceWaitSeconds:diceWait,age:end.life.age,id:end.life.id,engineStateIdentical:true,delays});await q.screenshot({path:`${out}/end-30-minute-375.png`,fullPage:true});
  await load(q,birth,{screen:'birth',mode:'speed',automatic:false});await q.getByRole('button',{name:'开始这一生 →',exact:true}).click();await q.clock.runFor(60000);const fast=await read(q);assert.equal(fast.screen,'end');assert.deepEqual({...fast.life,capture:true},expected);results.push({case:'一分钟极速局，自动偏好关闭时仍全自动并完整终局',pass:true,seconds:60,engineStateIdentical:true});
  assert.deepEqual(errors,[]);

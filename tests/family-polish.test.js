@@ -14,7 +14,9 @@ test('06家族城乡、生育参数、1000个可接力农村Q1家族目标均满
  for(const e of [...r.loopSample.loops,...r.loopSample.oldLine])assert.deepEqual(findBannedWords(e.text),[]);
 });
 test('姓氏取父亲，乡村工作迁居不提前解锁城市出生目标',()=>{
- const mother=simulate(createBirth('粤-2026-410636'),{capture:true});assert.equal(mother.sex,'female');const child=deriveChild(mother);assert.ok(child);assert.equal(child.name[0],child.parents.father.name[0]);assert.equal(child.parents.mother.name,mother.name);
+ // 不绑死某个编号的人生走向（M3 加剧本后同一编号的一生会变）：按条件找一位农村出身、在县城或省会定居、有孩子的女性。
+ let mother=null;for(let i=0;i<4000&&!mother;i++){const s=simulate(createBirth(`粤-2026-${String(410636+i).padStart(6,'0')}`),{capture:true});if(s.sex==='female'&&s.hukou==='rural'&&['县城','省会'].includes(s.city)&&deriveChild(s))mother=s;}
+ assert.ok(mother,'没有找到农村出身、城镇定居、有孩子的女性样本');assert.equal(mother.sex,'female');const child=deriveChild(mother);assert.ok(child);assert.equal(child.name[0],child.parents.father.name[0]);assert.equal(child.parents.mother.name,mother.name);
  assert.equal(settlement(mother).hukou,'urban');assert.equal(familyGoalStatus(mother,'city'),false);
  assert.equal(familyGoalStatus({...mother,hukou:'urban'},'city'),true);
  assert.deepEqual(child,deriveChild(mother));

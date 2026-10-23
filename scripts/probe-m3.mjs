@@ -1,0 +1,29 @@
+import{writeFileSync,mkdirSync}from'node:fs';import{resolve}from'node:path';import{fileURLToPath}from'node:url';
+import{drawBirth,createBirth}from'../src/engine/birth.js';import{simulate}from'../src/engine/life.js';import{SCENARIOS}from'../src/content/scenarios.js';import{CARDS}from'../src/content/cards/index.js';import{FIXED_SAMPLE_IDS}from'./probe-m2.mjs';
+const mean=a=>a.reduce((x,y)=>x+y,0)/a.length,median=a=>{const b=[...a].sort((x,y)=>x-y);return (b[Math.floor((b.length-1)/2)]+b[Math.ceil((b.length-1)/2)])/2;};
+// 2026-10-23 user ruling in docs/codex-handoff-09d-m5-fix.md:
+// Good experience: positive story ending good. Bad experience: a negative
+// story ending bad/mixed/rehabilitated; avoided never counts. This measures
+// ordinary setbacks as well as severe harm. Outcome names and the separate
+// actual-serious-consequence >=60% test remain unchanged.
+export function storyExperience(histories){
+ const good=histories.some(h=>h.positive===true&&h.outcome==='good');
+ const bad=histories.some(h=>h.positive===false&&['bad','mixed','rehabilitated'].includes(h.outcome));
+ return {good,bad,both:good&&bad};
+}
+export function probeM3({n=3000,offset=0}={}){
+ if(n<3000||!Number.isInteger(n))throw Error('M3探针至少3000局');
+ const choices=[],after35=[],counts=[],scenarioCounts={},matrix={};let everMarried=0,everDivorced=0,remarried=0,zero=0,six=0,risky=0,bad=0,rehab=0,both=0,goodExperiences=0,badExperiences=0,heavyInLight=0,seriousBad=0,maxPerYear=0,maxPerCard=0,marriedTwice=0,lateMarriage=0,divorces=0;
+ for(let i=0;i<n;i++){
+  const b=drawBirth((Math.imul(i+offset,2654435761)+123456789)>>>0),s=simulate(b);const histories=s.scenarioHistory??[];counts.push(histories.length);zero+=histories.length===0;six+=histories.length>=6;
+  choices.push(s.cardHistory.length);after35.push(s.cardHistory.filter(x=>x.age>35).length);
+  const years={},cards={};for(const x of s.cardHistory){years[x.age]=(years[x.age]??0)+1;cards[x.id]=(cards[x.id]??0)+1;}maxPerYear=Math.max(maxPerYear,...Object.values(years),0);maxPerCard=Math.max(maxPerCard,...Object.values(cards),0);
+  for(const h of histories){scenarioCounts[h.id]=(scenarioCounts[h.id]??0)+1;if(['boundary','jianghu'].includes(h.category)&&h.outcome&&h.outcome!=='avoided'){risky++;bad+=h.outcome==='bad';const serious=Object.values(h.consequences??{}).some(Boolean);seriousBad+=serious;rehab+=h.outcome==='rehabilitated'&&!serious;}}
+  const experience=storyExperience(histories);both+=experience.both;goodExperiences+=experience.good;badExperiences+=experience.bad;marriedTwice+=(s.record.marriages??0)>=2;divorces+=s.record.divorces??0;everMarried+=(s.record.marriages??0)>=1;everDivorced+=(s.record.divorces??0)>=1;remarried+=(s.record.divorces??0)>=1&&(s.record.marriages??0)>=2;lateMarriage+=(s.relationshipHistory??[]).some(x=>x.kind==='marriage'&&x.age>=70);
+  const key=`${b.tier}:${b.hukou}:Q${b.wealthQ}`,m=matrix[key]??={sampleSize:0,alive18:0,bachelorAlive18:0};m.sampleSize++;m.alive18+=s.age>=18;m.bachelorAlive18+=s.age>=18&&['bachelor','211','985','master'].includes(s.edu);
+  if(i<2000){const light=simulate({...b,skipHeavy:true});heavyInLight+=(light.scenarioHistory??[]).filter(x=>x.heavy).length;for(const h of light.cardHistory)if(CARDS.find(c=>c.id===h.id)?.heavy)heavyInLight++;}
+ }
+ const checks=[{name:'每局有效抉择中位数30–50',value:median(choices),min:30,max:50,pass:median(choices)>=30&&median(choices)<=50},{name:'35岁后有效抉择中位数≥10',value:median(after35),min:10,pass:median(after35)>=10},{name:'触发剧本平均2–4',value:mean(counts),min:2,max:4,pass:mean(counts)>=2&&mean(counts)<=4},{name:'零剧本局<10%',value:zero/n,max:.10,pass:zero/n<.10},{name:'六个及以上剧本局<5%',value:six/n,max:.05,pass:six/n<.05},{name:'越界江湖（未躲开者）实际承担严重后果≥60%',value:seriousBad/risky,sampleSize:risky,min:.60,pass:risky>=100&&seriousBad/risky>=.60},{name:'越界江湖（未躲开者）毫发无损地洗白≤15%',value:rehab/risky,sampleSize:risky,max:.15,pass:risky>=100&&rehab/risky<=.15},{name:'每局经历过好事和坏事各至少一次 ≥60%',value:both/n,numerator:both,sampleSize:n,min:.60,pass:both/n>=.60},{name:'略过沉重后2000局沉重触发0',value:heavyInLight,max:0,pass:heavyInLight===0},{name:'结过婚的人里离过婚15–35%（参数：2024 离婚登记 262.1 万对 / 结婚 610.6 万对）',value:everDivorced/Math.max(1,everMarried),min:.15,max:.35,pass:everDivorced/Math.max(1,everMarried)>=.15&&everDivorced/Math.max(1,everMarried)<=.35},{name:'离过婚的人里再婚30–70%（参数）',value:remarried/Math.max(1,everDivorced),min:.30,max:.70,pass:everDivorced>=50&&remarried/everDivorced>=.30&&remarried/everDivorced<=.70},{name:'每年最多2卡',value:maxPerYear,max:2,pass:maxPerYear<=2},{name:'同卡一生最多2次',value:maxPerCard,max:2,pass:maxPerCard<=2}];
+ return{milestone:'M3',n,offset,checks,pass:checks.every(x=>x.pass),failures:checks.filter(x=>!x.pass),choices:{median:median(choices),medianAfter35:median(after35)},stories:{mean:mean(counts),zero,sixOrMore:six,counts:scenarioCounts,library:SCENARIOS.length,cards:CARDS.length},outcomes:{risky,bad,seriousBad,rehab,both,goodExperiences,badExperiences,experienceDefinition:'09d user ruling: positive+good; negative+bad/mixed/rehabilitated; avoided excluded'},relationships:{marriedTwice,lateMarriage,divorces,everMarried,everDivorced,remarried},matrix,light:{n:2000,heavyInLight}};
+}
+if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){const args=process.argv.slice(2),opt=(k,d)=>{const i=args.indexOf(k);return i<0?d:args[i+1];},dir=opt('--output-dir','tests/artifacts-09/M3'),p=probeM3({n:Number(opt('--n',3000)),offset:Number(opt('--offset',0))});mkdirSync(dir,{recursive:true});writeFileSync(`${dir}/scenario-probe.json`,JSON.stringify(p,null,2)+'\n');for(const x of p.checks)console.log(x.pass?'PASS':'FAIL',x.name,x.value);writeFileSync(`${dir}/sample-lives.json`,JSON.stringify(Object.fromEntries(Object.entries(FIXED_SAMPLE_IDS).map(([k,id])=>[k,simulate(createBirth(id),{capture:true})])),null,2)+'\n');if(!p.pass)process.exitCode=1;}

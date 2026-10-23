@@ -1,22 +1,36 @@
-import { careerDecision,autoCareerChoice } from './career.js';
-import { random } from './rng.js';
-import { P } from './params.js';
-const option=(id,label,effect)=>({id,label,effect});
-export function decisionAt(s){
- if(s.age===15&&s.edu==='junior')return {id:'school',title:'中考之后，你想走哪条路？',options:[option('general','争取普通高中','成绩判定；家境影响机会'),option('vocational','报读中职','学习一门技能'),option('leave','先去工作','增加收入，停止升学')]};
- if(s.age===18&&s.record.completed)return {id:'exam',title:s.record.general?'填报高考志愿':'中职毕业后的路',options:[option('exam','参加高考 / 职教升学考试','录取概率取决于成绩与出身'),option('factory','进厂工作','开始积累收入')]};
- if(s.age===19&&s.record.gaokao&&!s.record.admitted&&!s.repeatUsed)return {id:'repeat',title:'你还想再试一次吗？',options:[option('repeat','复读一次','再参加一次考试，成绩略提升'),option('college','接受专科或工作','走技能与就业路线')]};
- if(s.age===21&&['college','vocational'].includes(s.edu))return {id:'upgrade',title:'要再试试本科这条路吗？',options:[option('upgrade','准备专升本 / 继续升学','需要准备考试，不保证录取'),option('work','开始工作','积累工作经验')]};
- if(s.age===22)return careerDecision(s);
- if(s.age===25)return {id:'city',title:'去哪里生活？',options:['一线','省会','县城','老家'].map(c=>option(c,c,'影响收入与住房成本'))};
- if(s.age===29&&!s.married)return {id:'marry',title:'两个人的生活',options:[option('marry','尝试相亲与结婚','影响幸福与家庭支出'),option('single','先独自生活','保留当前生活节奏')]};
- if(s.age===31)return {id:'house',title:'要买房吗？',options:[option('buy','拿积蓄付首付','承担按揭，可能因积蓄不足放弃'),option('rent','继续租住','保留积蓄')]};
- if(s.age===33&&s.married)return {id:'child',title:'是否抚养一个孩子？',options:[option('child','迎接孩子','孩子起点由当前收入和居住地派生'),option('no','暂时不生育','保留当前生活节奏')]};
- if(s.age===35)return {id:'midcareer',title:'工作走到新的路口',options:[option('stay','继续现在的工作','面临行业波动'),option('change','学习技能转行','短期收入下降，改善技能')]};
- return careerDecision(s);
-}
-export function autoChoose(s){const d=s.pending;if(!d)return null;const u=random(s.rngState).value;
- if(d.id==='career'||d.id==='careerPlan')return autoCareerChoice(s,u);
- const defaults={school:'general',exam:'exam',repeat:'college',upgrade:'upgrade',career:u<.13?'master':u<.18?'civil':u<.25?'home':'work',city:s.wealthQ>=4?'省会':s.hukou==='rural'?'县城':'省会',marry:'marry',house:'rent',child:u<P.family.autoChildProbability?'child':'no',midcareer:'stay'};
- return defaults[d.id]??d.options[0].id;
+import {autoCareerChoice} from './career.js';
+import {random} from './rng.js';
+import {P} from './params.js';
+import {drawCards} from './cards.js';
+import {houseQuote} from './money.js';
+export const decisionAt=s=>drawCards(s).pending??null;
+export function autoChoose(s){
+ const d=s.pending;if(!d)return null;
+ const u=random(d.core?s.rngState:s.cardRngState??s.rngState).value,options=d.options.filter(o=>!o.disabled),has=id=>options.some(o=>o.id===id);
+ if(d.id==='career')return autoCareerChoice(s,u);
+ if(d.id==='self-employed-insurance')return has('pay')&&s.assets>=24000?'pay':'skip';
+ if(d.id==='flexible-retirement')return 'normal';
+ if(d.id==='early-house'){if(has('full')&&s.assets>=houseQuote(s,s.city,'small',{fullCash:true}).price*1.10)return 'full';return has('normal')?'normal':'small';}
+ if(d.id==='city'&&has('一线')&&['bachelor','211','985','master'].includes(s.edu)&&u<.18)return '一线';
+ if(d.id==='business-start'){if(has('factory')&&(s.skills?.craft??0)>=20&&s.assets>=180000&&u<.12)return 'factory';if(has('training')&&['teacher','training'].includes(s.occupation?.id))return 'training';if(has('shop')&&s.assets>=60000)return 'shop';return has('online')?'online':'decline';}
+ if(d.id==='house'){
+  if(houseQuote(s).enabled)return 'buy';
+  if(has('buy-small')&&houseQuote(s,s.city,'small').enabled)return 'buy-small';
+  if(has('buy-county')&&houseQuote(s,'县城','small').enabled)return 'buy-county';
+  if(has('buy-home')&&houseQuote(s,'老家','small').enabled)return 'buy-home';
+  return 'rent';
+ }
+ if(d.id==='school-alternatives'){
+  if(!s.record.stage)return 'work';
+  if(s.wealthQ>=4&&has('private')&&u<.65)return 'private';
+  if(s.wealthQ===3&&has('private')&&u<.22)return 'private';
+  if(u>.86)return 'repeat-junior';if(u>.80)return 'work';if(u>.74&&has('talent'))return 'talent';if(u>.70&&has('international'))return 'international';return 'vocational';
+ }
+ const defaults={school:'general',exam:'exam','repeat-exam':'exam',repeat:'college',upgrade:'upgrade',city:s.wealthQ>=4?'省会':s.hukou==='rural'?'县城':'省会',marry:'marry',house:houseQuote(s).enabled?'buy':'rent',child:u<P.family.autoChildProbability?'child':'no',midcareer:'stay'};
+ if(has(defaults[d.id]))return defaults[d.id];
+ if(d.id==='rural-special-plan'&&has('apply'))return 'apply';
+ if(s.wealthQ<=2&&has('loan'))return 'loan';if(has('family')&&s.wealthQ>=3)return 'family';
+ // All contextual choices are real inputs; rotate across eligible alternatives,
+ // including declining an invitation, rather than always picking the first one.
+ return options[Math.min(options.length-1,Math.floor(u*options.length))]?.id??null;
 }

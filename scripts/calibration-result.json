@@ -1,6 +1,517 @@
 {
   "cohort": {
     "n": 100000,
+    "competitionAdmitted": 167,
+    "specialAdmitted": 1610,
+    "specialPoorAdmitted": 667,
+    "specialExams": 10795,
+    "specialEligible": 3537,
+    "schoolStrata": {
+      "C:urban:Q4": {
+        "sampleSize": 5674,
+        "highSchoolKnown": 4922,
+        "countyHighSchool": 2982,
+        "gaokao": 4732,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "B:rural:Q2": {
+        "sampleSize": 3985,
+        "highSchoolKnown": 3310,
+        "countyHighSchool": 2985,
+        "gaokao": 2661,
+        "specialEligible": 353,
+        "specialAdmitted": 185,
+        "specialPoorAdmitted": 185,
+        "specialExams": 2661
+      },
+      "B:rural:Q3": {
+        "sampleSize": 3149,
+        "highSchoolKnown": 2718,
+        "countyHighSchool": 2158,
+        "gaokao": 2539,
+        "specialEligible": 396,
+        "specialAdmitted": 183,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "C:urban:Q1": {
+        "sampleSize": 3167,
+        "highSchoolKnown": 2531,
+        "countyHighSchool": 2415,
+        "gaokao": 1099,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "A:urban:Q3": {
+        "sampleSize": 2128,
+        "highSchoolKnown": 1823,
+        "countyHighSchool": 1482,
+        "gaokao": 1716,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "C:rural:Q2": {
+        "sampleSize": 4550,
+        "highSchoolKnown": 3726,
+        "countyHighSchool": 3337,
+        "gaokao": 3005,
+        "specialEligible": 427,
+        "specialAdmitted": 219,
+        "specialPoorAdmitted": 219,
+        "specialExams": 3005
+      },
+      "S:urban:Q5": {
+        "sampleSize": 765,
+        "highSchoolKnown": 687,
+        "countyHighSchool": 281,
+        "gaokao": 666,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "B:urban:Q5": {
+        "sampleSize": 5995,
+        "highSchoolKnown": 5412,
+        "countyHighSchool": 2137,
+        "gaokao": 5215,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "C:urban:Q5": {
+        "sampleSize": 6422,
+        "highSchoolKnown": 5763,
+        "countyHighSchool": 2264,
+        "gaokao": 5565,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "B:urban:Q2": {
+        "sampleSize": 3559,
+        "highSchoolKnown": 2973,
+        "countyHighSchool": 2663,
+        "gaokao": 2374,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "C:rural:Q3": {
+        "sampleSize": 3682,
+        "highSchoolKnown": 3134,
+        "countyHighSchool": 2474,
+        "gaokao": 2959,
+        "specialEligible": 491,
+        "specialAdmitted": 261,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "B:rural:Q1": {
+        "sampleSize": 4738,
+        "highSchoolKnown": 3733,
+        "countyHighSchool": 3519,
+        "gaokao": 1620,
+        "specialEligible": 151,
+        "specialAdmitted": 89,
+        "specialPoorAdmitted": 89,
+        "specialExams": 1620
+      },
+      "C:rural:Q1": {
+        "sampleSize": 5434,
+        "highSchoolKnown": 4309,
+        "countyHighSchool": 4108,
+        "gaokao": 1864,
+        "specialEligible": 161,
+        "specialAdmitted": 90,
+        "specialPoorAdmitted": 90,
+        "specialExams": 1864
+      },
+      "B:rural:Q5": {
+        "sampleSize": 1533,
+        "highSchoolKnown": 1361,
+        "countyHighSchool": 548,
+        "gaokao": 1318,
+        "specialEligible": 155,
+        "specialAdmitted": 42,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "B:urban:Q3": {
+        "sampleSize": 4430,
+        "highSchoolKnown": 3815,
+        "countyHighSchool": 3028,
+        "gaokao": 3570,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "A:rural:Q4": {
+        "sampleSize": 906,
+        "highSchoolKnown": 808,
+        "countyHighSchool": 489,
+        "gaokao": 779,
+        "specialEligible": 133,
+        "specialAdmitted": 50,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "C:urban:Q2": {
+        "sampleSize": 4052,
+        "highSchoolKnown": 3380,
+        "countyHighSchool": 3039,
+        "gaokao": 2760,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "A:urban:Q1": {
+        "sampleSize": 1501,
+        "highSchoolKnown": 1194,
+        "countyHighSchool": 1135,
+        "gaokao": 496,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "C:rural:Q5": {
+        "sampleSize": 1825,
+        "highSchoolKnown": 1615,
+        "countyHighSchool": 648,
+        "gaokao": 1561,
+        "specialEligible": 202,
+        "specialAdmitted": 54,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "A:urban:Q4": {
+        "sampleSize": 2590,
+        "highSchoolKnown": 2296,
+        "countyHighSchool": 1386,
+        "gaokao": 2216,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "A:urban:Q5": {
+        "sampleSize": 2887,
+        "highSchoolKnown": 2569,
+        "countyHighSchool": 1014,
+        "gaokao": 2483,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "C:urban:Q3": {
+        "sampleSize": 4706,
+        "highSchoolKnown": 4026,
+        "countyHighSchool": 3251,
+        "gaokao": 3773,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "B:urban:Q4": {
+        "sampleSize": 5146,
+        "highSchoolKnown": 4524,
+        "countyHighSchool": 2731,
+        "gaokao": 4336,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "B:rural:Q4": {
+        "sampleSize": 2390,
+        "highSchoolKnown": 2053,
+        "countyHighSchool": 1206,
+        "gaokao": 1973,
+        "specialEligible": 268,
+        "specialAdmitted": 102,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "C:rural:Q4": {
+        "sampleSize": 2826,
+        "highSchoolKnown": 2461,
+        "countyHighSchool": 1522,
+        "gaokao": 2373,
+        "specialEligible": 393,
+        "specialAdmitted": 161,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "A:rural:Q3": {
+        "sampleSize": 1110,
+        "highSchoolKnown": 945,
+        "countyHighSchool": 750,
+        "gaokao": 900,
+        "specialEligible": 131,
+        "specialAdmitted": 66,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "B:urban:Q1": {
+        "sampleSize": 3041,
+        "highSchoolKnown": 2457,
+        "countyHighSchool": 2341,
+        "gaokao": 1032,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "A:rural:Q2": {
+        "sampleSize": 1443,
+        "highSchoolKnown": 1182,
+        "countyHighSchool": 1072,
+        "gaokao": 951,
+        "specialEligible": 121,
+        "specialAdmitted": 58,
+        "specialPoorAdmitted": 58,
+        "specialExams": 951
+      },
+      "A:rural:Q1": {
+        "sampleSize": 1648,
+        "highSchoolKnown": 1316,
+        "countyHighSchool": 1244,
+        "gaokao": 597,
+        "specialEligible": 49,
+        "specialAdmitted": 23,
+        "specialPoorAdmitted": 23,
+        "specialExams": 597
+      },
+      "A:urban:Q2": {
+        "sampleSize": 1826,
+        "highSchoolKnown": 1524,
+        "countyHighSchool": 1375,
+        "gaokao": 1251,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "S:urban:Q1": {
+        "sampleSize": 355,
+        "highSchoolKnown": 295,
+        "countyHighSchool": 280,
+        "gaokao": 118,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "S:urban:Q3": {
+        "sampleSize": 525,
+        "highSchoolKnown": 452,
+        "countyHighSchool": 356,
+        "gaokao": 416,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "S:urban:Q4": {
+        "sampleSize": 633,
+        "highSchoolKnown": 565,
+        "countyHighSchool": 324,
+        "gaokao": 533,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "S:rural:Q1": {
+        "sampleSize": 116,
+        "highSchoolKnown": 91,
+        "countyHighSchool": 81,
+        "gaokao": 35,
+        "specialEligible": 6,
+        "specialAdmitted": 1,
+        "specialPoorAdmitted": 1,
+        "specialExams": 35
+      },
+      "A:rural:Q5": {
+        "sampleSize": 558,
+        "highSchoolKnown": 504,
+        "countyHighSchool": 198,
+        "gaokao": 484,
+        "specialEligible": 65,
+        "specialAdmitted": 17,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "S:urban:Q2": {
+        "sampleSize": 454,
+        "highSchoolKnown": 383,
+        "countyHighSchool": 343,
+        "gaokao": 306,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "S:rural:Q5": {
+        "sampleSize": 38,
+        "highSchoolKnown": 32,
+        "countyHighSchool": 10,
+        "gaokao": 30,
+        "specialEligible": 4,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "S:rural:Q4": {
+        "sampleSize": 57,
+        "highSchoolKnown": 49,
+        "countyHighSchool": 35,
+        "gaokao": 48,
+        "specialEligible": 7,
+        "specialAdmitted": 2,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "S:rural:Q2": {
+        "sampleSize": 87,
+        "highSchoolKnown": 77,
+        "countyHighSchool": 68,
+        "gaokao": 62,
+        "specialEligible": 8,
+        "specialAdmitted": 2,
+        "specialPoorAdmitted": 2,
+        "specialExams": 62
+      },
+      "S:rural:Q3": {
+        "sampleSize": 69,
+        "highSchoolKnown": 62,
+        "countyHighSchool": 56,
+        "gaokao": 56,
+        "specialEligible": 16,
+        "specialAdmitted": 5,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      }
+    },
+    "schoolByWealth": {
+      "urban:Q4": {
+        "sampleSize": 14043,
+        "highSchoolKnown": 12307,
+        "countyHighSchool": 7423,
+        "gaokao": 11817,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "rural:Q2": {
+        "sampleSize": 10065,
+        "highSchoolKnown": 8295,
+        "countyHighSchool": 7462,
+        "gaokao": 6679,
+        "specialEligible": 909,
+        "specialAdmitted": 464,
+        "specialPoorAdmitted": 464,
+        "specialExams": 6679
+      },
+      "rural:Q3": {
+        "sampleSize": 8010,
+        "highSchoolKnown": 6859,
+        "countyHighSchool": 5438,
+        "gaokao": 6454,
+        "specialEligible": 1034,
+        "specialAdmitted": 515,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "urban:Q1": {
+        "sampleSize": 8064,
+        "highSchoolKnown": 6477,
+        "countyHighSchool": 6171,
+        "gaokao": 2745,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "urban:Q3": {
+        "sampleSize": 11789,
+        "highSchoolKnown": 10116,
+        "countyHighSchool": 8117,
+        "gaokao": 9475,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "urban:Q5": {
+        "sampleSize": 16069,
+        "highSchoolKnown": 14431,
+        "countyHighSchool": 5696,
+        "gaokao": 13929,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "urban:Q2": {
+        "sampleSize": 9891,
+        "highSchoolKnown": 8260,
+        "countyHighSchool": 7420,
+        "gaokao": 6691,
+        "specialEligible": 0,
+        "specialAdmitted": 0,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "rural:Q1": {
+        "sampleSize": 11936,
+        "highSchoolKnown": 9449,
+        "countyHighSchool": 8952,
+        "gaokao": 4116,
+        "specialEligible": 367,
+        "specialAdmitted": 203,
+        "specialPoorAdmitted": 203,
+        "specialExams": 4116
+      },
+      "rural:Q5": {
+        "sampleSize": 3954,
+        "highSchoolKnown": 3512,
+        "countyHighSchool": 1404,
+        "gaokao": 3393,
+        "specialEligible": 426,
+        "specialAdmitted": 113,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      },
+      "rural:Q4": {
+        "sampleSize": 6179,
+        "highSchoolKnown": 5371,
+        "countyHighSchool": 3252,
+        "gaokao": 5173,
+        "specialEligible": 801,
+        "specialAdmitted": 315,
+        "specialPoorAdmitted": 0,
+        "specialExams": 0
+      }
+    },
+    "publicGeneral": 51071,
+    "privateGeneral": 8694,
     "births": {
       "山东": 7005,
       "湖北": 3395,
@@ -39,558 +550,596 @@
     "survive16": 99244,
     "junior16": 95111,
     "junior": 95132,
-    "general": 58696,
-    "stage": 87571,
+    "general": 59765,
+    "stage": 85077,
     "poor": 11936,
-    "poorComplete": 4389,
-    "exams": 74477,
-    "admit": 32109,
-    "elite": 1197,
-    "eliteRural": 238,
-    "bachelor": 34542,
-    "lifespan": 7876404,
+    "poorComplete": 4106,
+    "exams": 70472,
+    "admit": 30762,
+    "elite": 1108,
+    "eliteRural": 222,
+    "bachelor": 33588,
+    "lifespan": 7868292,
     "sex": {
       "male": {
         "n": 52316,
-        "age": 3982922
+        "age": 3976866
       },
       "female": {
         "n": 47684,
-        "age": 3893482
+        "age": 3891426
       }
     },
     "provinceAge": {
       "山东": {
         "n": 7005,
-        "age": 553695,
-        "bachelor": 2212
+        "age": 553989,
+        "bachelor": 2171
       },
       "湖北": {
         "n": 3395,
-        "age": 268023,
-        "bachelor": 1162
+        "age": 267365,
+        "bachelor": 1138
       },
       "江西": {
         "n": 3304,
-        "age": 258162,
-        "bachelor": 1103
+        "age": 258281,
+        "bachelor": 1069
       },
       "广东": {
         "n": 12257,
-        "age": 967467,
-        "bachelor": 3817
+        "age": 965883,
+        "bachelor": 3765
       },
       "重庆": {
         "n": 1829,
-        "age": 144019,
-        "bachelor": 624
+        "age": 143441,
+        "bachelor": 622
       },
       "内蒙古": {
         "n": 1179,
-        "age": 94414,
-        "bachelor": 506
+        "age": 94417,
+        "bachelor": 472
       },
       "福建": {
         "n": 3431,
-        "age": 269293,
-        "bachelor": 1185
+        "age": 269215,
+        "bachelor": 1129
       },
       "北京": {
         "n": 1417,
-        "age": 117150,
-        "bachelor": 830
+        "age": 117456,
+        "bachelor": 790
       },
       "陕西": {
         "n": 2715,
-        "age": 212719,
-        "bachelor": 927
+        "age": 214170,
+        "bachelor": 899
       },
       "云南": {
         "n": 4334,
-        "age": 331256,
-        "bachelor": 1428
+        "age": 331432,
+        "bachelor": 1402
       },
       "湖南": {
         "n": 4215,
-        "age": 332272,
-        "bachelor": 1403
+        "age": 331244,
+        "bachelor": 1344
       },
       "贵州": {
         "n": 4437,
-        "age": 339594,
-        "bachelor": 1336
+        "age": 339378,
+        "bachelor": 1322
       },
       "河南": {
         "n": 8258,
-        "age": 651411,
-        "bachelor": 2541
+        "age": 651133,
+        "bachelor": 2511
       },
       "河北": {
         "n": 4682,
-        "age": 366579,
-        "bachelor": 1598
+        "age": 366856,
+        "bachelor": 1537
       },
       "四川": {
         "n": 5744,
-        "age": 454192,
-        "bachelor": 1803
+        "age": 453628,
+        "bachelor": 1753
       },
       "新疆": {
         "n": 2223,
-        "age": 167396,
-        "bachelor": 783
+        "age": 167205,
+        "bachelor": 755
       },
       "江苏": {
         "n": 4644,
-        "age": 371742,
-        "bachelor": 1919
+        "age": 370549,
+        "bachelor": 1862
       },
       "广西": {
         "n": 4637,
-        "age": 365952,
-        "bachelor": 1436
+        "age": 366099,
+        "bachelor": 1430
       },
       "辽宁": {
         "n": 1930,
-        "age": 154261,
-        "bachelor": 797
+        "age": 153753,
+        "bachelor": 766
       },
       "吉林": {
         "n": 827,
-        "age": 66372,
-        "bachelor": 319
+        "age": 66536,
+        "bachelor": 308
       },
       "安徽": {
         "n": 4036,
-        "age": 318660,
-        "bachelor": 1350
+        "age": 318046,
+        "bachelor": 1315
       },
       "山西": {
         "n": 2112,
-        "age": 166002,
-        "bachelor": 706
+        "age": 165234,
+        "bachelor": 681
       },
       "浙江": {
         "n": 4494,
-        "age": 357015,
-        "bachelor": 1854
+        "age": 355629,
+        "bachelor": 1785
       },
       "甘肃": {
         "n": 1690,
-        "age": 133302,
-        "bachelor": 566
+        "age": 132600,
+        "bachelor": 546
       },
       "海南": {
         "n": 907,
-        "age": 72284,
-        "bachelor": 362
+        "age": 71586,
+        "bachelor": 329
       },
       "黑龙江": {
         "n": 817,
-        "age": 65131,
-        "bachelor": 316
+        "age": 64576,
+        "bachelor": 304
       },
       "上海": {
         "n": 1006,
-        "age": 83584,
-        "bachelor": 573
+        "age": 83999,
+        "bachelor": 559
       },
       "青海": {
         "n": 587,
-        "age": 43783,
-        "bachelor": 210
+        "age": 44366,
+        "bachelor": 201
       },
       "宁夏": {
         "n": 746,
-        "age": 59828,
-        "bachelor": 280
+        "age": 59610,
+        "bachelor": 258
       },
       "天津": {
         "n": 676,
-        "age": 56314,
-        "bachelor": 405
+        "age": 56211,
+        "bachelor": 381
       },
       "西藏": {
         "n": 466,
-        "age": 34532,
-        "bachelor": 191
+        "age": 34405,
+        "bachelor": 184
       }
     },
     "edu": {
-      "211": 2019,
-      "985": 968,
-      "vocational": 2711,
-      "college": 31643,
-      "master": 7610,
-      "none": 4868,
-      "bachelor": 23945,
-      "high": 5650,
-      "junior": 20586
+      "211": 1856,
+      "985": 841,
+      "high": 5191,
+      "college": 29459,
+      "junior": 24531,
+      "none": 4829,
+      "bachelor": 22905,
+      "master": 7986,
+      "vocational": 2402
     },
     "tiers": {
       "C": {
         "n": 42338,
-        "exams": 31324,
-        "admit": 12044,
-        "bachelor": 13145
+        "exams": 29691,
+        "admit": 11678,
+        "bachelor": 12952
       },
       "B": {
         "n": 37966,
-        "exams": 28178,
-        "admit": 11909,
-        "bachelor": 12835
+        "exams": 26638,
+        "admit": 11375,
+        "bachelor": 12437
       },
       "A": {
         "n": 16597,
-        "exams": 12570,
-        "admit": 6384,
-        "bachelor": 6754
+        "exams": 11873,
+        "admit": 6026,
+        "bachelor": 6469
       },
       "S": {
         "n": 3099,
-        "exams": 2405,
-        "admit": 1772,
-        "bachelor": 1808
+        "exams": 2270,
+        "admit": 1683,
+        "bachelor": 1730
       }
     },
     "matrix": {
       "urban:Q4": {
         "n": 14043,
-        "bachelor": 6939
+        "bachelor": 6803
       },
       "rural:Q2": {
         "n": 10065,
-        "bachelor": 1888
+        "bachelor": 1889
       },
       "rural:Q3": {
         "n": 8010,
-        "bachelor": 1846
+        "bachelor": 1995
       },
       "urban:Q1": {
         "n": 8064,
-        "bachelor": 1048
+        "bachelor": 956
       },
       "urban:Q3": {
         "n": 11789,
-        "bachelor": 3655
+        "bachelor": 3723
       },
       "urban:Q5": {
         "n": 16069,
-        "bachelor": 10761
+        "bachelor": 10436
       },
       "urban:Q2": {
         "n": 9891,
-        "bachelor": 2536
+        "bachelor": 2391
       },
       "rural:Q1": {
         "n": 11936,
-        "bachelor": 1148
+        "bachelor": 1059
       },
       "rural:Q5": {
         "n": 3954,
-        "bachelor": 2273
+        "bachelor": 2037
       },
       "rural:Q4": {
         "n": 6179,
-        "bachelor": 2448
+        "bachelor": 2299
       }
     },
     "career": {
-      "本地服务业": 10599,
-      "待业": 35589,
-      "技术员": 10014,
-      "工厂工人": 13424,
-      "研究生在读": 4475,
-      "建筑工人": 3411,
-      "互联网职员": 2403,
-      "企业职员": 3980,
-      "务农": 4832,
-      "个体户": 8249,
-      "医护": 192,
-      "老板": 1527,
-      "事业编": 143,
-      "公务员": 52,
-      "教师": 187
+      "待业": 26597,
+      "技术员": 9214,
+      "工厂工人": 13571,
+      "建筑工人": 3438,
+      "企业职员": 4079,
+      "互联网职员": 2507,
+      "本地服务业": 11843,
+      "个体户": 8452,
+      "务农": 4825,
+      "事业编": 471,
+      "研究生在读": 1909,
+      "老板": 1594,
+      "公务员": 41
     },
     "causes": {
-      "疾病": 94418,
-      "意外": 5582
+      "疾病": 94454,
+      "意外": 5546
     },
     "strata": {
       "C:urban:Q4": {
         "n": 5674,
         "n18": 5636,
-        "bachelor": 2520,
-        "bachelor18": 2520
+        "bachelor": 2470,
+        "bachelor18": 2470
       },
       "B:rural:Q2": {
         "n": 3985,
         "n18": 3953,
-        "bachelor": 768,
-        "bachelor18": 768
+        "bachelor": 773,
+        "bachelor18": 773
       },
       "B:rural:Q3": {
         "n": 3149,
         "n18": 3120,
-        "bachelor": 714,
-        "bachelor18": 714
+        "bachelor": 754,
+        "bachelor18": 754
       },
       "C:urban:Q1": {
         "n": 3167,
         "n18": 3141,
-        "bachelor": 373,
-        "bachelor18": 373
+        "bachelor": 345,
+        "bachelor18": 345
       },
       "A:urban:Q3": {
         "n": 2128,
         "n18": 2111,
-        "bachelor": 775,
-        "bachelor18": 775
+        "bachelor": 785,
+        "bachelor18": 785
       },
       "C:rural:Q2": {
         "n": 4550,
         "n18": 4502,
-        "bachelor": 754,
-        "bachelor18": 754
+        "bachelor": 783,
+        "bachelor18": 783
       },
       "S:urban:Q5": {
         "n": 765,
         "n18": 759,
-        "bachelor": 639,
-        "bachelor18": 639
+        "bachelor": 612,
+        "bachelor18": 612
       },
       "B:urban:Q5": {
         "n": 5995,
         "n18": 5936,
-        "bachelor": 4001,
-        "bachelor18": 4001
+        "bachelor": 3884,
+        "bachelor18": 3884
       },
       "C:urban:Q5": {
         "n": 6422,
         "n18": 6372,
-        "bachelor": 4055,
-        "bachelor18": 4055
+        "bachelor": 3953,
+        "bachelor18": 3953
       },
       "B:urban:Q2": {
         "n": 3559,
         "n18": 3530,
-        "bachelor": 884,
-        "bachelor18": 884
+        "bachelor": 827,
+        "bachelor18": 827
       },
       "C:rural:Q3": {
         "n": 3682,
         "n18": 3656,
-        "bachelor": 761,
-        "bachelor18": 761
+        "bachelor": 891,
+        "bachelor18": 891
       },
       "B:rural:Q1": {
         "n": 4738,
         "n18": 4697,
-        "bachelor": 447,
-        "bachelor18": 447
+        "bachelor": 409,
+        "bachelor18": 409
       },
       "C:rural:Q1": {
         "n": 5434,
         "n18": 5384,
-        "bachelor": 466,
-        "bachelor18": 466
+        "bachelor": 456,
+        "bachelor18": 456
       },
       "B:rural:Q5": {
         "n": 1533,
         "n18": 1515,
-        "bachelor": 907,
-        "bachelor18": 907
+        "bachelor": 827,
+        "bachelor18": 827
       },
       "B:urban:Q3": {
         "n": 4430,
         "n18": 4393,
-        "bachelor": 1296,
-        "bachelor18": 1296
+        "bachelor": 1313,
+        "bachelor18": 1313
       },
       "A:rural:Q4": {
         "n": 906,
         "n18": 900,
-        "bachelor": 422,
-        "bachelor18": 422
+        "bachelor": 385,
+        "bachelor18": 385
       },
       "C:urban:Q2": {
         "n": 4052,
         "n18": 4024,
-        "bachelor": 897,
-        "bachelor18": 897
+        "bachelor": 837,
+        "bachelor18": 837
       },
       "A:urban:Q1": {
         "n": 1501,
         "n18": 1488,
-        "bachelor": 234,
-        "bachelor18": 234
+        "bachelor": 204,
+        "bachelor18": 204
       },
       "C:rural:Q5": {
         "n": 1825,
         "n18": 1812,
-        "bachelor": 968,
-        "bachelor18": 968
+        "bachelor": 853,
+        "bachelor18": 853
       },
       "A:urban:Q4": {
         "n": 2590,
         "n18": 2573,
-        "bachelor": 1458,
-        "bachelor18": 1458
+        "bachelor": 1446,
+        "bachelor18": 1446
       },
       "A:urban:Q5": {
         "n": 2887,
         "n18": 2865,
-        "bachelor": 2066,
-        "bachelor18": 2066
+        "bachelor": 1987,
+        "bachelor18": 1987
       },
       "C:urban:Q3": {
         "n": 4706,
         "n18": 4668,
-        "bachelor": 1305,
-        "bachelor18": 1305
+        "bachelor": 1347,
+        "bachelor18": 1347
       },
       "B:urban:Q4": {
         "n": 5146,
         "n18": 5101,
-        "bachelor": 2510,
-        "bachelor18": 2510
+        "bachelor": 2455,
+        "bachelor18": 2455
       },
       "B:rural:Q4": {
         "n": 2390,
         "n18": 2368,
-        "bachelor": 942,
-        "bachelor18": 942
+        "bachelor": 861,
+        "bachelor18": 861
       },
       "C:rural:Q4": {
         "n": 2826,
         "n18": 2803,
-        "bachelor": 1046,
-        "bachelor18": 1046
+        "bachelor": 1017,
+        "bachelor18": 1017
       },
       "A:rural:Q3": {
         "n": 1110,
         "n18": 1104,
-        "bachelor": 339,
-        "bachelor18": 339
+        "bachelor": 317,
+        "bachelor18": 317
       },
       "B:urban:Q1": {
         "n": 3041,
         "n18": 3016,
-        "bachelor": 366,
-        "bachelor18": 366
+        "bachelor": 334,
+        "bachelor18": 334
       },
       "A:rural:Q2": {
         "n": 1443,
         "n18": 1435,
-        "bachelor": 334,
-        "bachelor18": 334
+        "bachelor": 307,
+        "bachelor18": 307
       },
       "A:rural:Q1": {
         "n": 1648,
         "n18": 1635,
-        "bachelor": 212,
-        "bachelor18": 212
+        "bachelor": 176,
+        "bachelor18": 176
       },
       "A:urban:Q2": {
         "n": 1826,
         "n18": 1817,
-        "bachelor": 544,
-        "bachelor18": 544
+        "bachelor": 527,
+        "bachelor18": 527
       },
       "S:urban:Q1": {
         "n": 355,
         "n18": 353,
-        "bachelor": 75,
-        "bachelor18": 75
+        "bachelor": 73,
+        "bachelor18": 73
       },
       "S:urban:Q3": {
         "n": 525,
         "n18": 522,
-        "bachelor": 279,
-        "bachelor18": 279
+        "bachelor": 278,
+        "bachelor18": 278
       },
       "S:urban:Q4": {
         "n": 633,
         "n18": 631,
-        "bachelor": 451,
-        "bachelor18": 451
+        "bachelor": 432,
+        "bachelor18": 432
       },
       "S:rural:Q1": {
         "n": 116,
         "n18": 114,
-        "bachelor": 23,
-        "bachelor18": 23
+        "bachelor": 18,
+        "bachelor18": 18
       },
       "A:rural:Q5": {
         "n": 558,
         "n18": 556,
-        "bachelor": 370,
-        "bachelor18": 370
+        "bachelor": 335,
+        "bachelor18": 335
       },
       "S:urban:Q2": {
         "n": 454,
         "n18": 451,
-        "bachelor": 211,
-        "bachelor18": 211
+        "bachelor": 200,
+        "bachelor18": 200
       },
       "S:rural:Q5": {
         "n": 38,
         "n18": 38,
-        "bachelor": 28,
-        "bachelor18": 28
+        "bachelor": 22,
+        "bachelor18": 22
       },
       "S:rural:Q4": {
         "n": 57,
         "n18": 57,
-        "bachelor": 38,
-        "bachelor18": 38
+        "bachelor": 36,
+        "bachelor18": 36
       },
       "S:rural:Q2": {
         "n": 87,
         "n18": 87,
-        "bachelor": 32,
-        "bachelor18": 32
+        "bachelor": 26,
+        "bachelor18": 26
       },
       "S:rural:Q3": {
         "n": 69,
         "n18": 69,
-        "bachelor": 32,
-        "bachelor18": 32
+        "bachelor": 33,
+        "bachelor18": 33
       }
     },
-    "master": 7610,
-    "tizhi35": 5606,
-    "at40": 97791,
-    "ruralAt40": 39201,
-    "gig40": 518,
-    "farming40": 6160,
+    "master": 7986,
+    "tizhi35": 4934,
+    "publicPaths": {
+      "hospital-recruitment": 902,
+      "civil-exam": 1890,
+      "institution-recruitment": 742,
+      "teacher-recruitment": 1275,
+      "military-transfer": 119,
+      "selected-graduate": 6
+    },
+    "at40": 97753,
+    "ruralAt40": 39202,
+    "gig40": 443,
+    "farming40": 6066,
     "jobs40": {
-      "本地服务业": 12449,
-      "公务员": 1038,
-      "技术员": 16963,
-      "工厂工人": 16467,
-      "企业职员": 14379,
-      "建筑工人": 3856,
-      "互联网职员": 7548,
-      "务农": 6160,
-      "个体户": 11536,
-      "事业编": 1369,
-      "医护": 1537,
-      "老板": 2402,
-      "网约车司机": 244,
-      "教师": 1569,
-      "外卖骑手": 274
+      "汽修工": 3587,
+      "建筑工人": 2573,
+      "技术员": 8667,
+      "企业职员": 6324,
+      "焊工": 2214,
+      "店主": 2740,
+      "互联网职员": 4149,
+      "本地服务业": 5913,
+      "工厂工人": 10736,
+      "务农": 6066,
+      "自由职业者": 2109,
+      "待业": 6897,
+      "个体户": 5438,
+      "医护": 2471,
+      "工程技术员": 1344,
+      "保安": 786,
+      "手机维修师": 1661,
+      "销售": 2614,
+      "网店店主": 1682,
+      "公务员": 1861,
+      "设计师": 1150,
+      "事业编": 825,
+      "营业员": 746,
+      "编辑写作者": 1453,
+      "外卖骑手": 236,
+      "程序员": 359,
+      "理发师": 751,
+      "服务员": 724,
+      "护工": 733,
+      "厨师": 701,
+      "运维工程师": 1391,
+      "木工": 618,
+      "行政文员": 519,
+      "教师": 2219,
+      "律师": 226,
+      "技能培训教师": 364,
+      "快递员": 621,
+      "人力专员": 473,
+      "老板": 1150,
+      "保洁": 811,
+      "主播": 381,
+      "银行职员": 449,
+      "会计": 407,
+      "电工": 391,
+      "网约车司机": 207,
+      "规培医师": 12,
+      "小厂经营者": 4
     }
   },
   "effort": {
     "n": 100000,
-    "study": 0.44915,
-    "never": 0.32478,
-    "difference": 0.12437,
+    "study": 0.43997,
+    "never": 0.30849,
+    "difference": 0.13148,
     "poorN": 12047,
-    "poorStudy": 0.1468415373121939,
+    "poorStudy": 0.13920478127334607,
     "richN": 15956,
-    "richAuto": 0.6721609425921283
+    "richAuto": 0.6482201052895462
   },
   "rows": [
     {
@@ -627,7 +1176,7 @@
     },
     {
       "name": "初中毕业升普高",
-      "value": 61.69953328007401,
+      "value": 62.823235083883446,
       "min": 58,
       "max": 64,
       "unit": "%",
@@ -635,7 +1184,7 @@
     },
     {
       "name": "初中毕业进入高中阶段",
-      "value": 92.05209603498297,
+      "value": 89.43047554976243,
       "min": 89,
       "max": 95,
       "unit": "%",
@@ -643,7 +1192,7 @@
     },
     {
       "name": "农村Q1完成高中阶段",
-      "value": 36.77111260053619,
+      "value": 34.40013404825738,
       "min": 30,
       "max": 45,
       "unit": "%",
@@ -651,7 +1200,7 @@
     },
     {
       "name": "高考者本科录取",
-      "value": 43.11263880124065,
+      "value": 43.65137927119991,
       "min": 37,
       "max": 45,
       "unit": "%",
@@ -659,7 +1208,7 @@
     },
     {
       "name": "S/C档高考本科率比",
-      "value": 1.9162629609657176,
+      "value": 1.885014142334734,
       "min": 1.7,
       "max": "Infinity",
       "unit": "倍",
@@ -667,7 +1216,7 @@
     },
     {
       "name": "高考者985",
-      "value": 1.6072075942908548,
+      "value": 1.5722556476331024,
       "min": 1.2,
       "max": 2.2,
       "unit": "%",
@@ -675,7 +1224,7 @@
     },
     {
       "name": "985新生农村占比",
-      "value": 19.883040935672515,
+      "value": 20.03610108303249,
       "min": 10,
       "max": 25,
       "unit": "%",
@@ -683,7 +1232,7 @@
     },
     {
       "name": "出生队列最终本科及以上",
-      "value": 34.542,
+      "value": 33.588,
       "min": 28,
       "max": 40,
       "unit": "%",
@@ -691,7 +1240,7 @@
     },
     {
       "name": "全队列平均寿命",
-      "value": 78.76404,
+      "value": 78.68292,
       "min": 77.5,
       "max": 80.5,
       "unit": "岁",
@@ -699,7 +1248,7 @@
     },
     {
       "name": "女性减男性平均寿命",
-      "value": 5.519743509336408,
+      "value": 5.592384406661594,
       "min": 4,
       "max": 7,
       "unit": "岁",
@@ -707,7 +1256,7 @@
     },
     {
       "name": "上海减西藏平均寿命",
-      "value": 8.9824827856893,
+      "value": 9.667539825425123,
       "min": 6,
       "max": "Infinity",
       "unit": "岁",
@@ -715,7 +1264,7 @@
     },
     {
       "name": "同出身全学习增益",
-      "value": 12.437,
+      "value": 13.148000000000001,
       "min": 5,
       "max": 20,
       "unit": "pp",
@@ -723,7 +1272,7 @@
     },
     {
       "name": "城市Q5自动减农村Q1全学习",
-      "value": 52.531940527993434,
+      "value": 50.90153240162001,
       "min": 1e-7,
       "max": "Infinity",
       "unit": "pp",
@@ -731,7 +1280,7 @@
     },
     {
       "name": "城市Q5出生队列本科率",
-      "value": 66.96745285954322,
+      "value": 64.94492501089053,
       "min": 60,
       "max": 85,
       "unit": "%",
@@ -739,7 +1288,7 @@
     },
     {
       "name": "农村Q1出生队列本科率",
-      "value": 9.617962466487935,
+      "value": 8.872319034852547,
       "min": 8,
       "max": 18,
       "unit": "%",
@@ -755,7 +1304,7 @@
     },
     {
       "name": "同家境Q3城市减农村",
-      "value": 7.957285558629793,
+      "value": 6.673919666749583,
       "min": 5,
       "max": "Infinity",
       "unit": "pp",
@@ -763,7 +1312,7 @@
     },
     {
       "name": "出生队列硕士及以上",
-      "value": 7.61,
+      "value": 7.986,
       "min": 4,
       "max": 9,
       "unit": "%",
@@ -771,7 +1320,7 @@
     },
     {
       "name": "35岁前进入体制内",
-      "value": 5.606,
+      "value": 4.934,
       "min": 3,
       "max": 7.000000000000001,
       "unit": "%",
@@ -779,7 +1328,7 @@
     },
     {
       "name": "40岁外卖骑手及网约车占比",
-      "value": 0.5297010972379871,
+      "value": 0.453183022515933,
       "min": 0,
       "max": 5,
       "unit": "%",
@@ -787,7 +1336,7 @@
     },
     {
       "name": "40岁农村出身务农占比",
-      "value": 15.713884849876278,
+      "value": 15.473700321412172,
       "min": 5,
       "max": 20,
       "unit": "%",

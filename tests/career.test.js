@@ -3,6 +3,9 @@ import assert from 'node:assert/strict';
 import { careerDecision, autoCareerChoice, resolveCareer, annualCareer, resolveMidcareer, isPublic } from '../src/engine/career.js';
 import { logistic, logit } from '../src/engine/params.js';
 import { DATA } from '../src/engine/stats.js';
+import { beginPreparation, annualPreparation } from '../src/engine/preparation.js';
+import { createBirth } from '../src/engine/birth.js';
+import { step } from '../src/engine/life.js';
 
 const person = (changes={}) => ({age:22,edu:'bachelor',job:'尚未就业',tier:'C',hukou:'rural',wealthQ:1,gradePct:40,attrs:{grind:40,happy:60,knowledge:40},record:{},income:20000,city:'老家',...changes});
 const sink = () => {const events=[];return {events,emit:(text,stat,metadata)=>events.push({text,stat,...metadata})};};
@@ -14,16 +17,27 @@ test('不同年龄学历职业的自动选项合法，报考资格和年度年�
     for(let i=0;i<100;i++)assert.ok(s.pending.options.some(o=>o.id===autoCareerChoice(s,i/100)));
     if(age<22||age>35||job==='研究生在读'||job==='公务员'||edu==='junior')assert.ok(!s.pending.options.some(o=>o.id==='civil'||o.id==='institution'));
   }
-  for(const age of [22,23,25,29,31,33,35])assert.ok(careerDecision(person({age})).options.some(o=>o.id==='civil'));
+  assert.ok(careerDecision(person()).options.some(o=>o.id==='civil'));
+  for(const age of [23,25,29,31,33,35])assert.equal(careerDecision(person({age})),null);
   const {emit}=sink();assert.throws(()=>resolveCareer(person({edu:'junior'}),'master',()=>0,emit));assert.throws(()=>resolveCareer(person({age:36}),'civil',()=>0,emit));
 });
 
-test('考研允许二战但不允许三战，失败消耗一年并扣幸福，22岁仍记录去向',()=>{
+test('考研选择一次后逐年自动考试，同年不重复，失败消耗时间并在27岁退出',()=>{
   const s=person(),{events,emit}=sink();resolveCareer(s,'master',()=>.999,emit);
   assert.equal(s.record.masterAttempts,1);assert.equal(s.income,0);assert.equal(s.examGapUntil,23);assert.equal(s.attrs.happy,56);assert.equal(s.record.age22,'待业');
   assert.ok(events.some(e=>e.node==='career'&&e.stat==='education.kaoyan_admit_ratio'));
-  s.age=23;resolveCareer(s,'master',()=>.999,emit);assert.equal(s.record.masterAttempts,2);assert.equal(s.examGapUntil,24);
-  assert.equal(careerDecision(s),null);s.age=24;assert.ok(!careerDecision(s).options.some(o=>o.id==='master'));assert.throws(()=>resolveCareer(s,'master',()=>0,emit));
+  beginPreparation(s,'master');assert.equal(s.preparation.kind,'master');
+  annualPreparation(s,()=>{assert.fail('进入备考的同年不能再次抽考试骰子');},emit);
+  for(let age=23;age<=26;age++){
+    s.age=age;annualPreparation(s,()=>.999,emit);
+    assert.equal(s.record.masterAttempts,age-21);assert.equal(s.examGapUntil,age+1);
+    assert.equal(s.preparation.lastExamAge,age);assert.equal(careerDecision(s),null);
+    annualPreparation(s,()=>{assert.fail('同一年不能重复考试');},emit);
+  }
+  assert.equal(s.record.masterAttempts,5,'不再把二战当作终身上限');
+  s.age=27;annualPreparation(s,()=>{assert.fail('超龄不应再抽考试骰子');},emit);
+  assert.equal(s.preparation,null);assert.equal(s.record.masterAttempts,5);
+  assert.throws(()=>resolveCareer(s,'master',()=>0,emit));
 });
 
 test('录取不等于硕士毕业，保留原学历且三年后才取得硕士',()=>{
@@ -39,7 +53,9 @@ test('公务员和事业编含教师医护采用同一体制口径，35岁企业
   const {emit}=sink();
   for(const job of ['公务员','事业编','教师','医护']){const s=person({age:35,job,industry:'public'});assert.equal(isPublic(s),true);annualCareer(s,()=>0,emit);assert.equal(s.record.tizhiBy35,true);resolveMidcareer(s,'stay',()=>0,emit);assert.equal(s.job,job);}
   const s=person({age:23});resolveCareer(s,'institution',()=>0,emit);assert.equal(isPublic(s),true);assert.equal(s.record.tizhiBy35,true);
-  const failed=person({age:30});resolveCareer(failed,'civil',()=>.999,emit);assert.equal(failed.record.civilAttempts,1);assert.equal(failed.examGapUntil,31);assert.equal(failed.attrs.happy,57);assert.equal(failed.income,0);assert.equal(careerDecision(failed),null);failed.age=31;assert.ok(careerDecision(failed).options.some(o=>o.id==='civil'));
+  const failed=person({age:30});resolveCareer(failed,'civil',()=>.999,emit);assert.equal(failed.record.civilAttempts,1);assert.equal(failed.examGapUntil,31);assert.equal(failed.attrs.happy,57);assert.equal(failed.income,0);assert.equal(careerDecision(failed),null);
+  beginPreparation(failed,'civil');failed.age=31;annualPreparation(failed,()=>.999,emit);
+  assert.equal(failed.record.civilAttempts,2);assert.equal(failed.preparation.lastExamAge,31);assert.equal(careerDecision(failed),null);
 });
 
 test('农村低学历回乡可务农，企业裁员后可找普通岗位，不默认成为零工',()=>{
@@ -67,12 +83,27 @@ test('连续14次考编失败有14条不同内容和独立模板，35岁风险�
   assert.match(e.footnote,/27%/);assert.match(e.footnote,/来源：本地岗位风险参数/);assert.doesNotMatch(e.text,/外卖|网约车/);
 });
 
-test('生活节点之后每年仍能安排事业，选择继续工作后同年不重复、次年重新提供',()=>{
-  const s=person({age:25,job:'企业职员'}),{emit}=sink();
-  for(const age of [25,29,31,33,35]){
-    s.age=age;const d=careerDecision(s);assert.ok(d.options.some(o=>o.id==='civil'));assert.ok(d.options.some(o=>o.id==='work'));
-    resolveCareer(s,'work',()=>.5,emit);assert.equal(s.record.careerPlanAge,age);assert.equal(careerDecision(s),null);
+test('公务员和事业编持续备考到35岁，录用后退出，36岁不再考试',()=>{
+  for(const kind of ['civil','institution']){
+    const s=person(),{emit}=sink();resolveCareer(s,kind,()=>.999,emit);beginPreparation(s,kind);
+    for(let age=23;age<=35;age++){s.age=age;annualPreparation(s,()=>.999,emit);assert.equal(s.record.civilAttempts,age-21);assert.equal(careerDecision(s),null);}
+    s.age=36;annualPreparation(s,()=>{assert.fail('36岁不能继续招录考试');},emit);
+    assert.equal(s.preparation,null);assert.equal(s.record.civilAttempts,14);
+    const admitted=person();resolveCareer(admitted,kind,()=>.999,emit);beginPreparation(admitted,kind);
+    admitted.age=23;annualPreparation(admitted,()=>0,emit);
+    assert.equal(isPublic(admitted),true);assert.equal(admitted.record.tizhiBy35,true);assert.equal(admitted.preparation,null);
   }
-  const next=person({age:23,job:'企业职员'});resolveCareer(next,'work',()=>.5,emit);assert.equal(careerDecision(next),null);
-  next.age=24;assert.ok(careerDecision(next).options.some(o=>o.id==='civil'));
+});
+
+test('菜单放弃备考是可复现的输入，不推进年龄或随机数，之后不再自动考试',()=>{
+  const birth=createBirth('京-2026-066321');
+  const s={...birth,age:24,edu:'bachelor',job:'企业职员',record:{...birth.record,civilAttempts:3}};
+  beginPreparation(s,'civil');const before=structuredClone(s);
+  const a=step(s,{action:'leave-preparation'}),b=step(structuredClone(s),{action:'leave-preparation'});
+  assert.deepEqual(a,b);assert.deepEqual(s,before);assert.equal(a.state.age,24);assert.equal(a.state.rngState,s.rngState);
+  assert.equal(a.state.preparation,null);assert.deepEqual(a.state.inputHistory.at(-1),{age:24,action:'leave-preparation'});
+  assert.ok(a.events.some(e=>e.node==='preparation'));
+  const after=a.state;after.age=25;
+  annualPreparation(after,()=>{assert.fail('菜单放弃后不能再抽考试骰子');},()=>{});
+  assert.equal(after.record.civilAttempts,3);assert.equal(careerDecision(after),null);
 });

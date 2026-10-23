@@ -241,7 +241,8 @@
       "value": 0.61,
       "year": 2024,
       "source": "普高招生/初中毕业生 = 61.02%（第一财经计算，非官方指标）",
-      "status": "已核"
+      "status": "已核",
+      "note": "普高招生 1036.2 万包含公办和民办普高。游戏里「普高率」= 公办普高 + 民办普高（交钱读的）合计，不是只算公办"
     },
     "hs_stage_gross_enroll": {
       "value": 0.92,
@@ -323,6 +324,49 @@
     "study_abroad": {
       "status": "参数",
       "note": "出国留学只对家境前 20% 的城市家庭开放（国际学校 / 本科 / 硕士留学），数量级每年数十万人，具体比例待核"
+    },
+    "student_loan": {
+      "max_per_year_undergrad": {
+        "value": 20000,
+        "unit": "元/年",
+        "source": "财教〔2024〕188 号：2024 年秋季学期起，全日制本专科每人每年上限 2 万元（2023 年为 1.6 万）",
+        "status": "已核"
+      },
+      "max_per_year_grad": {
+        "value": 25000,
+        "unit": "元/年",
+        "source": "同上，研究生上限 2.5 万元",
+        "status": "已核"
+      },
+      "term": {
+        "value": "学制 + 15 年，最长不超过 22 年",
+        "source": "国家助学贷款政策（2023 年报道）",
+        "status": "已核"
+      },
+      "principal_grace_years": {
+        "value": 5,
+        "unit": "年",
+        "source": "还本宽限期 5 年（毕业后前 5 年可只还利息）",
+        "status": "已核"
+      },
+      "in_school_interest": {
+        "value": "在校期间利息由财政补贴，学生不付",
+        "status": "待核",
+        "note": "长期政策，2024 年通知原文未确认这一条"
+      },
+      "rate": {
+        "value": "LPR 减 70 个基点",
+        "year": 2024,
+        "source": "财教〔2024〕188 号",
+        "status": "已核"
+      },
+      "military_tuition_compensation": {
+        "value": 20000,
+        "unit": "元/年",
+        "source": "服兵役学生学费补偿 / 代偿：本专科每人每年最高 2 万元（2024 起）",
+        "status": "已核",
+        "note": "接当兵路线：大学生参军可获学费补偿"
+      }
     }
   },
   "career": {
@@ -612,6 +656,59 @@
     "special_admission_plans": {
       "status": "参数",
       "note": "国家专项（贫困地区，中央部属和省属重点高校）、高校专项（县以下农村、成绩优良）、地方专项（省属重点高校招农村学生）。全国合计规模待核；游戏里给家境 Q1–Q2 农村、成绩前 20% 的学生一次额外录取机会"
+    }
+  },
+  "pension": {
+    "_note": "养老金分三类，差距是这个游戏最该体现的残酷对比之一",
+    "urban_rural_resident_monthly": {
+      "value": 204.7,
+      "unit": "元/月",
+      "year": 2022,
+      "source": "《中国劳动统计年鉴》：城乡居民基本养老保险领取人月均（主要是农民、没交职工社保的人）",
+      "status": "已核"
+    },
+    "resident_basic_floor_2024": {
+      "value": 123,
+      "unit": "元/月",
+      "year": 2024,
+      "source": "中央财政补贴的城乡居民基础养老金最低标准；多数省份总标准约 170–190 元",
+      "status": "已核"
+    },
+    "enterprise_worker_monthly": {
+      "value": 3148.6,
+      "unit": "元/月",
+      "year": 2022,
+      "source": "同上，企业职工退休者月均",
+      "status": "已核"
+    },
+    "public_institution_monthly": {
+      "value": 6099.8,
+      "unit": "元/月",
+      "year": 2022,
+      "source": "同上，机关事业单位退休者月均",
+      "status": "已核"
+    },
+    "worker_monthly_2025_est": {
+      "value": 3962,
+      "unit": "元/月",
+      "year": 2025,
+      "source": "按人社部 2025 统计公报折算的职工养老金月人均（非官方直接公布）",
+      "status": "估算"
+    },
+    "retirement_age": {
+      "value": "男 63；女职工 55（原 50）、女干部 58（原 55）",
+      "source": "全国人大常委会《关于实施渐进式延迟法定退休年龄的决定》，2025-01-01 施行，15 年过渡；2026 年出生者退休时已全部适用新年龄",
+      "status": "已核"
+    },
+    "min_contribution_years": {
+      "value": 20,
+      "unit": "年",
+      "source": "同上：最低缴费年限自 2030 年起由 15 年逐步提高到 20 年",
+      "status": "已核"
+    },
+    "flexible_retirement": {
+      "value": "可弹性提前或延后，最多 3 年，不得早于原法定年龄",
+      "status": "已核"
     }
   }
 }
