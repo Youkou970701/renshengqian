@@ -11,12 +11,16 @@ export function withoutHeavyPending(previous){
  if(!previous.pending?.heavy&&!activeHeavy)return previous;
  return {...previous,pending:previous.pending?.heavy?null:previous.pending,storyActive:activeHeavy?null:active,scenarioHistory:activeHeavy?(previous.scenarioHistory??[]).map(h=>h.id===active.id&&!h.outcome?{...h,outcome:'skipped',endedAt:previous.age}:h):previous.scenarioHistory};
 }
+// 变体（2026-10-23，用户：「每人的选择都是一样的？我想要都不一样」）：按处境确定性地挑第一个匹配的版本，
+// 只换标题、情境和选项文字，选项编号与后果不变，所以不消耗随机数、不影响统计机制。
+export function cardVariant(c,s){return c.variants?.find(v=>v.when(s))??null;}
 export function materializeCard(c,s){
- const options=c.options;
- return {id:c.id,core:!!c.core,title:c.title,body:typeof c.body==='function'?c.body(s):c.body??'',heavy:!!c.heavy,profile:c.profile?c.profile(s):null,stat:c.stat??null,options:options.map(o=>{
+ const options=c.options,variant=cardVariant(c,s),text=(x,fallback)=>x==null?fallback:typeof x==='function'?x(s):x;
+ return {id:c.id,variant:variant?.key??null,core:!!c.core,title:text(variant?.title,c.title),body:text(variant?.body,typeof c.body==='function'?c.body(s):c.body??''),heavy:!!c.heavy,profile:c.profile?c.profile(s):null,stat:c.stat??null,options:options.map(o=>{
   const routeAllowed=c.id!=='school-alternatives'||(o.id==='private'?s.wealthQ>=3:o.id==='international'?s.hukou==='urban'&&s.wealthQ===5:o.id==='talent'?Boolean(s.talent||s.interest||(s.skills?.craft??0)>=8):true);
   const price=typeof o.cost==='function'?o.cost(s):o.cost??0;const enabled=routeAllowed&&(!o.requires||o.requires(s))&&(price<=0||s.age<18||s.assets>=price);
-  return {id:o.id,label:o.label,effect:o.hint??o.effect??'',cost:typeof o.cost==='number'?o.cost:undefined,disabled:!enabled};
+  const relabel=variant?.labels?.[o.id];
+  return {id:o.id,label:relabel?.[0]??o.label,effect:relabel?.[1]??o.hint??o.effect??'',cost:typeof o.cost==='number'?o.cost:undefined,disabled:!enabled};
  })};
 }
 // An independent, persisted stream keeps content selection from coupling the

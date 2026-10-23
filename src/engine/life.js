@@ -63,7 +63,7 @@ export function step(previous,input={}) {
   const definition=cardById(d.id),core=definition?.core??false;
   if(core&&d.id!=='school-alternatives')draw();
   else contentDraw(s);
-  s.cardHistory.push({id:d.id,age:s.age,choice});
+  s.cardHistory.push({id:d.id,age:s.age,choice,...(d.variant?{variant:d.variant}:{})});
   if(!core)s=resolveCard(s,choice);
   const consequences=[...(s.pendingScenarioEvents??[]),...(s.relationshipEvents??[])];
   for(const event of consequences.filter(e=>e.node==='scenario-scene'))emit(event.text,event.stat,event);

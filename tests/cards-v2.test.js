@@ -175,7 +175,9 @@ test('v2 未进公办普高六条路实际改变去向，民办/国际课程记�
     const next = step(freeze(state), { choice }).state;
     assert.equal(next.age, 15);
     assert.equal(next.schoolRoute, route);
-    assert.deepEqual(next.cardHistory[0], { id: 'school-alternatives', age: 15, choice });
+    // 交接 11 起记录里多了 variant（用了哪个处境版本），只核对原有三个字段。
+    const { variant: _variant, ...entry } = next.cardHistory[0]
+    assert.deepEqual(entry, { id: 'school-alternatives', age: 15, choice });
     if (choice === 'private') assert.equal(next.educationFinance.annualSchoolFee, 18000);
     if (choice === 'international') assert.equal(next.educationFinance.annualSchoolFee, 120000);
     if (choice === 'repeat-junior') assert.equal(next.repeatJunior, true);

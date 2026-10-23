@@ -1,7 +1,7 @@
 {
   "cohort": {
     "n": 100000,
-    "competitionAdmitted": 167,
+    "competitionAdmitted": 166,
     "specialAdmitted": 1611,
     "specialPoorAdmitted": 670,
     "specialExams": 10797,
@@ -81,7 +81,7 @@
         "sampleSize": 5995,
         "highSchoolKnown": 5412,
         "countyHighSchool": 2137,
-        "gaokao": 5220,
+        "gaokao": 5221,
         "specialEligible": 0,
         "specialAdmitted": 0,
         "specialPoorAdmitted": 0,
@@ -91,7 +91,7 @@
         "sampleSize": 6422,
         "highSchoolKnown": 5763,
         "countyHighSchool": 2264,
-        "gaokao": 5564,
+        "gaokao": 5563,
         "specialEligible": 0,
         "specialAdmitted": 0,
         "specialPoorAdmitted": 0,
@@ -141,7 +141,7 @@
         "sampleSize": 1533,
         "highSchoolKnown": 1361,
         "countyHighSchool": 548,
-        "gaokao": 1320,
+        "gaokao": 1321,
         "specialEligible": 155,
         "specialAdmitted": 43,
         "specialPoorAdmitted": 0,
@@ -191,7 +191,7 @@
         "sampleSize": 1825,
         "highSchoolKnown": 1615,
         "countyHighSchool": 648,
-        "gaokao": 1562,
+        "gaokao": 1560,
         "specialEligible": 202,
         "specialAdmitted": 54,
         "specialPoorAdmitted": 0,
@@ -209,9 +209,9 @@
       },
       "A:urban:Q5": {
         "sampleSize": 2887,
-        "highSchoolKnown": 2569,
+        "highSchoolKnown": 2568,
         "countyHighSchool": 1014,
-        "gaokao": 2485,
+        "gaokao": 2484,
         "specialEligible": 0,
         "specialAdmitted": 0,
         "specialPoorAdmitted": 0,
@@ -461,9 +461,9 @@
       },
       "urban:Q5": {
         "sampleSize": 16069,
-        "highSchoolKnown": 14431,
+        "highSchoolKnown": 14430,
         "countyHighSchool": 5696,
-        "gaokao": 13934,
+        "gaokao": 13933,
         "specialEligible": 0,
         "specialAdmitted": 0,
         "specialPoorAdmitted": 0,
@@ -493,7 +493,7 @@
         "sampleSize": 3954,
         "highSchoolKnown": 3512,
         "countyHighSchool": 1404,
-        "gaokao": 3396,
+        "gaokao": 3395,
         "specialEligible": 426,
         "specialAdmitted": 114,
         "specialPoorAdmitted": 0,
@@ -510,8 +510,8 @@
         "specialExams": 0
       }
     },
-    "publicGeneral": 51071,
-    "privateGeneral": 8694,
+    "publicGeneral": 51082,
+    "privateGeneral": 8686,
     "births": {
       "山东": 7005,
       "湖北": 3395,
@@ -550,31 +550,31 @@
     "survive16": 99244,
     "junior16": 95111,
     "junior": 95132,
-    "general": 59765,
-    "stage": 85077,
+    "general": 59768,
+    "stage": 85076,
     "poor": 11936,
     "poorComplete": 4107,
-    "exams": 70477,
-    "admit": 30775,
+    "exams": 70475,
+    "admit": 30773,
     "elite": 1107,
     "eliteRural": 222,
     "bachelor": 33598,
-    "lifespan": 7868145,
+    "lifespan": 7868101,
     "sex": {
       "male": {
         "n": 52316,
-        "age": 3976969
+        "age": 3976972
       },
       "female": {
         "n": 47684,
-        "age": 3891176
+        "age": 3891129
       }
     },
     "provinceAge": {
       "山东": {
         "n": 7005,
-        "age": 553965,
-        "bachelor": 2168
+        "age": 553957,
+        "bachelor": 2169
       },
       "湖北": {
         "n": 3395,
@@ -583,12 +583,12 @@
       },
       "江西": {
         "n": 3304,
-        "age": 258120,
+        "age": 258123,
         "bachelor": 1074
       },
       "广东": {
         "n": 12257,
-        "age": 965940,
+        "age": 965950,
         "bachelor": 3761
       },
       "重庆": {
@@ -598,22 +598,22 @@
       },
       "内蒙古": {
         "n": 1179,
-        "age": 94340,
+        "age": 94352,
         "bachelor": 472
       },
       "福建": {
         "n": 3431,
-        "age": 269273,
+        "age": 269268,
         "bachelor": 1133
       },
       "北京": {
         "n": 1417,
-        "age": 117307,
+        "age": 117304,
         "bachelor": 788
       },
       "陕西": {
         "n": 2715,
-        "age": 214024,
+        "age": 213982,
         "bachelor": 900
       },
       "云南": {
@@ -623,48 +623,48 @@
       },
       "湖南": {
         "n": 4215,
-        "age": 331284,
+        "age": 331287,
         "bachelor": 1344
       },
       "贵州": {
         "n": 4437,
-        "age": 339406,
+        "age": 339401,
         "bachelor": 1323
       },
       "河南": {
         "n": 8258,
-        "age": 651014,
+        "age": 651029,
         "bachelor": 2518
       },
       "河北": {
         "n": 4682,
-        "age": 366694,
-        "bachelor": 1542
+        "age": 366713,
+        "bachelor": 1543
       },
       "四川": {
         "n": 5744,
-        "age": 453773,
+        "age": 453777,
         "bachelor": 1754
       },
       "新疆": {
         "n": 2223,
-        "age": 167065,
+        "age": 167062,
         "bachelor": 754
       },
       "江苏": {
         "n": 4644,
-        "age": 370413,
-        "bachelor": 1870
+        "age": 370425,
+        "bachelor": 1869
       },
       "广西": {
         "n": 4637,
-        "age": 366011,
+        "age": 365937,
         "bachelor": 1426
       },
       "辽宁": {
         "n": 1930,
-        "age": 153599,
-        "bachelor": 766
+        "age": 153596,
+        "bachelor": 767
       },
       "吉林": {
         "n": 827,
@@ -673,28 +673,28 @@
       },
       "安徽": {
         "n": 4036,
-        "age": 318071,
-        "bachelor": 1314
+        "age": 318116,
+        "bachelor": 1313
       },
       "山西": {
         "n": 2112,
-        "age": 165339,
+        "age": 165338,
         "bachelor": 679
       },
       "浙江": {
         "n": 4494,
-        "age": 355868,
-        "bachelor": 1784
+        "age": 355850,
+        "bachelor": 1783
       },
       "甘肃": {
         "n": 1690,
-        "age": 132711,
-        "bachelor": 547
+        "age": 132712,
+        "bachelor": 546
       },
       "海南": {
         "n": 907,
-        "age": 71798,
-        "bachelor": 330
+        "age": 71791,
+        "bachelor": 331
       },
       "黑龙江": {
         "n": 817,
@@ -718,7 +718,7 @@
       },
       "天津": {
         "n": 676,
-        "age": 56256,
+        "age": 56257,
         "bachelor": 383
       },
       "西藏": {
@@ -728,33 +728,33 @@
       }
     },
     "edu": {
-      "211": 1857,
-      "985": 840,
+      "211": 1858,
+      "985": 841,
       "high": 5179,
-      "college": 29466,
-      "junior": 24525,
-      "none": 4830,
-      "bachelor": 22891,
+      "college": 29464,
+      "junior": 24526,
+      "none": 4831,
+      "bachelor": 22889,
       "master": 8010,
       "vocational": 2402
     },
     "tiers": {
       "C": {
         "n": 42338,
-        "exams": 29696,
-        "admit": 11684,
-        "bachelor": 12950
+        "exams": 29693,
+        "admit": 11683,
+        "bachelor": 12951
       },
       "B": {
         "n": 37966,
-        "exams": 26641,
+        "exams": 26643,
         "admit": 11383,
-        "bachelor": 12444
+        "bachelor": 12443
       },
       "A": {
         "n": 16597,
-        "exams": 11870,
-        "admit": 6025,
+        "exams": 11869,
+        "admit": 6024,
         "bachelor": 6472
       },
       "S": {
@@ -787,7 +787,7 @@
       },
       "urban:Q5": {
         "n": 16069,
-        "bachelor": 10438
+        "bachelor": 10439
       },
       "urban:Q2": {
         "n": 9891,
@@ -799,7 +799,7 @@
       },
       "rural:Q5": {
         "n": 3954,
-        "bachelor": 2036
+        "bachelor": 2035
       },
       "rural:Q4": {
         "n": 6179,
@@ -807,23 +807,23 @@
       }
     },
     "career": {
-      "待业": 26620,
-      "技术员": 9213,
-      "工厂工人": 13565,
+      "待业": 26612,
+      "技术员": 9211,
+      "工厂工人": 13562,
       "建筑工人": 3439,
-      "企业职员": 4079,
-      "互联网职员": 2511,
-      "个体户": 8454,
-      "务农": 4826,
-      "本地服务业": 11844,
-      "事业编": 470,
-      "研究生在读": 1917,
-      "老板": 1591,
+      "企业职员": 4081,
+      "互联网职员": 2510,
+      "个体户": 8456,
+      "务农": 4827,
+      "本地服务业": 11843,
+      "事业编": 468,
+      "研究生在读": 1919,
+      "老板": 1592,
       "公务员": 40
     },
     "causes": {
-      "疾病": 94431,
-      "意外": 5569
+      "疾病": 94429,
+      "意外": 5571
     },
     "strata": {
       "C:urban:Q4": {
@@ -877,8 +877,8 @@
       "C:urban:Q5": {
         "n": 6422,
         "n18": 6372,
-        "bachelor": 3950,
-        "bachelor18": 3950
+        "bachelor": 3951,
+        "bachelor18": 3951
       },
       "B:urban:Q2": {
         "n": 3559,
@@ -907,8 +907,8 @@
       "B:rural:Q5": {
         "n": 1533,
         "n18": 1515,
-        "bachelor": 828,
-        "bachelor18": 828
+        "bachelor": 827,
+        "bachelor18": 827
       },
       "B:urban:Q3": {
         "n": 4430,
@@ -1068,63 +1068,63 @@
       }
     },
     "master": 8010,
-    "tizhi35": 4920,
+    "tizhi35": 4922,
     "publicPaths": {
-      "hospital-recruitment": 891,
-      "civil-exam": 1889,
-      "institution-recruitment": 746,
-      "teacher-recruitment": 1265,
-      "military-transfer": 124,
+      "hospital-recruitment": 890,
+      "civil-exam": 1890,
+      "institution-recruitment": 745,
+      "teacher-recruitment": 1267,
+      "military-transfer": 125,
       "selected-graduate": 5
     },
-    "at40": 97754,
+    "at40": 97753,
     "ruralAt40": 39193,
-    "gig40": 446,
-    "farming40": 6063,
+    "gig40": 445,
+    "farming40": 6064,
     "jobs40": {
       "汽修工": 3555,
       "建筑工人": 2576,
-      "技术员": 8689,
-      "店主": 2750,
-      "企业职员": 6324,
+      "技术员": 8686,
+      "店主": 2746,
+      "企业职员": 6319,
       "焊工": 2179,
-      "互联网职员": 4128,
-      "工厂工人": 10743,
-      "务农": 6063,
+      "互联网职员": 4132,
+      "工厂工人": 10741,
+      "务农": 6064,
       "保安": 789,
-      "待业": 7000,
-      "个体户": 5432,
-      "医护": 2452,
-      "运维工程师": 1392,
-      "工程技术员": 1336,
-      "自由职业者": 2111,
-      "手机维修师": 1658,
-      "本地服务业": 5913,
-      "销售": 2583,
-      "网店店主": 1713,
-      "公务员": 1857,
-      "设计师": 1145,
+      "待业": 7003,
+      "个体户": 5435,
+      "医护": 2454,
+      "运维工程师": 1395,
+      "工程技术员": 1335,
+      "自由职业者": 2109,
+      "手机维修师": 1659,
+      "本地服务业": 5912,
+      "销售": 2587,
+      "网店店主": 1712,
+      "公务员": 1858,
+      "设计师": 1143,
       "事业编": 834,
-      "营业员": 730,
-      "编辑写作者": 1451,
-      "外卖骑手": 239,
+      "营业员": 731,
+      "编辑写作者": 1454,
+      "外卖骑手": 238,
       "程序员": 359,
       "理发师": 742,
       "服务员": 718,
-      "护工": 732,
+      "护工": 731,
       "厨师": 702,
       "木工": 616,
       "行政文员": 518,
-      "教师": 2195,
-      "律师": 224,
+      "教师": 2193,
+      "律师": 225,
       "技能培训教师": 371,
-      "老板": 1145,
-      "人力专员": 481,
+      "老板": 1147,
+      "人力专员": 478,
       "保洁": 813,
-      "主播": 407,
+      "主播": 403,
       "银行职员": 452,
       "快递员": 614,
-      "会计": 408,
+      "会计": 410,
       "电工": 392,
       "网约车司机": 207,
       "规培医师": 12,
@@ -1133,13 +1133,13 @@
   },
   "effort": {
     "n": 100000,
-    "study": 0.43979,
-    "never": 0.3084,
-    "difference": 0.13139,
+    "study": 0.43982,
+    "never": 0.30845,
+    "difference": 0.13137,
     "poorN": 12047,
     "poorStudy": 0.13920478127334607,
     "richN": 15956,
-    "richAuto": 0.6478440711957885
+    "richAuto": 0.648094760591627
   },
   "rows": [
     {
@@ -1176,7 +1176,7 @@
     },
     {
       "name": "初中毕业升普高",
-      "value": 62.823235083883446,
+      "value": 62.82638859689694,
       "min": 58,
       "max": 64,
       "unit": "%",
@@ -1184,7 +1184,7 @@
     },
     {
       "name": "初中毕业进入高中阶段",
-      "value": 89.43047554976243,
+      "value": 89.42942437875794,
       "min": 89,
       "max": 95,
       "unit": "%",
@@ -1200,7 +1200,7 @@
     },
     {
       "name": "高考者本科录取",
-      "value": 43.6667281524469,
+      "value": 43.66512947853849,
       "min": 37,
       "max": 45,
       "unit": "%",
@@ -1208,7 +1208,7 @@
     },
     {
       "name": "S/C档高考本科率比",
-      "value": 1.8843634202878443,
+      "value": 1.8843343296728823,
       "min": 1.7,
       "max": "Infinity",
       "unit": "倍",
@@ -1216,7 +1216,7 @@
     },
     {
       "name": "高考者985",
-      "value": 1.5707252011294464,
+      "value": 1.5707697765164952,
       "min": 1.2,
       "max": 2.2,
       "unit": "%",
@@ -1240,7 +1240,7 @@
     },
     {
       "name": "全队列平均寿命",
-      "value": 78.68145,
+      "value": 78.68101,
       "min": 77.5,
       "max": 80.5,
       "unit": "岁",
@@ -1248,7 +1248,7 @@
     },
     {
       "name": "女性减男性平均寿命",
-      "value": 5.585172752952786,
+      "value": 5.584129753553356,
       "min": 4,
       "max": 7,
       "unit": "岁",
@@ -1264,7 +1264,7 @@
     },
     {
       "name": "同出身全学习增益",
-      "value": 13.139000000000001,
+      "value": 13.136999999999999,
       "min": 5,
       "max": 20,
       "unit": "pp",
@@ -1272,7 +1272,7 @@
     },
     {
       "name": "城市Q5自动减农村Q1全学习",
-      "value": 50.86392899224423,
+      "value": 50.88899793182809,
       "min": 1e-7,
       "max": "Infinity",
       "unit": "pp",
@@ -1280,7 +1280,7 @@
     },
     {
       "name": "城市Q5出生队列本科率",
-      "value": 64.95737133611301,
+      "value": 64.96359449872425,
       "min": 60,
       "max": 85,
       "unit": "%",
@@ -1320,7 +1320,7 @@
     },
     {
       "name": "35岁前进入体制内",
-      "value": 4.92,
+      "value": 4.922,
       "min": 3,
       "max": 7.000000000000001,
       "unit": "%",
@@ -1328,7 +1328,7 @@
     },
     {
       "name": "40岁外卖骑手及网约车占比",
-      "value": 0.45624731468789,
+      "value": 0.455228995529549,
       "min": 0,
       "max": 5,
       "unit": "%",
@@ -1336,7 +1336,7 @@
     },
     {
       "name": "40岁农村出身务农占比",
-      "value": 15.469599163115863,
+      "value": 15.472150639144745,
       "min": 5,
       "max": 20,
       "unit": "%",
@@ -1346,7 +1346,7 @@
   "educationRows": [
     {
       "name": "竞赛录取占出生队列",
-      "value": 0.167,
+      "value": 0.166,
       "min": 0.1,
       "max": 0.3,
       "unit": "%",
