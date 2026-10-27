@@ -1,5 +1,5 @@
 import React,{useEffect,useRef,useState} from 'react';
-import {birthCard,endCard,familyCard,colorCard,CARD_WIDTH,CARD_HEIGHT} from './share-cards.js';
+const CARD_WIDTH=1080,CARD_HEIGHT=1920;
 
 export async function svgToPng(svg) {
  const svgUrl=URL.createObjectURL(new Blob([svg],{type:'image/svg+xml;charset=utf-8'}));
@@ -25,6 +25,7 @@ export default function ShareImage({life,kind='end',badge='',family=null}) {
   if(state.blob)return state;
   const startedVersion=version.current;setState(s=>({...s,busy:true,error:''}));
   try {
+   const {birthCard,endCard,familyCard,colorCard}=await import('./share-cards.js');
    const svg=(kind==='birth'?birthCard:kind==='family'?familyCard:kind==='color'?colorCard:endCard)(life,{badge,family});const blob=await svgToPng(svg);const url=URL.createObjectURL(blob);if(startedVersion!==version.current){URL.revokeObjectURL(url);return null;}
    if(current.current)URL.revokeObjectURL(current.current);current.current=url;
    const result={busy:false,url,blob,error:''};setState(result);return result;

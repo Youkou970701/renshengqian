@@ -2,8 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import React from 'react';
-import {renderToStaticMarkup} from 'react-dom/server';
+import {renderToStaticMarkup,renderToPipeableStream} from 'react-dom/server';
 import {build} from 'esbuild';
+import {PassThrough} from 'node:stream';
 import {fileURLToPath} from 'node:url';
 import {drawBirth} from '../src/engine/birth.js';
 import {step} from '../src/engine/life.js';
@@ -28,11 +29,15 @@ function checkText(text, context, {sourcePage=false}={}) {
 // the app, so the check cannot pass by inspecting a separate copy of UI text.
 async function loadUI() {
   const url=new URL('../src/ui/App.jsx',import.meta.url);
-  const bundle=await build({entryPoints:[fileURLToPath(url)],bundle:true,write:false,format:'esm',platform:'node',external:['react','react-dom'],loader:{'.css':'empty'}});
+  const bundle=await build({stdin:{contents:`export {default} from './App.jsx'; export * from './App.jsx'; export {default as End} from './End.jsx'; export {default as Sources} from './Sources.jsx';`,resolveDir:fileURLToPath(new URL('.',url)),loader:'jsx'},bundle:true,write:false,format:'esm',platform:'node',external:['react','react-dom'],loader:{'.css':'empty'}});
   const code=bundle.outputFiles[0].text;
   const linked=code.replace(/from\s+(['"])([^'"]+)\1/g, (_,quote,path)=>
     `from ${JSON.stringify(path.startsWith('.')?new URL(path,url).href:import.meta.resolve(path))}`);
   return import(`data:text/javascript;base64,${Buffer.from(linked).toString('base64')}`);
+}
+
+async function renderApp(element){
+ return new Promise((resolve,reject)=>{const output=new PassThrough();let html='';output.on('data',data=>{html+=data;});output.on('end',()=>resolve(html));const stream=renderToPipeableStream(element,{onAllReady(){stream.pipe(output);},onError:reject});});
 }
 
 test('2000 complete lives: actual logs, birth cards, endings and rendered UI contain no forbidden terminology', async()=>{
@@ -125,7 +130,7 @@ test('2000 complete lives: actual logs, birth cards, endings and rendered UI con
       const life=screen==='end'?appExample.end:appExample.birth;
       const saved={schemaVersion:2,screen,life,peers:[life,life,life,life]};
       Object.defineProperty(globalThis,'localStorage',{value:{getItem:()=>JSON.stringify(saved)},configurable:true});
-      const text=renderToStaticMarkup(React.createElement(ui.default)).replace(/<[^>]*>/g,'');
+      const text=(await renderApp(React.createElement(ui.default))).replace(/<[^>]*>/g,'');
       checkText(text,`full app screen ${screen}`);
       if(screen==='home') {
         // Includes hidden screen-reader copy and collapsed details, not just

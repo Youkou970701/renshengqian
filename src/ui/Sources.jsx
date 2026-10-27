@@ -1,0 +1,5 @@
+import React from 'react';
+import {DATA,PROVINCES} from '../engine/stats.js';
+import {SOURCES_NOTE,footnote,statKeys,resolveStat} from '../content/footnotes.js';
+export const SOURCE_KEYS = statKeys;
+export default function Sources() { return <section className="sources"><p className="eyebrow">数字从哪里来</p><h2>统计出处</h2><p>{SOURCES_NOTE}</p><p>数据状态按原始表保留：已核表示出处已复核，待核表示仍需核对原始出处，估算表示由公开资料推算。首页用「初步数据」「推算」提示，完整标注集中列在本页。</p>{SOURCE_KEYS.map(key=><p className="source" key={key}>{footnote(key)} 数据状态：{resolveStat(key).status}。</p>)}<h3>首页人口计数与出生分布</h3><p>2024 年全国出生人口 {DATA.births.national_2024.value} 万人，数据状态：{DATA.births.national_2024.status}。来源：{DATA.births.national_2024.source}。</p><p>2024 年全国死亡人口 {DATA.births.deaths_2024.value} 万人，数据状态：{DATA.births.deaths_2024.status}。</p><p>农村出生占比取 {Math.round(DATA.births.rural_share_of_births.value*100)}%，数据状态：{DATA.births.rural_share_of_births.status}。按农村生育情况与常住人口城乡比例推算，用于模拟出身。</p><p>{DATA.births.by_province_2024._note}</p>{PROVINCES.map(province=><p className="source" key={province}>2024 年{province}出生人口 {DATA.births.by_province_2024[province].value} 万人，数据状态：{DATA.births.by_province_2024[province].status}。</p>)}</section>; }
