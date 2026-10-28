@@ -5,6 +5,8 @@ import {P,clamp} from './params.js';
 import {makeDice} from './dice.js';
 import {incomeEvent} from './income-events.js';
 import {isProtectedPost} from './employment.js';
+import {businessScene} from '../content/income-scenes.js';
+import {beginMoneyYear,recordMoneyFlow,recordMoneyTransfer,finishMoneyYear} from './money-ledger.js';
 const cash=x=>Math.round(x*100)/100;
 export function copyEconomy(s){
  const m={...(s.money??{}),accounts:{...(s.money?.accounts??{})},debts:(s.money?.debts??[]).map(x=>({...x})),relatives:(s.money?.relatives??[]).map(x=>({...x})),parentSpending:{...(s.money?.parentSpending??{})},actionUsage:{...(s.money?.actionUsage??{})},property:s.money?.property?{...s.money.property}:null,mortgage:s.money?.mortgage?{...s.money.mortgage}:null};
@@ -53,7 +55,7 @@ function eligibility(s,a,input={}){
 export function moneyOptions(s){return MONEY_ACTIONS.map(a=>{const reason=eligibility(s,a);const q=a.city?houseQuote(s,a.city,a.size):null;return {...a,enabled:!reason,reason,cost:q?q.down:a.cost,hint:q?`房价${q.price}元，首付${q.down}元，月供约${Math.round(q.monthly)}元`:a.id==='online-loan'?'本局合同年息18%，借款需还本付息':a.id==='business-loan'?'本局合同年息8%，需要信用和持续经营':a.id==='business-hire'?'入职开支3000元；之后每年2.4万元工资，扩大接单能力':a.id==='wealth'?'可能损失本金':`${a.cost}元`};});}
 export function financialReason(s,input){const a=MONEY_ACTION_BY_ID[input.action];return a?eligibility(s,a,input):'未知行动';}
 export function financialAction(previous,input){
- let s=copyEconomy(previous);s.attrs={...s.attrs};s.skills={...s.skills};s.record={...s.record};s.educationFinance={...s.educationFinance};
+ let s=copyEconomy(previous);beginMoneyYear(s);const beforeAction=netAssets(s);s.attrs={...s.attrs};s.skills={...s.skills};s.record={...s.record};s.educationFinance={...s.educationFinance};
  const emit=(text,stat,meta={})=>{if(s.capture!==false)s.log=[...s.log,{age:s.age,text,stat:stat??null,...meta}];};
  if(input.action==='apply-job'){
   const j=JOB_BY_ID[input.jobId];if(!j||s.age<18||s.retired||s.job==='研究生在读'||s.militaryService?.active||!jobEligible(s,j))throw new Error('当前不符合该岗位入口');
@@ -95,39 +97,46 @@ export function financialAction(previous,input){
    if(a.id!=='lottery')emit(`你安排了「${a.label}」，${s.age<18?'家里':'自己'}支出${Math.round(amount)}元。`,null,{node:'money',actionId:a.id});
   }
  }
- s.inputHistory=[...(s.inputHistory??[]),{age:s.age,...input}];return s;
+ s.inputHistory=[...(s.inputHistory??[]),{age:s.age,...input}];
+ const action=input.action,delta=netAssets(s)-beforeAction;
+ const kind=action==='parents'||action==='bride-gift'||action==='dowry'?'family':action==='relative'?'relative':action==='house-sell'?'property':action==='business-transfer'?'businessExit':action==='business-hire'?'businessLoss':action==='checkup'?'health':['tutoring','interest','school-choice','certificate'].includes(action)?'education':action==='lottery'?'unexpected':'living';
+ recordMoneyFlow(s,kind,delta);
+ if(['online-loan','business-loan'].includes(action))recordMoneyTransfer(s,'借款本金',input.amount??(action==='business-loan'?50000:10000));
+ if(action==='mortgage-prepay')recordMoneyTransfer(s,'提前归还房贷本金',(previous.money?.mortgage?.balance??0)-(s.money?.mortgage?.balance??0));
+ if(action==='debt-repay')recordMoneyTransfer(s,'归还其他借款本金',(previous.money?.debts??[]).reduce((n,d)=>n+d.balance,0)-(s.money?.debts??[]).reduce((n,d)=>n+d.balance,0));
+ finishMoneyYear(s);return s;
 }
 export function annualBusiness(s,emit){
  if(!s.business?.active||s.business.lastAge===s.age)return;
- if(s.retired){s.assets+=Math.round(s.business.capital*.5);s.business={...s.business,active:false,transferredAt:s.age};incomeEvent(s,emit,'business-retirement','退休后你转让了生意，收回部分投入，收入改按养老金结算。');return;}
+ if(s.retired){const before=netAssets(s);s.assets+=Math.round(s.business.capital*.5);s.business={...s.business,active:false,transferredAt:s.age};incomeEvent(s,emit,'business-retirement','你把经营中用过的东西一件件交接出去，收回部分投入，往后的收入改由养老金接上。');recordMoneyFlow(s,'businessExit',netAssets(s)-before);return;}
  const b={...s.business,lastAge:s.age},u=economyDraw(s),outcome=u<.20?'good':u<.70?'flat':u<.93?'hard':'closed';
  const base=b.type==='factory'?100000:b.type==='training'?70000:b.type==='online'?50000:55000;
  const profit=Math.round(base*b.scale*(outcome==='good'?1.7:outcome==='flat'?.65:outcome==='hard'?-.3:0)-b.employees*24000);
  b.lastOutcome=outcome;b.profit=profit;
- if(outcome==='closed'){const recovered=Math.round(b.capital*.2);s.assets+=recovered;b.active=false;b.closedAt=s.age;s.record={...s.record,businessClosed:true};s.businessHistory=(s.businessHistory??[]).map(x=>x.startedAt===b.startedAt?{...x,closedAt:s.age}:x);s.income=0;s.job='待业';s.industry='unemployed';s.occupation=null;incomeEvent(s,emit,'business-closure',`${b.name}关门了，设备和存货收回${recovered}元，原来投入的大部分资金没有回来。`,{node:'business',outcome});}
- else{s.income=Math.max(0,profit);if(profit<0)s.assets+=profit;incomeEvent(s,emit,'business-year',`${b.name}这一年${outcome==='good'?'生意顺利':outcome==='flat'?'收支平常':'难熬'}，扣除经营开支后${profit>=0?'结余':'亏损'}${Math.abs(profit)}元。`,{node:'business',outcome,profit,dice:[makeDice({id:'business-year',label:'本次生意顺利机会',p:.20,u,successLabel:'顺利',failureLabel:'未遇顺利年'})]});}
+ if(outcome==='closed'){const recovered=Math.round(b.capital*.2);s.assets+=recovered;b.active=false;b.closedAt=s.age;s.record={...s.record,businessClosed:true};s.businessHistory=(s.businessHistory??[]).map(x=>x.startedAt===b.startedAt?{...x,closedAt:s.age}:x);s.income=0;s.job='待业';s.industry='unemployed';s.occupation=null;const scene=businessScene(s,b.type,outcome);incomeEvent(s,emit,'business-closure',`${scene.text}处理剩下的物品收回${recovered}元。`,{node:'business',outcome,sceneId:scene.sceneId,recovered});recordMoneyFlow(s,'businessExit',recovered-b.capital);}
+ else{s.income=Math.max(0,profit);if(profit<0){s.assets+=profit;recordMoneyFlow(s,'businessLoss',profit);}const scene=businessScene(s,b.type,outcome);incomeEvent(s,emit,'business-year',`${scene.text}这一年生意${profit>=0?'赚了':'亏了'}${Math.abs(profit)}元（${profit>=0?'+':'−'}${Math.abs(profit)}元）。`,{node:'business',outcome,profit,sceneId:scene.sceneId,dice:[makeDice({id:'business-year',label:'本次生意顺利机会',p:.20,u,successLabel:'顺利',failureLabel:'未遇顺利年'})]});}
  s.business=b;
 }
 export function annualMoney(s,emit){
  const m=s.money;if(!m||m.lastAge===s.age)return;m.lastAge=s.age;m.investmentIncome=0;
  for(const [key,balance] of Object.entries(m.accounts)){
   if(balance<=0)continue;const u=economyDraw(s),change=key==='deposit'?MONEY_RULES.depositRate:key==='fund'?-.25+u*.60:key==='stock'?-.55+u*1.20:u<.04?-.80:.025+u*.05;
-  const next=Math.max(0,Math.round(balance*(1+change)));m.accounts[key]=next;m.investmentIncome+=next-balance;
+  const next=Math.max(0,Math.round(balance*(1+change)));m.accounts[key]=next;m.investmentIncome+=next-balance;recordMoneyFlow(s,'investment',next-balance);
   if(key==='wealth'&&change<-.5)emit('这笔理财发生了本金损失，账户按实际剩余金额记录。',null,{node:'investment'});
  }
- if(m.property?.rented){const rent=Math.round(m.property.value*.025);s.assets+=rent;m.investmentIncome+=rent;}
- if(m.car){m.car={...m.car,value:Math.round(m.car.value*.85)};s.assets-=3000;}
+ if(m.property?.rented){const rent=Math.round(m.property.value*.025);s.assets+=rent;m.investmentIncome+=rent;recordMoneyFlow(s,'rent',rent);}
+ if(m.car){const previousValue=m.car.value;m.car={...m.car,value:Math.round(m.car.value*.85)};s.assets-=3000;recordMoneyFlow(s,'car',m.car.value-previousValue-3000);}
  if(m.mortgage?.balance>0){
-  const loan={...m.mortgage};let paid=0,interest=0;
+  const loan={...m.mortgage},previousBalance=loan.balance;let paid=0,interest=0;
   for(let i=0;i<12&&loan.balance>0&&loan.monthsLeft>0;i++){
    const dueInterest=loan.balance*loan.rate/12,payment=loan.monthsLeft===1?loan.balance+dueInterest:Math.min(loan.balance+dueInterest,loan.monthly),available=Math.max(0,s.assets-paid);loan.monthsLeft--;
    if(available<payment){s.credit=Math.max(0,(s.credit??100)-5);loan.balance+=dueInterest;continue;}
    interest+=dueInterest;loan.balance=Math.max(0,loan.balance-(payment-dueInterest));paid+=payment;
   }
   if(loan.monthsLeft<=0&&loan.balance>0){const final=Math.min(Math.max(0,s.assets-paid),loan.balance);loan.balance-=final;paid+=final;if(loan.balance>.01){s.credit=Math.max(0,(s.credit??100)-10);emit('房贷合同已经到期，仍有欠款需要处理。',null,{node:'debt'});}}
-  s.assets=cash(s.assets-paid);loan.balance=cash(loan.balance);loan.lastPayment=cash(paid);loan.lastInterest=cash(interest);m.mortgage=loan;s.mortgage=loan.balance;
+  s.assets=cash(s.assets-paid);loan.balance=cash(loan.balance);loan.lastPayment=cash(paid);loan.lastInterest=cash(interest);m.mortgage=loan;s.mortgage=loan.balance;recordMoneyFlow(s,'mortgageInterest',-(paid+loan.balance-previousBalance));recordMoneyTransfer(s,'归还房贷本金',Math.max(0,previousBalance-loan.balance));
  }
- for(const debt of m.debts){if(debt.balance<=0)continue;const interest=debt.balance*debt.rate,principal=debt.balance/Math.max(1,debt.yearsLeft),due=interest+principal,paid=Math.min(Math.max(0,s.assets),due);s.assets=cash(s.assets-paid);debt.balance=cash(Math.max(0,debt.balance+interest-paid));debt.yearsLeft=Math.max(0,debt.yearsLeft-1);if(paid<due){s.credit=Math.max(0,(s.credit??100)-10);emit('今年的借款没有足额偿还，欠款和信用变化记入了账目。',null,{node:'debt'});}}
- for(const loan of m.relatives){if(!loan.settled&&s.age>=loan.dueAge){loan.settled=true;if(economyDraw(s)<.65){s.assets+=loan.amount;emit('亲戚把此前借的钱还了回来。',null,{node:'relative'});}else emit('约定的还款时间过了，这笔借给亲戚的钱暂时没有收回来。',null,{node:'relative'});}}
+ for(const debt of m.debts){if(debt.balance<=0)continue;const interest=debt.balance*debt.rate,principal=debt.balance/Math.max(1,debt.yearsLeft),due=interest+principal,paid=Math.min(Math.max(0,s.assets),due);s.assets=cash(s.assets-paid);debt.balance=cash(Math.max(0,debt.balance+interest-paid));debt.yearsLeft=Math.max(0,debt.yearsLeft-1);recordMoneyFlow(s,'debtInterest',-interest);recordMoneyTransfer(s,'归还其他借款本金',Math.max(0,paid-interest));if(paid<due){s.credit=Math.max(0,(s.credit??100)-10);emit('今年的借款没有足额偿还，欠款和信用变化记入了账目。',null,{node:'debt'});}}
+ for(const loan of m.relatives){if(!loan.settled&&s.age>=loan.dueAge){loan.settled=true;if(economyDraw(s)<.65){s.assets+=loan.amount;recordMoneyFlow(s,'relative',loan.amount);emit(`亲戚把此前借的${loan.amount}元还了回来（+${loan.amount}元）。`,null,{node:'relative'});}else emit('约定的还款时间过了，这笔借给亲戚的钱暂时没有收回来。',null,{node:'relative'});}}
 }
 export function netAssets(s){const m=s.money;return Math.round((s.assets??0)+Object.values(m?.accounts??{}).reduce((a,v)=>a+v,0)+(m?.property?.value??(s.ownsHouse?P.houseCost[s.city]:0))+(m?.car?.value??0)+(s.business?.active?s.business.capital:0)-(m?.mortgage?.balance??s.mortgage??0)-(s.educationFinance?.loanBalance??0)-(s.educationFinance?.loanInterestArrears??0)-(m?.debts??[]).reduce((a,d)=>a+d.balance,0));}

@@ -1,3 +1,4 @@
+import {PEOPLE_CARDS} from './people.js';
 import {SCENARIO_CARDS} from '../../engine/scenarios.js';
 import {RELATIONSHIP_CARDS} from './relationships.js';
 import {LATE_FAMILY_CARDS} from './late-family.js';
@@ -9,7 +10,7 @@ import {STUDENT_FINANCE_CARDS} from './student-finance.js';
 import {CARD_VARIANTS} from './variants.js';
 import {MORE_VARIANTS} from './variants-more.js';
 import {VARIANT_LABELS} from './variant-labels.js';
-export const CARDS=[...CORE_CARDS,...EXTRA_CARDS,...STUDENT_FINANCE_CARDS,...WORK_CARDS,...PENSION_CARDS,...SCENARIO_CARDS,...RELATIONSHIP_CARDS,...LATE_FAMILY_CARDS];
+export const CARDS=[...CORE_CARDS,...EXTRA_CARDS,...STUDENT_FINANCE_CARDS,...WORK_CARDS,...PENSION_CARDS,...SCENARIO_CARDS,...RELATIONSHIP_CARDS,...LATE_FAMILY_CARDS,...PEOPLE_CARDS];
 // 处境变体挂到对应卡上（只换文字，不改选项编号和后果）。
 const ALL_VARIANTS={...CARD_VARIANTS,...MORE_VARIANTS};
 for(const c of CARDS)if(ALL_VARIANTS[c.id])c.variants=ALL_VARIANTS[c.id].map(v=>({...v,labels:{...(VARIANT_LABELS[c.id]?.[v.key]??{}),...(v.labels??{})}}));

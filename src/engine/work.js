@@ -6,6 +6,8 @@ import {P,clamp} from './params.js';
 import {incomeEvent} from './income-events.js';
 import {isProtectedPost} from './employment.js';
 import {pensionEntitlement} from './pension.js';
+import {workScene} from '../content/income-scenes.js';
+import {recordMoneyFlow} from './money-ledger.js';
 export const degreeRank=s=>({none:0,junior:0,vocational:0,high:0,college:1,bachelor:2,'211':3,'985':3,master:4})[s.edu]??0;
 export const jobEligible=(s,j)=>!((s.record?.criminalRecord||s.criminalRecord)&&['teacher','doctor','lawyer','soldier','civil','institution'].includes(j.profession))&&degreeRank(s)>=j.entry.degree&&(!j.entry.majors.length||j.entry.majors.includes(s.major))&&(s.skills?.craft??0)>=j.entry.certificate&&!j.publicOnly&&(j.id!=='soldier'||s.age<=24&&s.attrs.health>=60)&&(j.profession!=='doctor'||(s.residencyCompletedYears??0)>=3);
 export function economyDraw(s){const r=random(s.economyRngState??hashSeed(s.seed^0x49d91a37));s.economyRngState=r.seed;return r.value;}
@@ -35,7 +37,7 @@ function startOccupation(s,j,emit,{paidMonths=12}={}){
  const level=same?Math.max(0,Math.min(j.levels.length-1,previous.level)):0;
  s.occupation={...(same?previous:{}),id:j.id,legacy:s.job,employmentType:s.employmentType??null,level,startedAt:s.age,yearsAtLevel:same?previous.yearsAtLevel:0,years:same?previous.years:s.workExperience?.[j.id]??0,percentile:same?previous.percentile:economyDraw(s),paidMonths};
  s.industry=isPublic(s)?'public':j.industry;
- incomeEvent(s,emit,'job-entry',`你开始做${j.name}，从${j.levels[level].title}这一档积累经验。`,{jobId:j.id,level});
+ incomeEvent(s,emit,'job-entry',`你开始做${j.name}，从${j.levels[level].title}做起，慢慢积累经验。`,{jobId:j.id,level});
 }
 export const publicOccupation=(s,j=JOB_BY_ID[s.occupation?.id])=>isPublic(s)||['civil','institution','teacher','doctor','nurse','soldier'].includes(j?.profession??j?.id);
 export function industryYear(industry,year){
@@ -57,12 +59,12 @@ export function annualWork(s,emit){
  if(isProtectedPost(s))s.employmentSearch=null;
  if(s.employmentSearch){
   const search={...s.employmentSearch};
-  if(search.monthsLeft>=12){search.monthsLeft-=12;s.employmentSearch=search;s.income=0;incomeEvent(s,emit,'unemployment','这一年仍在找工作，没有工资收入。',{node:'jobSearch',months:12});return;}
+  if(search.monthsLeft>=12){search.monthsLeft-=12;s.employmentSearch=search;s.income=0;incomeEvent(s,emit,'unemployment',workScene(s,'unemployment').text,{node:'jobSearch',months:12,sceneId:`unemployment:${s.incomeSceneMemory.unemployment.index}`});return;}
   paidMonths=12-search.monthsLeft;const j=JOB_BY_ID[search.jobId]??JOB_BY_ID.freelancer;
   s.job=j.legacy;s.industry=j.industry;s.employmentType='非编制';s.publicEmployer=false;s.employmentSearch=null;startOccupation(s,j,emit,{paidMonths});
-  incomeEvent(s,emit,'reemployment',`找工作用了${search.monthsLeft}个月，之后接上了${j.name}的收入。`,{node:'jobSearch',months:search.monthsLeft});
+  const scene=workScene(s,'reemployment');incomeEvent(s,emit,'reemployment',`找工作等了${search.monthsLeft}个月。${scene.text}`,{node:'jobSearch',months:search.monthsLeft,jobId:j.id,sceneId:scene.sceneId});
  }
- if(s.job==='待业'){s.income=0;if(s.lastIncomeObservation?.income>0)incomeEvent(s,emit,'unemployment','你暂时没有在岗工作，这一年没有工资。');return;}
+ if(s.job==='待业'){s.income=0;if(s.lastIncomeObservation?.income>0)incomeEvent(s,emit,'unemployment',workScene(s,'unemployment').text,{sceneId:`unemployment:${s.incomeSceneMemory.unemployment.index}`});return;}
  if(!s.occupation||s.occupation.legacy!==s.job||s.occupation.employmentType!==(s.employmentType??null))startOccupation(s,pickJob(s),emit);
  const o=s.occupation,j=JOB_BY_ID[o.id];o.years++;o.yearsAtLevel++;s.workExperience={...(s.workExperience??{}),[j.id]:o.years};
  const cycle=industryYear(s.industry??j.industry,s.year+s.age);
@@ -78,19 +80,20 @@ export function annualWork(s,emit){
  }
  if(Number.isFinite(s.salaryNegotiation)&&s.salaryNegotiation<s.age){const p=.40,u=economyDraw(s),pass=u<p;s.salaryNegotiation=null;if(pass){o.percentile=clamp(o.percentile+.08,0,1);o.contractAnnual=null;incomeEvent(s,emit,'salary-negotiation','调薪谈话通过了，新一年的薪酬标准有所提高。',{node:'salaryTalk',dice:[makeDice({id:'salary-talk',label:'本次调薪通过机会',p,u,successLabel:'通过',failureLabel:'未通过'})]});}else emit('这次调薪要求没有通过，原来的收入标准继续保留。',null,{node:'salaryTalk',dice:[makeDice({id:'salary-talk',label:'本次调薪通过机会',p,u,successLabel:'通过',failureLabel:'未通过'})]});}
  const stable=publicOccupation(s,j),old=s.lastIncomeObservation;
- if(old?.income===0&&old.examGap&&!(s.examGapUntil>=s.age))incomeEvent(s,emit,'exam-return','备考结束，回到原来的岗位，工资恢复按在岗月份结算。',{jobId:j.id});
- if(old?.income===0&&old.job==='待业'&&s.job!=='待业'&&!s.employmentSearch)incomeEvent(s,emit,'reemployment','面试后恢复了在岗工作，这一年重新开始领取工资。',{jobId:j.id});
+ if(old?.income===0&&old.examGap&&!(s.examGapUntil>=s.age))incomeEvent(s,emit,'exam-return',workScene(s,'exam-return').text,{jobId:j.id,sceneId:`exam-return:${s.incomeSceneMemory['exam-return'].index}`});
+ if(old?.income===0&&old.job==='待业'&&s.job!=='待业'&&!s.employmentSearch&&!s.incomeReasons?.some(e=>e.age===s.age&&e.kind==='reemployment'))incomeEvent(s,emit,'reemployment',workScene(s,'reemployment').text,{jobId:j.id,sceneId:`reemployment:${s.incomeSceneMemory.reemployment.index}`});
  const [lo,hi]=j.levels[o.level].annual,residency=s.job==='规培医师'?.48:1;
  if(!o.contractAnnual)o.contractAnnual=(lo+(hi-lo)*o.percentile)*(j.upside&&o.percentile>=j.upside.threshold?j.upside.multiple:1)*WORK_RULES.salaryScale*(j.migrant?WORK_RULES.migrantScale:1);
  else o.contractAnnual*=1+(economyDraw(s)-.5)*(stable?.025:j.volatile?.20:.06);
- if(old?.jobId===j.id&&old.city!==s.city)incomeEvent(s,emit,'city-change',`工作生活地点改为${s.city}，本局按当地收入系数调整薪酬。`);
- if(old?.paidMonths>0&&old.paidMonths<12&&paidMonths===12)incomeEvent(s,emit,'full-year-pay','求职空档已经结束，今年按完整十二个月发薪。');
+ if(old?.jobId===j.id&&old.city!==s.city)incomeEvent(s,emit,'city-change',workScene(s,'city-change',{city:s.city}).text,{sceneId:`city-change:${s.incomeSceneMemory['city-change'].index}`});
+ if(old?.paidMonths>0&&old.paidMonths<12&&paidMonths===12)incomeEvent(s,emit,'full-year-pay',workScene(s,'full-year-pay').text,{sceneId:`full-year-pay:${s.incomeSceneMemory['full-year-pay'].index}`});
  if(o.residencyFactor!=null&&o.residencyFactor!==residency)incomeEvent(s,emit,'residency-complete','规培阶段结束，在岗收入改按正式岗位结算。');
  o.residencyFactor=residency;o.paidMonths=paidMonths;
  const factor=stable?1:cycle.factor;
- if(o.cycleFactor!=null&&o.cycleFactor!==factor)incomeEvent(s,emit,'industry-cycle',`所在行业进入新的年景周期，岗位薪酬系数由${o.cycleFactor.toFixed(2)}调整为${factor.toFixed(2)}。`);
+ const cycleChanged=o.cycleFactor!=null&&o.cycleFactor!==factor;
  o.cycleFactor=factor;const capacity=s.disability?1-Math.min(.6,s.disability):1;if(o.workCapacity!=null&&o.workCapacity!==capacity)incomeEvent(s,emit,'injury-capacity','身体留下的活动限制影响了可承担的工作量，岗位收入按实际能力调整。');o.workCapacity=capacity;
  s.income=Math.round(o.contractAnnual*WORK_RULES.city[s.city]*factor*residency*capacity*paidMonths/12);
+ if(cycleChanged){const direction=old&&s.income!==old.income?(s.income>old.income?'up':'down'):'flat',scene=workScene(s,`industry-${direction}`,{profession:j.profession});incomeEvent(s,emit,'industry-cycle',`${j.name}这行，${scene.text}`,{sceneId:scene.sceneId,direction,previousIncome:old?.income??null,currentIncome:s.income});}
  s.lastStableIncome=s.income;s.industryCycle=cycle.label;
 }
 export function settleDisposableIncome(s){
@@ -108,7 +111,7 @@ export function settleDisposableIncome(s){
  const studying=s.job==='研究生在读'||s.job==='尚未就业'&&s.age<(s.collegeGraduateAge??22);
  const childSupport=s.retired&&s.kids.some(k=>s.age-k.bornAt>=18)?WORK_RULES.adultChildRemittance:0;
  const support=studying?[8000,12000,18000,30000,60000][s.wealthQ-1]:childSupport|| (s.income===0&&!s.married&&s.age<35?[2000,4000,8000,16000,24000][s.wealthQ-1]:0);
- if(childSupport&&s.money.remittanceSettledAt!==s.age){s.money.remittanceSettledAt=s.age;s.money.familyRemittance=childSupport;s.assets+=childSupport;}
+ if(childSupport&&s.money.remittanceSettledAt!==s.age){s.money.remittanceSettledAt=s.age;s.money.familyRemittance=childSupport;s.assets+=childSupport;recordMoneyFlow(s,'family',childSupport);}
  const household=1+Number(s.married)+s.kids.filter(k=>s.age-k.bornAt<22).length;
  s.disposableIncome=Math.max(0,Math.round(((s.laborIncome??(s.retired?0:s.income))*.85+(s.pensionIncome??0)+spouse+support+(s.money?.investmentIncome??0))/household));
  const old=s.incomeStats??{observations:0,firstBucket:null,minBucket:null,maxBucket:null,largeChange:false,lastIncome:null};

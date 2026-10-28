@@ -15,7 +15,7 @@ import {createBirth,drawBirth} from '../src/engine/birth.js';
 import {step} from '../src/engine/life.js';
 import {autoChoose} from '../src/engine/decisions.js';
 import {migrateLife} from '../src/engine/migrate.js';
-import {hydrateSave} from '../src/ui/save.js';
+import {hydrateSave,SCHEMA_VERSION} from '../src/ui/save.js';
 
 const require=createRequire(join(homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/package.json'));
 const {chromium}=require('playwright');
@@ -147,7 +147,7 @@ try{
  let legacyLife=birth;while(legacyLife.alive&&(legacyLife.age<46||!legacyLife.pending))legacyLife=step(legacyLife,{auto:true}).state;
  const legacy=oldSave(legacyLife);await load(legacy);const peerText=await page.locator('.peers').textContent();
  await page.evaluate(()=>window.dispatchEvent(new Event('pagehide')));await settle(page);const migrated=await read(page);
- check('旧全量存档主角完整进度迁移',{age:migrated.life.age,pending:migrated.life.pending?.id,schemaVersion:migrated.schemaVersion},'与迁移前所有字段一致且schema3',JSON.stringify(migrated.life)===JSON.stringify(migrateLife(legacyLife))&&migrated.schemaVersion===3);
+ check('旧全量存档主角完整进度迁移',{age:migrated.life.age,pending:migrated.life.pending?.id,schemaVersion:migrated.schemaVersion},`与迁移前所有字段一致且schema${SCHEMA_VERSION}`,JSON.stringify(migrated.life)===JSON.stringify(migrateLife(legacyLife))&&migrated.schemaVersion===SCHEMA_VERSION);
  check('旧全量存档四条同生人生可见',legacy.peers.map(peer=>({id:peer.id,age:peer.age})), '4人姓名/年龄显示',legacy.peers.every(peer=>peerText.includes(peer.name)&&peerText.includes(`${peer.age} 岁`)));
  await page.reload({waitUntil:'networkidle'});await page.locator('.peers').waitFor();const resumedPeers=await page.locator('.peers').textContent();
  check('压缩后重载同生人生一致',resumedPeers,'与旧档展示逐字一致',resumedPeers===peerText);

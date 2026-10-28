@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {createBirth,drawBirth} from '../src/engine/birth.js';
 import {step} from '../src/engine/life.js';
 import {deriveChild} from '../src/engine/family.js';
-import {validLife,restorePeers,advancePeer,serializeSave,hydrateSave,checkpointChanged} from '../src/ui/save.js';
+import {SCHEMA_VERSION,validLife,restorePeers,advancePeer,serializeSave,hydrateSave,checkpointChanged} from '../src/ui/save.js';
 import {TITLE_IDS,TITLE_ID_MIGRATIONS,ACHIEVEMENT_IDS} from '../src/ui/collection-ids.js';
 import {TITLES,TITLE_ID_MIGRATIONS as actualMigrations} from '../src/content/titles.js';
 import {ACHIEVEMENTS} from '../src/content/achievements.js';
@@ -19,7 +19,7 @@ test('compact peers replay exactly across repeated save/load, including pending 
   for(const age of [1,2,15,16,18,22,35,60,80,100,110]){
    direct=direct.map(p=>advancePeer(p,age));restored=restored.map(p=>advancePeer(p,age));
    const saved=JSON.parse(serializeSave({schemaVersion:2,life:birth,peers:restored,saveRevision:12}));
-   assert.equal(saved.schemaVersion,3);assert.equal('saveRevision'in saved,false);
+   assert.equal(saved.schemaVersion,SCHEMA_VERSION);assert.equal('saveRevision'in saved,false);
    assert.ok(saved.peers.every(p=>Object.keys(p).join(',')==='id,age'));
    restored=restorePeers(saved.peers);assert.deepEqual(restored,direct,`${id} at ${age}`);
   }
@@ -47,6 +47,17 @@ test('checkpoints exclude preferences, timer ticks, dice dismissal and unanswere
  assert.equal(checkpointChanged(before,{life:{...year.life,pending:{id:'test'}}},{type:'advance'}),false);
  const chosen={life:{...year.life,choices:[{choice:'yes'}]}};
  assert.equal(checkpointChanged(year,chosen,{type:'advance',choice:'yes'}),true);
+});
+test('deployed schema 3 income dictionary migrates losslessly to schema 4',()=>{
+ let life=createBirth('陕-2026-405095');while(life.alive&&life.age<60)life=step(life,{auto:true}).state;
+ const plain=JSON.parse(JSON.stringify(life));
+ const keys=[...new Set(plain.incomeHistory.flatMap(row=>Object.keys(row)))];
+ const old={schemaVersion:3,life:{...plain,incomeHistory:{encoding:'columns-v1',keys,rows:plain.incomeHistory.map(row=>Object.fromEntries(Object.entries(row).map(([key,value])=>[keys.indexOf(key),value]))) }},peers:[],familyRows:[plain]};
+ const hydrated=hydrateSave(JSON.parse(JSON.stringify(old)));
+ assert.deepEqual(hydrated.life,plain);
+ const current=JSON.parse(serializeSave(hydrated));assert.equal(current.schemaVersion,4);
+ assert.deepEqual(hydrateSave(current).life,plain);
+ assert.deepEqual(hydrateSave(current).familyRows,[plain]);
 });
 test('80-year UTF-8 compact save <=120 KiB without dropping own logs or choices',()=>{
  let checked=0;

@@ -1,3 +1,6 @@
+import {ensurePeople,annualPeople,peopleChoice,personalDaily} from './people.js';
+import {offerPeopleCard,maturePeopleSeeds,peopleSeedState} from './people-opportunities.js';
+import {beginMoneyYear,recordMoneyFlow,finishMoneyYear} from './money-ledger.js';
 import { random, weightedIndex } from './rng.js';
 import { DATA } from './stats.js';
 import { P, logistic, logit, clamp } from './params.js';
@@ -19,9 +22,13 @@ import {extendStudentLoanStudy} from './student-loans.js';
 import {ensureHighSchoolLocation,specialPlanEligible} from './school-location.js';
 import {annualWork,settleDisposableIncome} from './work.js';
 import {retirementAge,isFlexibleWork,recordContributions,settlePension,pensionComparisonText} from './pension.js';
-import {copyEconomy,financialAction,buyHouse,annualBusiness,annualMoney} from './money.js';
+import {copyEconomy,financialAction,buyHouse,annualBusiness,annualMoney,netAssets} from './money.js';
 const STAGES=['baby','child','junior','high','college','adult','middle','senior'];
 const byStage=Object.fromEntries(STAGES.map(stage=>[stage,templates.filter(e=>e.stage===stage)]));
+const flowTotal=s=>Object.entries(s.moneyYear?.flows??{}).filter(([kind])=>!['other','rounding'].includes(kind)).reduce((sum,[,value])=>sum+value,0);
+const moneyMark=s=>({net:netAssets(s),flows:flowTotal(s)});
+const explainRemainder=(s,mark,kind)=>recordMoneyFlow(s,kind,netAssets(s)-mark.net-(flowTotal(s)-mark.flows));
+const recentPeopleScene=(previous,output,key,age)=>{for(const rows of [output,previous.log])for(let i=rows.length-1;i>=0&&rows[i].age>=age-5;i--)if(rows[i].peopleScene===key)return true;return false;};
 const stageAt=a=>a<6?'baby':a<12?'child':a<16?'junior':a<19?'high':a<23?'college':a<36?'adult':a<60?'middle':'senior';
 
 export function step(previous,input={}) {
@@ -35,6 +42,8 @@ export function step(previous,input={}) {
  const draw=()=>{const r=random(seed);seed=r.seed;return r.value;};
  const output=[];
  const emit=(text,stat,meta={})=>{if(s.capture!==false)output.push({age:s.age,text,stat:stat??null,...meta});};
+ s=ensurePeople(s,emit);
+ beginMoneyYear(s);
  const report=(node,gate,u,outcome,stat,choice=false,bonus=0,dice=null)=>{
   const cause=choice?{dominant:'choice',contributions:{},probability:null,draw:u}:attribution(s,gate,u,bonus);
   let variant=(s.seed+s.age)%4;
@@ -60,11 +69,12 @@ export function step(previous,input={}) {
  if(s.pending){
   const d=s.pending,choice=input.choice??autoChoose(s);
   if(!d.options.some(o=>o.id===choice&&!o.disabled))throw new Error('无效抉择：'+choice);
-  const definition=cardById(d.id),core=definition?.core??false;
+  const definition=cardById(d.id),core=definition?.core??false,isPeople=definition?.category==='people',choiceMoney=moneyMark(s);
+  const demographicCardRng=s.cardRngState;
   if(core&&d.id!=='school-alternatives')draw();
-  else contentDraw(s);
+  else if(!isPeople)contentDraw(s);
   s.cardHistory.push({id:d.id,age:s.age,choice,...(d.variant?{variant:d.variant}:{})});
-  if(!core)s=resolveCard(s,choice);
+  if(!core){if(isPeople)s.cardRngState=peopleSeedState(s);s=resolveCard(s,choice);if(isPeople)s.cardRngState=demographicCardRng;}
   const consequences=[...(s.pendingScenarioEvents??[]),...(s.relationshipEvents??[])];
   for(const event of consequences.filter(e=>e.node==='scenario-scene'))emit(event.text,event.stat,event);
   s.pendingScenarioEvents=[];s.relationshipEvents=[];
@@ -91,16 +101,19 @@ export function step(previous,input={}) {
    case 'city':s.city=choice;emit(`你把生活搬到了${choice}。`);break;
    case 'marry':if(choice==='marry'&&draw()<P.marriageProbability)marryPartner(s,partnerCandidate(s),emit);else emit('你暂时独自生活。');break;
    case 'house':{const city=choice==='buy-home'?'老家':choice==='buy-county'?'县城':s.city,size=choice==='buy'?'normal':'small';if(choice==='rent'||!buyHouse(s,emit,city,size))emit(choice!=='rent'?'首付、月供或贷款条件暂时不合适，你继续租住。':'你续签了租房合同。');break;}
-   case 'child':if(choice==='child'){s.kids=[{bornAt:s.age,hukou:['一线','省会'].includes(s.city)?'urban':'rural',wealthQ:clamp(Math.ceil(s.income/26000),1,5)}];emit('孩子出生了。'+childStartingText(s));}break;
+   case 'child':if(choice==='child'){s.kids=[{bornAt:s.age,hukou:['一线','省会'].includes(s.city)?'urban':'rural',wealthQ:clamp(Math.ceil(s.income/26000),1,5)}];s=ensurePeople(s);const child=Object.values(s.people.members).find(p=>p.role==='child'&&p.bornAt===s.age);emit(`孩子${child?.name??''}出生了。`+childStartingText(s));}break;
    case 'midcareer':resolveMidcareer(s,choice,draw,emit);break;
   }
-  if(!core)resolveEducationAction(s,emit);
-  s=drawCards(s);
+  if(!core&&!isPeople){const mark=moneyMark(s);resolveEducationAction(s,emit);explainRemainder(s,mark,'education');}
+  explainRemainder(s,choiceMoney,/illness|medical|body|hospital|rehabilitation/.test(`${d.id}:${definition?.category}`)?'health':/parent|child|family|sibling|marry|grandchild/.test(d.id)?'family':/school|exam|college|education|master|upgrade|loan/.test(d.id)?'education':'living');
+  s=peopleChoice(s,d.id,choice,emit,definition?.options.find(o=>o.id===choice)?.peopleImpact);
+  if(!isPeople)s=drawCards(s);
  }else if(draw()<mortalityRisk(s)){
   s.alive=false;s.death=causeOfDeath(s,draw());
   emit(`${s.age}岁这一年，你因${s.death.detail}离开了。家人把你的旧照片收进了相册。`,'health.life_expectancy',{node:'death'});
  }else{
   s.age++;
+  beginMoneyYear(s);
   const selectedFocus=input.focus??(['study','work','family','health','hobby'][Math.floor(draw()*5)]);
   settleFocus(s,selectedFocus);const focus=demographicFocus(selectedFocus);
   if(s.age>=6){
@@ -116,10 +129,11 @@ export function step(previous,input={}) {
    else if(parent.age>=55&&!parent.ill&&draw()<.025){parent.ill=true;parent.health=55;emit(`${role==='mother'?'妈妈':'爸爸'}${parent.name}需要住院治疗。你请了假，把药盒和换洗衣服装进袋子。`);}
   }
   const care=familyCareEvent(s);if(care)emit(care.text,null,care);
+  s=ensurePeople(s);
   if(s.age===15){const u=draw();s.record.junior=u<probability(s,'junior');s.edu=s.record.junior?'junior':'none';emit(s.record.junior?'你完成初中学业，拿到了毕业证，接下来要面对中考。':'你没能完成初中学业。课本收进抽屉，你开始帮家里分担日常。','education.compulsory_retention',{node:'junior'});}
   if(s.age===(s.repeatJunior?19:18)&&s.record.stage&&!s.highDropout){const u=draw();s.record.completed=u<probability(s,'completion');if(!s.record.completed)s.edu='junior';report('completion','completion',u,s.record.completed?'completed':'dropped',s.hukou==='rural'&&s.wealthQ===1?'education.poor_rural_hs_completion':'education.hs_stage_gross_enroll');}
   annualCareer(s,draw,emit);
-  annualEducation(s,emit);
+  {const mark=moneyMark(s);annualEducation(s,emit);explainRemainder(s,mark,'education');}
   if(!s.retired&&((!isFlexibleWork(s)&&s.age>=retirementAge(s))||(isFlexibleWork(s)&&(s.attrs.health<45||s.age>=85)))){s.retirementClass=s.retirementClass??s.pensionRecord?.retirementClass;s.retired=true;s.retiredAt=s.age;s.lastJob=s.job;s.job='退休';emit(`你收好工作时常用的物件，结束了在岗工作。${pensionComparisonText(s)}`,null,{node:'retirement'});}
   if(s.kids[0]&&s.age-s.kids[0].bornAt===15)emit('孩子也到了中考的年纪。你陪着孩子翻招生简章，想起自己当年的那张志愿表。','education.general_hs_rate');
   const pool=byStage[stageAt(s.age)],count=1+Math.floor(draw()*3);
@@ -129,20 +143,30 @@ export function step(previous,input={}) {
    const u=draw();if(!weights.some(w=>w>0))continue;
    const t=pool[weightedIndex(weights,u)],old=usage[t.id];usage[t.id]={count:(old?.count??0)+1,lastAge:s.age};
    for(const [key,delta]of Object.entries(t.effects??{}))if(key in s.attrs)s.attrs[key]=clamp(s.attrs[key]+delta);
-   if(s.capture!==false)emit(t.text(s),t.stat,{templateId:t.id});
+   if(s.capture!==false){
+    const original=t.text(s);let scene=t.stat?{text:original,peopleNamed:false,personIds:[]}:personalDaily(s,original,{templateId:t.id,slot:i});
+    // Reusing a family member's name must not turn a small scene into a yearly
+    // refrain. Keep the legacy scene if this situation was shown recently.
+    if(scene.sceneKey&&recentPeopleScene(previous,output,scene.sceneKey,s.age))scene={text:original,peopleNamed:false,personIds:[]};
+    emit(scene.text,t.stat,{templateId:t.id,...(scene.peopleNamed?{peopleNamed:true,personIds:scene.personIds,peopleScene:scene.sceneKey}:{})});
+   }
   }
   draw(); // Retain the demographic stream's historical annual wage draw.
   if(s.age>=18){
    annualWork(s,emit);annualBusiness(s,emit);
-   recordContributions(s);s.laborIncome=s.income;settlePension(s,emit);s.income=Math.round(s.laborIncome+s.pensionIncome);
+   {const mark=moneyMark(s);recordContributions(s);explainRemainder(s,mark,'contributions');}s.laborIncome=s.income;settlePension(s,emit);s.income=Math.round(s.laborIncome+s.pensionIncome);
    const savingRate=P.savingRate+(s.ownsHouse&&s.money.property?.city===s.city&&!s.money.property.rented?.15:0);
-   s.peakIncome=Math.max(s.peakIncome??0,s.income);s.assets=Math.round(s.assets+s.income*savingRate-s.kids.filter(k=>s.age-k.bornAt<22).length*P.childAnnualCost);
+   s.peakIncome=Math.max(s.peakIncome??0,s.income);const childCost=s.kids.filter(k=>s.age-k.bornAt<22).length*P.childAnnualCost;s.assets=Math.round(s.assets+s.income*savingRate-childCost);
+   recordMoneyFlow(s,'pension',(s.pensionIncome??0)*savingRate);recordMoneyFlow(s,s.business?.active?'business':'wages',(s.laborIncome??0)*savingRate);recordMoneyFlow(s,'children',-childCost);
    annualMoney(s,emit);settleDisposableIncome(s);annualRelationships(s,emit);
   }
   if(s.age===40)s.record.job40=s.job;
-  annualPreparation(s,draw,emit);
-  s=drawCards(s);
+  {const mark=moneyMark(s);annualPreparation(s,draw,emit);explainRemainder(s,mark,'education');}
+  s=annualPeople(s,selectedFocus,emit);
+  s=maturePeopleSeeds(s,emit);
+  s=offerPeopleCard(drawCards(s));
  }
+ finishMoneyYear(s);
  s.rngState=seed;
  if(s.capture!==false){s.log=[...previous.log,...output];s.history=[...previous.history,...(s.age!==previous.age?[{age:s.age,happy:s.attrs.happy}]:[])];}
  return {state:s,events:output};

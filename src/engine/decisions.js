@@ -1,3 +1,4 @@
+import {peopleAutoChoice} from './people-opportunities.js';
 import {autoCareerChoice} from './career.js';
 import {random} from './rng.js';
 import {P} from './params.js';
@@ -6,6 +7,7 @@ import {houseQuote} from './money.js';
 export const decisionAt=s=>drawCards(s).pending??null;
 export function autoChoose(s){
  const d=s.pending;if(!d)return null;
+ if(d.category==='people'||d.id.startsWith('people-'))return peopleAutoChoice(s);
  const u=random(d.core?s.rngState:s.cardRngState??s.rngState).value,options=d.options.filter(o=>!o.disabled),has=id=>options.some(o=>o.id===id);
  if(d.id==='career')return autoCareerChoice(s,u);
  if(d.id==='self-employed-insurance')return has('pay')&&s.assets>=24000?'pay':'skip';

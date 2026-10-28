@@ -69,7 +69,7 @@ export const LATE_FAMILY_CARDS=[
  ]),
  card('return-hometown','midlife',s=>s.age===46&&s.city!=='老家'&&!isProtectedPost(s),'要不要回老家生活？','熟悉的地方有亲友，留下来则能保住眼前的生活圈。换地方后，岗位收入会按所在地结算。',[
   {id:'stay',label:'暂时留在现在的城市',hint:'维持当前生活地点',effects:()=>({record:{hometownPlan:'stay'}})},
-  {id:'home',label:'收拾东西，回老家安顿',hint:'支出3000元搬家，之后按老家系数结算收入',cost:3000,effects:()=>({city:'老家',record:{returnedHome:true,hometownPlan:'return'}})},
+  {id:'home',label:'收拾东西，回老家安顿',hint:'支出3000元搬家，往后按老家找到的工作挣钱',cost:3000,effects:()=>({city:'老家',record:{returnedHome:true,hometownPlan:'return'}})},
  ]),
  card('fifty-reemployment','midlife',s=>s.age===50&&!s.retired&&!isProtectedPost(s)&&s.job==='待业'&&!s.employmentSearch,'五十岁，重新找一份工作','你想找一份能接上收入的工作，也想把身体能承受的事情说清楚。',[
   {id:'security',label:'申请附近的保安岗位',hint:'进入求职等待，等待期间没有工资',requires:s=>!s.business?.active,effects:s=>{const next=financialAction(s,{action:'apply-job',jobId:'security'});return {job:next.job,industry:next.industry,employmentType:next.employmentType,publicEmployer:next.publicEmployer,employmentSearch:next.employmentSearch,economyRngState:next.economyRngState,income:next.income,inputHistory:next.inputHistory};}},

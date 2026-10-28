@@ -3,7 +3,7 @@ import {random,hashSeed,weightedIndex} from './rng.js';
 import {ensureHighSchoolLocation} from './school-location.js';
 import {scenarioOpportunity} from './scenarios.js';
 export const cardById=id=>CARD_BY_ID[id];
-const ordinaryCards=CARDS.filter(c=>!c.scenarioId);
+const ordinaryCards=CARDS.filter(c=>!c.scenarioId&&c.category!=='people');
 export function availableCards(s){const context={scenario:scenarioOpportunity(s)},storyId=s.storyActive?`story:${s.storyActive.id}:${s.storyActive.index}`:context.scenario?`story:${context.scenario.id}:0`:null,pool=storyId?[...ordinaryCards,CARD_BY_ID[storyId]]:ordinaryCards;return pool.filter(c=>!(s.militaryService?.active&&['college','high'].includes(c.stage))&&!((s.skipHeavy??false)&&c.heavy)&&c.when(s,context)&&(s.cardUsage?.[c.id]?.count??0)<(c.maxPerLife??2)&&s.age-(s.cardUsage?.[c.id]?.lastAge??-999)>=(c.cooldown??5));}
 export function withoutHeavyPending(previous){
  if(!previous.skipHeavy)return previous;
@@ -16,7 +16,7 @@ export function withoutHeavyPending(previous){
 export function cardVariant(c,s){return c.variants?.find(v=>v.when(s))??null;}
 export function materializeCard(c,s){
  const options=c.options,variant=cardVariant(c,s),text=(x,fallback)=>x==null?fallback:typeof x==='function'?x(s):x;
- return {id:c.id,variant:variant?.key??null,core:!!c.core,title:text(variant?.title,c.title),body:text(variant?.body,typeof c.body==='function'?c.body(s):c.body??''),heavy:!!c.heavy,profile:c.profile?c.profile(s):null,stat:c.stat??null,options:options.map(o=>{
+ return {id:c.id,variant:variant?.key??null,core:!!c.core,category:c.category??null,title:text(variant?.title,c.title),body:text(variant?.body,typeof c.body==='function'?c.body(s):c.body??''),heavy:!!c.heavy,profile:c.profile?c.profile(s):null,stat:c.stat??null,options:options.map(o=>{
   const routeAllowed=c.id!=='school-alternatives'||(o.id==='private'?s.wealthQ>=3:o.id==='international'?s.hukou==='urban'&&s.wealthQ===5:o.id==='talent'?Boolean(s.talent||s.interest||(s.skills?.craft??0)>=8):true);
   const price=typeof o.cost==='function'?o.cost(s):o.cost??0;const enabled=routeAllowed&&(!o.requires||o.requires(s))&&(price<=0||s.age<18||s.assets>=price);
   const relabel=variant?.labels?.[o.id];
