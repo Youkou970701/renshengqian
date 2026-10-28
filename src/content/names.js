@@ -7,4 +7,30 @@ export function nameFor(sex, generation, u, surname) {
  const bank = generation === 'parent' || generation === 'older' || (typeof generation === 'number' && generation < 2005) ? older : young;
  return (surname || pick(surnames, u)) + pick(bank[sex === 'female' ? 'female' : 'male'], (u * 37.117) % 1);
 }
+// The caller supplies a deterministic draw; retries never consume an engine
+// random stream. Reserve given names across surnames and across generations.
+export const givenName=name=>typeof name==='string'?name.slice(1):'';
+export function uniqueNameFor(sex,generation,u,surname,used=[]){
+ const occupied=new Set([...used].map(givenName).filter(Boolean));
+ const first=nameFor(sex,generation,u,surname),family=surname??first[0];
+ if(!occupied.has(givenName(first)))return first;
+ const bank=generation==='parent'||generation==='older'||typeof generation==='number'&&generation<2005?older:young;
+ const names=bank[sex==='female'?'female':'male'],start=names.indexOf(givenName(first));
+ for(let offset=1;offset<=names.length;offset++){
+  const candidate=names[(Math.max(0,start)+offset)%names.length];
+  if(!occupied.has(candidate))return family+candidate;
+ }
+ // Long-lived blended families can exhaust one small editorial name bank.
+ const extras=['知秋','云舟','望舒','映川','初霁','庭安','怀瑾','云岚','景澄','时雨','星河','念远','明澈','安禾','清圆','云初'];
+ for(const candidate of extras)if(!occupied.has(candidate))return family+candidate;
+ for(const a of '予安知清云星景怀明映初念庭时若'){
+  for(const b of '禾宁川澄远舟秋雨舒霁瑾圆然夏和'){
+   if(!occupied.has(a+b))return family+a+b;
+  }
+ }
+ throw Error('Given-name bank exhausted');
+}
+export function namesInLife(s){
+ return [s.name,...Object.values(s.parents??{}).map(p=>p.name),s.partner?.name,...(s.exPartners??[]).map(p=>p.name),...Object.values(s.people?.members??{}).flatMap(p=>[p.name,...(p.previousNames??[])])].filter(Boolean);
+}
 export { surnames };

@@ -1,6 +1,6 @@
 import {DATA,PROVINCES} from './stats.js';
 import {hashSeed,random} from './rng.js';
-import {nameFor} from '../content/names.js';
+import {uniqueNameFor,namesInLife} from '../content/names.js';
 import {netAssets} from './money.js';
 
 // Civil Code, arts. 1062–1064, 1076–1079, 1087–1089 (official text):
@@ -32,7 +32,7 @@ export function partnerCandidate(s){
  const roles=age<18?['学生']:age>=65?['退休职工','务农','零工']:['企业职员','工厂工人','店员','技术员','教师','个体经营者'];
  const job=roles[Math.floor(u(5)*roles.length)],income=age<18?0:Math.round((age>=65?18000:28000)+u(6)*(age>=65?30000:90000));
  const assets=age<18?0:Math.round(income*(.4+u(7)*5)),quote=brideGiftQuote(province,s.hukou),gift=age<18?0:Math.round(quote.value*(.6+u(8)*.8)/1000)*1000;
- return {id:`partner-${s.seed}-${s.age}-${s.relationshipCount??0}`,name:nameFor(sex,s.year,u(9)),sex,age,province,education,job,income,assets,ownsHouse:age>=25&&u(10)<.5,ownsCar:age>=22&&u(11)<.4,personality:['温和','直爽','谨慎','开朗','安静'][Math.floor(u(12)*5)],family:{fatherJob:['工人','务农','职员','个体经营者'][Math.floor(u(13)*4)],motherJob:['工人','务农','职员','个体经营者'][Math.floor(u(14)*4)],siblings:Math.floor(u(15)*3)},brideGift:gift,dowry:Math.round(gift*(.2+u(16)*.5)/1000)*1000,brideGiftStatus:quote.status,quote};
+ return {id:`partner-${s.seed}-${s.age}-${s.relationshipCount??0}`,name:uniqueNameFor(sex,s.year,u(9),undefined,namesInLife(s)),sex,age,province,education,job,income,assets,ownsHouse:age>=25&&u(10)<.5,ownsCar:age>=22&&u(11)<.4,personality:['温和','直爽','谨慎','开朗','安静'][Math.floor(u(12)*5)],family:{fatherJob:['工人','务农','职员','个体经营者'][Math.floor(u(13)*4)],motherJob:['工人','务农','职员','个体经营者'][Math.floor(u(14)*4)],siblings:Math.floor(u(15)*3)},brideGift:gift,dowry:Math.round(gift*(.2+u(16)*.5)/1000)*1000,brideGiftStatus:quote.status,quote};
 }
 export function partnerSummary(s){const p=partnerCandidate(s);return `${p.name}，${p.age}岁，${p.province}，${p.education}，${p.job}，年收入${p.income}元，存款${p.assets}元，${p.ownsHouse?'有房':'暂无房'}、${p.ownsCar?'有车':'暂无车'}。彩礼意向${p.brideGift}元、嫁妆意向${p.dowry}元（${p.brideGiftStatus}，可协商）。`;}
 

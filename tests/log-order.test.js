@@ -25,7 +25,8 @@ test('剧本日志依次为情境、选择、后果和结局，各出现一次',
  const s={...drawBirth(42),age:25,pending:pending(c)};
  const result=step(s,{choice:'leave'}),events=result.events;
  assert.deepEqual(events.map(e=>e.node),['scenario-scene','card','scenario-end']);
- assert.equal(events.filter(e=>e.text.includes('你选择了')).length,1);
+ assert.equal(events.filter(e=>e.node==='card'&&e.text.startsWith('你选了')).length,1);
+ assert.equal(events.filter(e=>e.node==='card'&&e.text.includes(c.title)).length,0,'scenario choice must not repeat its title after the full scene');
  assert.equal(result.state.scenarioHistory.at(-1).outcome,'avoided');
  assert.deepEqual(orderedLifeLog(events),events);
 });

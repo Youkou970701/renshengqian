@@ -48,14 +48,14 @@ test('checkpoints exclude preferences, timer ticks, dice dismissal and unanswere
  const chosen={life:{...year.life,choices:[{choice:'yes'}]}};
  assert.equal(checkpointChanged(year,chosen,{type:'advance',choice:'yes'}),true);
 });
-test('deployed schema 3 income dictionary migrates losslessly to schema 4',()=>{
+test('deployed schema 3 income dictionary migrates losslessly to the current schema',()=>{
  let life=createBirth('陕-2026-405095');while(life.alive&&life.age<60)life=step(life,{auto:true}).state;
  const plain=JSON.parse(JSON.stringify(life));
  const keys=[...new Set(plain.incomeHistory.flatMap(row=>Object.keys(row)))];
  const old={schemaVersion:3,life:{...plain,incomeHistory:{encoding:'columns-v1',keys,rows:plain.incomeHistory.map(row=>Object.fromEntries(Object.entries(row).map(([key,value])=>[keys.indexOf(key),value]))) }},peers:[],familyRows:[plain]};
  const hydrated=hydrateSave(JSON.parse(JSON.stringify(old)));
  assert.deepEqual(hydrated.life,plain);
- const current=JSON.parse(serializeSave(hydrated));assert.equal(current.schemaVersion,4);
+ const current=JSON.parse(serializeSave(hydrated));assert.equal(current.schemaVersion,SCHEMA_VERSION);
  assert.deepEqual(hydrateSave(current).life,plain);
  assert.deepEqual(hydrateSave(current).familyRows,[plain]);
 });
@@ -69,6 +69,14 @@ test('80-year UTF-8 compact save <=120 KiB without dropping own logs or choices'
   assert.deepEqual(hydrateSave(JSON.parse(saved)).life,JSON.parse(JSON.stringify(life)));checked++;
  }
  assert.ok(checked>=5);
+});
+test('deployed schema 4 shared strings and log dictionary reload into schema 5 without changing text',()=>{
+ const life=JSON.parse(JSON.stringify(createBirth('陕-2026-405095')));
+ const text=life.log[0].text,keys=Object.keys(life.log[0]);
+ const old={schemaVersion:4,life:{...life,_saveStrings:[text],log:{encoding:'entries-v1',keys,rows:[Object.entries(life.log[0]).flatMap(([key,value])=>[keys.indexOf(key),key==='text'?{$s:0}:value])] }},peers:[]};
+ const loaded=hydrateSave(old);assert.deepEqual(loaded.life,life);
+ const current=JSON.parse(serializeSave(loaded));assert.equal(current.schemaVersion,SCHEMA_VERSION);
+ assert.deepEqual(hydrateSave(current).life,life);
 });
 test('light storage catalogue matches lazy authored catalogues exactly',()=>{
  assert.deepEqual(TITLE_IDS,TITLES.map(t=>t.id));assert.deepEqual(TITLE_ID_MIGRATIONS,actualMigrations);assert.deepEqual(ACHIEVEMENT_IDS,ACHIEVEMENTS.map(a=>a.id));

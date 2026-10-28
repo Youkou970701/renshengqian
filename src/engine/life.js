@@ -1,6 +1,7 @@
 import {ensurePeople,annualPeople,peopleChoice,personalDaily} from './people.js';
 import {offerPeopleCard,maturePeopleSeeds,peopleSeedState} from './people-opportunities.js';
 import {beginMoneyYear,recordMoneyFlow,finishMoneyYear} from './money-ledger.js';
+import {beginHappiness,finishHappiness} from './happiness.js';
 import { random, weightedIndex } from './rng.js';
 import { DATA } from './stats.js';
 import { P, logistic, logit, clamp } from './params.js';
@@ -29,12 +30,13 @@ const flowTotal=s=>Object.entries(s.moneyYear?.flows??{}).filter(([kind])=>!['ot
 const moneyMark=s=>({net:netAssets(s),flows:flowTotal(s)});
 const explainRemainder=(s,mark,kind)=>recordMoneyFlow(s,kind,netAssets(s)-mark.net-(flowTotal(s)-mark.flows));
 const recentPeopleScene=(previous,output,key,age)=>{for(const rows of [output,previous.log])for(let i=rows.length-1;i>=0&&rows[i].age>=age-5;i--)if(rows[i].peopleScene===key)return true;return false;};
+const currentHappinessHistory=s=>s.capture===false?s:{...s,history:s.history?.at(-1)?.age===s.age?[...s.history.slice(0,-1),{...s.history.at(-1),happy:s.attrs.happy}]:[...(s.history??[]),{age:s.age,happy:s.attrs.happy}]};
 const stageAt=a=>a<6?'baby':a<12?'child':a<16?'junior':a<19?'high':a<23?'college':a<36?'adult':a<60?'middle':'senior';
 
 export function step(previous,input={}) {
  if(!previous.alive)return {state:previous,events:[]};
  const light=withoutHeavyPending(previous);if(light!==previous)return {state:light,events:[]};
- if(input.action){const state=input.action==='leave-preparation'?preparationAction(previous,input.action):financialAction(previous,input);return {state,events:state.log.slice(previous.log.length)};}
+ if(input.action){const before=beginHappiness(previous),changed=input.action==='leave-preparation'?preparationAction(before,input.action):financialAction(before,input);const state=currentHappinessHistory(finishHappiness(changed));return {state,events:state.log.slice(previous.log.length)};}
  if(previous.pending&&!input.choice&&!input.auto)return {state:previous,events:[]};
  let s={...previous,cardHistory:[...(previous.cardHistory??[])],skills:{...(previous.skills??{})},educationFinance:{...(previous.educationFinance??{})},cardUsage:{...(previous.cardUsage??{})},cardSeeds:[...(previous.cardSeeds??[])],preparation:previous.preparation?{...previous.preparation}:null,attrs:{...previous.attrs},record:{...previous.record},kids:[...previous.kids],templateUsage:previous.templateUsage,verdictUsage:{...previous.verdictUsage},parents:Object.fromEntries(Object.entries(previous.parents).map(([role,p])=>[role,{...p}]))};
  s=copyEconomy(s);
@@ -42,6 +44,7 @@ export function step(previous,input={}) {
  const draw=()=>{const r=random(seed);seed=r.seed;return r.value;};
  const output=[];
  const emit=(text,stat,meta={})=>{if(s.capture!==false)output.push({age:s.age,text,stat:stat??null,...meta});};
+ s=beginHappiness(s);
  s=ensurePeople(s,emit);
  beginMoneyYear(s);
  const report=(node,gate,u,outcome,stat,choice=false,bonus=0,dice=null)=>{
@@ -80,7 +83,9 @@ export function step(previous,input={}) {
   s.pendingScenarioEvents=[];s.relationshipEvents=[];
   s.pending=null;
   if(s.capture!==false)s.choices=[...s.choices,{age:s.age,decision:d.id,choice}];
-  emit(`你选择了「${d.options.find(o=>o.id===choice).label}」。`,null,{node:'card',cardId:d.id});
+  const choiceLabel=d.options.find(o=>o.id===choice).label;
+  const cardTitle=d.title??(typeof definition?.title==='function'?definition.title(s):definition?.title);
+  emit(`${definition?.scenarioId?'':`${cardTitle}——`}你选了「${choiceLabel}」。`,null,{node:'card',cardId:d.id,cardTitle,choice,choiceLabel});
   for(const event of consequences.filter(e=>e.node!=='scenario-scene'))emit(event.text,event.stat,event);
   switch(d.id){
    case 'school': {
@@ -167,8 +172,9 @@ export function step(previous,input={}) {
   s=offerPeopleCard(drawCards(s));
  }
  finishMoneyYear(s);
+ s=finishHappiness(s);
  s.rngState=seed;
- if(s.capture!==false){s.log=[...previous.log,...output];s.history=[...previous.history,...(s.age!==previous.age?[{age:s.age,happy:s.attrs.happy}]:[])];}
+ if(s.capture!==false){s.log=[...previous.log,...output];s=currentHappinessHistory(s);}
  return {state:s,events:output};
 }
 export function simulate(initial,{focus,choices=[],capture=false,until=110}={}){

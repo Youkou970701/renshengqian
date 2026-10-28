@@ -44,7 +44,7 @@ export function schoolAlternative(s,choice,emit){
  if(choice==='private'){s.educationFinance={...s.educationFinance,annualSchoolFee:schoolCost,familySpent:(s.educationFinance?.familySpent??0)+schoolCost};emit('家里凑出了第一年的民办高中学费。每年一万八千元，需要继续安排。');}
  if(choice==='talent'){s.educationRoute='talent';emit('你拿着从小练习积累的作品或成绩，走进艺体方向的课堂。文化课仍然要学。');}
  if(choice==='international'){s.educationRoute='international';s.educationFinance={...s.educationFinance,annualSchoolFee:120000};emit('家里承担了国际学校的费用。语言考试和申请材料，成了新的日常。');}
- if(choice==='vocational'){s.major=s.major??['汽修','护理','电商','烹饪'][Math.floor(contentDraw(s)*4)];emit(`你选择了中职的${s.major}方向，课表里多了实训课。`);}
+ if(choice==='vocational'){s.major=s.major??['汽修','护理','电商','烹饪'][Math.floor(contentDraw(s)*4)];emit(`你进入中职的${s.major}方向学习，课表里多了实训课。`);}
 }
 export function annualEducation(s,emit){
  if(s.repeatJunior&&s.age===16){const p=probability(s,'general'),u=contentDraw(s),cause=attribution(s,'general',u);s.record.stage=true;s.record.general=u<p;s.record.publicGeneralEver=s.record.general;s.edu=s.record.general?'high':'vocational';emit(s.record.general?'重新参加中考后，你进入普通高中，比同龄人晚一年开始。':'重新参加中考后，你转入中职，继续学习一门技能。',null,{node:'school',reason:cause.dominant,probability:cause.probability,draw:u,contributions:cause.contributions,dice:[makeDice({id:'junior-repeat',label:'再次中考普通高中录取概率',p,u,contributions:{},successLabel:'普通高中录取',failureLabel:'转入中职'})]});}

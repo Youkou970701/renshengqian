@@ -1,5 +1,5 @@
 import {hashSeed,random} from './rng.js';
-import {nameFor} from '../content/names.js';
+import {nameFor,uniqueNameFor,givenName} from '../content/names.js';
 
 const clamp=n=>Math.max(0,Math.min(100,n));
 const hash=text=>{let n=2166136261;for(const c of String(text))n=Math.imul(n^c.charCodeAt(0),16777619)>>>0;return n;};
@@ -30,17 +30,20 @@ function own(previous,fields){
  const profile=generatedProfiles.get(fields)??(previous&&generatedProfiles.get(previous));if(profile)generatedProfiles.set(result,profile);
  return result;
 }
-function generated(s,id,role,label,bornAt,sex,surname,previous){
+function generated(s,id,role,label,bornAt,sex,surname,previous,assignedNames){
  const old=previous&&generatedProfiles.get(previous);
  const same=old&&old.seed===s.seed&&old.year===s.year&&old.id===id&&old.role===role&&old.label===label&&old.bornAt===bornAt&&old.sex===sex&&old.surname===surname;
  const profile=same?old:{seed:s.seed,year:s.year,id,role,label,bornAt,sex,surname,name:memberName(s,id,sex,s.year+bornAt,surname),deathAge:78+Math.floor(roll(s,`${id}:death`)*24),adultJob:jobAt(s,id,18)};
  const age=Math.max(0,s.age-bornAt),alive=age<profile.deathAge;
- const result={id,role,label,name:profile.name,age:alive?age:profile.deathAge,job:age<6?'尚未入学':age<18?'学生':age>=65?'退休':profile.adultJob,alive,diedAge:alive?null:profile.deathAge,bornAt,active:true,closeness:initialCloseness(s,id)};
+ const previousName=previous?.bornAt===bornAt&&previous.role===role?previous.name:null;
+ const name=assignedNames?.get(id)??(previousName?(surname??previousName[0])+givenName(previousName):profile.name);
+ const result={id,role,label,name,age:alive?age:profile.deathAge,job:age<6?'尚未入学':age<18?'学生':age>=65?'退休':profile.adultJob,alive,diedAge:alive?null:profile.deathAge,bornAt,active:true,closeness:initialCloseness(s,id)};
  generatedProfiles.set(result,profile);return result;
 }
 function change(s,id,delta,reason,emit,{annual=false}={}){
  const person=s.people.members[id];if(!person||!person.alive||!delta)return s;
  const before=person.closeness,after=clamp(before+delta);if(before===after)return s;
+ reason=String(reason).replaceAll('{name}',person.name);
  const next={...person,closeness:after};
  const profile=generatedProfiles.get(person);if(profile)generatedProfiles.set(next,profile);
  const event={age:s.age,personId:id,name:person.name,before,after,reason};
@@ -54,24 +57,42 @@ function change(s,id,delta,reason,emit,{annual=false}={}){
  * income, school attribute or existing relationship state is changed. */
 export function ensurePeople(state,emit){
  const source=sourceSnapshot(state),known=state.people&&syncedPeople.get(state.people);
- if(known&&sameSource(source,known)&&!(state.age===0&&!state.people.birthCareRecorded&&emit))return state;
+ if(known&&sameSource(source,known)&&!(state.age===0&&!state.people.birthCareRecorded&&emit)&&!(emit&&state.people.nameCorrections?.length))return state;
  const old=state.people?.version===1?state.people:{version:1,members:{},changeCount:0,lastAnnualAge:null,birthCareRecorded:false};
  const members={...old.members};
+ // Existing people keep their given names as children arrive and partners
+ // change. On a pre-polish save, family takes precedence over a same-named
+ // friend; one explicit log note explains the corrected name, once.
+ const occupied=[state.name,...Object.values(state.parents??{}).map(p=>p.name),state.partner?.name,...(state.exPartners??[]).map(p=>p.name),...Object.values(old.members).filter(p=>p.role==='partner').map(p=>p.name)].filter(Boolean);
+ const assignedNames=new Map(),renamed=[];
+ const reserve=(id,role,bornAt,sex,surname,previous)=>{
+  const preferred=previous?.name?(surname??previous.name[0])+givenName(previous.name):memberName(state,id,sex,state.year+bornAt,surname);
+  const name=occupied.some(n=>givenName(n)===givenName(preferred))?uniqueNameFor(sex,state.year+bornAt,roll(state,`${id}:name`),surname??preferred[0],occupied):preferred;
+  occupied.push(name);assignedNames.set(id,name);
+  if(previous?.name&&previous.name!==name&&givenName(previous.name)!==givenName(name))renamed.push({id,role,oldName:previous.name,name});
+ };
+ for(const p of Object.values(old.members).filter(p=>!['parent','partner'].includes(p.role)).sort((a,b)=>(a.role==='friend')-(b.role==='friend'))){
+  reserve(p.id,p.role,p.bornAt,sexFor(state,p.id,p),p.role==='sibling'?state.parents?.father?.name?.[0]:p.role==='child'?state.name?.[0]:undefined,p);
+ }
+ const assignNew=(id,role,bornAt,sex,surname)=>{if(!assignedNames.has(id))reserve(id,role,bornAt,sex,surname,null);};
  for(const role of ['mother','father']){
   const p=state.parents?.[role];if(!p)continue;
   members[role]=own(members[role],{id:role,role:'parent',label:role==='mother'?'妈妈':'爸爸',name:p.name,age:p.age,job:p.job,alive:p.alive!==false,diedAge:p.alive===false?p.age:null,active:true,closeness:initialCloseness(state,role)});
  }
  for(let i=0;i<(state.siblings??0);i++){
   const id=`sibling:${i}`,sex=sexFor(state,id,members[id]),bornAt=-(i+1)*2;
-  members[id]=own(members[id],generated(state,id,'sibling',sex==='female'?'姐姐':'哥哥',bornAt,sex,state.parents?.father?.name?.[0],members[id]));
+  assignNew(id,'sibling',bornAt,sex,state.parents?.father?.name?.[0]);
+  members[id]=own(members[id],generated(state,id,'sibling',sex==='female'?'姐姐':'哥哥',bornAt,sex,state.parents?.father?.name?.[0],members[id],assignedNames));
  }
  for(let i=0;i<(state.age>=6?2:0);i++){
   const id=`friend:${i}`,sex=sexFor(state,id,members[id]);
-  members[id]=own(members[id],generated(state,id,'friend',i?'老朋友':'好朋友',i?1:0,sex,undefined,members[id]));
+  assignNew(id,'friend',i?1:0,sex,undefined);
+  members[id]=own(members[id],generated(state,id,'friend',i?'老朋友':'好朋友',i?1:0,sex,undefined,members[id],assignedNames));
  }
  for(const [i,kid] of (state.kids??[]).entries()){
   const id=`child:${kid.bornAt}:${i}`,sex=sexFor(state,id,members[id]);
-  const fields=generated(state,id,'child',sex==='female'?'女儿':'儿子',kid.bornAt,sex,state.name?.[0],members[id]);
+  assignNew(id,'child',kid.bornAt,sex,state.name?.[0]);
+  const fields=generated(state,id,'child',sex==='female'?'女儿':'儿子',kid.bornAt,sex,state.name?.[0],members[id],assignedNames);
   fields.closeness=kid.leftBehind||kid.careBy==='left-behind'?45:62;members[id]=own(members[id],fields);
  }
  const currentPartner=state.partner&&(state.married||state.partner.alive===false)?state.partner:null;
@@ -93,9 +114,15 @@ export function ensurePeople(state,emit){
  }
  if(state.leftBehind&&state.parents?.mother?.away){
   const id='caregiver:grandmother',ageAtBirth=(state.parents?.father?.birthAge??29)+24;
-  members[id]=own(members[id],generated(state,id,'grandparent','奶奶',-ageAtBirth,'female',undefined,members[id]));
+  assignNew(id,'grandparent',-ageAtBirth,'female',undefined);
+  members[id]=own(members[id],generated(state,id,'grandparent','奶奶',-ageAtBirth,'female',undefined,members[id],assignedNames));
  }
- let s={...state,people:{...old,members}};
+ for(const row of renamed)members[row.id]={...members[row.id],previousNames:[...new Set([...(members[row.id]?.previousNames??[]),row.oldName])]};
+ let s={...state,people:{...old,members,...(renamed.length?{nameCorrections:[...(old.nameCorrections??[]),...renamed]}:{})}};
+ if(emit&&s.people.nameCorrections?.length){
+  for(const row of s.people.nameCorrections)emit(`此前的纪录里有人同名。往后的纪录把${row.oldName}记作${row.name}，前面的文字仍保留原名。`,null,{node:'people-name-correction',personId:row.id,previousName:row.oldName,name:row.name});
+  const {nameCorrections,...people}=s.people;s={...s,people};
+ }
  syncedPeople.set(s.people,source);
  // Only a genuinely new birth gets this moment. Old saves are not given a
  // retroactive birth scene; their next actual choice/year changes closeness.
@@ -103,7 +130,7 @@ export function ensurePeople(state,emit){
   s={...s,people:inheritSync(s.people,{...s.people,birthCareRecorded:true})};
   const id=members['caregiver:grandmother']?'caregiver:grandmother':members.mother?.alive?'mother':'father';
   const person=members[id];
-  if(person)s=change(s,id,1,`${person.label}把你抱在怀里，认出了你哭声里要人陪的意思`,emit);
+  if(person)s=change(s,id,1,`${person.label}${person.name}把你抱在怀里，听见你哭时就轻轻拍着你的背`,emit);
  }
  return s;
 }
@@ -130,9 +157,9 @@ export function peopleChoice(state,cardId,choice,emit,impact=null){
  else if(cardId==='parent-care-arrangement')apply(parents,choice==='together'?10:choice==='calls'?3:6,choice==='together'?'你为老人腾出房间，把复诊和买菜写进自己的日程':'你把探望和通话的时间固定下来，不再只说有空再联系');
  else if(cardId==='parent-serious-illness')apply(parents,choice==='discuss'?3:8,'你陪着核对治疗安排，老人知道这件事有人一起承担');
  else if(cardId==='sibling-borrowing')apply(siblings,choice==='decline'?-7:choice==='lend'?9:5,choice==='decline'?'你说清了自己家里的开支，对方仍一时有些失落':'你们把能帮多少和何时归还谈清楚，没有让人空等');
- else if(cardId==='siblings-family-division')apply(siblings,choice==='defer'?-5:6,choice==='defer'?'分工一直没谈妥，几次电话都说不到一处':'你们把照护分工一项项说清，谁也不用猜对方的意思');
- else if(cardId.startsWith('relationship-')&&partner)apply([partner],['cold','separate','sue','request-divorce','breakup'].includes(choice)?-12:['consult','talk','continue','withdraw'].includes(choice)?8:0,['cold','separate','sue','request-divorce','breakup'].includes(choice)?'争执之后你们减少了联系，许多话没能继续说完':'你们给彼此留出说话的时间，把上次争执的事情重新谈过');
- else if(cardId==='return-hometown'&&choice==='home')apply(parents,7,'回老家以后，你能常去看看他们，不必把见面都等到过年');
+ else if(cardId==='siblings-family-division')apply(siblings,choice==='defer'?-5:6,choice==='defer'?'你们一直没谈妥谁去照护老人，几次电话都说不到一处':'你们把照护分工一项项说清，谁也不用猜对方的意思');
+ else if(cardId.startsWith('relationship-')&&partner)apply([partner],['cold','separate','sue','request-divorce','breakup'].includes(choice)?-12:['consult','talk','continue','withdraw'].includes(choice)?8:0,['cold','separate','sue','request-divorce','breakup'].includes(choice)?'你们吵过以后减少了联系，许多话没能继续说完':'你们给彼此留出说话的时间，把上次争执的事情重新谈过');
+ else if(cardId==='return-hometown'&&choice==='home')apply(parents,7,'你回老家后常去看看父母，不必把见面都等到过年');
  else if(cardId==='grandchild-care')apply(children,choice==='help'?8:3,choice==='help'?'你答应固定几天帮忙，也把自己的休息时间说清楚':'你们谈妥探望的日子，照护安排没有靠猜测');
  else if(cardId==='child-down-payment')apply(children,choice==='budget'?2:6,choice==='budget'?'你把自己的养老开支说清，又陪孩子核对了预算':'你把愿意支持的数目说清，孩子知道这份帮忙并不轻松');
  else if(cardId.startsWith('people-')){
@@ -141,7 +168,7 @@ export function peopleChoice(state,cardId,choice,emit,impact=null){
   const close=/help|stand|support|witness|join|listen|accompany|share|talk|report|return|agree|care|protect/.test(choice),distant=/ignore|avoid|refuse|silence|leave|decline|hide|pass/.test(choice);
   const targets=cardId==='people-sibling-hand'?[closeSibling(s)].filter(Boolean):cardId==='people-child-weekend'?children.filter(p=>p.closeness>=65).slice(0,1):impact?.target==='child'?children.slice(0,1):impact?.target==='parent'?parents.slice(0,1):impact?.target==='sibling'||cardId.includes('relative')||cardId.includes('sibling')?siblings.slice(0,1):friends.slice(0,1);
   if(impact)apply(targets,impact.delta,impact.reason);
-  else apply(targets,close?5:distant?-4:1,close?'听你讲完这次为别人费心的事，对方也愿意把自己的难处告诉你':distant?'这次你没有接住求助，后来再联系时两边都拘谨了一些':'你们把彼此能承担的事情说清，往后联络也有了分寸');
+  else apply(targets,close?5:distant?-4:1,close?'你把这次替别人费心的经过讲给对方听，对方也愿意把自己的难处告诉你':distant?'你这次没有帮上对方的忙，后来联系时两个人都有些拘谨':'你们把彼此能承担的事情说清，往后联络也有了分寸');
  }
  return s;
 }
@@ -161,7 +188,7 @@ export function annualPeople(state,focus,emit){
   if(p)s=change(s,p.id,-3,'你几次忙到很晚，原先答应的见面和通话都往后推了',emit,{annual:true});
  }else if(s.age<6){
   const p=list.find(p=>p.role==='grandparent')??list.find(p=>p.id==='mother');
-  if(p)s=change(s,p.id,1,'每天有人应声、喂饭、哄睡，你渐渐记住了这个熟悉的怀抱',emit,{annual:true});
+  if(p)s=change(s,p.id,1,`${p.label}${p.name}每天给你喂饭哄睡，你渐渐认出了对方的声音`,emit,{annual:true});
  }else if(s.age%4===0){
   const p=list.find(p=>p.role==='sibling')??list.find(p=>p.role==='friend');
   if(p)s=change(s,p.id,2,'你记得对方提过的难处，这回专门打了个电话问后来怎样',emit,{annual:true});

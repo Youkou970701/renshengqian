@@ -16,7 +16,7 @@ import {autoChoose} from '../src/engine/decisions.js';
 import {familyMembers,closenessLabel} from '../src/engine/people.js';
 import {PEOPLE_CARDS} from '../src/content/cards/people.js';
 import {advancePeer,hydrateSave} from '../src/ui/save.js';
-import {moneyChangeRows} from '../src/engine/money-ledger.js';
+import {moneyDisplayRows,wholeMoney} from '../src/ui/money-display.js';
 import {incomeAgeGroup,incomePercentile} from '../src/ui/income-rank.js';
 
 const require=createRequire(join(homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/package.json'));
@@ -83,12 +83,12 @@ try{
    const rows=await page.locator('.people-list article').allTextContents(),members=familyMembers(life);
    const missing=members.filter(p=>!rows.some(text=>text.includes(p.name)&&text.includes(p.alive?`${p.age} 岁`:`${p.diedAge??p.age} 岁离开`)&&text.includes(p.job)&&text.includes(closenessLabel(p.closeness))));
    check(`${label} ${width}px complete people panel`,missing.length===0&&rows.length===members.length,{expected:members.length,shown:rows.length,missing:missing.map(p=>p.id),deceased:members.filter(p=>!p.alive).map(p=>({id:p.id,name:p.name,age:p.diedAge}))});
-   const frame=life.moneyYear,sum=(frame.sources??[]).reduce((total,row)=>total+row.amount,0),moneyRows=moneyChangeRows(life);
+   const frame=life.moneyYear,sum=(frame.sources??[]).reduce((total,row)=>total+row.amount,0),moneyRows=moneyDisplayRows(life);
    const moneyText=await page.locator('.money-changes').textContent();
-   check(`${label} ${width}px real money sources reconcile`,Math.abs(sum-frame.delta)<.011&&moneyRows.every(row=>moneyText.includes(row.label)),{delta:frame.delta,sum,sources:frame.sources});
+   check(`${label} ${width}px real money sources reconcile`,Math.abs(sum-frame.delta)<.011&&moneyRows.every(row=>moneyText.includes(row.label)&&moneyText.includes(wholeMoney(row.amount)))&&moneyRows.reduce((sum,row)=>sum+row.amount,0)===Math.round(frame.delta)&&!/金额取整|[0-9]\.[0-9]+\s*元/.test(moneyText),{delta:frame.delta,sum,sources:frame.sources});
    const ageGroup=incomeAgeGroup(life.age),p=reference.groups[ageGroup].provinces[life.province],n=reference.groups[ageGroup].national,rankText=await page.locator('.income-rank').textContent(),pp=incomePercentile(life.income,p),np=incomePercentile(life.income,n);
-   check(`${label} ${width}px rank uses current income and age group`,rankText.includes(`${pp} 百分位`)&&rankText.includes(`${np} 百分位`)&&rankText.includes(ageGroup.replace('-','–'))&&!rankText.includes('峰值'),{income:life.income,peakIncome:life.peakIncome,ageGroup,provincePercentile:pp,nationalPercentile:np});
-   check(`${label} ${width}px rank names birth province and distinct-person sample`,rankText.includes(life.province)&&rankText.includes('出生省份')&&rankText.includes(`${p.nLives.toLocaleString('zh-CN')} 人`)&&rankText.includes(`${n.nLives.toLocaleString('zh-CN')} 人`)&&rankText.includes('同一个人可贡献多个年度')&&rankText.includes('少于 30 人'),{birthProvince:life.province,provinceNLives:p.nLives,nationalNLives:n.nLives});
+   check(`${label} ${width}px rank uses current income and age group`,rankText.includes(`比全国约 ${np}% 的同龄人高`)&&rankText.includes(`在${life.province}同龄人中排在前 ${Math.max(1,100-pp)}%`)&&rankText.includes(ageGroup.replace('-','–'))&&!rankText.includes('峰值'),{income:life.income,peakIncome:life.peakIncome,ageGroup,provincePercentile:pp,nationalPercentile:np});
+   check(`${label} ${width}px rank uses plain language and puts sample detail in sources`,rankText.includes(life.province)&&rankText.includes('出生省份')&&!/百分位|年度观察|贡献多个年度|样本|少于 30|\d[\d,]* 人/.test(rankText)&&rankText.includes('统计出处'),{birthProvince:life.province,provinceNLives:p.nLives,nationalNLives:n.nLives});
    await noOverflow(label);
    const screenshot=join(out,`${label}-${width}.png`);await page.screenshot({path:screenshot,fullPage:true});
    await page.locator('.people-panel').screenshot({path:join(out,`${label}-people-${width}.png`)});
@@ -101,7 +101,7 @@ try{
   await page.waitForFunction(({key,id,choice})=>JSON.parse(localStorage.getItem(key))?.life?.peopleDilemmas?.[id]?.choice===choice,{key:SAVE_KEY,id:social.cardId,choice:social.choice});
   const after=hydrateSave(await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),SAVE_KEY));
   const relation=after.life.log.findLast(e=>e.node==='people-relationship'&&e.age===social.before.age),expected=social.decided.people.lastChange;
-  check(`real people choice ${width}px changes closeness with reason`,relation?.reason===social.impact.reason&&relation?.personId===expected.personId&&relation.before===expected.before&&relation.after===expected.after,{choice:social.choice,event:relation});
+  check(`real people choice ${width}px changes closeness with reason`,typeof relation?.reason==='string'&&relation.reason===social.impact.reason.replaceAll('{name}',relation.name)&&relation.reason===expected.reason&&relation.reason.includes(relation.name)&&relation.text.includes(relation.reason)&&relation?.personId===expected.personId&&relation.before===expected.before&&relation.after===expected.after,{choice:social.choice,event:relation});
   check(`real people choice ${width}px schedules 1-5 year seed`,after.life.cardSeeds.some(seed=>seed.cardId===social.seed.cardId&&seed.atAge===social.seed.atAge)&&social.seed.atAge-social.before.age>=1&&social.seed.atAge-social.before.age<=5,{age:social.before.age,scheduledAge:social.seed.atAge,id:social.seed.cardId});
   await page.screenshot({path:join(out,`people-choice-${width}.png`),fullPage:true});
   await load(social.future);

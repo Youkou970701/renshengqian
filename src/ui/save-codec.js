@@ -1,11 +1,12 @@
 export const SAVE_KEY='toutai-sim:v2';
-export const SCHEMA_VERSION=4;
+export const SCHEMA_VERSION=5;
 // Repeated income-observation keys dominate older lives. A lossless column
 // dictionary keeps every value and absent field, without truncating history.
+const choiceText=row=>`${row.cardId?.startsWith('story:')?'':`${row.cardTitle}——`}你选了「${row.choiceLabel}」。`;
 function packLog(rows){
  if(!Array.isArray(rows)||rows.length<30)return rows;
  const keys=[...new Set(rows.flatMap(row=>Object.keys(row)))],index=new Map(keys.map((key,i)=>[key,i]));
- return {encoding:'entries-v1',keys,rows:rows.map(row=>Object.entries(row).filter(([,value])=>value!==undefined).flatMap(([key,value])=>[index.get(key),value]))};
+ return {encoding:'entries-v1',keys,rows:rows.map(row=>Object.entries(row).filter(([,value])=>value!==undefined).flatMap(([key,value])=>[index.get(key),key==='text'&&row.node==='card'&&typeof row.cardTitle==='string'&&typeof row.choiceLabel==='string'&&value===choiceText(row)?{$choice:true}:value]))};
 }
 function unpackLog(data){
  if(!data||data.encoding!=='entries-v1')return data;
@@ -13,17 +14,29 @@ function unpackLog(data){
  return data.rows.map(row=>{
   if(!Array.isArray(row)||row.length%2)throw Error('Invalid log row');
   const entries=[];for(let i=0;i<row.length;i+=2){const key=data.keys[row[i]];if(!Number.isInteger(row[i])||typeof key!=='string')throw Error('Invalid log field');entries.push([key,row[i+1]]);}
-  return Object.fromEntries(entries);
+  const result=Object.fromEntries(entries);
+  if(result.text?.$choice===true&&Object.keys(result.text).length===1){
+   if(typeof result.cardTitle!=='string'||typeof result.choiceLabel!=='string')throw Error('Invalid choice text');
+   result.text=choiceText(result);
+  }
+  return result;
  });
 }
 // Income explanations also appear verbatim in the life log. Share repeated
 // long strings across those two histories; never remove an event or a value.
-const sharedFields=['log','incomeHistory','incomeSceneMemory','lastIncomeObservation'];
+const sharedFields=['log','incomeHistory','incomeSceneMemory','lastIncomeObservation','cardHistory','choices','people'];
 function shareStrings(life){
  const counts=new Map();
- const visit=value=>{if(typeof value==='string'&&value.length>=20)counts.set(value,(counts.get(value)??0)+1);else if(value&&typeof value==='object')Object.values(value).forEach(visit);};
+ const visit=value=>{if(typeof value==='string'&&value.length>=4)counts.set(value,(counts.get(value)??0)+1);else if(value&&typeof value==='object')Object.values(value).forEach(visit);};
  for(const field of sharedFields)visit(life[field]);
- const strings=[...counts].filter(([,count])=>count>1).map(([value])=>value);
+ const bytes=new TextEncoder();
+ // Short repeated Chinese titles/names can save more bytes than long ASCII
+ // keys. Only intern values when their UTF-8 cost beats the dictionary entry
+ // and references. Schema 5 also shares choices and people with those logs.
+ const strings=[...counts].filter(([value,count])=>{
+  const length=bytes.encode(JSON.stringify(value)).length;
+  return count>1&&(count-1)*length>count*13+1;
+ }).map(([value])=>value);
  if(!strings.length)return life;
  const indexes=new Map(strings.map((value,i)=>[value,i]));
  const encode=value=>typeof value==='string'&&indexes.has(value)?{$s:indexes.get(value)}:Array.isArray(value)?value.map(encode):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).map(([key,v])=>[key,encode(v)])):value;
@@ -60,7 +73,7 @@ function unpackLife(life) {
  })))};
 }
 export function hydrateSave(saved) {
- if(!saved||![3,SCHEMA_VERSION].includes(saved.schemaVersion))return saved;
+ if(!saved||![3,4,SCHEMA_VERSION].includes(saved.schemaVersion))return saved;
  return {...saved,life:unpackLife(saved.life),birthOrigin:unpackLife(saved.birthOrigin),familyRows:Array.isArray(saved.familyRows)?saved.familyRows.map(unpackLife):saved.familyRows};
 }
 export function serializeSave(state) {

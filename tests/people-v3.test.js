@@ -6,6 +6,7 @@ import {build} from 'esbuild';
 import {fileURLToPath} from 'node:url';
 import {createBirth} from '../src/engine/birth.js';
 import {ensurePeople,annualPeople,peopleChoice,personalDaily,familyMembers,closenessLabel,closeSibling,childVisitFrequency,relationshipOpportunity} from '../src/engine/people.js';
+import {partnerCandidate} from '../src/engine/relationships.js';
 
 const birth=()=>createBirth('粤-2026-694669');
 const adult=()=>({...birth(),age:43,married:true,partner:{id:'sample-partner',name:'李知夏',age:42,job:'护士'},relationship:{closeness:65},kids:[{bornAt:30},{bornAt:34}],siblings:2});
@@ -127,4 +128,37 @@ test('generated profile cache preserves names and death ages across aging and JS
   assert.deepEqual(restored.people,s.people);
   for(const p of original){const current=s.people.members[p.id];assert.equal(current.name,p.name);assert.equal(current.age,current.alive?age-p.bornAt:current.diedAge);}
  }
+});
+test('given names stay unique as children and new partners arrive, including deceased and former people',()=>{
+ let s=ensurePeople(adult());
+ const names=()=>[s.name,...Object.values(s.people.members).map(p=>p.name)].map(n=>n.slice(1));
+ assert.equal(new Set(names()).size,names().length);
+ const oldNames=Object.fromEntries(Object.values(s.people.members).map(p=>[p.id,p.name]));
+ s=ensurePeople({...s,kids:[...s.kids,{bornAt:s.age}]});
+ for(const [id,name]of Object.entries(oldNames))assert.equal(s.people.members[id].name,name,'new children never rename established people');
+ const candidate=partnerCandidate({...s,datingPartner:null,partner:null,married:false});
+ assert.ok(!names().includes(candidate.name.slice(1)));
+ s=ensurePeople({...s,married:true,partner:candidate});
+ assert.equal(new Set(names()).size,names().length);
+ assert.deepEqual(ensurePeople(JSON.parse(JSON.stringify(s))).people,s.people);
+ for(const year of [1960,2000,2026,2100]){
+  const b=createBirth(`粤-${year}-694669`),given=[b.name,...Object.values(b.parents).map(p=>p.name)].map(n=>n.slice(1));
+  assert.equal(new Set(given).size,given.length);
+ }
+});
+test('old duplicate names are disambiguated with one explicit note and preserve historical names',()=>{
+ let s=ensurePeople(adult());const child=familyMembers(s).find(p=>p.role==='child'),friend=familyMembers(s).find(p=>p.role==='friend');
+ const duplicate=friend.name[0]+child.name.slice(1);
+ s={...s,people:{...s.people,members:{...s.people.members,[friend.id]:{...friend,name:duplicate}}}};
+ const log=[];s=ensurePeople(s,(text,stat,meta)=>log.push({text,...meta}));
+ assert.equal(log.length,1);assert.equal(log[0].node,'people-name-correction');
+ assert.equal(log[0].previousName,duplicate);assert.ok(s.people.members[friend.id].previousNames.includes(duplicate));
+ assert.notEqual(s.people.members[friend.id].name.slice(1),child.name.slice(1));
+ ensurePeople(s,(...args)=>log.push(args));assert.equal(log.length,1,'correction note is emitted once');
+ assert.equal(s.log.some(e=>e.node==='people-name-correction'),false,'pure helper leaves prior log untouched');
+});
+test('all social choice reasons name an actor and resolve the actual recipient instead of an abstract slogan',()=>{
+ const s=ensurePeople(adult()),p=familyMembers(s).find(p=>p.role==='friend'),events=[];
+ peopleChoice(s,'people-identity-request','refuse',(text,stat,meta)=>events.push({text,...meta}),{target:'friend',delta:-4,reason:'你没有把身份证借给{name}，对方有些不高兴'});
+ assert.ok(events[0].reason.includes(p.name));assert.ok(events[0].text.includes(`你没有把身份证借给${p.name}`));assert.ok(!events[0].text.includes('{name}'));
 });
